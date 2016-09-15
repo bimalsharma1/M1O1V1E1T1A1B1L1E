@@ -1,0 +1,13 @@
+To add a new Nao robot with the naoqisim controller, here is how to proceed:
+
+1. open the nao.wbt world file
+2. stop the simulation (if not already stopped) and revert the world file
+3. select the Nao robot in the scene tree
+4. create a new Nao robot from the (+) button and select the PROTO (Webots) -> aldebaran -> Nao
+5. move the new Nao robot (either change its translation field in the scene tree or moving it using the mouse)
+6. open the new Nao node in the scene tree
+7. select the controller field of this node
+8. replace "nao_demo" with "naoqisim"
+9. be sure set the correct port number in "controllerArgs"
+10. save the world file with a different name, e.g., nao_2.wbt
+11. revert and run the simulation

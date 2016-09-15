@@ -1,0 +1,41 @@
+#DEFINITIONS OF ALL BEHAVIOURS
+
+1.	Find Object
+	Precondition:  Nao has initialised
+	StopCondition: Object found
+	Description: Look left 180 degrees, take picture and find blob.
+		Note: test on different positions of the table, mix the behaviour 1. go towards the corner 2. walk sideways to corner
+		Go to V position the rotate to the angle
+		###to determine if the Nao is in front or behind the table,  find the nao head and scan the y axis below it. If you 
+		##finf blue then nao is behind table , else it is in front of table
+		## v state of corner
+		##at v corner then look left then right and correct for horizontal and distance until left and right are equal
+		##when lifting keep table on elbow tot he side
+		## nao should adjust to the speed of the other Nao
+		-have a behaviour for random walk
+-subsumption architecture (behavioir based robotics) - behaviour co-ordination
+	petri nets
+describe main behaviours and sub behav
+2.	Move to closest corner of object
+	Precondition:   Object seen
+	StopCondition: Object bottom  point is greater than 420 pixels(Y)/480 pixels of top camera 
+
+3.	Face centre of Object
+	Precondition:  Object is close enough i.e > 420 pixels of top camera
+	StopCondition: Whole object can be seen from top camera
+
+4.	Align to longer side of Object
+	Precondition:  Whole object can be seen and turn angle/ distance can be calculated usign rotated rectangle
+	StopCondition: Move and turn to align 90 degrees with the object
+
+5.	Walk to within lift range of Object
+	Precondition:  Robot is aligned with object
+	StopCondition: Walk until object is greater than 420 pixels(Y) on the bottom camera
+
+6.	Wait for second Nao Object
+	Precondition:  First Nao is in "Seek help mode" (both hand are horixontal to the side and straight)
+	StopCondition: Second Nao is in front
+
+7.	Lift and move Object
+	Precondition:  Both Naos aligned to object
+	StopCondition: Nao have moved table 1 metre to the right

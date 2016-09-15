@@ -1,0 +1,7 @@
+Webots Proto Cache File version 1.2
+protoFileHash: 0f08e97351ce3632f715e706471ac0f8
+containsDevices: 0
+baseType: Solid
+slotType: 
+parameters: translation,rotation,size,feetSize,feetPadding,frameThickness,trayTransparency,trayTextureUrl,trayTileSize,feetTextureUrl,feetTileSize,mass
+info: Customizable\stable
