@@ -10778,3 +10778,56 @@ September 16, 2016 05:31:13:846000	[(544, 248), (544, 248), (551, 251), (544, 25
 September 16, 2016 05:31:14:110000	STARTING behaviourMoveToCornerOfObject
 September 16, 2016 05:31:17:416000	[(379, 296), (519, 279), (560, 290), (398, 304), [640, 480]]
 September 16, 2016 05:31:37:681000	[(556, 220), (556, 220), (559, 223), (556, 223), [640, 480]]
+September 16, 2016 05:48:42:176000	MOVE FIRST NAO
+September 16, 2016 05:48:43:841000	STARTING SIMULATION
+September 16, 2016 05:48:48:199000	[(363, 279), (495, 267), (544, 278), (383, 292), [640, 480]]
+September 16, 2016 05:48:48:258000	initial top cam
+September 16, 2016 05:48:50:265000	onject found
+September 16, 2016 05:48:53:579000	[(524, 248), (524, 248), (531, 251), (524, 251), [640, 480]]
+September 16, 2016 05:48:53:849000	STARTING behaviourMoveToCornerOfObject
+September 16, 2016 05:48:57:169000	[(363, 296), (487, 279), (539, 281), (384, 304), [640, 480]]
+September 16, 2016 05:48:57:229000	bottommost point: 303
+September 16, 2016 05:48:57:234000	move head down by x degrees
+September 16, 2016 05:48:58:464000	turn angle:  0.9
+September 16, 2016 05:48:58:471000	bottom most position:  
+September 16, 2016 05:48:58:473000	0
+September 16, 2016 05:49:00:478000	ending behaviourMoveToCornerOfObject
+September 16, 2016 05:49:03:820000	[(463, 196), (472, 191), (638, 207), (629, 208), [640, 480]]
+September 16, 2016 05:49:03:881000	bottommost point: 207
+September 16, 2016 05:49:03:894000	turn angle:  0.9
+September 16, 2016 05:49:03:902000	bottom most position:  
+September 16, 2016 05:49:03:904000	0
+September 16, 2016 05:49:05:918000	ending behaviourMoveToCornerOfObject
+September 16, 2016 05:49:09:324000	bottommost point: 0
+September 16, 2016 05:49:09:334000	turn angle:  0.9
+September 16, 2016 05:49:09:353000	bottom most position:  
+September 16, 2016 05:49:09:356000	0
+September 16, 2016 05:49:11:368000	ending behaviourMoveToCornerOfObject
+September 16, 2016 05:49:14:859000	bottommost point: 0
+September 16, 2016 05:49:14:892000	turn angle:  0.9
+September 16, 2016 05:49:14:923000	bottom most position:  
+September 16, 2016 05:49:14:931000	0
+September 16, 2016 05:49:16:949000	ending behaviourMoveToCornerOfObject
+September 16, 2016 05:49:20:396000	bottommost point: 0
+September 16, 2016 05:49:20:426000	turn angle:  0.9
+September 16, 2016 05:49:20:454000	bottom most position:  
+September 16, 2016 05:49:20:459000	0
+September 16, 2016 05:49:22:465000	ending behaviourMoveToCornerOfObject
+September 16, 2016 05:49:26:224000	bottommost point: 0
+September 16, 2016 05:49:26:312000	turn angle:  0.9
+September 16, 2016 05:49:26:369000	bottom most position:  
+September 16, 2016 05:49:26:378000	0
+September 16, 2016 05:49:28:390000	ending behaviourMoveToCornerOfObject
+September 16, 2016 05:49:32:419000	bottommost point: 427
+September 16, 2016 05:49:32:445000	move head down by x degrees
+September 16, 2016 05:49:33:676000	turn angle:  0.9
+September 16, 2016 05:49:33:684000	bottom most position:  
+September 16, 2016 05:49:33:686000	0
+September 16, 2016 05:49:35:716000	ending behaviourMoveToCornerOfObject
+September 16, 2016 05:49:42:542000	bottommost point: 475
+September 16, 2016 05:49:42:574000	move head down by x degrees
+September 16, 2016 05:49:43:838000	right side is longer
+September 16, 2016 05:49:43:850000	Initial longer side is 
+September 16, 2016 05:49:43:866000	RIGHT
+September 16, 2016 05:49:43:880000	reached corner of object
+September 16, 2016 05:49:43:893000	FIND LONGER SIDE OF TABLE
