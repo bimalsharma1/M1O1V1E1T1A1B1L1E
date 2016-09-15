@@ -10831,3 +10831,34 @@ September 16, 2016 05:49:43:850000	Initial longer side is
 September 16, 2016 05:49:43:866000	RIGHT
 September 16, 2016 05:49:43:880000	reached corner of object
 September 16, 2016 05:49:43:893000	FIND LONGER SIDE OF TABLE
+September 16, 2016 05:50:12:884000	right side is longer
+September 16, 2016 05:50:41:153000	[(404, 300), (408, 296), (411, 299), (404, 303), [640, 480]]
+September 16, 2016 05:50:41:315000	[(404, 300), (408, 296), (411, 299), (404, 303), [640, 480]]
+September 16, 2016 05:50:44:345000	left most x and right most x points
+September 16, 2016 05:50:44:348000	0
+September 16, 2016 05:50:44:350000	411
+September 16, 2016 05:50:44:369000	too much to left: -411
+September 16, 2016 05:51:08:822000	left most x and right most x points
+September 16, 2016 05:51:08:825000	0
+September 16, 2016 05:51:08:832000	0
+September 16, 2016 05:51:34:776000	left most x and right most x points
+September 16, 2016 05:51:34:778000	0
+September 16, 2016 05:51:34:794000	0
+September 16, 2016 05:51:59:061000	left most x and right most x points
+September 16, 2016 05:51:59:063000	0
+September 16, 2016 05:51:59:065000	0
+September 16, 2016 05:52:21:683000	left most x and right most x points
+September 16, 2016 05:52:21:685000	0
+September 16, 2016 05:52:21:687000	0
+September 16, 2016 05:52:44:778000	left most x and right most x points
+September 16, 2016 05:52:44:780000	0
+September 16, 2016 05:52:44:782000	0
+September 16, 2016 05:53:07:857000	left most x and right most x points
+September 16, 2016 05:53:07:859000	0
+September 16, 2016 05:53:07:861000	0
+September 16, 2016 05:53:31:705000	left most x and right most x points
+September 16, 2016 05:53:31:731000	0
+September 16, 2016 05:53:31:742000	0
+September 16, 2016 05:53:55:427000	left most x and right most x points
+September 16, 2016 05:53:55:432000	0
+September 16, 2016 05:53:55:435000	0
