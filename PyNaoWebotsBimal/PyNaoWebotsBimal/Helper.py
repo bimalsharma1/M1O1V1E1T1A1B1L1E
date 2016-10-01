@@ -48,7 +48,7 @@ def LiftWithElbowAndShouldersPutObjectDown(motionProxy):
     pFractionMaxSpeed = 0.02
     
     JointNames = ["LShoulderPitch", "RShoulderPitch"]
-    Arm = [60,  60]  #-35
+    Arm = [40,  40]  #-35
     Arm = [ x * motion.TO_RAD for x in Arm]
     motionProxy.angleInterpolationWithSpeed(JointNames, Arm, pFractionMaxSpeed)
 

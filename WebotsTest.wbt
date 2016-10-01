@@ -1,0 +1,479 @@
+#VRML_SIM V8.4.0 utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.0409969 -0.953045 -0.300042 2.88261
+  position -1.89765 4.73145 -5.39061
+  follow "NAO_H25_V50:2"
+}
+Background {
+  skyColor [
+    1 1 1
+  ]
+}
+LandscapePainting {
+  translation -1 0.5 2
+  rotation 0 1 0 3.14159
+}
+FruitBowl {
+  translation 1.4 -0.0001962 1.7
+  rotation -0.707107 3.81213e-08 -0.707107 -4.86495e-10
+}
+RectangleArena {
+  rotation 0 1 0 4.71239
+  floorSize 4 4
+  wallHeight 0.7
+  wallTextureUrl [
+    "textures/old_brick_wall.jpg"
+  ]
+}
+LandscapePainting {
+  translation -1 0.5 -2
+  rotation 0 0 1 4.71239
+  textureUrl [
+    "textures/portrait_painting.jpg"
+  ]
+}
+Door {
+  hidden position_4_0 -0.0678304
+  hidden translation_5 0.00148774 -0.000107599 0.0103751
+  hidden rotation_5 -0.000802043 0.999999 -0.000876788 -0.0337734
+  translation 0 0 -2
+  size 0.6 0.7 0.01
+  wallTileSize 0.05 0.05
+  frameTextureUrl [
+    "textures/old_brick_wall.jpg"
+  ]
+}
+Nao {
+  hidden position_0_0 1.56814e-10
+  hidden position2_0_0 -4.80755e-06
+  hidden position_0_1 0.00040646
+  hidden position2_0_1 -0.0087
+  hidden position_0_2 0.000406515
+  hidden position2_0_2 0.0087
+  hidden position_0_3 -0.000271763
+  hidden position_0_4 -0.000271763
+  hidden linearVelocity_0 9.81275e-07 4.81875e-08 -2.94085e-06
+  hidden angularVelocity_0 -1.32406e-05 -8.47082e-09 -4.41566e-06
+  hidden translation_11 1.7972e-08 -6.69819e-10 0.126478
+  hidden rotation_11 -8.03437e-06 1 -3.25841e-05 -3.6186e-06
+  hidden linearVelocity_11 1.53909e-06 1.98186e-09 -4.61341e-06
+  hidden angularVelocity_11 -1.31956e-05 -8.47072e-09 -4.40064e-06
+  hidden translation_18 1.24893e-08 -0.098 0.0999818
+  hidden rotation_18 0.000349944 1 -7.44138e-07 0.000306946
+  hidden position_18_0 2.7356e-07
+  hidden linearVelocity_18 1.24297e-06 -2.79009e-07 -3.72505e-06
+  hidden angularVelocity_18 -1.71663e-05 -8.33974e-09 -5.72467e-06
+  hidden translation_19 0.105 -0.015 -1.03721e-05
+  hidden rotation_19 -0.235562 0.971859 -2.73559e-05 5.57745e-07
+  hidden position_19_0 0.0087
+  hidden linearVelocity_19 1.23061e-06 -1.41408e-06 -3.68364e-06
+  hidden angularVelocity_19 -1.90159e-05 1.31804e-09 -1.77577e-07
+  hidden translation_20 8.26481e-09 -2.60383e-10 -8.33694e-06
+  hidden rotation_20 0.00288818 0.999948 -0.00977772 5.97926e-07
+  hidden position_20_0 -1.27065e-06
+  hidden linearVelocity_20 1.23069e-06 -2.35674e-06 -3.69903e-06
+  hidden angularVelocity_20 -1.90159e-05 1.31822e-09 -1.77577e-07
+  hidden translation_21 0.05595 -1.8709e-10 -5.90061e-06
+  hidden rotation_21 -0.971497 0.237051 -1.32588e-05 8.66825e-07
+  hidden position_21_0 -2.19135e-11
+  hidden position_21_1 -2.19183e-11
+  hidden position_21_2 7.5795e-11
+  hidden linearVelocity_21 1.23097e-06 -3.54972e-06 -3.74109e-06
+  hidden angularVelocity_21 -1.90198e-05 1.33801e-09 -1.66065e-07
+  hidden translation_22 0.069 -0.013 -0.00500004
+  hidden rotation_22 1.74307e-14 -1 1.14201e-14 -0.96
+  hidden position_22_0 4.09546e-11
+  hidden linearVelocity_22 1.22875e-06 -4.15748e-06 -3.49275e-06
+  hidden angularVelocity_22 -1.90198e-05 1.33801e-09 -1.66065e-07
+  hidden translation_23 0.014 -6.38822e-13 -1.18459e-08
+  hidden rotation_23 3.57629e-15 -1 3.36592e-15 -0.96
+  hidden position_23_0 1.87409e-11
+  hidden linearVelocity_23 1.22673e-06 -4.20299e-06 -3.2608e-06
+  hidden angularVelocity_23 -1.90198e-05 1.33803e-09 -1.66065e-07
+  hidden translation_24 0.014 -3.19134e-13 3.54815e-09
+  hidden rotation_24 -1.14201e-15 -1 9.61692e-16 -0.96
+  hidden linearVelocity_24 1.22523e-06 -4.04831e-06 -3.08857e-06
+  hidden angularVelocity_24 -1.90198e-05 1.33804e-09 -1.66065e-07
+  hidden translation_25 0.069 0.013 -0.00500004
+  hidden rotation_25 1.50264e-14 -1 1.29828e-14 -0.96
+  hidden position_25_0 4.09461e-11
+  hidden linearVelocity_25 1.22874e-06 -4.30981e-06 -3.49274e-06
+  hidden angularVelocity_25 -1.90198e-05 1.33802e-09 -1.66065e-07
+  hidden translation_26 0.014 -6.38267e-13 -1.18459e-08
+  hidden rotation_26 6.251e-15 -1 3.1255e-15 -0.96
+  hidden position_26_0 1.87419e-11
+  hidden linearVelocity_26 1.22672e-06 -4.35533e-06 -3.26078e-06
+  hidden angularVelocity_26 -1.90198e-05 1.33802e-09 -1.66065e-07
+  hidden translation_27 0.014 -3.19134e-13 3.54816e-09
+  hidden rotation_27 -3.00529e-16 -1 2.40423e-15 -0.96
+  hidden linearVelocity_27 1.22522e-06 -4.20064e-06 -3.08856e-06
+  hidden angularVelocity_27 -1.90198e-05 1.33803e-09 -1.66065e-07
+  hidden translation_28 0.049 -6.38767e-13 -0.026
+  hidden rotation_28 0.216544 0.921463 -0.322512 2.4097e-14
+  hidden position_28_0 1.11456e-11
+  hidden linearVelocity_28 1.2261e-06 -3.91756e-06 -3.18736e-06
+  hidden angularVelocity_28 -1.90198e-05 1.33802e-09 -1.66065e-07
+  hidden translation_29 0.014 -3.19078e-13 -1.0342e-08
+  hidden rotation_29 1.48762e-15 1 1.26222e-15 -0.96
+  hidden linearVelocity_29 1.2269e-06 -4.12474e-06 -3.28049e-06
+  hidden angularVelocity_29 -1.90198e-05 1.33802e-09 -1.66065e-07
+  hidden translation_30 1.24888e-08 0.098 0.0999818
+  hidden rotation_30 -0.000349875 1 5.2192e-07 0.000307001
+  hidden position_30_0 -5.44872e-07
+  hidden linearVelocity_30 1.24349e-06 -2.78904e-07 -3.7266e-06
+  hidden angularVelocity_30 -1.71662e-05 -8.34038e-09 -5.72464e-06
+  hidden translation_31 0.105 0.015 -1.03721e-05
+  hidden rotation_31 -0.740816 0.671708 -2.29621e-05 8.06973e-07
+  hidden position_31_0 -0.0087
+  hidden linearVelocity_31 1.23044e-06 -1.41394e-06 -3.68582e-06
+  hidden angularVelocity_31 -1.71675e-05 -8.33336e-09 -5.72061e-06
+  hidden translation_32 8.26505e-09 -2.56297e-10 -8.33694e-06
+  hidden rotation_32 -0.00288632 0.99995 0.00962512 5.97925e-07
+  hidden position_32_0 1.23016e-06
+  hidden linearVelocity_32 1.23549e-06 -2.37304e-06 -3.69958e-06
+  hidden angularVelocity_32 -1.71675e-05 -8.33397e-09 -5.72061e-06
+  hidden translation_33 0.05595 -1.78809e-10 -5.90061e-06
+  hidden rotation_33 0.977246 0.212109 -1.29869e-06 9.68751e-07
+  hidden position_33_0 -2.19185e-11
+  hidden position_33_1 -2.19161e-11
+  hidden position_33_2 7.57883e-11
+  hidden linearVelocity_33 1.24867e-06 -3.54443e-06 -3.7373e-06
+  hidden angularVelocity_33 -1.71637e-05 -8.354e-09 -5.73213e-06
+  hidden translation_34 0.069 -0.013 -0.00500004
+  hidden rotation_34 1.43052e-14 -1 1.11797e-14 -0.96
+  hidden position_34_0 4.09455e-11
+  hidden linearVelocity_34 1.17408e-06 -4.2336e-06 -3.51297e-06
+  hidden angularVelocity_34 -1.71637e-05 -8.35403e-09 -5.73213e-06
+  hidden translation_35 0.014 -6.46205e-13 -1.18459e-08
+  hidden rotation_35 4.89862e-15 -1 3.72656e-15 -0.96
+  hidden position_35_0 1.87459e-11
+  hidden linearVelocity_35 1.1042e-06 -4.27912e-06 -3.30365e-06
+  hidden angularVelocity_35 -1.71637e-05 -8.35399e-09 -5.73213e-06
+  hidden translation_36 0.014 -3.2313e-13 3.54815e-09
+  hidden rotation_36 1.74307e-15 -1 1.56275e-15 -0.96
+  hidden linearVelocity_36 1.05223e-06 -4.12443e-06 -3.14826e-06
+  hidden angularVelocity_36 -1.71637e-05 -8.35398e-09 -5.73213e-06
+  hidden translation_37 0.069 0.013 -0.00500004
+  hidden rotation_37 1.4786e-14 -1 9.49671e-15 -0.96
+  hidden position_37_0 4.09574e-11
+  hidden linearVelocity_37 1.17416e-06 -4.23338e-06 -3.51319e-06
+  hidden angularVelocity_37 -1.71637e-05 -8.35403e-09 -5.73213e-06
+  hidden translation_38 0.014 -6.45928e-13 -1.18459e-08
+  hidden rotation_38 4.47788e-15 -1 4.44782e-15 -0.96
+  hidden position_38_0 1.87432e-11
+  hidden linearVelocity_38 1.10427e-06 -4.2789e-06 -3.30387e-06
+  hidden angularVelocity_38 -1.71637e-05 -8.35398e-09 -5.73213e-06
+  hidden translation_39 0.014 -3.23408e-13 3.54815e-09
+  hidden rotation_39 1.80317e-16 -1 2.52444e-15 -0.96
+  hidden linearVelocity_39 1.0523e-06 -4.12421e-06 -3.14848e-06
+  hidden angularVelocity_39 -1.71637e-05 -8.35398e-09 -5.73213e-06
+  hidden translation_40 0.049 -6.46483e-13 -0.026
+  hidden rotation_40 -0.247329 0.807255 -0.53588 1.61598e-14
+  hidden position_40_0 1.11439e-11
+  hidden linearVelocity_40 1.08195e-06 -3.91741e-06 -3.23755e-06
+  hidden angularVelocity_40 -1.71637e-05 -8.354e-09 -5.73213e-06
+  hidden translation_41 0.014 -3.23297e-13 -1.0342e-08
+  hidden rotation_41 -5.8002e-15 1 3.72656e-15 -0.96
+  hidden linearVelocity_41 1.1101e-06 -4.12459e-06 -3.32156e-06
+  hidden angularVelocity_41 -1.71637e-05 -8.35399e-09 -5.73213e-06
+  hidden translation_42 -4.29238e-08 -0.0499996 -0.0849546
+  hidden rotation_42 0.00203879 0.711248 0.702938 -0.000205061
+  hidden position_42_0 -9.80035e-05
+  hidden linearVelocity_42 5.07614e-07 8.62291e-08 -1.56892e-06
+  hidden angularVelocity_42 -1.13853e-05 -1.96513e-06 -3.79439e-06
+  hidden translation_43 -3.80427e-08 4.08407e-07 4.76705e-05
+  hidden rotation_43 0.999727 0.0233494 -0.000369616 -7.1125e-05
+  hidden position_43_0 -0.000370058
+  hidden linearVelocity_43 3.7014e-07 1.79155e-07 -1.18972e-06
+  hidden angularVelocity_43 -1.16712e-05 -1.96406e-06 -2.9371e-06
+  hidden translation_44 -4.84977e-08 4.04995e-07 5.2082e-05
+  hidden rotation_44 0.00141244 0.999999 -9.38308e-05 -0.000279533
+  hidden position_44_0 -0.000374724
+  hidden linearVelocity_44 3.21867e-07 -1.60082e-08 -8.01308e-07
+  hidden angularVelocity_44 -8.08603e-06 -1.96391e-06 -1.74123e-06
+  hidden translation_45 -5.0498e-08 4.04903e-07 -0.0999356
+  hidden rotation_45 0.00163315 0.999999 -9.27777e-05 -0.000283103
+  hidden position_45_0 -0.000385432
+  hidden linearVelocity_45 2.20944e-07 -2.40192e-08 -2.05633e-07
+  hidden angularVelocity_45 -4.45058e-06 -1.96376e-06 -5.28573e-07
+  hidden translation_46 -4.74053e-08 4.04818e-07 -0.102826
+  hidden rotation_46 0.00180377 0.999998 -9.03749e-05 -0.00029122
+  hidden position_46_0 -0.000124298
+  hidden linearVelocity_46 1.81259e-07 -5.96451e-09 2.15576e-08
+  hidden angularVelocity_46 -7.08373e-07 -1.9636e-06 7.19685e-07
+  hidden translation_47 -2.72995e-08 4.08299e-07 7.79886e-05
+  hidden rotation_47 0.99984 0.0178999 -0.000284371 -9.28117e-05
+  hidden linearVelocity_47 2.91455e-07 -1.02929e-08 8.2913e-08
+  hidden angularVelocity_47 -1.09346e-06 -1.96318e-06 1.87428e-06
+  hidden translation_48 0.019737 -0.00695615 -0.0389792
+  hidden rotation_48 -1.64784e-06 6.09127e-07 1 -3.14158
+  hidden linearVelocity_48 2.91029e-07 -1.72587e-13 9.34396e-08
+  hidden angularVelocity_48 -1.09331e-06 -1.96319e-06 1.87415e-06
+  hidden translation_52 -3.9147e-08 0.0499996 -0.0849546
+  hidden rotation_52 -0.00204969 0.711239 -0.702947 -0.000205061
+  hidden position_52_0 9.85e-05
+  hidden linearVelocity_52 5.36802e-07 8.62723e-08 -1.55991e-06
+  hidden angularVelocity_52 -1.13836e-05 1.94807e-06 -3.79905e-06
+  hidden translation_53 -3.42697e-08 -4.05441e-07 4.76155e-05
+  hidden rotation_53 -0.999731 0.023176 0.000363555 -7.15084e-05
+  hidden position_53_0 -0.000369182
+  hidden linearVelocity_53 4.19062e-07 1.79213e-07 -1.17434e-06
+  hidden angularVelocity_53 -1.10962e-05 1.94698e-06 -4.66102e-06
+  hidden translation_54 -4.47016e-08 -4.01738e-07 5.2027e-05
+  hidden rotation_54 -0.00142355 0.999999 9.30062e-05 -0.000278918
+  hidden position_54_0 -0.000373782
+  hidden linearVelocity_54 2.24446e-07 -1.59435e-08 -8.34355e-07
+  hidden angularVelocity_54 -7.51755e-06 1.9466e-06 -3.46812e-06
+  hidden translation_55 -4.67044e-08 -4.00879e-07 -0.0999358
+  hidden rotation_55 -0.00164367 0.999999 9.19772e-05 -0.000282429
+  hidden position_55_0 -0.000384423
+  hidden linearVelocity_55 -5.31707e-08 -2.40062e-08 -2.96451e-07
+  hidden angularVelocity_55 -3.88964e-06 1.9462e-06 -2.25881e-06
+  hidden translation_56 -4.36702e-08 -4.00202e-07 -0.102826
+  hidden rotation_56 -0.00181323 0.999998 8.96006e-05 -0.000290487
+  hidden position_56_0 0.000124604
+  hidden linearVelocity_56 -1.58335e-07 -5.90157e-09 -9.03635e-08
+  hidden angularVelocity_56 -1.55696e-07 1.94579e-06 -1.01415e-06
+  hidden translation_57 -2.36306e-08 -4.03425e-07 7.79336e-05
+  hidden rotation_57 -0.999841 0.0178082 0.000280503 -9.3053e-05
+  hidden linearVelocity_57 -2.83482e-07 -1.07995e-08 -1.0653e-07
+  hidden angularVelocity_57 2.30197e-07 1.94538e-06 -2.17167e-06
+  hidden translation_58 0.0196755 0.00709477 -0.0389818
+  hidden rotation_58 -2.22475e-07 4.38926e-07 1 3.14158
+  hidden linearVelocity_58 -2.89621e-07 -1.05112e-11 -9.75168e-08
+  hidden angularVelocity_58 2.3024e-07 1.94538e-06 -2.17148e-06
+  translation -0.795316 0.330483 1.13461
+  rotation 0.70052 -0.505093 -0.504135 -1.92032
+  controller "naoqisim"
+  controllerArgs "9557"
+}
+Nao {
+  hidden position_0_0 4.83351e-12
+  hidden position2_0_0 -4.6058e-06
+  hidden position_0_1 0.000388964
+  hidden position2_0_1 -0.0087
+  hidden position_0_2 0.000388963
+  hidden position2_0_2 0.0087
+  hidden position_0_3 -0.000260171
+  hidden position_0_4 -0.000260171
+  hidden linearVelocity_0 2.32972e-07 4.86108e-08 3.09045e-06
+  hidden angularVelocity_0 1.39139e-05 1.94678e-10 -1.04872e-06
+  hidden translation_11 1.73929e-08 -2.26146e-11 0.126478
+  hidden rotation_11 -2.66811e-07 1 -1.07606e-06 -3.6809e-06
+  hidden linearVelocity_11 3.65449e-07 2.5047e-09 4.84807e-06
+  hidden angularVelocity_11 1.38664e-05 1.94689e-10 -1.04515e-06
+  hidden translation_18 1.21162e-08 -0.098 0.0999818
+  hidden rotation_18 0.000344396 1 -6.29795e-07 0.000311888
+  hidden position_18_0 2.6926e-07
+  hidden linearVelocity_18 2.95157e-07 -2.78439e-07 3.91543e-06
+  hidden angularVelocity_18 1.80404e-05 1.99627e-10 -1.35982e-06
+  hidden translation_19 0.105 -0.015 -1.03721e-05
+  hidden rotation_19 0.527075 0.849819 1.63128e-06 6.37842e-07
+  hidden position_19_0 0.0087
+  hidden linearVelocity_19 2.91943e-07 -1.41324e-06 3.87261e-06
+  hidden angularVelocity_19 1.80407e-05 1.92853e-10 -1.35561e-06
+  hidden translation_20 8.13566e-09 -1.0304e-11 -8.33694e-06
+  hidden rotation_20 0.0028873 0.999949 -0.00970722 5.97925e-07
+  hidden position_20_0 -1.13174e-06
+  hidden linearVelocity_20 2.93052e-07 -2.37213e-06 3.88723e-06
+  hidden angularVelocity_20 1.80407e-05 1.93434e-10 -1.35561e-06
+  hidden translation_21 0.05595 -9.50662e-12 -5.90061e-06
+  hidden rotation_21 -0.965964 0.258676 -6.60999e-06 7.94356e-07
+  hidden position_21_0 -2.19249e-11
+  hidden position_21_1 -2.19293e-11
+  hidden position_21_2 7.57953e-11
+  hidden linearVelocity_21 2.96101e-07 -3.54326e-06 3.92715e-06
+  hidden angularVelocity_21 1.80398e-05 2.12937e-10 -1.36773e-06
+  hidden translation_22 0.069 -0.013 -0.00500004
+  hidden rotation_22 1.95344e-15 -1 -8.4148e-16 -0.96
+  hidden position_22_0 4.09586e-11
+  hidden linearVelocity_22 2.78252e-07 -4.23208e-06 3.69161e-06
+  hidden angularVelocity_22 1.80398e-05 2.12936e-10 -1.36773e-06
+  hidden translation_23 0.014 -1.68754e-14 -1.18462e-08
+  hidden rotation_23 -1.38243e-15 -1 -9.16612e-16 -0.96
+  hidden position_23_0 1.87489e-11
+  hidden linearVelocity_23 2.61572e-07 -4.27759e-06 3.47161e-06
+  hidden angularVelocity_23 1.80398e-05 2.12942e-10 -1.36773e-06
+  hidden translation_24 0.014 -8.21565e-15 3.54801e-09
+  hidden rotation_24 -2.40423e-16 -1 7.96401e-16 -0.96
+  hidden linearVelocity_24 2.49185e-07 -4.12295e-06 3.30826e-06
+  hidden angularVelocity_24 1.80398e-05 2.12935e-10 -1.36773e-06
+  hidden translation_25 0.069 0.013 -0.00500004
+  hidden rotation_25 0 -1 -1.17206e-15 -0.96
+  hidden position_25_0 4.09508e-11
+  hidden linearVelocity_25 2.78251e-07 -4.23228e-06 3.69161e-06
+  hidden angularVelocity_25 1.80398e-05 2.12939e-10 -1.36773e-06
+  hidden translation_26 0.014 -1.62093e-14 -1.18462e-08
+  hidden rotation_26 -3.30582e-16 -1 -4.4328e-16 -0.96
+  hidden position_26_0 1.87405e-11
+  hidden linearVelocity_26 2.61572e-07 -4.27779e-06 3.4716e-06
+  hidden angularVelocity_26 1.80398e-05 2.12941e-10 -1.36773e-06
+  hidden translation_27 0.014 -8.88178e-15 3.54801e-09
+  hidden rotation_27 -4.80846e-16 -1 2.1037e-16 -0.96
+  hidden linearVelocity_27 2.49185e-07 -4.12315e-06 3.30825e-06
+  hidden angularVelocity_27 1.80398e-05 2.12942e-10 -1.36773e-06
+  hidden translation_28 0.049 -1.53211e-14 -0.026
+  hidden rotation_28 0.0639683 0.997906 -0.00959525 1.73558e-14
+  hidden position_28_0 1.11489e-11
+  hidden linearVelocity_28 2.56287e-07 -3.91618e-06 3.40195e-06
+  hidden angularVelocity_28 1.80398e-05 2.12936e-10 -1.36773e-06
+  hidden translation_29 0.014 -7.54952e-15 -1.0342e-08
+  hidden rotation_29 4.80846e-16 1 -6.01057e-16 -0.96
+  hidden linearVelocity_29 2.62986e-07 -4.12331e-06 3.49028e-06
+  hidden angularVelocity_29 1.80398e-05 2.12933e-10 -1.36773e-06
+  hidden translation_30 1.21162e-08 0.098 0.0999818
+  hidden rotation_30 -0.000344395 1 6.22417e-07 0.000311888
+  hidden position_30_0 -2.8027e-07
+  hidden linearVelocity_30 2.95155e-07 -2.78392e-07 3.91539e-06
+  hidden angularVelocity_30 1.80404e-05 1.98399e-10 -1.35982e-06
+  hidden translation_31 0.105 0.015 -1.03721e-05
+  hidden rotation_31 -0.46842 0.883506 -3.55774e-06 6.13522e-07
+  hidden position_31_0 -0.0087
+  hidden linearVelocity_31 2.91938e-07 -1.41319e-06 3.87257e-06
+  hidden angularVelocity_31 1.80401e-05 2.05247e-10 -1.36406e-06
+  hidden translation_32 8.13566e-09 -7.42073e-12 -8.33694e-06
+  hidden rotation_32 -0.00288722 0.999949 0.00970213 5.97925e-07
+  hidden position_32_0 1.15335e-06
+  hidden linearVelocity_32 2.93055e-07 -2.37207e-06 3.88719e-06
+  hidden angularVelocity_32 1.80401e-05 2.04652e-10 -1.36406e-06
+  hidden translation_33 0.05595 -2.67164e-12 -5.90061e-06
+  hidden rotation_33 0.971308 0.237827 5.57712e-06 8.63992e-07
+  hidden position_33_0 -2.193e-11
+  hidden position_33_1 -2.19287e-11
+  hidden position_33_2 7.57943e-11
+  hidden linearVelocity_33 2.96049e-07 -3.5432e-06 3.92711e-06
+  hidden angularVelocity_33 1.8041e-05 1.85156e-10 -1.35196e-06
+  hidden translation_34 0.069 -0.013 -0.00500004
+  hidden rotation_34 9.31639e-16 -1 6.61163e-16 -0.96
+  hidden position_34_0 4.09624e-11
+  hidden linearVelocity_34 2.78404e-07 -4.23223e-06 3.69156e-06
+  hidden angularVelocity_34 1.8041e-05 1.85145e-10 -1.35196e-06
+  hidden translation_35 0.014 -2.70894e-14 -1.18462e-08
+  hidden rotation_35 6.01057e-16 -1 -7.88888e-16 -0.96
+  hidden position_35_0 1.87363e-11
+  hidden linearVelocity_35 2.61917e-07 -4.27774e-06 3.47154e-06
+  hidden angularVelocity_35 1.8041e-05 1.85162e-10 -1.35196e-06
+  hidden translation_36 0.014 -1.42109e-14 3.54801e-09
+  hidden rotation_36 7.21269e-16 -1 -2.55449e-16 -0.96
+  hidden linearVelocity_36 2.49673e-07 -4.1231e-06 3.30818e-06
+  hidden angularVelocity_36 1.8041e-05 1.85157e-10 -1.35196e-06
+  hidden translation_37 0.069 0.013 -0.00500004
+  hidden rotation_37 2.34412e-15 -1 8.11427e-16 -0.96
+  hidden position_37_0 4.09483e-11
+  hidden linearVelocity_37 2.78404e-07 -4.23202e-06 3.69155e-06
+  hidden angularVelocity_37 1.8041e-05 1.85165e-10 -1.35196e-06
+  hidden translation_38 0.014 -2.77556e-14 -1.18462e-08
+  hidden rotation_38 3.00529e-17 -1 -8.6402e-16 -0.96
+  hidden position_38_0 1.87436e-11
+  hidden linearVelocity_38 2.61917e-07 -4.27753e-06 3.47154e-06
+  hidden angularVelocity_38 1.8041e-05 1.85149e-10 -1.35196e-06
+  hidden translation_39 0.014 -1.37668e-14 3.54801e-09
+  hidden rotation_39 4.80846e-16 -1 3.00529e-17 -0.96
+  hidden linearVelocity_39 2.49673e-07 -4.12289e-06 3.30817e-06
+  hidden angularVelocity_39 1.8041e-05 1.8516e-10 -1.35196e-06
+  hidden translation_40 0.049 -2.84217e-14 -0.026
+  hidden rotation_40 0.0355744 0.998455 -0.0426893 2.34064e-14
+  hidden position_40_0 1.11514e-11
+  hidden linearVelocity_40 2.56693e-07 -3.91612e-06 3.40188e-06
+  hidden angularVelocity_40 1.8041e-05 1.85151e-10 -1.35196e-06
+  hidden translation_41 0.014 -1.44329e-14 -1.0342e-08
+  hidden rotation_41 -1.20211e-16 1 -1.20211e-15 -0.96
+  hidden linearVelocity_41 2.63315e-07 -4.12325e-06 3.49022e-06
+  hidden angularVelocity_41 1.8041e-05 1.85153e-10 -1.35196e-06
+  hidden translation_42 -3.9642e-08 -0.0499996 -0.0849546
+  hidden rotation_42 0.0019951 0.711179 0.703008 -0.000208317
+  hidden position_42_0 -9.30991e-05
+  hidden linearVelocity_42 1.39156e-07 8.65695e-08 1.64284e-06
+  hidden angularVelocity_42 1.19615e-05 -1.95753e-06 -9.03926e-07
+  hidden translation_43 -3.45886e-08 4.09367e-07 4.76406e-05
+  hidden rotation_43 0.999728 0.0233262 -0.000369418 -7.11107e-05
+  hidden position_43_0 -0.000353632
+  hidden linearVelocity_43 1.19219e-07 1.79438e-07 1.24024e-06
+  hidden angularVelocity_43 1.18939e-05 -1.9565e-06 -1.80157e-06
+  hidden translation_44 -4.45816e-08 4.05818e-07 5.20521e-05
+  hidden rotation_44 0.00138319 0.999999 -9.24173e-05 -0.000283659
+  hidden position_44_0 -0.000358009
+  hidden linearVelocity_44 1.37755e-08 -1.56682e-08 8.63398e-07
+  hidden angularVelocity_44 8.12974e-06 -1.95623e-06 -1.51819e-06
+  hidden translation_45 -4.54324e-08 4.05338e-07 -0.0999358
+  hidden rotation_45 0.00160142 0.999999 -9.142e-05 -0.000287212
+  hidden position_45_0 -0.000368138
+  hidden linearVelocity_45 -1.23248e-07 -2.37332e-08 2.74806e-07
+  hidden angularVelocity_45 4.31383e-06 -1.95596e-06 -1.23091e-06
+  hidden translation_46 -4.11353e-08 4.04954e-07 -0.102826
+  hidden rotation_46 0.00177045 0.999998 -8.90953e-05 -0.000295362
+  hidden position_46_0 -0.000118357
+  hidden linearVelocity_46 -1.74444e-07 -5.66705e-09 4.97381e-08
+  hidden angularVelocity_46 3.87145e-07 -1.95568e-06 -9.35293e-07
+  hidden translation_47 -2.04635e-08 4.08138e-07 7.79587e-05
+  hidden rotation_47 0.999844 0.0176706 -0.000281156 -9.38471e-05
+  hidden linearVelocity_47 -2.99399e-07 -1.03173e-08 3.52929e-08
+  hidden angularVelocity_47 2.96039e-07 -1.95534e-06 -2.1448e-06
+  hidden translation_48 0.020001 -0.00699798 -0.039627
+  hidden rotation_48 2.16901e-06 -5.65983e-08 1 -3.14159
+  hidden linearVelocity_48 -3.05015e-07 -1.41926e-11 2.51345e-08
+  hidden angularVelocity_48 2.95954e-07 -1.95534e-06 -2.14462e-06
+  hidden translation_52 -3.97129e-08 0.0499996 -0.0849546
+  hidden rotation_52 -0.00199388 0.711179 -0.703008 -0.000208317
+  hidden position_52_0 9.30431e-05
+  hidden linearVelocity_52 1.08739e-07 8.65885e-08 1.64512e-06
+  hidden angularVelocity_52 1.19618e-05 1.95791e-06 -8.99159e-07
+  hidden translation_53 -3.46591e-08 -4.09265e-07 4.76453e-05
+  hidden rotation_53 -0.999727 0.0233421 0.000369654 -7.10655e-05
+  hidden position_53_0 -0.000353649
+  hidden linearVelocity_53 6.80984e-08 1.79462e-07 1.24407e-06
+  hidden angularVelocity_53 1.20295e-05 1.95688e-06 -2.08214e-09
+  hidden translation_54 -4.46531e-08 -4.05709e-07 5.20569e-05
+  hidden rotation_54 -0.00138224 0.999999 9.24143e-05 -0.000283672
+  hidden position_54_0 -0.000358027
+  hidden linearVelocity_54 1.15856e-07 -1.5645e-08 8.5569e-07
+  hidden angularVelocity_54 8.26522e-06 1.95661e-06 2.82119e-07
+  hidden translation_55 -4.55022e-08 -4.05204e-07 -0.0999358
+  hidden rotation_55 -0.00160041 0.999999 9.14163e-05 -0.000287226
+  hidden position_55_0 -0.000368156
+  hidden linearVelocity_55 1.63082e-07 -2.37095e-08 2.53235e-07
+  hidden angularVelocity_55 4.44926e-06 1.95633e-06 5.70213e-07
+  hidden translation_56 -4.12038e-08 -4.048e-07 -0.102826
+  hidden rotation_56 -0.00176939 0.999998 8.90909e-05 -0.000295376
+  hidden position_56_0 0.000118295
+  hidden linearVelocity_56 1.79953e-07 -5.64563e-09 2.30501e-08
+  hidden angularVelocity_56 5.22559e-07 1.95605e-06 8.66665e-07
+  hidden translation_57 -2.05302e-08 -4.07973e-07 7.79635e-05
+  hidden rotation_57 -0.999844 0.0176808 0.000281307 -9.37971e-05
+  hidden linearVelocity_57 3.01319e-07 -1.02879e-08 -9.95137e-09
+  hidden angularVelocity_57 6.13779e-07 1.95571e-06 2.07557e-06
+  hidden translation_58 0.020001 0.00699798 -0.0396272
+  hidden rotation_58 2.16946e-06 6.43155e-08 1 -3.14159
+  hidden linearVelocity_58 3.05342e-07 9.58152e-12 -2.08366e-08
+  hidden angularVelocity_58 6.13668e-07 1.95571e-06 2.07541e-06
+  translation 1.33715 0.331128 -1.14124
+  rotation 0.606073 0.562046 0.562832 -2.05078
+  controller "naoqisim"
+  controllerArgs "9559"
+}
+TableWithPhysics {
+  translation -3.52416e-09 0.00694431 -0.000371433
+  rotation -0.0183293 0.999664 -0.0183293 1.57113
+  size 0.4 0.3 0.8
+  feetSize 0.02 0.02
+  frameThickness 0.03
+  trayTextureUrl [
+    "textures/blue.jpg"
+  ]
+}
+CeilingLight {
+  translation 1 2.4 0
+}
+CeilingLight {
+  translation -1 2.4 0
+  rotation 0.707107 0.707107 0 0
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0 -1 0
+}
+PottedTree {
+  translation 1.8 0 1
+}

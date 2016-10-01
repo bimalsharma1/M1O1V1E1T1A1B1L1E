@@ -23,10 +23,10 @@ def LiftObject(motionProxy, portName, X, Y, Theta):
     time.sleep(2)
     readyToLift = findNaoObjectPositions.findIfNaoBehindObject(motionProxy, portName)
     print "ready STATUS"
-    print readyToLift
+    
 
     readyToLift = True
-
+    print readyToLift
     time.sleep(1)
     Helper.LiftWithElbowAndShoulders(motionProxy)
     if (readyToLift):
@@ -34,10 +34,10 @@ def LiftObject(motionProxy, portName, X, Y, Theta):
         time.sleep(1)
         print "move arms"
         WalkToPosition.WalkToPositionWithHandsUp(motionProxy, X, Y, Theta)
-        time.sleep(4)
+        time.sleep(3)
         Helper.LiftWithElbowAndShouldersPutObjectDown(motionProxy)
         time.sleep(3)
-        WalkToPosition.WalkToPosition(motionProxy, -2, 0, 0)
+        WalkToPosition.WalkToPosition(motionProxy, -0.1, 0, 0)
 
 def behaviourWalkToLiftRangeOfObject(motionProxy,portName): 
         #InitialiseHeadAndShoulders.InitialiseHeadAndShoulders(motionProxy,motionProxy1)

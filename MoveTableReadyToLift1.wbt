@@ -1,0 +1,171 @@
+#VRML_SIM V8.4.0 utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.152843 -0.946985 -0.282594 2.1949
+  position -4.54138 4.18918 -1.92516
+  follow "NAO_H25_V50:2"
+}
+Background {
+  skyColor [
+    1 1 1
+  ]
+}
+LandscapePainting {
+  translation -1 0.5 2
+  rotation 0 1 0 3.14159
+}
+FruitBowl {
+  translation 1.4 -0.0001962 1.7
+  rotation -0.707107 2.86349e-07 -0.707107 -4.86942e-10
+}
+RectangleArena {
+  rotation 0 1 0 4.71239
+  floorSize 4 4
+  wallHeight 0.7
+  wallTextureUrl [
+    "textures/old_brick_wall.jpg"
+  ]
+}
+LandscapePainting {
+  translation -1 0.5 -2
+  rotation 0 0 1 4.71239
+  textureUrl [
+    "textures/portrait_painting.jpg"
+  ]
+}
+Door {
+  hidden position_4_0 -0.0378902
+  translation 0 0 -2
+  size 0.6 0.7 0.01
+  wallTileSize 0.05 0.05
+  frameTextureUrl [
+    "textures/old_brick_wall.jpg"
+  ]
+}
+Nao {
+  hidden position_0_0 -4.20183e-08
+  hidden position2_0_0 -4.14023e-07
+  hidden position_0_1 1.30037
+  hidden position2_0_1 -0.152394
+  hidden position_0_2 1.30089
+  hidden position2_0_2 0.138464
+  hidden position_0_3 -5.68942e-06
+  hidden position_0_4 -5.51051e-06
+  hidden position_18_0 0.962552
+  hidden position_19_0 0.275413
+  hidden position_20_0 -1.10387e-07
+  hidden position_21_0 2.16811e-10
+  hidden position_21_1 2.16854e-10
+  hidden position_21_2 -3.89874e-12
+  hidden position_22_0 1.08488e-10
+  hidden position_23_0 1.84778e-11
+  hidden position_25_0 1.08708e-10
+  hidden position_26_0 1.85402e-11
+  hidden position_28_0 2.69694e-11
+  hidden position_30_0 -0.961436
+  hidden position_31_0 -0.275709
+  hidden position_32_0 1.25551e-06
+  hidden position_33_0 6.82151e-11
+  hidden position_33_1 2.16987e-10
+  hidden position_33_2 7.09878e-11
+  hidden position_34_0 3.54017e-11
+  hidden position_35_0 -1.44394e-13
+  hidden position_37_0 3.55211e-11
+  hidden position_38_0 1.84736e-11
+  hidden position_40_0 2.69053e-11
+  hidden position_42_0 -0.0168845
+  hidden position_43_0 -0.186311
+  hidden position_44_0 0.4743
+  hidden position_45_0 -0.266716
+  hidden position_46_0 0.0168474
+  hidden translation_48 0.0197178 -0.0070182 -0.0387905
+  hidden rotation_48 -9.57056e-07 5.05458e-07 1 -3.14158
+  hidden position_52_0 -0.0168209
+  hidden position_53_0 -0.186303
+  hidden position_54_0 0.474306
+  hidden position_55_0 -0.266715
+  hidden position_56_0 0.0168665
+  hidden translation_58 0.0196972 0.00715767 -0.0387712
+  hidden rotation_58 3.65895e-07 1.19726e-08 1 3.14158
+  translation 0.0405864 0.322962 0.318393
+  rotation 0.562294 -0.577749 -0.591635 -2.09785
+  controller "naoqisim"
+  controllerArgs "9557"
+}
+Nao {
+  hidden position_0_0 -1.47682e-08
+  hidden position2_0_0 -3.79609e-07
+  hidden position_0_1 0.911443
+  hidden position2_0_1 -0.0662817
+  hidden position_0_2 0.838125
+  hidden position2_0_2 0.0689493
+  hidden position_0_3 -5.31031e-06
+  hidden position_0_4 -4.99663e-06
+  hidden position_18_0 0.491677
+  hidden position_19_0 0.114531
+  hidden position_20_0 0.0749196
+  hidden position_21_0 9.34434e-11
+  hidden position_21_1 9.34371e-11
+  hidden position_21_2 6.46842e-11
+  hidden position_22_0 5.96292e-11
+  hidden position_23_0 1.67532e-11
+  hidden position_25_0 8.4508e-11
+  hidden position_26_0 1.6757e-11
+  hidden position_28_0 1.46279e-11
+  hidden position_30_0 -0.491333
+  hidden position_31_0 -0.115338
+  hidden position_32_0 1.26391e-06
+  hidden position_33_0 8.47546e-11
+  hidden position_33_1 8.47523e-11
+  hidden position_33_2 6.75214e-11
+  hidden position_34_0 8.19523e-11
+  hidden position_35_0 1.74061e-11
+  hidden position_37_0 8.15605e-11
+  hidden position_38_0 1.73961e-11
+  hidden position_40_0 2.02784e-11
+  hidden position_42_0 -0.0121292
+  hidden position_43_0 -0.073594
+  hidden position_44_0 0.20419
+  hidden position_45_0 -0.109283
+  hidden position_46_0 0.0121226
+  hidden translation_48 0.0199582 -0.0070917 -0.0393827
+  hidden rotation_48 2.92871e-06 -3.51142e-07 1 -3.14159
+  hidden position_52_0 -0.0121187
+  hidden position_53_0 -0.0735692
+  hidden position_54_0 0.204205
+  hidden position_55_0 -0.109279
+  hidden position_56_0 0.0121322
+  hidden translation_58 0.0200465 0.00709189 -0.0393407
+  hidden rotation_58 2.7047e-06 -7.10992e-07 1 -3.14159
+  translation 0.027063 0.328275 -0.34857
+  rotation 0.613667 0.56514 0.551389 -2.05975
+  controller "naoqisim"
+  controllerArgs "9559"
+}
+TableWithPhysics {
+  hidden linearVelocity_0 -7.58178e-06 -9.39111e-06 7.02396e-06
+  hidden angularVelocity_0 3.27459e-05 -6.50917e-05 -6.34749e-05
+  translation -0.0090918 0.0328159 -0.0234286
+  rotation 0.0384717 0.997291 0.0626925 1.62031
+  size 0.4 0.3 0.8
+  feetSize 0.02 0.02
+  frameThickness 0.03
+  trayTextureUrl [
+    "textures/blue.jpg"
+  ]
+}
+CeilingLight {
+  translation 1 2.4 0
+}
+CeilingLight {
+  translation -1 2.4 0
+  rotation 0.707107 0.707107 0 0
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0 -1 0
+}
+PottedTree {
+  translation 1.8 0 1
+}

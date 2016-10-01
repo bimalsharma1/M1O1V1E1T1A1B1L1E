@@ -26,6 +26,7 @@ def detectColouredObject(FILENAME,CAMERANAME, im, colourToDetect = None):
 
     percentOfImageCoveredWithContour = 0
     bottomMostPoint = [0,0]
+    bottomMostYPoint = 0
 
 #    # define the list of boundaries
 #    boundaries = [
@@ -70,10 +71,16 @@ def detectColouredObject(FILENAME,CAMERANAME, im, colourToDetect = None):
         mask = cv2.inRange(image, lower, upper)   #mask has black and white image
         cv2.imwrite("mask.png",mask)   #255 is white and 0 is black
 
-        print "BOTTOM MOST POINT BY NP ARRAY"
-        print np.max(np.where(np.max(mask,axis=1)==255))
-        bottomMostPoint = [0, np.max(np.where(np.max(mask,axis=1)==255))]
-        print bottomMostPoint
+        
+        try:
+            print "BOTTOM MOST POINT BY NP ARRAY"
+            #print np.max(np.where(np.max(mask,axis=1)==255))
+            bottomMostYPoint = np.max(np.where(np.max(mask,axis=1)==255))
+            print bottomMostYPoint
+        except Exception as e:
+            print "ERROR occurred trying to find largest contour"
+            print e
+            bottomMostYPoint = 0  
         
         #bottomMostPoint = tuple(mask[mask[:,:,1].argmax()][0])
         #print bottomMostPoint
@@ -157,7 +164,23 @@ def detectColouredObject(FILENAME,CAMERANAME, im, colourToDetect = None):
             #else:
             #    bottomMostPoint = br
             #the code below replaces the code above to remove depency on bottommost point on drawing a rectangle
-            #bottomMostPoint = tuple(cnt[cnt[:,:,1].argmax()][0])   # removed this as we now get bottom most point directly from the mask to be more accurate
+            Logger.Log("PRINTING BOTTOMMOST POINTS BELOW:::::")
+            Logger.Log(str(tuple(cnt[cnt[:,:,1].argmax()][0]) ))
+            Logger.Log(str(bottomMostYPoint))
+            bottomMostPoint = tuple(cnt[cnt[:,:,1].argmax()][0])   # removed this as we now get bottom most point directly from the mask to be more accurate
+            if (bottomMostYPoint > 0):
+                try:
+                    Logger.Log("WRITING Y POINT START")
+                    lst = list(bottomMostPoint) #convert tuple to list as tuples are immutable
+                    Logger.Log(str(lst))
+                    lst[1] = bottomMostYPoint  #assign value
+                    Logger.Log(str(lst[1]))
+                    bottomMostPoint = tuple(lst)
+                    Logger.Log(str(bottomMostPoint))
+                    Logger.Log(str(bottomMostPoint[1]))
+                    Logger.Log("WRITING Y POINT END")
+                except Exception as e:
+                    Logger.Log(str(e))
             contourList[0] = tuple(cnt[cnt[:,:,0].argmin()][0])   #leftmost
             contourList[1] = tuple(cnt[cnt[:,:,1].argmin()][0])   #topmost
             contourList[2] = tuple(cnt[cnt[:,:,0].argmax()][0])   #rightmost

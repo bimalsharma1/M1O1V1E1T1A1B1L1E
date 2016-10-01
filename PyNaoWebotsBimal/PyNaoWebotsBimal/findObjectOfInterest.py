@@ -115,18 +115,6 @@ def findObjectOfInterest(motionProxy, filenameTopCamera, filenameBottomCamera, p
                 Logger.Log(str(angleOfHead))
                 Helper.HeadYawMove(motionProxy,math.radians(angleOfHead))
 
-                #if (angleOfHead < -100):
-                #    ##move head down, it is point to the right most side
-                #    print "turn head down"      
-                #    angleOfHead = 100                           
-                #    Helper.HeadYawMove(motionProxy,math.radians(angleOfHead))
-                #    Logger.Log("Move head 29.5 degrees down, it is facing rightmost")
-                    #if (headDown == True):
-                    #    headDownChecked = True
-                    #else:
-                    #    headDown = True
-                    #print "angle is less than -100"
-
             print "out of inner loop"
          
             WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, math.radians(180))
@@ -136,116 +124,7 @@ def findObjectOfInterest(motionProxy, filenameTopCamera, filenameBottomCamera, p
                 WalkToPosition.WalkToPosition(motionProxy, 1, 0, 0)
                 time.sleep(3)
             
-                # Shake the head from side to side
-            ##turn left
-            #print "turn head left"
-            #Helper.HeadYawMove(motionProxy,math.radians(50))
-            #Logger.Log("Move head 50 degrees left")
-            ##use top camera only as head is turned ...
-            #imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
-            #xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
-            #if (xCentrePostion > 0):
-            #    cameraPosition = 'TOP'
-            #    ObjectFound = True
-            #    print "found top left "
-            #    headLookingPosition = "LEFT"
-            #    #WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, Theta)  
-            #    return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound,bottomMostPoint)   
-            #time.sleep(2)
-
-
-            #print "turn head left"
-            #Helper.HeadYawMove(motionProxy,math.radians(50))
-            #Logger.Log("Move head 50 degrees left")
-            ##use top camera only as head is turned ...
-            #imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
-            #xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
-            #if (xCentrePostion > 0):
-            #    cameraPosition = 'TOP'
-            #    ObjectFound = True
-            #    print "found top left "
-            #    headLookingPosition = "LEFT"
-            #    #WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, Theta)  
-            #    return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound,bottomMostPoint)   
-            #time.sleep(2)
-
-
-            #print "turn head right"
-            #Helper.HeadYawMove(motionProxy,math.radians(-150))
-            #Logger.Log("Move head 150 degrees right")
-            ##use top camera only as head is turned ...
-            #imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
-            #xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
-            #if (xCentrePostion > 0):
-            #    cameraPosition = 'TOP'
-            #    ObjectFound = True
-            #    print "found top right "
-            #    headLookingPosition = "RIGHT"
-            #    #WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, Theta)  
-            #    return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound,bottomMostPoint)   
-            #time.sleep(2)
-
-
-            #print "turn head right"
-            #Helper.HeadYawMove(motionProxy,math.radians(-50))
-            #Logger.Log("Move head 50 degrees right")
-            ##use top camera only as head is turned ...
-            #imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
-            #xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
-            #if (xCentrePostion > 0):
-            #    cameraPosition = 'TOP'
-            #    ObjectFound = True
-            #    print "found top right "
-            #    headLookingPosition = "RIGHT"
-            #    #WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, Theta)  
-            #    return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound,bottomMostPoint)   
-            #time.sleep(2)
-         
-
-            ##move head down, it is point to the right most side
-            #print "turn head down"
-            #Helper.HeadPitchMove(motionProxy,math.radians(29.5))
-            #Logger.Log("Move head 29.5 degrees down, it is facing rightmost")
-            ##use top camera only as head is turned ...
-            #imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
-            #xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
-            #if (xCentrePostion > 0):
-            #    cameraPosition = 'TOP'
-            #    ObjectFound = True
-            #    print "found top right "
-            #    headLookingPosition = "RIGHT"
-            #    #WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, Theta)  
-            #    return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound,bottomMostPoint)   
-            #time.sleep(2)
-
-
-            #print "turn head right"
-            #angleLists      = [-moveLeftAngleInRadians]
-            #motionProxy.angleInterpolation(names, angleLists, times, isAbsolute)  #turn head right
-            #headLookingPosition = "RIGHT"
-            #print "checking right "
-            
-            #time.sleep(2)
-            ##use top camera only if bottom camera cannot see ...
-            #imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
-            #xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
-            #if (xCentrePostion > 0):
-            #    cameraPosition = 'TOP'
-            #    ObjectFound = True
-            #    print "found right from top camera"
-            #    #WalkToPosition.WalkToPosition(motionProxy,motionProxy1, 0.0, 0, -Theta)  
-            #    return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound,bottomMostPoint)   
-            #time.sleep(2)
-          
-            #print "turn head to point straight"
-            #angleLists      = [0]
-            #motionProxy.angleInterpolation(names, angleLists, times, isAbsolute)
-            #headLookingPosition = "CENTRE"
-
-            ##Theta = 3.14 # set theta = 1 to get a clockwise turn
-            #print "object still not found so turning"
-            #WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, Theta) 
-            #time.sleep(2)
+  
     except Exception as e:
         print e
         return (xCentrePostion, yCentrePosition,"", False,0)

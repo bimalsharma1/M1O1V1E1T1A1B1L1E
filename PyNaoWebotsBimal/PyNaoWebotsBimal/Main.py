@@ -51,6 +51,7 @@ def main():
         print "Enter 1 for single robot task to move a light table"
         print "Enter 2 for two robot task to move a heavy table"
         print "Enter 3 to select a single behaviour"
+        print "Enter 4 to lift and move with table"
         inputChoice = raw_input("Enter your choice: ")
 
         if ("1" in inputChoice):
@@ -127,6 +128,30 @@ def main():
         
             #thread.start_new_thread(moveTowardObjectOfInterest.moveTowardObjectOfInterest(motionProxy,portName,))    
            # thread.start_new_thread(moveTowardObjectOfInterest.moveTowardObjectOfInterest(motionProxy1,portName,))
+        elif ("4" in inputChoice):
+            Logger.Log("MOVE FIRST NAO") 
+            portName1 = 'port1'
+            motionProxy = InitialiseNao.InitialiseFirstNao()
+
+            Logger.Log("MOVE SECOND NAO")    
+            portName2 = 'port2'
+            motionProxy1 = InitialiseNao.InitialiseSecondNao()
+
+            #time.sleep(3) 
+            #Helper.LiftWithElbowAndShoulders(motionProxy)
+            #Helper.LiftWithElbowAndShoulders(motionProxy1)
+
+            t2 = threading.Thread(target=BehaviourWalkToLiftRangeOfObject.LiftObject, args=(motionProxy,portName1, 0, 4, 0))
+            #   threads.append(t)
+            t3 = threading.Thread(target=BehaviourWalkToLiftRangeOfObject.LiftObject, args=(motionProxy1,portName2, 0, -4, 0))
+            #threads.append(t)
+            t2.start()
+            t3.start()
+            t2.join()#for concurrency
+            t3.join()
+            #BehaviourWalkToLiftRangeOfObject.LiftObject(motionProxy, portName1, 0, 2, 0)
+            #BehaviourWalkToLiftRangeOfObject.LiftObject(motionProxy1, portName2, 0, -2, 0)
+  
         else:
             print "Coming soon!"
         
