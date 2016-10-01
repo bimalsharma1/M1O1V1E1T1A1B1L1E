@@ -27,6 +27,8 @@ import Helper
 import BehaviourWalkToLiftRangeOfObject
 import threading 
 import sys
+import ClassesMoveTable
+from ClassesMoveTable import MoveTableMain
 print sys.argv
 
 
@@ -48,13 +50,42 @@ def main():
 
     try:
         print "Select between the tasks below"
+        print "Enter 0 for NEW two robot task to move a heavy table"
         print "Enter 1 for single robot task to move a light table"
         print "Enter 2 for two robot task to move a heavy table"
         print "Enter 3 to select a single behaviour"
         print "Enter 4 to lift and move with table"
         inputChoice = raw_input("Enter your choice: ")
 
-        if ("1" in inputChoice):
+        if ("0" in inputChoice):
+            Logger.Log("MOVE FIRST NAO") 
+            portName1 = 'port1'
+            motionProxy = InitialiseNao.InitialiseFirstNao()
+
+            Logger.Log("MOVE SECOND NAO")    
+            portName2 = 'port2'
+            motionProxy1 = InitialiseNao.InitialiseSecondNao()
+      
+            moveTableWithTwoRobots = MoveTableMain.MoveTableMain()
+            moveTableWithTwoRobots.Main(motionProxy, portName1, 0, 2, 0)
+            #t = threading.Thread(target=moveTowardObjectOfInterest.moveTowardObjectOfInterest, args=(motionProxy,portName1))
+            ##   threads.append(t)
+            #t1 = threading.Thread(target=moveTowardObjectOfInterest.moveTowardObjectOfInterest, args=(motionProxy1,portName2))
+            ##threads.append(t)
+            #t.start()
+            #t1.start()
+            #t.join()#for concurrency
+            #t1.join()
+
+            #t2 = threading.Thread(target=BehaviourWalkToLiftRangeOfObject.LiftObject, args=(motionProxy,portName1, 0, 2, 0))
+            ##   threads.append(t)
+            #t3 = threading.Thread(target=BehaviourWalkToLiftRangeOfObject.LiftObject, args=(motionProxy1,portName2, 0, -2, 0))
+            ##threads.append(t)
+            #t2.start()
+            #t3.start()
+            #t2.join()#for concurrency
+            #t3.join()
+        elif ("1" in inputChoice):
             Logger.Log("MOVE FIRST NAO") 
             portName1 = 'port1'
             motionProxy = InitialiseNao.InitialiseFirstNao()

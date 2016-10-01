@@ -1,4 +1,5 @@
 import BehaviourMoveToCornerOfObject
+import Logger
 
 class GoToTable(object):
     """description of class"""

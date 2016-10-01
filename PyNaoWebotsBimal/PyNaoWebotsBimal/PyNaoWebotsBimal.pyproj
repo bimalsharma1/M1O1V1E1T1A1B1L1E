@@ -42,6 +42,36 @@
     <Compile Include="BehaviourWalkToLiftRangeOfObject.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ClassesMoveTable\GoToOppositeSideOfTable.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassesMoveTable\GoToTable.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassesMoveTable\LandTable.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassesMoveTable\LiftTable.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassesMoveTable\LookForTable.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassesMoveTable\MoveTable.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassesMoveTable\MoveTableMain.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassesMoveTable\PositionToCentreOfTableSide.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassesMoveTable\SmallStepSideways.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassesMoveTable\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="config.py" />
     <Compile Include="DetectCornersFast.py" />
     <Compile Include="DetectRedBlueYellowGrey.py" />
@@ -79,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ImageProcessing\" />
+    <Folder Include="ClassesMoveTable\" />
     <Folder Include="SImpleBehaviours\" />
   </ItemGroup>
   <ItemGroup>

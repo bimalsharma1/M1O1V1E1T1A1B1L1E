@@ -1,6 +1,7 @@
 import LiftTable
 import SmallStepSideways
 import LandTable
+import Logger
 
 class MoveTable(object):
     """description of class"""

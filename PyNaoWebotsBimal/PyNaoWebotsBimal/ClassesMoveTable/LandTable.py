@@ -1,5 +1,7 @@
 import Helper
 import WalkToPosition
+import Logger
+
 class LandTable(object):
     """description of class"""
     def LandTable(motionProxy):

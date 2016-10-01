@@ -1,4 +1,5 @@
 import findNaoObjectPositions
+import Logger
 class GoToOppositeSideOfTable(object):
     """description of class"""
     def GoToOppositeSideOfTable(motionProxy,portName):

@@ -1,8 +1,9 @@
 import findObjectOfInterest
+import Logger
 
-class LookForTable(object):
+class LookForTable:
     """description of class"""
-    def LookForTable(motionProxy, portName):
+    def LookForTable(self, motionProxy, portName):
         Logger.Log("STARTING LOOKFORTABLE")
         filenameTopCamera = "naoImageTopCamera"
         filenameBottomCamera = "naoImageBottomCamera"

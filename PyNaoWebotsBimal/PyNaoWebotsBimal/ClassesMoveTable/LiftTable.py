@@ -1,4 +1,6 @@
 import Helper
+import Logger
+
 class LiftTable(object):
     """description of class"""
     def LiftTable(motionProxy):

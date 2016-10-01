@@ -1,4 +1,6 @@
 import BehaviourAlignToLongerSideOfObject
+import Logger
+
 class PositionToCentreOfTableSide(object):
     """description of class"""
     def PositionToCentreOfTableSide(motionProxy, portName):

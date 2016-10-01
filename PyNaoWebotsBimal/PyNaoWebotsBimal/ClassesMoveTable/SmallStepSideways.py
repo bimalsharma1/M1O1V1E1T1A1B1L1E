@@ -1,4 +1,6 @@
 import WalkToPosition
+import Logger
+
 class SmallStepSideways(object):
     """description of class"""
     def SmallStepSideways(motionProxy, X, Y, Theta):
