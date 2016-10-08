@@ -4,7 +4,7 @@ import Logger
 
 class LandTable(object):
     """description of class"""
-    def LandTable(motionProxy):
+    def LandTable(self, motionProxy):
         Logger.Log("STARTING LandTable")
         Helper.LiftWithElbowAndShouldersPutObjectDown(motionProxy)
         time.sleep(3)

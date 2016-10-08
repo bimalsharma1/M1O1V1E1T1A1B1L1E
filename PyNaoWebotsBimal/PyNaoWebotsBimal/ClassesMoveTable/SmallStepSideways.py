@@ -3,7 +3,7 @@ import Logger
 
 class SmallStepSideways(object):
     """description of class"""
-    def SmallStepSideways(motionProxy, X, Y, Theta):
+    def SmallStepSideways(self, motionProxy, X, Y, Theta):
         Logger.Log("STARTING SmallStepSideways")
         time.sleep(1)
         print "move arms"

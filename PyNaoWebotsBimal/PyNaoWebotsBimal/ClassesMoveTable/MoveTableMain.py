@@ -13,6 +13,8 @@ class MoveTableMain:
 
         lookForTable = LookForTable.LookForTable() 
         lookForTable.LookForTable(motionProxy, portName1)
+        goToTable = GoToTable.GoToTable()
+        goToTable.GoToTable(motionProxy, portName1)
         #    moveTableWithTwoRobots.Main(motionProxy, 0, 2, 0)
         #LookForTable.LookForTable(motionProxy)
         #GoToTable.GoToTable(motionProxy)
