@@ -30,7 +30,8 @@ import sys
 import ClassesMoveTable
 from ClassesMoveTable import MoveTableMain
 print sys.argv
-
+from Queue import Queue
+import config9559
 
 exitFlag = 0
 
@@ -39,12 +40,10 @@ class myThread (threading.Thread):
         threading.Thread.__init__(self)
         self.motionProxy = motionProxy
         self.portName = portName
+        print "declare class my thread"
     def run(self):
         moveTowardObjectOfInterest.moveTowardObjectOfInterest(self.motionProxy, self.portName)
-
-
-
-
+        print "in main class move to ward object of interest"
 
 def main():  
 
@@ -65,6 +64,8 @@ def main():
             Logger.Log("MOVE SECOND NAO")    
             portName2 = 'port2'
             motionProxy1 = InitialiseNao.InitialiseSecondNao()
+
+            q = Queue()
       
             moveTableWithTwoRobots = MoveTableMain.MoveTableMain()
             moveTableWithTwoRobots.Main(motionProxy, portName1, 0, 2, 0)

@@ -18,5 +18,6 @@ InitialLongerSideOfTable = ""
 #to find index myList.index("revolves")
 ListOfNaosDetected = [] 
 Leader = ""
+
 #def init():
 #global InitialLongerSideOfTable

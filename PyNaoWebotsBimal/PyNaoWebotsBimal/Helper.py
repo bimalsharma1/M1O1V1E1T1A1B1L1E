@@ -16,7 +16,8 @@ import os
 import DetectCornersFast
 import Logger
 import motion
-
+import config
+import config9559
 
 def HeadYawMove(motionProxy, angle): #get angle in degrees (+ve value to turn left, -ve to turn right)
     names = "HeadYaw"   # looking left and right
@@ -24,6 +25,14 @@ def HeadYawMove(motionProxy, angle): #get angle in degrees (+ve value to turn le
     isAbsolute = True
     motionProxy.angleInterpolation(names, angle, times, isAbsolute)
 
+def AddNao(ipAddress, port): #get angle in degrees (+ve value to look down, -ve to look up)
+    ipList = ipAddress+':'+str(port)
+    config9559.ListOfNaosDetected.append([ipList,"",""])
+    SelectLeader()
+
+def SelectLeader(): #get angle in degrees (+ve value to look down, -ve to look up)
+    config.Leader = max(sublist[0] for sublist in config9559.ListOfNaosDetected)
+    print config.Leader
 
 def HeadPitchMove(motionProxy, angle): #get angle in degrees (+ve value to look down, -ve to look up)
     names = "HeadPitch"   #looking up and down

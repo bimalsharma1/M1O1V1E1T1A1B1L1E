@@ -10,7 +10,7 @@ from naoqi import ALProxy
 def InitialiseFirstNao():
     motionProxy  = ALProxy("ALMotion", config.ipAddress, config.ports['port1'])
     postureProxy = ALProxy("ALRobotPosture", config.ipAddress, config.ports['port1']) 
-#    photoCaptureProxy = ALProxy("ALPhotoCapture", config.ipAddress, config.ports['port1'])
+    #    photoCaptureProxy = ALProxy("ALPhotoCapture", config.ipAddress, config.ports['port1'])
     
     # Wake up robot
     motionProxy.wakeUp()
