@@ -3,13 +3,21 @@ import SmallStepSideways
 import LandTable
 import Logger
 
-class MoveTable(object):
-    """description of class"""
-    def MoveTable(motionProxy, X, Y, Theta):
+class MoveTable:
+    @staticmethod
+    def MoveTableDef(motionProxy, X, Y, Theta):
+        print "in function"
         Logger.Log("STARTING MoveTable")
-        LiftTable.LiftTable(motionProxy)
-        SmallStepSideways.SmallStepSideways(motionProxy, X, Y, Theta)
-        LandTable.LandTable(motionProxy)
+
+        print "lifting table"
+        liftTable = LiftTable.LiftTable()
+        liftTable.LiftTable(motionProxy)
+
+        print "taking small step sideways"
+        smallStepSideways = SmallStepSideways.SmallStepSideways()
+        smallStepSideways.SmallStepSideways(motionProxy, X, Y, Theta)
+
+        print "Landing table"
+        landTable = LandTable.LandTable()
+        landTable.LandTable(motionProxy)
         Logger.Log("MoveTable COMPLETE")
-
-

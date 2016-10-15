@@ -1,8 +1,9 @@
 import Helper
 import WalkToPosition
 import Logger
+import time
 
-class LandTable(object):
+class LandTable:
     """description of class"""
     def LandTable(self, motionProxy):
         Logger.Log("STARTING LandTable")

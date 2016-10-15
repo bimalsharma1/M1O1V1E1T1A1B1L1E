@@ -17,22 +17,14 @@ import DetectCornersFast
 import Logger
 import motion
 import config
-import config9559
+import comms9557
+import comms9559
 
 def HeadYawMove(motionProxy, angle): #get angle in degrees (+ve value to turn left, -ve to turn right)
     names = "HeadYaw"   # looking left and right
     times      = [1.0]
     isAbsolute = True
     motionProxy.angleInterpolation(names, angle, times, isAbsolute)
-
-def AddNao(ipAddress, port): #get angle in degrees (+ve value to look down, -ve to look up)
-    ipList = ipAddress+':'+str(port)
-    config9559.ListOfNaosDetected.append([ipList,"",""])
-    SelectLeader()
-
-def SelectLeader(): #get angle in degrees (+ve value to look down, -ve to look up)
-    config.Leader = max(sublist[0] for sublist in config9559.ListOfNaosDetected)
-    print config.Leader
 
 def HeadPitchMove(motionProxy, angle): #get angle in degrees (+ve value to look down, -ve to look up)
     names = "HeadPitch"   #looking up and down
@@ -94,7 +86,8 @@ def LiftWithElbowAndShoulders(motionProxy):
     #Arm = [ x * motion.TO_RAD for x in Arm]
     #motionProxy.angleInterpolationWithSpeed(JointNames, Arm, pFractionMaxSpeed)
 
-
+############################################################################################
+#####COmms#
 
 def CommunicateReadyToLift(motionProxy):
     #Lshoulder roll goes up to 76 degrees out and LElbow roll goes inwards up tp -88 degrees
@@ -110,8 +103,26 @@ def CommunicateReadyToLift(motionProxy):
     motionProxy.angleInterpolationWithSpeed(JointNames, Arm, pFractionMaxSpeed)
 
 
-    
-  
-    
+def AddNao(ipAddress, port): #get angle in degrees (+ve value to look down, -ve to look up)
+    ipList = ipAddress+':'+str(port)
+    comms9557.ListOfNaosDetected.append([ipList,"",""])
+    comms9559.ListOfNaosDetected.append([ipList,"",""])
+    SelectLeader(ipAddress, port)
 
+def SelectLeader(ipAddress, port): #get angle in degrees (+ve value to look down, -ve to look up)
+    ipList = ipAddress+':'+str(port)
+    if(port == 9557):
+        config.Leader = max(sublist[0] for sublist in comms9557.ListOfNaosDetected)
+    if(port == 9559):
+        config.Leader = max(sublist[0] for sublist in comms9559.ListOfNaosDetected)
+    print "THE LEADER IS: "
+    Logger.Log("THE LEADER IS: ")
+    print config.Leader
+    Logger.Log(config.Leader)
+
+def SendMessage(ipAddress, port):
+    config.ListOfNaosDetected.append([config.ipAddress+str(config.ports['port1']), [MsgReceived], [MsgSent]])
+
+def ReadMessage(ipAddress, port):
+    config.ListOfNaosDetected.append([config.ipAddress+str(config.ports['port1']), [MsgReceived], [MsgSent]])
 

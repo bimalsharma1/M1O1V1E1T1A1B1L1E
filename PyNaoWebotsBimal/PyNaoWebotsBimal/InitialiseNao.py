@@ -6,6 +6,9 @@ Created on Mon Feb 22 04:27:34 2016
 """
 import config
 from naoqi import ALProxy
+import comms9557
+import comms9559
+import Helper
 
 def InitialiseFirstNao():
     motionProxy  = ALProxy("ALMotion", config.ipAddress, config.ports['port1'])
@@ -28,7 +31,11 @@ def InitialiseFirstNao():
     #####################
     #~ motionProxy.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION",False]])
     motionProxy.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION", True]])
-    
+
+    #add own ip address to list
+    Helper.AddNao(config.ipAddress, config.ports['port1'])
+    print config.ports['port1']
+    print "woken up"
     return motionProxy
     
 def InitialiseSecondNao():
@@ -51,6 +58,10 @@ def InitialiseSecondNao():
     #####################
     #~ motionProxy.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION",False]])
     motionProxy.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION", True]])
-    
+
+    #add own ip address to list
+    Helper.AddNao(config.ipAddress, config.ports['port2'])
+    print config.ports['port2']
+    print "woken up"
     return motionProxy
 

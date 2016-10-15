@@ -1,7 +1,8 @@
 import WalkToPosition
 import Logger
+import time
 
-class SmallStepSideways(object):
+class SmallStepSideways:
     """description of class"""
     def SmallStepSideways(self, motionProxy, X, Y, Theta):
         Logger.Log("STARTING SmallStepSideways")
