@@ -57,18 +57,10 @@ def main():
         inputChoice = raw_input("Enter your choice: ")
 
         if ("0" in inputChoice):
-            Logger.Log("MOVE FIRST NAO") 
-            portName1 = 'port1'
-            motionProxy = InitialiseNao.InitialiseFirstNao()
-
-            Logger.Log("MOVE SECOND NAO")    
-            portName2 = 'port2'
-            motionProxy1 = InitialiseNao.InitialiseSecondNao()
-
-            q = Queue()
+            
       
             moveTableWithTwoRobots = MoveTableMain.MoveTableMain()
-            moveTableWithTwoRobots.Main(motionProxy, portName1, 0, 2, 0)
+            moveTableWithTwoRobots.Main()
             #t = threading.Thread(target=moveTowardObjectOfInterest.moveTowardObjectOfInterest, args=(motionProxy,portName1))
             ##   threads.append(t)
             #t1 = threading.Thread(target=moveTowardObjectOfInterest.moveTowardObjectOfInterest, args=(motionProxy1,portName2))
