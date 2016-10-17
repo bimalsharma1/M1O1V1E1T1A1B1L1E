@@ -24,35 +24,46 @@ class MoveTableMain:
         portName2 = 'port2'
         motionProxy2 = InitialiseNao.InitialiseSecondNao()
 
-        q = Queue()
+        #q = Queue()
 
-        lookForTable = LookForTable.LookForTable() 
-        lookForTable.LookForTable(motionProxy1, portName1)
+        lookForTable1 = LookForTable.LookForTable() 
+        #lookForTable1.LookForTable(motionProxy1, portName1)
         #second Nao looks for table
-        lookForTable.LookForTable(motionProxy2, portName2)
+        lookForTable2 = LookForTable.LookForTable() 
+        #lookForTable2.LookForTable(motionProxy2, portName2)
+
+        t0 = threading.Thread(target=lookForTable1.LookForTable, args=(motionProxy1, portName1))    
+        t0.start()
+        t0.join()#for concurrency
+        #Helper.LiftWithElbowAndShoulders(motionProxy)
+        t1 = threading.Thread(target=lookForTable2.LookForTable, args=(motionProxy2, portName2))
+        t1.start()
+        t1.join()#for concurrency
 
         #
 
-        goToTable = GoToTable.GoToTable()
+        goToTable1 = GoToTable.GoToTable()
+        goToTable2 = GoToTable.GoToTable()
         #goToTable.GoToTable(motionProxy, portName1)
 
-        t = threading.Thread(target=goToTable.GoToTable, args=(motionProxy1, portName1))    
+        t = threading.Thread(target=goToTable1.GoToTable, args=(motionProxy1, portName1))    
         t.start()
         t.join()#for concurrency
         time.sleep(3) 
         #Helper.LiftWithElbowAndShoulders(motionProxy)
-        t2 = threading.Thread(target=goToTable.GoToTable, args=(motionProxy2, portName2))
+        t2 = threading.Thread(target=goToTable2.GoToTable, args=(motionProxy2, portName2))
         t2.start()
         t2.join()#for concurrency
 
         #goToTable = GoToTable.GoToTable()
         #goToTable.GoToTable(motionProxy, portName1)
 
-        print "calling MOveTable class"
-        moveTable = MoveTable.MoveTable()
+        print "calling MoveTable class"
+        moveTable1 = MoveTable.MoveTable()
         print "call func"
-        moveTable.MoveTableDef(motionProxy1, X, Y, Theta)
-        moveTable.MoveTableDef(motionProxy2, X, Y, Theta)
+        moveTable1.MoveTableDef(motionProxy1, 0, 4, 0)
+        moveTable2 = MoveTable.MoveTable()
+        moveTable2.MoveTableDef(motionProxy2, 0, -4, 0)
         #    moveTableWithTwoRobots.Main(motionProxy, 0, 2, 0)
         #LookForTable.LookForTable(motionProxy)
         #GoToTable.GoToTable(motionProxy)
