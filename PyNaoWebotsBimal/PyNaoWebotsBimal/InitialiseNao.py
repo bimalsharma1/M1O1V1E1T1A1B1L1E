@@ -13,10 +13,15 @@ import Helper
 def InitialiseFirstNao():
     motionProxy  = ALProxy("ALMotion", config.ipAddress, config.ports['port1'])
     postureProxy = ALProxy("ALRobotPosture", config.ipAddress, config.ports['port1']) 
+    tts = ALProxy("ALTextToSpeech", config.ipAddress, config.ports['port1'])
+    tts.say("Hello, world, I have woken up, I have woken up, I have woken up, I have woken up")
+
     #    photoCaptureProxy = ALProxy("ALPhotoCapture", config.ipAddress, config.ports['port1'])
     
     # Wake up robot
     motionProxy.wakeUp()
+    motionProxy.moveInit()
+    motionProxy.setStiffnesses("Body", 1.0)
     
     # Send robot to Stand Init
     #postureProxy.goToPosture("StandZero", 0.5)
@@ -36,15 +41,20 @@ def InitialiseFirstNao():
     Helper.AddNao(config.ipAddress, config.ports['port1'])
     print config.ports['port1']
     print "woken up"
+
     return motionProxy
     
 def InitialiseSecondNao():
     motionProxy  = ALProxy("ALMotion", config.ipAddress, config.ports['port2'])
     postureProxy = ALProxy("ALRobotPosture", config.ipAddress, config.ports['port2']) 
+    tts = ALProxy("ALTextToSpeech", config.ipAddress, config.ports['port2'])
+    tts.say("Hello, world, I have woken up, I have woken up, I have woken up, I have woken up")
+
     
     # Wake up robot
     motionProxy.wakeUp()
-    
+    motionProxy.moveInit()
+    motionProxy.setStiffnesses("Body", 1.0)
     # Send robot to Stand Init
     #postureProxy.goToPosture("StandZero", 0.5)
     #####################
