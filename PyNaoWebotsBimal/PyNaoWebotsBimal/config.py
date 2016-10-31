@@ -11,6 +11,9 @@ ports = dict(
     )
 ipAddress = '127.0.0.1'
 
+imageWidth = 640
+imageHeight = 480
+
 InitialLongerSideOfTable = ""
 
 Leader = ""   # config is updated witht he leader name

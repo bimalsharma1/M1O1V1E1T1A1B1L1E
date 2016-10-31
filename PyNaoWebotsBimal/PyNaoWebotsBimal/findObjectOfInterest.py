@@ -102,6 +102,15 @@ def findObjectOfInterest(motionProxy, filenameTopCamera, filenameBottomCamera, p
                     print "top camera values"
                     print xCentrePostion, yCentrePosition, objectFoundOnBottomCamera
                     WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, math.radians(angleOfHead))
+                    time.sleep(3)
+                    #keep turning until centre of table is mid way
+                    # imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
+                    # xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
+                    # while(xCentrePostion < (config.imageWidth/2)):
+                    #     WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, math.radians(20))#20 degrees
+                    #     imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
+                    # xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
+
                     Helper.HeadInitialise(motionProxy)
                     time.sleep(3)
                     return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound, bottomMostPoint)   

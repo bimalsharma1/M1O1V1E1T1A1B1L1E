@@ -7,22 +7,58 @@ import time
 from scipy.spatial import distance as dist
 import Logger
 import config
-import config9559
 import Helper
+import Logger
+import InitialiseNao
+from Queue import Queue
+import threading 
+import thread
+import time
+import BehaviourMoveToTopCornerOfObject
+#from ClassesMoveTable import LookForTable
 
-ipAddress1='127.0.0.1'
-ipAddress2='127.0.0.1'
-port1 = 9557
-port2= 9559
 
-#ipList = [ipAddress1+':'+str(port1)]
-#config9559.ListOfNaosDetected.append([ipList,"",""])
+Logger.Log("MOVE FIRST NAO") 
+portName1 = 'port1'
+motionProxy1 = InitialiseNao.InitialiseFirstNao()
+print "Initialise first nao"
+
+Logger.Log("MOVE SECOND NAO")    
+portName2 = 'port2'
+motionProxy2 = InitialiseNao.InitialiseSecondNao()
+print "Initialise second nao"
+#q = Queue()
+
+lookForTable1 = LookForTable.LookForTable() 
+lookForTable1.LookForTable(motionProxy1, portName1)
+#second Nao looks for table
+lookForTable2 = LookForTable.LookForTable() 
+lookForTable2.LookForTable(motionProxy2, portName2)
 
 
-Helper.AddNao(ipAddress1, port1)
 
-Helper.AddNao(ipAddress2, port2)
-print config.Leader
+
+
+
+
+
+
+
+
+
+# ipAddress1='127.0.0.1'
+# ipAddress2='127.0.0.1'
+# port1 = 9557
+# port2= 9559
+
+# #ipList = [ipAddress1+':'+str(port1)]
+# #config9559.ListOfNaosDetected.append([ipList,"",""])
+
+
+# Helper.AddNao(ipAddress1, port1)
+
+# Helper.AddNao(ipAddress2, port2)
+# print config.Leader
 
 #idList.insert(ipAddress1)
 #ipList = ipAddress2+':'+str(port2)

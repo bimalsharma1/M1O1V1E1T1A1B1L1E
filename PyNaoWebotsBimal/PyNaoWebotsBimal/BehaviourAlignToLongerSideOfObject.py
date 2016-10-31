@@ -29,7 +29,7 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
         percentOfImageCoveredWithContour=0
         leftLonger = False
         rightLonger = False
-        Y = 1
+        Y = 2
         correctionAngle = 0
 
 
@@ -77,16 +77,16 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
             print "hypot right is 0"
         
         Helper.HeadInitialise(motionProxy)
-        time.sleep(3)
+        time.sleep(2)
         #walk ahead closer to table
-        WalkToPosition.WalkToPosition(motionProxy,0.3, 0, 0) #+ve 45 degrees turn
-
+        WalkToPosition.WalkToPosition(motionProxy,0.5, 0, 0) #+ve 45 degrees turn
+        time.sleep(3)
         
         if (hypotLeft > hypotRight and config.InitialLongerSideOfTable=="LEFT"): # if diff is less than 50 px then it is not accurate
             print "left side is longer"
             Logger.Log("left side is longer")
             leftLonger = True
-            WalkToPosition.WalkToPosition(motionProxy, 0,0, -math.radians(75)) #+ve 45 degrees turn
+            WalkToPosition.WalkToPosition(motionProxy, 0,0, -math.radians(85)) #+ve 45 degrees turn
             time.sleep(4)
             WalkToPosition.WalkToPosition(motionProxy, 0,Y, 0) #+ve 45 degrees turn
             time.sleep(3)
@@ -97,10 +97,10 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
             rightLonger = True
             #WalkToPosition.WalkToPosition(motionProxy,0, 0, math.radians(75)) #-ve 45 degrees turn 
             Y = -1 * Y
-            WalkToPosition.WalkToPosition(motionProxy,0, 0, math.radians(75)) #-ve 45 degrees turn 
+            WalkToPosition.WalkToPosition(motionProxy,0, 0, math.radians(85)) #-ve 45 degrees turn 
             time.sleep(4)
             WalkToPosition.WalkToPosition(motionProxy,0, Y, 0) #-ve 45 degrees turn 
-        time.sleep(3)            
+            time.sleep(3)            
         #ALIGN to centre using top camera
          #aligned
         aligned = False   
@@ -233,7 +233,7 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
                 if not contourList:
                     print "CANNOT see object from bottom cam so walk ahead"
                     Logger.Log("countour list is empty")
-                    WalkToPosition.WalkToPosition(motionProxy,0.2, 0, 0)
+                    WalkToPosition.WalkToPosition(motionProxy,0.5, 0, 0)
                 else:
                     Logger.Log("Longer side is ")
                     Logger.Log(str(config.InitialLongerSideOfTable))
@@ -253,13 +253,18 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
                             WalkToPosition.WalkToPositionWaitUntilWalkFinished(motionProxy,0, 0, adjustAngle)
                         WalkToPosition.WalkToPositionWaitUntilWalkFinished(motionProxy,0, 0.2, 0)
 
-                    if (contourList[3][1] >= maxClosestPoint):  # ( (contourList[4][1] - bottomMostPoint[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
+                    # if (contourList[3][1] >= maxClosestPoint):  # ( (contourList[4][1] - bottomMostPoint[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
+                    if (bottomMostPoint[1] >= maxClosestPoint):  # ( (contourList[4][1] - bottomMostPoint[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
                         objectSeen = True 
                         Logger.Log(str(bottomMostPoint))
                         Logger.Log("height of pic: "+str(contourList[4][1]))
                         print "height of pic: "+str(contourList[4][1])
                     else:
-                        XValueToWalk = 0.3*((contourList[4][1] - contourList[3][1])/float(contourList[4][1]))
+                        #this determines if robot hits table
+                        Logger.Log(str(bottomMostPoint))
+                        print "bottom most table position is :: "
+                        print bottomMostPoint
+                        XValueToWalk = 0.2*(480-bottomMostPoint[1])/480  #((contourList[4][1] - contourList[3][1])/float(contourList[4][1]))
                         WalkToPosition.WalkToPosition(motionProxy,XValueToWalk, 0, 0) #-ve 45 degrees turn Y/float(8.0)
                     print "bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1])
                     Logger.Log("bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1]))

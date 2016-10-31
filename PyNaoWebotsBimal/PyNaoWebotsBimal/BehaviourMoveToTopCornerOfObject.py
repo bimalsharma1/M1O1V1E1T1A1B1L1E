@@ -1,0 +1,104 @@
+import almath # python's wrapping of almath
+from naoqi import ALProxy
+import time
+import InitialiseNao
+import ALPhotoCapture
+import config
+import vision_getandsaveimage
+import DetectRedBlueYellowGrey
+import InitialiseHeadAndShoulders
+import WalkToPosition 
+import sys
+import findObjectOfInterest
+import os
+import DetectCornersFast
+import Logger
+
+def behaviourMoveToTopCornerOfObject(motionProxy,portName):
+        lastKnownPositionOfObject = ""
+        filenameTopCamera = "naoImageTopCamera"
+        filenameBottomCamera = "naoImageBottomCamera"
+        fourtyFiveDegreeInRadians = 0.9
+        turnAngle = 0.00
+        count = 0
+        names = "HeadYaw"
+        times      = [1.0]
+        isAbsolute = True
+        percentOfImageCoveredWithContour=0
+        headDownCounter = 0
+        leftMostAlignmentLimit = 300
+        rightMostAlignmentLimit = 340
+        hypotLeft=0
+        hypotRight=0
+        X=0
+        Y = -0.0 # move left or right
+        #positive theta is anticlockwise
+        Theta = 1 # amount to turn around in radians
+        Logger.Log("STARTING behaviourMoveToCornerOfObject")
+        print "start moving robot so that bottom most point is in centre of screen"
+        objectInCentreScreen = False
+        while not (objectInCentreScreen):   
+            bottomMostPoint=[0,0]
+
+            #use top camera only if bottom camera cannot see ...
+            imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
+            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "",imT)  
+
+            #find closest top corner
+            if(abs(tl[0] - bottomMostPoint[0]) < abs(tr[0] - bottomMostPoint[0])):
+                bottomMostPoint[1] = tl[1]
+            else:
+                bottomMostPoint[1] = tr[1]
+
+            print "bottommost point"
+            print bottomMostPoint[1]
+            Logger.Log("bottommost point: "+ str(bottomMostPoint[1]))
+            
+            #move head pitch down by 5degrees each time it gets closer tot he bottom frame
+            #DONT FORGET TO RESET IT LATER
+            #head pitch can move a max of 29.5 degrees forward
+            if (bottomMostPoint[1] > 240 and headDownCounter < 5):
+                headDownCounter = headDownCounter + 1
+                print "move head down by x degrees"
+                Logger.Log("move head down by x degrees")
+                # Example showing multiple trajectories
+                names      = [ "HeadPitch"]
+                angleLists = [10.0*almath.TO_RAD]
+                timeLists  = [1.2]
+                isAbsolute = True
+                motionProxy.angleInterpolation(names, angleLists, timeLists, isAbsolute)
+                
+            turnAngle = (320 - bottomMostPoint[0])/float(320.0) * fourtyFiveDegreeInRadians # get appropriate angle to turn
+            print "turn angle"
+            print turnAngle
+            Logger.Log("turn angle:  " + str(turnAngle))
+            
+            
+
+            if (bottomMostPoint[0] >= leftMostAlignmentLimit and bottomMostPoint[0] <= rightMostAlignmentLimit):             
+                X= 5  # was 1.5
+                print "bottom y point"
+                print bottomMostPoint[1]
+
+                X = ((480.0-bottomMostPoint[1])/float(480.0)) * X
+                #WalkToPosition.WalkToPosition(motionProxy, X, 0, 0) 
+                print "OBJECT IS IN CENTRE, walking toward it"
+                print X
+                Logger.Log("OBJECT IS IN CENTRE, walking toward it:  "+ str(X))
+
+            if (bottomMostPoint[1] > 420):
+                leftMostAlignmentLimit = 310
+                rightMostAlignmentLimit = 330
+                fourtyFiveDegreeInRadians = 0.5
+                X = 0.1
+            X = ((480.0-bottomMostPoint[1])/float(480.0)) * X
+                           
+            print "horizontal pixel position:  ", str(bottomMostPoint[0])
+            Logger.Log("bottom most position:  ")
+            Logger.Log( str(bottomMostPoint[0]))
+            WalkToPosition.WalkToPosition(motionProxy, X, 0, turnAngle)   
+            time.sleep(2)
+            Logger.Log("ending behaviourMoveToCornerOfObject")
+        #turn and walk until table out of view
+        WalkToPosition.WalkToPosition(motionProxy, 0,0, -math.radians(75)) #+ve 45 degrees turn
+        

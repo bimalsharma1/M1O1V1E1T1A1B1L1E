@@ -170,15 +170,12 @@ def detectColouredObject(FILENAME,CAMERANAME, im, colourToDetect = None):
             bottomMostPoint = tuple(cnt[cnt[:,:,1].argmax()][0])   # removed this as we now get bottom most point directly from the mask to be more accurate
             if (bottomMostYPoint > 0):
                 try:
-                    Logger.Log("WRITING Y POINT START")
                     lst = list(bottomMostPoint) #convert tuple to list as tuples are immutable
                     Logger.Log(str(lst))
                     lst[1] = bottomMostYPoint  #assign value
                     Logger.Log(str(lst[1]))
                     bottomMostPoint = tuple(lst)
                     Logger.Log(str(bottomMostPoint))
-                    Logger.Log(str(bottomMostPoint[1]))
-                    Logger.Log("WRITING Y POINT END")
                 except Exception as e:
                     Logger.Log(str(e))
             contourList[0] = tuple(cnt[cnt[:,:,0].argmin()][0])   #leftmost
