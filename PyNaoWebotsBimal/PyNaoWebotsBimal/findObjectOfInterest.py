@@ -83,7 +83,7 @@ def findObjectOfInterest(motionProxy, filenameTopCamera, filenameBottomCamera, p
                     print xCentrePostion, yCentrePosition, objectFoundOnBottomCamera,bottomMostPoint
                     WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, math.radians(angleOfHead))
                     Helper.HeadInitialise(motionProxy)
-                    time.sleep(3)
+                    time.sleep(2)
                     return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound, bottomMostPoint)
                 time.sleep(2)
                 
@@ -123,6 +123,7 @@ def findObjectOfInterest(motionProxy, filenameTopCamera, filenameBottomCamera, p
                 print angleOfHead
                 Logger.Log(str(angleOfHead))
                 Helper.HeadYawMove(motionProxy,math.radians(angleOfHead))
+                time.sleep(2)
 
             print "out of inner loop"
          
