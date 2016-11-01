@@ -52,7 +52,7 @@ def findObjectOfInterest(motionProxy, filenameTopCamera, filenameBottomCamera, p
         time.sleep(2)       
         if (xCentrePostion > 0):
             print "OBJECT FOUND"
-            Logger.Log("onject found")
+            Logger.Log("object found")
             print xCentrePostion
             ObjectFound = True
             cameraPosition = 'TOP'
@@ -101,7 +101,7 @@ def findObjectOfInterest(motionProxy, filenameTopCamera, filenameBottomCamera, p
                     cameraPosition = 'TOP'
                     print "top camera values"
                     print xCentrePostion, yCentrePosition, objectFoundOnBottomCamera
-                    WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, math.radians(angleOfHead))
+                    WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, math.radians(angleOfHead)*1.5)
                     time.sleep(3)
                     #keep turning until centre of table is mid way
                     # imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
