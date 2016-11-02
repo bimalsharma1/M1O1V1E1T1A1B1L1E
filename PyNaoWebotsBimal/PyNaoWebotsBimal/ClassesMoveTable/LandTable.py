@@ -8,7 +8,8 @@ class LandTable:
     def LandTable(self, motionProxy):
         Logger.Log("STARTING LandTable")
         Helper.LiftWithElbowAndShouldersPutObjectDown(motionProxy)
+        motionProxy.waitUntilMoveIsFinished()
         time.sleep(3)
-        WalkToPosition.WalkToPosition(motionProxy, -0.1, 0, 0)
+        WalkToPosition.WalkToPosition(motionProxy, -0.5, 0, 0)
 
 

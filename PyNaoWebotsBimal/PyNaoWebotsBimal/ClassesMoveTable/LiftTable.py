@@ -6,5 +6,6 @@ class LiftTable:
     def LiftTable(self, motionProxy):
         Logger.Log("STARTING LiftTable")
         Helper.LiftWithElbowAndShoulders(motionProxy)
+        motionProxy.waitUntilMoveIsFinished()
 
 

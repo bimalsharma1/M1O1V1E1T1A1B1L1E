@@ -9,6 +9,7 @@ class SmallStepSideways:
         time.sleep(1)
         print "move arms"
         WalkToPosition.WalkToPositionWithHandsUp(motionProxy, X, Y, Theta)
-        time.sleep(3)
+        motionProxy.waitUntilMoveIsFinished()
+        time.sleep(5)
 
 

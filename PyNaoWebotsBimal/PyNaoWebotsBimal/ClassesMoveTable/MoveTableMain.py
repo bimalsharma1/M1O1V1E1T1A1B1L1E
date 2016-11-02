@@ -66,9 +66,9 @@ class MoveTableMain:
         moveTable1 = MoveTable.MoveTable()
         moveTable2 = MoveTable.MoveTable()
         print "call func"
-        t3 = threading.Thread(target=moveTable1.MoveTableDef, args=(motionProxy1, 0, 6, 0))
+        t3 = threading.Thread(target=moveTable1.MoveTableDef, args=(motionProxy1, 0, 1, 0))
         t3.start()
-        t4 = threading.Thread(target=moveTable2.MoveTableDef, args=(motionProxy2, 0, -6, 0))
+        t4 = threading.Thread(target=moveTable2.MoveTableDef, args=(motionProxy2, 0, -1, 0))
         t4.start()
         
         #moveTable1.MoveTableDef(motionProxy1, 0, 4, 0)  

@@ -195,6 +195,7 @@ def PerformIndividualBehaviour():
     print "Enter 1 to go to table"
     print "Enter 2 to go to longer side of table"
     print "Enter 3 to move table"
+    print "Enter 9 to initialise robots"
     inputSubChoice = raw_input("Enter your choice: ")
             
     #Initialise in all cases
@@ -243,10 +244,20 @@ def PerformIndividualBehaviour():
         moveTable1 = MoveTable.MoveTable()
         moveTable2 = MoveTable.MoveTable()
         print "call func"
-        t3 = threading.Thread(target=moveTable1.MoveTableDef, args=(motionProxy1, 0, 6, 0))
+        t3 = threading.Thread(target=moveTable1.MoveTableDef, args=(motionProxy1, 0, 1, 0))
         t3.start()
-        t4 = threading.Thread(target=moveTable2.MoveTableDef, args=(motionProxy2, 0, -6, 0))
+        t4 = threading.Thread(target=moveTable2.MoveTableDef, args=(motionProxy2, 0, -1, 0))
         t4.start()
+    elif ("9" in inputSubChoice):
+        Logger.Log("MOVE FIRST NAO") 
+        portName1 = 'port1'
+        motionProxy1 = InitialiseNao.InitialiseFirstNao()
+        print "Initialise first nao"
+
+        Logger.Log("MOVE SECOND NAO")    
+        portName2 = 'port2'
+        motionProxy2 = InitialiseNao.InitialiseSecondNao()
+        print "Initialise second nao"
         
 
 

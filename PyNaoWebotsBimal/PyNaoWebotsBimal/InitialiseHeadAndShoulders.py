@@ -5,19 +5,6 @@ Created on Sun May 01 07:26:37 2016
 @author: bimal
 """
 
-# -*- coding: utf-8 -*-
-"""
-Created on Sun May 01 07:21:29 2016
-
-@author: bimal
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Feb 27 15:56:26 2016
-
-@author: bimal
-"""
 import argparse
 import almath as m # python's wrapping of almath
 import time
