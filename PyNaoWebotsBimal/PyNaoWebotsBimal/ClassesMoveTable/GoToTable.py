@@ -9,6 +9,6 @@ class GoToTable(object):
         Logger.Log("STARTING GoToTable")
         BehaviourMoveToCornerOfObject.behaviourMoveToCornerOfObject(motionProxy, portName)
         BehaviourAlignToLongerSideOfObject.behaviourAlignToLongerSideOfObject(motionProxy, portName)   
-         
+         #document the pre AND post conditions
 
 

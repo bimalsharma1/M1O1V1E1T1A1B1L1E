@@ -3,7 +3,8 @@ import Logger
 
 class LookForTable:
     """description of class"""
-    def LookForTable(self, motionProxy, portName):
+    def LookForTable(self, motionProxy, portName): 
+        #inherit common vars
         Logger.Log("STARTING LOOKFORTABLE")
         filenameTopCamera = "naoImageTopCamera"
         filenameBottomCamera = "naoImageBottomCamera"

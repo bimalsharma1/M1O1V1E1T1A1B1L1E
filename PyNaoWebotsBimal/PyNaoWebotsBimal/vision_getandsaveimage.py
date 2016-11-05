@@ -9,9 +9,11 @@ import vision_definitions
 import time
 import config
 import StringIO
-
+#correct all the names of functions and classes
+#give option not to save to file
 def showNaoImageTopCam(IP, PORT, FILENAME):
   time.sleep(1)
+  #separate proxy from actual call
   camProxy = ALProxy("ALVideoDevice", IP, PORT)
   resolution = 2    # VGA
   colorSpace = 11   # RGB

@@ -49,7 +49,7 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
         try:
             #Look LEFT and find length
             Helper.HeadInitialise(motionProxy)
-            Helper.HeadPitchMove(motionProxy, math.radians(29))
+            Helper.HeadPitchMove(motionProxy, math.radians(29)) # put blocking call here
             Helper.HeadYawMove(motionProxy,math.radians(turnAngle))  #+ve value to look left
             time.sleep(2)
             imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
