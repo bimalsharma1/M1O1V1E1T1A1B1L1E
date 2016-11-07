@@ -27,6 +27,7 @@ import Helper
 import BehaviourWalkToLiftRangeOfObject
 import threading 
 import sys
+import config
 import ClassesMoveTable
 from ClassesMoveTable import LookForTable
 from ClassesMoveTable import GoToTable
@@ -44,9 +45,10 @@ import threading
 import thread
 import time
 import BehaviourMoveToTopCornerOfObject
-print sys.argv
+from Utils import InitialiseNaoRobot
 from Queue import Queue
 exitFlag = 0
+print sys.argv
 
 class myThread (threading.Thread):
     def __init__(self, motionProxy, portName):
@@ -195,19 +197,19 @@ def PerformIndividualBehaviour():
     print "Enter 1 to go to table"
     print "Enter 2 to go to longer side of table"
     print "Enter 3 to move table"
-    print "Enter 9 to initialise robots"
+    print "Enter 9 to initialise robots .."
     inputSubChoice = raw_input("Enter your choice: ")
             
-    #Initialise in all cases
-    Logger.Log("MOVE FIRST NAO") 
-    portName1 = 'port1'
-    motionProxy1 = InitialiseNao.InitialiseFirstNao()
-    print "Initialise first nao"
+    # #Initialise in all cases
+    # Logger.Log("MOVE FIRST NAO") 
+    # portName1 = 'port1'
+    # motionProxy1 = InitialiseNao.InitialiseFirstNao()
+    # print "Initialise first nao"
 
-    Logger.Log("MOVE SECOND NAO")    
-    portName2 = 'port2'
-    motionProxy2 = InitialiseNao.InitialiseSecondNao()
-    print "Initialise second nao"
+    # Logger.Log("MOVE SECOND NAO")    
+    # portName2 = 'port2'
+    # motionProxy2 = InitialiseNao.InitialiseSecondNao()
+    # print "Initialise second nao"
 
 
     if ("0" in inputSubChoice):
@@ -249,15 +251,24 @@ def PerformIndividualBehaviour():
         t4 = threading.Thread(target=moveTable2.MoveTableDef, args=(motionProxy2, 0, -1, 0))
         t4.start()
     elif ("9" in inputSubChoice):
-        Logger.Log("MOVE FIRST NAO") 
-        portName1 = 'port1'
-        motionProxy1 = InitialiseNao.InitialiseFirstNao()
-        print "Initialise first nao"
 
-        Logger.Log("MOVE SECOND NAO")    
-        portName2 = 'port2'
-        motionProxy2 = InitialiseNao.InitialiseSecondNao()
-        print "Initialise second nao"
+        initNao = InitialiseNaoRobot.InitialiseNaoRobot()
+        print "correct place"
+        initNao.InitialiseNao(config.ipAddress, config.ports['port1'])
+
+        initNao2 = InitialiseNaoRobot.InitialiseNaoRobot()
+        initNao2.InitialiseNao(config.ipAddress, config.ports['port2'])
+        # Logger.Log("MOVE FIRST NAO") 
+        # portName1 = 'port1'
+        # motionProxy1 = InitialiseNao.InitialiseFirstNao()
+        # print "Initialise first nao"
+
+        # Logger.Log("MOVE SECOND NAO")    
+        # portName2 = 'port2'
+        # motionProxy2 = InitialiseNao.InitialiseSecondNao()
+        # print "Initialise second nao"
+
+
         
 
 
