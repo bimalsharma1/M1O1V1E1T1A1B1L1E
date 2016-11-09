@@ -1,14 +1,17 @@
 import BehaviourMoveToCornerOfObject
 import BehaviourAlignToLongerSideOfObject
 import Logger
+from Utils import InitialiseNaoRobot
 
 class GoToTable(object):
     """description of class"""
-    def GoToTable(self, motionProxy,portName):
+    def __init__(self, InitialiseNaoRobot):
+        InitialiseNaoRobot = InitialiseNaoRobot
+    def GoToTable(self):
         print "Go to table"
         Logger.Log("STARTING GoToTable")
-        BehaviourMoveToCornerOfObject.behaviourMoveToCornerOfObject(motionProxy, portName)
-        BehaviourAlignToLongerSideOfObject.behaviourAlignToLongerSideOfObject(motionProxy, portName)   
+        BehaviourMoveToCornerOfObject.behaviourMoveToCornerOfObject(InitialiseNaoRobot)
+        BehaviourAlignToLongerSideOfObject.behaviourAlignToLongerSideOfObject(InitialiseNaoRobot)   
          #document the pre AND post conditions
 
 

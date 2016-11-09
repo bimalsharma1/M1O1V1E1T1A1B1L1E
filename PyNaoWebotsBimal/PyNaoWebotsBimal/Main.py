@@ -45,7 +45,7 @@ import threading
 import thread
 import time
 import BehaviourMoveToTopCornerOfObject
-from Utils import InitialiseNaoRobot
+from Utils import InitialiseNaoRobot 
 from Queue import Queue
 exitFlag = 0
 print sys.argv
@@ -73,8 +73,14 @@ def main():
         inputChoice = raw_input("Enter your choice: ")
 
         if ("0" in inputChoice):
-            moveTableWithTwoRobots = MoveTableMain.MoveTableMain()
-            moveTableWithTwoRobots.Main()
+            firstNao = MoveTableMain.MoveTableMain()
+            secondNao = MoveTableMain.MoveTableMain()
+            t0 = threading.Thread(target=firstNao.Main)   
+            t0.start()
+            t1 = threading.Thread(target=secondNao.Main)
+            t1.start()
+            print "start"
+
         if ("1" in inputChoice):
             PerformIndividualBehaviour()
             
@@ -199,38 +205,32 @@ def PerformIndividualBehaviour():
     print "Enter 3 to move table"
     print "Enter 9 to initialise robots .."
     inputSubChoice = raw_input("Enter your choice: ")
-            
-    # #Initialise in all cases
-    # Logger.Log("MOVE FIRST NAO") 
-    # portName1 = 'port1'
-    # motionProxy1 = InitialiseNao.InitialiseFirstNao()
-    # print "Initialise first nao"
 
-    # Logger.Log("MOVE SECOND NAO")    
-    # portName2 = 'port2'
-    # motionProxy2 = InitialiseNao.InitialiseSecondNao()
-    # print "Initialise second nao"
+    initNao1 = InitialiseNaoRobot.InitialiseNaoRobot("port1")
+    initNao2 = InitialiseNaoRobot.InitialiseNaoRobot("port2")
 
 
     if ("0" in inputSubChoice):
-        lookForTable1 = LookForTable.LookForTable() 
+        lookForTable1 = LookForTable.LookForTable(initNao1.camProxy) 
         # lookForTable1.LookForTable(motionProxy1, portName1)
         # #second Nao looks for table
-        lookForTable2 = LookForTable.LookForTable() 
+        lookForTable2 = LookForTable.LookForTable(initNao2.camProxy) 
         # lookForTable2.LookForTable(motionProxy2, portName2)
-
-        t0 = threading.Thread(target=lookForTable1.LookForTable, args=(motionProxy1, portName1))    
+        motionProxy1 = initNao1.motionProxy # InitialiseNaoRobot.InitialiseNaoRobot.motionProxy
+        portName1 = 'port1'
+        print "thread start a"
+        t0 = threading.Thread(target=LookForTable1.LookForTable, args=(initNao1.camProxy))    
         t0.start()
         t0.join()
 
-        t1 = threading.Thread(target=lookForTable2.LookForTable, args=(motionProxy2, portName2))
+        motionProxy2 = initNao2.motionProxy# InitialiseNaoRobot.InitialiseNaoRobot.motionProxy
+        portName2 = 'port2'
+        t1 = threading.Thread(target=LookForTable2.LookForTable, args=(initNao2.camProxy))
         t1.start()
         t1.join()#for concurrency
     elif ("1" in inputSubChoice):
         goToTable1 = GoToTable.GoToTable()
         goToTable2 = GoToTable.GoToTable()
-
-        print "before go to tabkle threaD"
         t = threading.Thread(target=goToTable1.GoToTable, args=(motionProxy1, portName1))    
         t.start()
 
@@ -251,44 +251,8 @@ def PerformIndividualBehaviour():
         t4 = threading.Thread(target=moveTable2.MoveTableDef, args=(motionProxy2, 0, -1, 0))
         t4.start()
     elif ("9" in inputSubChoice):
-
-        initNao = InitialiseNaoRobot.InitialiseNaoRobot()
-        print "correct place"
-        initNao.InitialiseNao(config.ipAddress, config.ports['port1'])
-
-        initNao2 = InitialiseNaoRobot.InitialiseNaoRobot()
-        initNao2.InitialiseNao(config.ipAddress, config.ports['port2'])
-        # Logger.Log("MOVE FIRST NAO") 
-        # portName1 = 'port1'
-        # motionProxy1 = InitialiseNao.InitialiseFirstNao()
-        # print "Initialise first nao"
-
-        # Logger.Log("MOVE SECOND NAO")    
-        # portName2 = 'port2'
-        # motionProxy2 = InitialiseNao.InitialiseSecondNao()
-        # print "Initialise second nao"
-
-
-        
-
-
-
-    # moveTowardObjectOfInterest.moveTowardObjectOfInterest,(motionProxy1, 10)
-    #try:
-    #    thread.start_new_thread(moveTowardObjectOfInterest.moveTowardObjectOfInterest,(motionProxy, 10))
-    #    thread.start_new_thread(moveTowardObjectOfInterest.moveTowardObjectOfInterest,(motionProxy1, 10))
-    #except:
-    #    print "error with threading"
-    #InitialiseHeadAndShoulders.InitialiseHeadAndShoulders(motionProxy,motionProxy1)
-      ## voice text to speech
-    #IP = "127.0.0.1"
-    #tts = ALProxy("ALTextToSpeech", IP, 9559)
-    ## Example: Sends a string to the text-to-speech module
-    #print "start speaking"
-    #tts.say("Hello Ishaan, I am Nao the  robot, how are you!")
-    #print "stop speaking"
-    #time.sleep(2)
-  
+        initNao = InitialiseNaoRobot.InitialiseNaoRobot("port1")
+        initNao2 = InitialiseNaoRobot.InitialiseNaoRobot("port2")
 
 if __name__ == "__main__":
     main()

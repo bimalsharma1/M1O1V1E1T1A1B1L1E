@@ -16,7 +16,7 @@ import Logger
 import Helper
 import math
 
-def behaviourAlignToLongerSideOfObject(motionProxy, portName): 
+def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot): 
         #InitialiseHeadAndShoulders.InitialiseHeadAndShoulders(motionProxy,motionProxy1)
         lastKnownPositionOfObject = ""
         filenameTopCamera = "naoImageTopCamera"
@@ -48,11 +48,11 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
         #print angleToTurn,distanceToWalk,longerSide
         try:
             #Look LEFT and find length
-            Helper.HeadInitialise(motionProxy)
-            Helper.HeadPitchMove(motionProxy, math.radians(29)) # put blocking call here
-            Helper.HeadYawMove(motionProxy,math.radians(turnAngle))  #+ve value to look left
+            Helper.HeadInitialise(InitialiseNaoRobot.motionProxy)
+            Helper.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(29)) # put blocking call here
+            Helper.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(turnAngle))  #+ve value to look left
             time.sleep(2)
-            imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
+            imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)            
             hypotLeft = math.hypot(abs(abs(contourList[0][0]) - abs(contourList[3][0])), abs(abs(contourList[0][1]) - abs(contourList[3][1])))
             Logger.Log(str(contourList))
@@ -65,8 +65,8 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
         try:
             # Look RIGHT and find length
             #Helper.HeadInitialise(motionProxy)
-            Helper.HeadYawMove(motionProxy,math.radians(-1 * turnAngle))  #+ve value to look left,   
-            imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
+            Helper.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(-1 * turnAngle))  #+ve value to look left,   
+            imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
             time.sleep(2)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)            
             hypotRight = math.hypot(abs(abs(contourList[2][0]) - abs(contourList[3][0])), abs(abs(contourList[2][1]) - abs(contourList[3][1])))
@@ -76,19 +76,19 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
             hypotRight=0
             print "hypot right is 0"
         
-        Helper.HeadInitialise(motionProxy)
+        Helper.HeadInitialise(InitialiseNaoRobot.motionProxy)
         time.sleep(2)
         #walk ahead closer to table
-        WalkToPosition.WalkToPosition(motionProxy,0.5, 0, 0) #+ve 45 degrees turn
+        WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy,0.5, 0, 0) #+ve 45 degrees turn
         time.sleep(3)
         
         if (hypotLeft > hypotRight and config.InitialLongerSideOfTable=="LEFT"): # if diff is less than 50 px then it is not accurate
             print "left side is longer"
             Logger.Log("left side is longer")
             leftLonger = True
-            WalkToPosition.WalkToPosition(motionProxy, 0,0, -math.radians(85)) #+ve 45 degrees turn
+            WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy, 0,0, -math.radians(85)) #+ve 45 degrees turn
             time.sleep(4)
-            WalkToPosition.WalkToPosition(motionProxy, 0,Y, 0) #+ve 45 degrees turn
+            WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy, 0,Y, 0) #+ve 45 degrees turn
             time.sleep(3)
             #WalkToPosition.WalkToPosition(motionProxy,0, Y, 0) #+ve 45 degrees turn
         else:
@@ -97,21 +97,21 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
             rightLonger = True
             #WalkToPosition.WalkToPosition(motionProxy,0, 0, math.radians(75)) #-ve 45 degrees turn 
             Y = -1 * Y
-            WalkToPosition.WalkToPosition(motionProxy,0, 0, math.radians(85)) #-ve 45 degrees turn 
+            WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy,0, 0, math.radians(85)) #-ve 45 degrees turn 
             time.sleep(4)
-            WalkToPosition.WalkToPosition(motionProxy,0, Y, 0) #-ve 45 degrees turn 
+            WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0) #-ve 45 degrees turn 
             time.sleep(3)            
         #ALIGN to centre using top camera
          #aligned
         aligned = False   
         print "LOOK LEFT THEN RIGHT< FIND DIFF AND ADJUST"     
         #LEFT
-        Helper.HeadPitchMove(motionProxy, math.radians(29))
+        Helper.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(29))
         while not (aligned):
             print "Aligning nao to object for"
-            Helper.HeadYawMove(motionProxy,math.radians(-turnAngle))  #-ve value to look left,     0.5 then 0.7
+            Helper.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(-turnAngle))  #-ve value to look left,     0.5 then 0.7
             time.sleep(2)
-            imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
+            imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
             xCentrePostion, yCentrePosition, maxPossibleAreaOfBottomCameraCovered, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)    
             print "array contour list LEFT"
             if not contourList:
@@ -130,9 +130,9 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
                 botLeft = 0
 
             time.sleep(2)
-            Helper.HeadYawMove(motionProxy,math.radians(turnAngle))  #+ve value to look right,     
+            Helper.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(turnAngle))  #+ve value to look right,     
             time.sleep(2)
-            imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
+            imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.portName], filenameTopCamera)
             xCentrePostion, yCentrePosition, maxPossibleAreaOfBottomCameraCovered, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)    
             print "array contour list RIGHT"
             
@@ -174,7 +174,7 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
             Logger.Log(str(rightMostX))
             print leftMostX , rightMostX
             if (leftMostX==0 and rightMostX==0):
-                WalkToPosition.WalkToPosition(motionProxy,0.4, 0, 0) 
+                WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy,0.4, 0, 0) 
             else:
                 #if (abs(leftMostX - rightMostX) < 5):
                 #    aligned = True
@@ -188,20 +188,20 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
                 if (leftMostX < rightMostX):
                     #check if left or righmost point is very close to edge
                     if (config.InitialLongerSideOfTable=="LEFT"):
-                        WalkToPosition.WalkToPosition(motionProxy,0, Y, 0)
+                        WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0)
                         aligned = True
                     else:
-                        WalkToPosition.WalkToPosition(motionProxy,0, -Y, 0) #((leftMostX - rightMostX)/contourList[4][1]) * X, 0)  correctionAngle
+                        WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy,0, -Y, 0) #((leftMostX - rightMostX)/contourList[4][1]) * X, 0)  correctionAngle
                         Logger.Log("too much to left: "+str(leftMostX - rightMostX))
                         print "too much space to left WALKING RIGHT: "+str(leftMostX - rightMostX)
                         print "LEFT MOST AND RIGHT MOST POINT ARE: "
                         print leftMostX, rightMostX
                 else:
                     if (config.InitialLongerSideOfTable=="RIGHT"):
-                        WalkToPosition.WalkToPosition(motionProxy,0, -Y, 0)
+                        WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy,0, -Y, 0)
                         aligned = True
                     else:
-                        WalkToPosition.WalkToPosition(motionProxy,0, Y, 0) #-((rightMostX - leftMostX)/contourList[4][1]) * X, 0)
+                        WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0) #-((rightMostX - leftMostX)/contourList[4][1]) * X, 0)
                         Logger.Log("too much to right: "+str(leftMostX - rightMostX))
                         print "too much space to right WALKING LEFT: "+str(leftMostX - rightMostX)
                         print "LEFT MOST AND RIGHT MOST POINT ARE: "
@@ -209,7 +209,7 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
             time.sleep(3)
 
         time.sleep(2)
-        Helper.HeadInitialise(motionProxy)
+        Helper.HeadInitialise(InitialiseNaoRobot.motionProxy)
         print "KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM"
 
 
@@ -224,7 +224,7 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
             print "KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM"
             Logger.Log( "KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM")
             time.sleep(2)
-            imB = vision_getandsaveimage.showNaoImageBottomCam(config.ipAddress, config.ports[portName], filenameBottomCamera)
+            imB = vision_getandsaveimage.showNaoImageBottomCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.portName], filenameBottomCamera)
             xCentrePostion, yCentrePosition, maxPossibleAreaOfBottomCameraCovered, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameBottomCamera + ".png", "", imB)  
             
 
@@ -233,7 +233,7 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
                 if not contourList:
                     print "CANNOT see object from bottom cam so walk ahead"
                     Logger.Log("countour list is empty")
-                    WalkToPosition.WalkToPosition(motionProxy,0.5, 0, 0)
+                    WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy,0.5, 0, 0)
                 else:
                     Logger.Log("Longer side is ")
                     Logger.Log(str(config.InitialLongerSideOfTable))
@@ -244,14 +244,14 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
                         #calculate angle to turn to correct
                         if (contourList[2][0]< 300): # correct angle if pic only seen to the right
                             adjustAngle = 0.5
-                            WalkToPosition.WalkToPositionWaitUntilWalkFinished(motionProxy,0, 0, adjustAngle)
-                        WalkToPosition.WalkToPositionWaitUntilWalkFinished(motionProxy,0, -0.2, 0)
+                            WalkToPosition.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy,0, 0, adjustAngle)
+                        WalkToPosition.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy,0, -0.2, 0)
                         time.sleep(2)
                     elif(config.InitialLongerSideOfTable=="LEFT" and contourList[2][0] < 630 and contourList[3][1] < maxClosestPoint):
                         if (contourList[0][0]> 300): # correct angle if pic only seen to the right
                             adjustAngle = -0.5
-                            WalkToPosition.WalkToPositionWaitUntilWalkFinished(motionProxy,0, 0, adjustAngle)
-                        WalkToPosition.WalkToPositionWaitUntilWalkFinished(motionProxy,0, 0.2, 0)
+                            WalkToPosition.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy,0, 0, adjustAngle)
+                        WalkToPosition.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy,0, 0.2, 0)
 
                     # if (contourList[3][1] >= maxClosestPoint):  # ( (contourList[4][1] - bottomMostPoint[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
                     if (bottomMostPoint[1] >= maxClosestPoint):  # ( (contourList[4][1] - bottomMostPoint[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
@@ -270,14 +270,14 @@ def behaviourAlignToLongerSideOfObject(motionProxy, portName):
                     Logger.Log("bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1]))
 
             except Exception as e:
-                WalkToPosition.WalkToPosition(motionProxy,0.2, 0, 0)
+                WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy,0.2, 0, 0)
                 #print e
 
-            Helper.HeadPitchMove(motionProxy, math.radians(maxHeadPitchAngle))
+            Helper.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(maxHeadPitchAngle))
             time.sleep(2)
 
         print "CLOSE ENOUGH TO TABLE NOW"
 
         #look straight    
-        Helper.HeadInitialise(motionProxy)
+        Helper.HeadInitialise(InitialiseNaoRobot.motionProxy)
 

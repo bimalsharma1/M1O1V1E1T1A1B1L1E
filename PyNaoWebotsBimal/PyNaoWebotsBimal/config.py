@@ -11,9 +11,12 @@ ports = dict(
     )
 ipAddress = '127.0.0.1'
 
+#variables set for camera
+resolution = 2    # VGA
+colorSpace = 11   # RGB
+
 imageWidth = 640
 imageHeight = 480
 
 InitialLongerSideOfTable = ""
-
 Leader = ""   # config is updated witht he leader name

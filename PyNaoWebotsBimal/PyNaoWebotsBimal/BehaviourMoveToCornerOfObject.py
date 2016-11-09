@@ -14,7 +14,7 @@ import os
 import DetectCornersFast
 import Logger
 
-def behaviourMoveToCornerOfObject(motionProxy,portName):
+def behaviourMoveToCornerOfObject(InitialiseNaoRobot):
         lastKnownPositionOfObject = ""
         filenameTopCamera = "naoImageTopCamera"
         filenameBottomCamera = "naoImageBottomCamera"
@@ -41,7 +41,8 @@ def behaviourMoveToCornerOfObject(motionProxy,portName):
             bottomMostPoint=[0,0]
 
             #use top camera only if bottom camera cannot see ...
-            imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
+            imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
+            # imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "",imT)   
             print "bottommost point"
             print bottomMostPoint[1]
