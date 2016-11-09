@@ -21,24 +21,18 @@ class MoveTableMain(object):
         print "MOVE FIRST NAO"
 
         initNao1 = InitialiseNaoRobot.InitialiseNaoRobot(self, "port1")
-        initNao2 = InitialiseNaoRobot.InitialiseNaoRobot(self, "port2")
-
+        # initNao2 = InitialiseNaoRobot.InitialiseNaoRobot("port2")
 
         lookForTable1 = LookForTable.LookForTable(initNao1) 
-        lookForTable2 = LookForTable.LookForTable(initNao2) 
-        # lookForTable1.LookForTable()
-        # lookForTable2.LookForTable()
+        # lookForTable2 = LookForTable.LookForTable(initNao2) 
 
-        goToTable1 = GoToTable.GoToTable()
-        goToTable2 = GoToTable.GoToTable()
-        goToTable1.GoToTable(initNao1.motionProxy, initNao1.portName)
-        goToTable2.GoToTable(initNao2.motionProxy, initNao2.portName)
+        goToTable1 = GoToTable.GoToTable(initNao1)
+        # goToTable2 = GoToTable.GoToTable(initNao2)
 
-
-        moveTable1 = MoveTable.MoveTable()
-        moveTable2 = MoveTable.MoveTable()
-        moveTable1.MoveTableDef(self,initNao1, 0, 1, 0)
-        moveTable2.MoveTableDef(self,initNao2, 0, -1, 0)
+        moveTable1 = MoveTable.MoveTable(initNao1, 0, 1, 0)
+        # moveTable2 = MoveTable.MoveTable(initNao2, 0, -1, 0)
+        # moveTable1.MoveTableDef(self,initNao1, 0, 1, 0)
+        # moveTable2.MoveTableDef(self,initNao2, 0, -1, 0)
         #goToTable.GoToTable(motionProxy, portName1)
         # print "before go to tabkle threaD"
         # t = threading.Thread(target=goToTable1.GoToTable, args=(motionProxy1, portName1))    

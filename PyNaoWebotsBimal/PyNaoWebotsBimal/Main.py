@@ -74,12 +74,13 @@ def main():
 
         if ("0" in inputChoice):
             firstNao = MoveTableMain.MoveTableMain()
-            secondNao = MoveTableMain.MoveTableMain()
-            t0 = threading.Thread(target=firstNao.Main)   
-            t0.start()
-            t1 = threading.Thread(target=secondNao.Main)
-            t1.start()
-            print "start"
+            firstNao.Main()
+            # secondNao = MoveTableMain.MoveTableMain()
+            # t0 = threading.Thread(target=firstNao.Main)   
+            # t0.start()
+            # t1 = threading.Thread(target=secondNao.Main)
+            # t1.start()
+            # print "start"
 
         if ("1" in inputChoice):
             PerformIndividualBehaviour()

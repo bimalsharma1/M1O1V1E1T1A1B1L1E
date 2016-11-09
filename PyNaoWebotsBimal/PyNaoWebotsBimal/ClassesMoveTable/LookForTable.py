@@ -9,7 +9,8 @@ class LookForTable:
     def LookForTable(self): 
         #inherit common vars
         Logger.Log("STARTING LOOKFORTABLE")
+        print "STARTING LOOKFORTABLE"
         filenameTopCamera = "naoImageTopCamera"
         filenameBottomCamera = "naoImageBottomCamera"
         xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound, bottomMostPoint = findObjectOfInterest.findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera,filenameBottomCamera)
-
+        print "ENDING LOOKFORTABLE"

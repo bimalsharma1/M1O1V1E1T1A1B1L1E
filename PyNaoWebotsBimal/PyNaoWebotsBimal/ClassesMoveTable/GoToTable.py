@@ -3,7 +3,7 @@ import BehaviourAlignToLongerSideOfObject
 import Logger
 from Utils import InitialiseNaoRobot
 
-class GoToTable(object):
+class GoToTable():
     """description of class"""
     def __init__(self, InitialiseNaoRobot):
         InitialiseNaoRobot = InitialiseNaoRobot
