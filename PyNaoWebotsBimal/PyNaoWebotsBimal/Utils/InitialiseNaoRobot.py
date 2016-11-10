@@ -13,7 +13,6 @@ import config
 import comms9557
 
 class InitialiseNaoRobot:
-    
     motionProxy = None
     postureProxy = None
     camProxy = camProxy = None
@@ -21,26 +20,41 @@ class InitialiseNaoRobot:
     topVideoClient = None
     bottomVideoClient = None
     portName = None
+    # motionProxy = ALProxy("ALMotion", config.ipAddress, config.ports['port1'])
+    # postureProxy = ALProxy("ALRobotPosture", config.ipAddress, config.ports['port1']) 
+    # camProxy = camProxy = ALProxy("ALVideoDevice", config.ipAddress, config.ports['port1'])
+    # tts = ALProxy("ALTextToSpeech", config.ipAddress, config.ports['port1'])
+    # topVideoClient = camProxy.subscribeCamera("python_client",vision_definitions.kTopCamera, config.resolution, config.colorSpace, 5)
+    # bottomVideoClient = camProxy.subscribeCamera("python_client",vision_definitions.kBottomCamera , config.resolution, config.colorSpace, 5)
+    # portName = ""
 
     @staticmethod
-    def __init__(self, port):
-        motionProxy = ALProxy("ALMotion", config.ipAddress, config.ports[port])
-        postureProxy = ALProxy("ALRobotPosture", config.ipAddress, config.ports[port]) 
-        camProxy = camProxy = ALProxy("ALVideoDevice", config.ipAddress, config.ports[port])
-        tts = ALProxy("ALTextToSpeech", config.ipAddress, config.ports[port])
-        topVideoClient = camProxy.subscribeCamera("python_client",vision_definitions.kTopCamera, config.resolution, config.colorSpace, 5)
-        bottomVideoClient = camProxy.subscribeCamera("python_client",vision_definitions.kBottomCamera , config.resolution, config.colorSpace, 5)
-        portName = port
+    def __init__(port):
+        # print "start initialise"
+        # print port
+        # print config.ipAddress
+        # print config.ports[port]
+        InitialiseNaoRobot.motionProxy = ALProxy("ALMotion", config.ipAddress, config.ports[port])
+        InitialiseNaoRobot.postureProxy = ALProxy("ALRobotPosture", config.ipAddress, config.ports[port]) 
+        InitialiseNaoRobot.camProxy = camProxy = ALProxy("ALVideoDevice", config.ipAddress, config.ports[port])
+        InitialiseNaoRobot.tts = ALProxy("ALTextToSpeech", config.ipAddress, config.ports[port])
+        InitialiseNaoRobot.topVideoClient = camProxy.subscribeCamera("python_client",vision_definitions.kTopCamera, config.resolution, config.colorSpace, 5)
+        InitialiseNaoRobot.bottomVideoClient = camProxy.subscribeCamera("python_client",vision_definitions.kBottomCamera , config.resolution, config.colorSpace, 5)
+        InitialiseNaoRobot.portName = port
         
-        motionProxy.wakeUp()
-        motionProxy.moveInit()
-        motionProxy.setStiffnesses("Body", 1.0)
-        motionProxy.setMoveArmsEnabled(True, True)
-        motionProxy.post.moveTo(0.01, 0, 0)
-        motionProxy.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION", True]])
+    # @staticmethod 
+    def wakeUpRobot(self, port):
+        print "wake up robot"
+        self.motionProxy.wakeUp()
+        self.motionProxy.moveInit()
+        self.motionProxy.setStiffnesses("Body", 1.0)
+        self.motionProxy.setMoveArmsEnabled(True, True)
+        self.motionProxy.post.moveTo(0.01, 0, 0)
+        self.motionProxy.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION", True]])
         Helper.AddNao(config.ipAddress, config.ports[port])
         print config.ipAddress, config.ports[port]
         print "woken up"
+       
         time.sleep(3)
 
     def getMotionProxy(self):

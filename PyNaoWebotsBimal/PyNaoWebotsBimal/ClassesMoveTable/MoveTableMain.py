@@ -20,15 +20,20 @@ class MoveTableMain(object):
         Logger.Log("MOVE FIRST NAO") 
         print "MOVE FIRST NAO"
 
-        initNao1 = InitialiseNaoRobot.InitialiseNaoRobot(self, "port1")
+        initNao1 = InitialiseNaoRobot.InitialiseNaoRobot('port1')
+        initNao1.wakeUpRobot('port1')
+
         # initNao2 = InitialiseNaoRobot.InitialiseNaoRobot("port2")
 
+        print "look for table"
         lookForTable1 = LookForTable.LookForTable(initNao1) 
         # lookForTable2 = LookForTable.LookForTable(initNao2) 
 
+        print "go to table"
         goToTable1 = GoToTable.GoToTable(initNao1)
         # goToTable2 = GoToTable.GoToTable(initNao2)
 
+        print "move table"
         moveTable1 = MoveTable.MoveTable(initNao1, 0, 1, 0)
         # moveTable2 = MoveTable.MoveTable(initNao2, 0, -1, 0)
         # moveTable1.MoveTableDef(self,initNao1, 0, 1, 0)
