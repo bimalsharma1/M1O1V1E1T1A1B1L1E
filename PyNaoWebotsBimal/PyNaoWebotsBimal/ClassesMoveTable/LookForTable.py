@@ -4,9 +4,7 @@ from Utils import InitialiseNaoRobot
 
 class LookForTable:
     """description of class"""
-    def __init__(self, InitialiseNaoRobot):
-        InitialiseNaoRobot = InitialiseNaoRobot
-    def LookForTable(self): 
+    def LookForTable(self, InitialiseNaoRobot): 
         #inherit common vars
         Logger.Log("STARTING LOOKFORTABLE")
         print "STARTING LOOKFORTABLE"

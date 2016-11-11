@@ -13,6 +13,7 @@ import findObjectOfInterest
 import os
 import DetectCornersFast
 import Logger
+from Utils import ImageProcessing as ip
 
 def behaviourMoveToCornerOfObject(InitialiseNaoRobot):
         lastKnownPositionOfObject = ""
@@ -60,7 +61,7 @@ def behaviourMoveToCornerOfObject(InitialiseNaoRobot):
                 angleLists = [10.0*almath.TO_RAD]
                 timeLists  = [1.2]
                 isAbsolute = True
-                motionProxy.angleInterpolation(names, angleLists, timeLists, isAbsolute)
+                InitialiseNaoRobot.motionProxy.angleInterpolation(names, angleLists, timeLists, isAbsolute)
 
             if (bottomMostPoint[1] > 450): #was 430
                 objectInCentreScreen = True
@@ -121,7 +122,7 @@ def behaviourMoveToCornerOfObject(InitialiseNaoRobot):
             print "horizontal pixel position:  ", str(bottomMostPoint[0])
             Logger.Log("bottom most position:  ")
             Logger.Log( str(bottomMostPoint[0]))
-            WalkToPosition.WalkToPosition(motionProxy, X, 0, turnAngle)   
+            WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy, X, 0, turnAngle)   
             time.sleep(2)
             Logger.Log("ending behaviourMoveToCornerOfObject")
         

@@ -15,6 +15,7 @@ import DetectCornersFast
 import Logger
 import Helper
 import math
+from Utils import ImageProcessing as ip
 
 def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot): 
         #InitialiseHeadAndShoulders.InitialiseHeadAndShoulders(motionProxy,motionProxy1)

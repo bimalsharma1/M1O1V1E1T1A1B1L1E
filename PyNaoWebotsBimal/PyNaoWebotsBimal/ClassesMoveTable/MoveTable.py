@@ -5,9 +5,7 @@ import Logger
 from Utils import InitialiseNaoRobot
 
 class MoveTable:
-    def __init__(self, InitialiseNaoRobot, X, Y, Theta):
-        InitialiseNaoRobot = InitialiseNaoRobot
-    def MoveTableDef(self):
+    def MoveTableDef(self, InitialiseNaoRobot):
         print "in function"
         Logger.Log("STARTING MoveTable")
 
