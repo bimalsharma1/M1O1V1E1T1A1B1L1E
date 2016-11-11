@@ -7,13 +7,13 @@ import config
 import vision_getandsaveimage
 import DetectRedBlueYellowGrey
 import InitialiseHeadAndShoulders
-import WalkToPosition 
 import sys
 import findObjectOfInterest
 import os
 import DetectCornersFast
 import Logger
 import Helper
+import WalkToPosition
 import math
 from Utils import ImageProcessing as ip
 
@@ -53,7 +53,8 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
             Helper.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(29)) # put blocking call here
             Helper.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(turnAngle))  #+ve value to look left
             time.sleep(2)
-            imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
+            #imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
+            imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)            
             hypotLeft = math.hypot(abs(abs(contourList[0][0]) - abs(contourList[3][0])), abs(abs(contourList[0][1]) - abs(contourList[3][1])))
             Logger.Log(str(contourList))
@@ -67,7 +68,8 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
             # Look RIGHT and find length
             #Helper.HeadInitialise(motionProxy)
             Helper.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(-1 * turnAngle))  #+ve value to look left,   
-            imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
+            # imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
+            imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             time.sleep(2)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)            
             hypotRight = math.hypot(abs(abs(contourList[2][0]) - abs(contourList[3][0])), abs(abs(contourList[2][1]) - abs(contourList[3][1])))
@@ -112,7 +114,8 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
             print "Aligning nao to object for"
             Helper.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(-turnAngle))  #-ve value to look left,     0.5 then 0.7
             time.sleep(2)
-            imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
+            imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
+            # imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
             xCentrePostion, yCentrePosition, maxPossibleAreaOfBottomCameraCovered, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)    
             print "array contour list LEFT"
             if not contourList:
@@ -133,7 +136,8 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
             time.sleep(2)
             Helper.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(turnAngle))  #+ve value to look right,     
             time.sleep(2)
-            imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.portName], filenameTopCamera)
+            imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
+            # imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.portName], filenameTopCamera)
             xCentrePostion, yCentrePosition, maxPossibleAreaOfBottomCameraCovered, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)    
             print "array contour list RIGHT"
             
@@ -225,7 +229,8 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
             print "KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM"
             Logger.Log( "KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM")
             time.sleep(2)
-            imB = vision_getandsaveimage.showNaoImageBottomCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.portName], filenameBottomCamera)
+            imB = ip.getImage(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)
+            # imB = vision_getandsaveimage.showNaoImageBottomCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.portName], filenameBottomCamera)
             xCentrePostion, yCentrePosition, maxPossibleAreaOfBottomCameraCovered, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameBottomCamera + ".png", "", imB)  
             
 

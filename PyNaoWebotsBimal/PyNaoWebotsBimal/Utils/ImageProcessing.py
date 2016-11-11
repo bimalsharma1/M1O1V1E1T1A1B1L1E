@@ -38,13 +38,9 @@ def getImage(InitialiseNaoRobot, camera, FILENAME = None):
         # camProxy.unsubscribe(videoClient)
         time.sleep(1)
         # Get the image size and pixel array.
-        print "b"
         imageWidth = naoImage[0]
-        print "s"
         imageHeight = naoImage[1]
-        print "d"
         array = naoImage[6]
-        print "a"
         array = np.array(array)
         
         # Create a PIL Image from our pixel array.
