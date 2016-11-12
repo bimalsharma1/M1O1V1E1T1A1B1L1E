@@ -27,12 +27,14 @@ def HeadYawMove(motionProxy, angle): #get angle in degrees (+ve value to turn le
     times      = [1.0]
     isAbsolute = True
     motionProxy.angleInterpolation(names, angle, times, isAbsolute)
+    motionProxy.waitUntilMoveIsFinished()
 
 def HeadPitchMove(motionProxy, angle): #get angle in degrees (+ve value to look down, -ve to look up)
     names = "HeadPitch"   #looking up and down
     times      = [1.0]
     isAbsolute = True
     motionProxy.angleInterpolation(names, angle, times, isAbsolute)
+    motionProxy.waitUntilMoveIsFinished()
 
 def HeadInitialise(motionProxy): #straighten up head
     names = "HeadPitch"   #looking up and down
@@ -56,6 +58,7 @@ def LiftWithElbowAndShouldersPutObjectDown(motionProxy):
     Arm = [90,  90]  #40
     Arm = [ x * motion.TO_RAD for x in Arm]
     motionProxy.angleInterpolationWithSpeed(JointNames, Arm, pFractionMaxSpeed)
+    motionProxy.waitUntilMoveIsFinished()
 
 
 def LiftWithElbowAndShoulders(motionProxy):
@@ -69,11 +72,12 @@ def LiftWithElbowAndShoulders(motionProxy):
     Arm = [30,  30]  #-35
     Arm = [ x * motion.TO_RAD for x in Arm]
     motionProxy.angleInterpolationWithSpeed(JointNames, Arm, pFractionMaxSpeed)
+    motionProxy.waitUntilMoveIsFinished()
 
 def WalkToPositionWithHandsUp(motionProxy, X, Y, Theta):
     motionProxy.setMoveArmsEnabled(False, False)
     motionProxy.post.moveTo(X, Y, Theta)
-    #motionProxy.waitUntilMoveIsFinished()
+    motionProxy.waitUntilMoveIsFinished()
 
     
 
@@ -87,7 +91,6 @@ def WalkToPosition(motionProxy, X, Y, Theta):
 def WalkToPositionWaitUntilWalkFinished(motionProxy, X, Y, Theta):
     motionProxy.post.moveTo(X, Y, Theta)
     # wait is useful because with post moveTo is not blocking function
-
     motionProxy.waitUntilMoveIsFinished()
     
     #JointNames = ["LElbowYaw", "RElbowYaw"]
