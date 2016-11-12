@@ -14,30 +14,36 @@ import thread
 import time
 import BehaviourMoveToTopCornerOfObject
 
-class MoveTableMain(object):
+class MoveTableMain:
     """description of class"""
-    def Main(self):
-        Logger.Log("MOVE FIRST NAO") 
-        print "MOVE FIRST NAO"
-
-        initNao1 = InitialiseNaoRobot.InitialiseNaoRobot('port1')
-        initNao1.wakeUpRobot('port1')
-
-        # initNao2 = InitialiseNaoRobot.InitialiseNaoRobot("port2")
+    def Main(self, port):
+        Logger.Log("MOVE  NAO") 
+        print "MOVE  NAO"
+        initNao = InitialiseNaoRobot.InitialiseNaoRobot(port)
+        initNao.wakeUpRobot(port)
 
         print "look for table"
-        lookForTable1 = LookForTable.LookForTable() 
-        lookForTable1.LookForTable(initNao1)
-        # lookForTable2 = LookForTable.LookForTable(initNao2) 
+        lookForTable = LookForTable.LookForTable() 
+        lookForTable.LookForTable(initNao)
 
         print "go to table"
-        goToTable1 = GoToTable.GoToTable()
-        goToTable1.GoToTable(initNao1)
-        # goToTable2 = GoToTable.GoToTable(initNao2)
+        goToTable = GoToTable.GoToTable()
+        goToTable.GoToTable(initNao)
 
         print "move table"
-        moveTable1 = MoveTable.MoveTable()
-        moveTable1.MoveTableDef(initNao1, 0, 1, 0)
+        moveTable = MoveTable.MoveTable()
+        moveTable.MoveTableDef(initNao, 0, 1, 0)
+
+
+
+
+
+
+
+
+
+
+        
         # moveTable2 = MoveTable.MoveTable(initNao2, 0, -1, 0)
         # moveTable1.MoveTableDef(self,initNao1, 0, 1, 0)
         # moveTable2.MoveTableDef(self,initNao2, 0, -1, 0)

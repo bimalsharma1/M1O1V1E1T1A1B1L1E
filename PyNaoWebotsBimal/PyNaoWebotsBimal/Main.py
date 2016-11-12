@@ -49,16 +49,7 @@ from Utils import InitialiseNaoRobot
 from Queue import Queue
 exitFlag = 0
 print sys.argv
-
-class myThread (threading.Thread):
-    def __init__(self, motionProxy, portName):
-        threading.Thread.__init__(self)
-        self.motionProxy = motionProxy
-        self.portName = portName
-        print "declare class my thread"
-    def run(self):
-        moveTowardObjectOfInterest.moveTowardObjectOfInterest(self.motionProxy, self.portName)
-        print "in main class move to ward object of interest"
+from multiprocessing import Process, Value, Array
 
 def main():  
 
@@ -73,18 +64,21 @@ def main():
         inputChoice = raw_input("Enter your choice: ")
 
         if ("0" in inputChoice):
-            firstNao = MoveTableMain.MoveTableMain()
-            firstNao.Main()
-            # secondNao = MoveTableMain.MoveTableMain()
-            # t0 = threading.Thread(target=firstNao.Main)   
+
+            p0 = Process(target=MoveTableMain.MoveTableMain().Main, args=('port1',))
+            p0.start()
+            p1 = Process(target=MoveTableMain.MoveTableMain().Main, args=('port2',))
+            p1.start()
+            p0.join()
+            p1.join()
+            # t0 = threading.Thread(target=MoveTableMain.MoveTableMain().Main, args=('port1',))   
             # t0.start()
-            # t1 = threading.Thread(target=secondNao.Main)
+            # t1 = threading.Thread(target=MoveTableMain.MoveTableMain().Main, args=('port2',))
             # t1.start()
             # print "start"
 
         if ("1" in inputChoice):
             PerformIndividualBehaviour()
-            
 
         elif ("5" in inputChoice):
             Logger.Log("MOVE FIRST NAO") 
