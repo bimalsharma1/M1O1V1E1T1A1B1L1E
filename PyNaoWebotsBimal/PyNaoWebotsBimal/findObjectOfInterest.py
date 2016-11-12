@@ -106,7 +106,7 @@ def findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                     cameraPosition = 'TOP'
                     print "top camera values"
                     print xCentrePostion, yCentrePosition, objectFoundOnBottomCamera
-                    h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead)*1.5)
+                    h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead)*1.5)
                     time.sleep(3)
                     #keep turning until centre of table is mid way
                     # imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)

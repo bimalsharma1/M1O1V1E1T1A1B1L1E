@@ -13528,3 +13528,2942 @@ November 12, 2016 16:28:22:297000	bottom most position:
 November 12, 2016 16:28:22:300000	356
 November 12, 2016 16:28:23:879000	ending behaviourMoveToCornerOfObject
 November 12, 2016 16:28:24:319000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:56:25:954000	MOVE  NAO
+November 12, 2016 20:56:26:032000	MOVE  NAO
+November 12, 2016 20:56:28:269000	THE LEADER IS: 
+November 12, 2016 20:56:28:284000	127.0.0.1:9559
+November 12, 2016 20:56:28:499000	THE LEADER IS: 
+November 12, 2016 20:56:28:567000	127.0.0.1:9557
+November 12, 2016 20:56:31:361000	STARTING LOOKFORTABLE
+November 12, 2016 20:56:31:759000	STARTING LOOKFORTABLE
+November 12, 2016 20:56:34:744000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:56:34:751000	(244, 207)
+November 12, 2016 20:56:34:759000	207
+November 12, 2016 20:56:34:769000	[244, 207]
+November 12, 2016 20:56:34:782000	207
+November 12, 2016 20:56:34:785000	(244, 207)
+November 12, 2016 20:56:34:789000	[(244, 204), (244, 204), (247, 207), (244, 207), [640, 480]]
+November 12, 2016 20:56:34:793000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:56:34:800000	(368, 351)
+November 12, 2016 20:56:34:802000	351
+November 12, 2016 20:56:34:807000	[368, 351]
+November 12, 2016 20:56:34:809000	351
+November 12, 2016 20:56:34:811000	(368, 351)
+November 12, 2016 20:56:34:815000	[(303, 318), (543, 299), (638, 335), (368, 351), [640, 480]]
+November 12, 2016 20:56:34:947000	initial top cam
+November 12, 2016 20:56:34:954000	initial top cam
+November 12, 2016 20:56:37:013000	object found
+November 12, 2016 20:56:37:026000	object found
+November 12, 2016 20:56:37:044000	STARTING GoToTable
+November 12, 2016 20:56:37:051000	STARTING behaviourMoveToCornerOfObject
+November 12, 2016 20:56:37:259000	STARTING GoToTable
+November 12, 2016 20:56:37:318000	STARTING behaviourMoveToCornerOfObject
+November 12, 2016 20:56:39:507000	bottommost point: 0
+November 12, 2016 20:56:39:591000	turn angle:  0.9
+November 12, 2016 20:56:39:692000	bottom most position:  
+November 12, 2016 20:56:39:695000	0
+November 12, 2016 20:56:39:798000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:56:39:816000	(364, 351)
+November 12, 2016 20:56:39:818000	351
+November 12, 2016 20:56:39:820000	[364, 351]
+November 12, 2016 20:56:39:822000	351
+November 12, 2016 20:56:39:824000	(364, 351)
+November 12, 2016 20:56:39:826000	[(303, 317), (507, 299), (638, 331), (364, 351), [640, 480]]
+November 12, 2016 20:56:39:868000	bottommost point: 351
+November 12, 2016 20:56:39:937000	move head down by x degrees
+November 12, 2016 20:56:41:338000	turn angle:  -0.12375
+November 12, 2016 20:56:41:344000	bottom most position:  
+November 12, 2016 20:56:41:347000	364
+November 12, 2016 20:56:41:708000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:56:43:379000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:56:43:588000	bottommost point: 0
+November 12, 2016 20:56:43:610000	turn angle:  0.9
+November 12, 2016 20:56:43:623000	bottom most position:  
+November 12, 2016 20:56:43:627000	0
+November 12, 2016 20:56:44:827000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:56:44:838000	(364, 351)
+November 12, 2016 20:56:44:842000	351
+November 12, 2016 20:56:44:852000	[364, 351]
+November 12, 2016 20:56:44:856000	351
+November 12, 2016 20:56:44:860000	(364, 351)
+November 12, 2016 20:56:44:869000	[(303, 317), (507, 299), (638, 331), (364, 351), [640, 480]]
+November 12, 2016 20:56:44:999000	bottommost point: 351
+November 12, 2016 20:56:45:027000	move head down by x degrees
+November 12, 2016 20:56:45:661000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:56:46:333000	turn angle:  -0.12375
+November 12, 2016 20:56:46:342000	bottom most position:  
+November 12, 2016 20:56:46:344000	364
+November 12, 2016 20:56:47:783000	bottommost point: 0
+November 12, 2016 20:56:48:029000	turn angle:  0.9
+November 12, 2016 20:56:48:296000	bottom most position:  
+November 12, 2016 20:56:48:326000	0
+November 12, 2016 20:56:48:357000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:56:50:405000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:56:50:532000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:56:50:561000	(352, 251)
+November 12, 2016 20:56:50:572000	251
+November 12, 2016 20:56:50:579000	[352, 251]
+November 12, 2016 20:56:50:601000	251
+November 12, 2016 20:56:50:620000	(352, 251)
+November 12, 2016 20:56:50:622000	[(291, 219), (523, 199), (638, 227), (352, 251), [640, 480]]
+November 12, 2016 20:56:52:036000	bottommost point: 251
+November 12, 2016 20:56:52:054000	move head down by x degrees
+November 12, 2016 20:56:52:069000	bottommost point: 0
+November 12, 2016 20:56:52:075000	turn angle:  0.9
+November 12, 2016 20:56:52:101000	bottom most position:  
+November 12, 2016 20:56:52:103000	0
+November 12, 2016 20:56:53:583000	turn angle:  -0.09
+November 12, 2016 20:56:53:591000	bottom most position:  
+November 12, 2016 20:56:53:593000	352
+November 12, 2016 20:56:54:117000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:56:55:637000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:56:56:182000	bottommost point: 0
+November 12, 2016 20:56:56:263000	turn angle:  0.9
+November 12, 2016 20:56:56:319000	bottom most position:  
+November 12, 2016 20:56:56:326000	0
+November 12, 2016 20:56:57:929000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:56:57:953000	(352, 251)
+November 12, 2016 20:56:57:970000	251
+November 12, 2016 20:56:57:976000	[352, 251]
+November 12, 2016 20:56:57:998000	251
+November 12, 2016 20:56:58:002000	(352, 251)
+November 12, 2016 20:56:58:004000	[(288, 212), (519, 199), (638, 227), (352, 251), [640, 480]]
+November 12, 2016 20:56:58:223000	bottommost point: 251
+November 12, 2016 20:56:58:301000	move head down by x degrees
+November 12, 2016 20:56:58:378000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:56:59:580000	turn angle:  -0.09
+November 12, 2016 20:56:59:607000	bottom most position:  
+November 12, 2016 20:56:59:608000	352
+November 12, 2016 20:57:00:187000	bottommost point: 0
+November 12, 2016 20:57:00:236000	turn angle:  0.9
+November 12, 2016 20:57:00:262000	bottom most position:  
+November 12, 2016 20:57:00:287000	0
+November 12, 2016 20:57:01:639000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:02:321000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:03:407000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:57:03:418000	(340, 251)
+November 12, 2016 20:57:03:432000	251
+November 12, 2016 20:57:03:447000	[340, 251]
+November 12, 2016 20:57:03:454000	251
+November 12, 2016 20:57:03:458000	(340, 251)
+November 12, 2016 20:57:03:463000	[(276, 212), (487, 199), (638, 227), (340, 251), [640, 480]]
+November 12, 2016 20:57:03:523000	bottommost point: 251
+November 12, 2016 20:57:03:544000	move head down by x degrees
+November 12, 2016 20:57:04:020000	bottommost point: 0
+November 12, 2016 20:57:04:025000	turn angle:  0.9
+November 12, 2016 20:57:04:045000	bottom most position:  
+November 12, 2016 20:57:04:050000	0
+November 12, 2016 20:57:04:770000	turn angle:  -0.05625
+November 12, 2016 20:57:04:796000	OBJECT IS IN CENTRE, walking toward it:  0.954166666667
+November 12, 2016 20:57:04:804000	bottom most position:  
+November 12, 2016 20:57:04:807000	340
+November 12, 2016 20:57:06:068000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:06:817000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:08:392000	bottommost point: 0
+November 12, 2016 20:57:08:395000	turn angle:  0.9
+November 12, 2016 20:57:08:522000	bottom most position:  
+November 12, 2016 20:57:08:532000	0
+November 12, 2016 20:57:09:104000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:57:09:109000	(296, 235)
+November 12, 2016 20:57:09:112000	235
+November 12, 2016 20:57:09:116000	[296, 235]
+November 12, 2016 20:57:09:120000	235
+November 12, 2016 20:57:09:123000	(296, 235)
+November 12, 2016 20:57:09:156000	[(239, 205), (463, 183), (619, 203), (296, 235), [640, 480]]
+November 12, 2016 20:57:09:973000	bottommost point: 235
+November 12, 2016 20:57:10:038000	turn angle:  0.0675
+November 12, 2016 20:57:10:118000	bottom most position:  
+November 12, 2016 20:57:10:122000	296
+November 12, 2016 20:57:10:560000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:12:172000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:13:531000	bottommost point: 0
+November 12, 2016 20:57:13:542000	turn angle:  0.9
+November 12, 2016 20:57:13:563000	bottom most position:  
+November 12, 2016 20:57:13:568000	0
+November 12, 2016 20:57:14:225000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:57:14:236000	(220, 267)
+November 12, 2016 20:57:14:242000	267
+November 12, 2016 20:57:14:252000	[220, 267]
+November 12, 2016 20:57:14:266000	267
+November 12, 2016 20:57:14:268000	(220, 267)
+November 12, 2016 20:57:14:276000	[(163, 237), (387, 215), (527, 239), (220, 267), [640, 480]]
+November 12, 2016 20:57:14:336000	bottommost point: 267
+November 12, 2016 20:57:14:341000	turn angle:  0.28125
+November 12, 2016 20:57:14:378000	bottom most position:  
+November 12, 2016 20:57:14:380000	220
+November 12, 2016 20:57:15:578000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:16:395000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:17:585000	bottommost point: 0
+November 12, 2016 20:57:17:695000	turn angle:  0.9
+November 12, 2016 20:57:17:819000	bottom most position:  
+November 12, 2016 20:57:17:828000	0
+November 12, 2016 20:57:18:652000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:57:18:660000	(70, 263)
+November 12, 2016 20:57:18:665000	263
+November 12, 2016 20:57:18:668000	[70, 263]
+November 12, 2016 20:57:18:672000	263
+November 12, 2016 20:57:18:676000	(70, 263)
+November 12, 2016 20:57:18:680000	[(1, 231), (358, 204), (367, 205), (70, 263), [640, 480]]
+November 12, 2016 20:57:19:518000	bottommost point: 263
+November 12, 2016 20:57:19:570000	turn angle:  0.703125
+November 12, 2016 20:57:19:635000	bottom most position:  
+November 12, 2016 20:57:19:638000	70
+November 12, 2016 20:57:19:890000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:21:654000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:22:167000	bottommost point: 0
+November 12, 2016 20:57:22:258000	turn angle:  0.9
+November 12, 2016 20:57:22:315000	bottom most position:  
+November 12, 2016 20:57:22:318000	0
+November 12, 2016 20:57:24:151000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:57:24:153000	(84, 263)
+November 12, 2016 20:57:24:155000	263
+November 12, 2016 20:57:24:162000	[84, 263]
+November 12, 2016 20:57:24:166000	263
+November 12, 2016 20:57:24:170000	(84, 263)
+November 12, 2016 20:57:24:177000	[(15, 231), (283, 195), (407, 211), (84, 263), [640, 480]]
+November 12, 2016 20:57:24:325000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:24:561000	bottommost point: 263
+November 12, 2016 20:57:24:593000	turn angle:  0.66375
+November 12, 2016 20:57:24:637000	bottom most position:  
+November 12, 2016 20:57:24:655000	84
+November 12, 2016 20:57:26:125000	bottommost point: 0
+November 12, 2016 20:57:26:190000	turn angle:  0.9
+November 12, 2016 20:57:26:266000	bottom most position:  
+November 12, 2016 20:57:26:270000	0
+November 12, 2016 20:57:26:688000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:28:318000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:28:645000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:57:28:649000	(124, 259)
+November 12, 2016 20:57:28:652000	259
+November 12, 2016 20:57:28:664000	[124, 259]
+November 12, 2016 20:57:28:676000	259
+November 12, 2016 20:57:28:683000	(124, 259)
+November 12, 2016 20:57:28:693000	[(59, 225), (339, 187), (447, 207), (124, 259), [640, 480]]
+November 12, 2016 20:57:29:431000	bottommost point: 259
+November 12, 2016 20:57:29:462000	turn angle:  0.55125
+November 12, 2016 20:57:29:533000	bottom most position:  
+November 12, 2016 20:57:29:552000	124
+November 12, 2016 20:57:30:409000	bottommost point: 0
+November 12, 2016 20:57:30:451000	turn angle:  0.9
+November 12, 2016 20:57:30:518000	bottom most position:  
+November 12, 2016 20:57:30:527000	0
+November 12, 2016 20:57:31:627000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:32:562000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:33:878000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:57:33:883000	(188, 259)
+November 12, 2016 20:57:33:889000	259
+November 12, 2016 20:57:33:891000	[188, 259]
+November 12, 2016 20:57:33:893000	259
+November 12, 2016 20:57:33:895000	(188, 259)
+November 12, 2016 20:57:33:911000	[(123, 223), (367, 195), (503, 215), (188, 259), [640, 480]]
+November 12, 2016 20:57:34:511000	bottommost point: 259
+November 12, 2016 20:57:34:570000	turn angle:  0.37125
+November 12, 2016 20:57:34:727000	bottom most position:  
+November 12, 2016 20:57:34:733000	188
+November 12, 2016 20:57:34:768000	bottommost point: 0
+November 12, 2016 20:57:34:808000	turn angle:  0.9
+November 12, 2016 20:57:34:868000	bottom most position:  
+November 12, 2016 20:57:34:872000	0
+November 12, 2016 20:57:36:773000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:36:900000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:39:670000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:57:39:680000	(204, 255)
+November 12, 2016 20:57:39:686000	259
+November 12, 2016 20:57:39:689000	[204, 255]
+November 12, 2016 20:57:39:692000	259
+November 12, 2016 20:57:39:696000	(204, 259)
+November 12, 2016 20:57:39:699000	[(144, 220), (395, 195), (516, 204), (204, 255), [640, 480]]
+November 12, 2016 20:57:40:121000	bottommost point: 0
+November 12, 2016 20:57:40:304000	turn angle:  0.9
+November 12, 2016 20:57:40:327000	bottommost point: 259
+November 12, 2016 20:57:40:477000	bottom most position:  
+November 12, 2016 20:57:40:520000	turn angle:  0.32625
+November 12, 2016 20:57:40:538000	0
+November 12, 2016 20:57:40:573000	bottom most position:  
+November 12, 2016 20:57:40:575000	204
+November 12, 2016 20:57:42:576000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:42:595000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:44:680000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:57:44:689000	(224, 259)
+November 12, 2016 20:57:44:697000	259
+November 12, 2016 20:57:44:701000	[224, 259]
+November 12, 2016 20:57:44:714000	259
+November 12, 2016 20:57:44:717000	(224, 259)
+November 12, 2016 20:57:44:720000	[(159, 231), (379, 199), (539, 219), (224, 259), [640, 480]]
+November 12, 2016 20:57:44:755000	bottommost point: 0
+November 12, 2016 20:57:44:822000	turn angle:  0.9
+November 12, 2016 20:57:44:942000	bottom most position:  
+November 12, 2016 20:57:44:957000	0
+November 12, 2016 20:57:45:341000	bottommost point: 259
+November 12, 2016 20:57:45:403000	turn angle:  0.27
+November 12, 2016 20:57:45:554000	bottom most position:  
+November 12, 2016 20:57:45:560000	224
+November 12, 2016 20:57:46:980000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:47:577000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:49:217000	bottommost point: 0
+November 12, 2016 20:57:49:447000	turn angle:  0.9
+November 12, 2016 20:57:49:637000	bottom most position:  
+November 12, 2016 20:57:49:660000	0
+November 12, 2016 20:57:50:348000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:57:50:358000	(244, 255)
+November 12, 2016 20:57:50:360000	255
+November 12, 2016 20:57:50:363000	[244, 255]
+November 12, 2016 20:57:50:372000	255
+November 12, 2016 20:57:50:397000	(244, 255)
+November 12, 2016 20:57:50:418000	[(183, 227), (427, 195), (567, 215), (244, 255), [640, 480]]
+November 12, 2016 20:57:51:552000	bottommost point: 255
+November 12, 2016 20:57:51:636000	turn angle:  0.21375
+November 12, 2016 20:57:51:684000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:51:819000	bottom most position:  
+November 12, 2016 20:57:51:833000	244
+November 12, 2016 20:57:53:909000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:54:299000	bottommost point: 0
+November 12, 2016 20:57:54:344000	turn angle:  0.9
+November 12, 2016 20:57:54:392000	bottom most position:  
+November 12, 2016 20:57:54:401000	0
+November 12, 2016 20:57:55:992000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:57:56:024000	(236, 255)
+November 12, 2016 20:57:56:029000	255
+November 12, 2016 20:57:56:035000	[236, 255]
+November 12, 2016 20:57:56:043000	255
+November 12, 2016 20:57:56:060000	(236, 255)
+November 12, 2016 20:57:56:074000	[(175, 223), (440, 196), (559, 215), (236, 255), [640, 480]]
+November 12, 2016 20:57:56:442000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:57:362000	bottommost point: 255
+November 12, 2016 20:57:57:368000	turn angle:  0.23625
+November 12, 2016 20:57:57:376000	bottom most position:  
+November 12, 2016 20:57:57:379000	236
+November 12, 2016 20:57:59:255000	bottommost point: 0
+November 12, 2016 20:57:59:371000	turn angle:  0.9
+November 12, 2016 20:57:59:405000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:57:59:486000	bottom most position:  
+November 12, 2016 20:57:59:496000	0
+November 12, 2016 20:58:01:440000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:58:01:460000	(232, 255)
+November 12, 2016 20:58:01:462000	259
+November 12, 2016 20:58:01:473000	[232, 255]
+November 12, 2016 20:58:01:484000	259
+November 12, 2016 20:58:01:490000	(232, 259)
+November 12, 2016 20:58:01:496000	[(175, 223), (436, 196), (539, 207), (232, 255), [640, 480]]
+November 12, 2016 20:58:01:573000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:02:404000	bottommost point: 259
+November 12, 2016 20:58:02:532000	turn angle:  0.2475
+November 12, 2016 20:58:02:734000	bottom most position:  
+November 12, 2016 20:58:02:738000	232
+November 12, 2016 20:58:03:374000	bottommost point: 0
+November 12, 2016 20:58:03:499000	turn angle:  0.9
+November 12, 2016 20:58:03:722000	bottom most position:  
+November 12, 2016 20:58:03:737000	0
+November 12, 2016 20:58:04:749000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:05:853000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:07:015000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:58:07:018000	(232, 255)
+November 12, 2016 20:58:07:046000	259
+November 12, 2016 20:58:07:053000	[232, 255]
+November 12, 2016 20:58:07:081000	259
+November 12, 2016 20:58:07:083000	(232, 259)
+November 12, 2016 20:58:07:085000	[(172, 220), (436, 196), (539, 207), (232, 255), [640, 480]]
+November 12, 2016 20:58:08:858000	bottommost point: 0
+November 12, 2016 20:58:09:120000	turn angle:  0.9
+November 12, 2016 20:58:09:471000	bottom most position:  
+November 12, 2016 20:58:09:497000	0
+November 12, 2016 20:58:09:652000	bottommost point: 259
+November 12, 2016 20:58:09:791000	turn angle:  0.2475
+November 12, 2016 20:58:09:919000	bottom most position:  
+November 12, 2016 20:58:09:921000	232
+November 12, 2016 20:58:11:548000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:11:962000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:13:088000	bottommost point: 0
+November 12, 2016 20:58:13:157000	turn angle:  0.9
+November 12, 2016 20:58:13:228000	bottom most position:  
+November 12, 2016 20:58:13:240000	0
+November 12, 2016 20:58:14:583000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:58:14:588000	(276, 255)
+November 12, 2016 20:58:14:592000	255
+November 12, 2016 20:58:14:598000	[276, 255]
+November 12, 2016 20:58:14:606000	255
+November 12, 2016 20:58:14:608000	(276, 255)
+November 12, 2016 20:58:14:610000	[(215, 226), (479, 195), (603, 219), (276, 255), [640, 480]]
+November 12, 2016 20:58:14:677000	bottommost point: 255
+November 12, 2016 20:58:14:686000	turn angle:  0.12375
+November 12, 2016 20:58:14:691000	bottom most position:  
+November 12, 2016 20:58:14:697000	276
+November 12, 2016 20:58:15:290000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:16:708000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:17:174000	bottommost point: 0
+November 12, 2016 20:58:17:361000	turn angle:  0.9
+November 12, 2016 20:58:17:454000	bottom most position:  
+November 12, 2016 20:58:17:478000	0
+November 12, 2016 20:58:18:929000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:58:18:933000	(272, 255)
+November 12, 2016 20:58:18:936000	255
+November 12, 2016 20:58:18:938000	[272, 255]
+November 12, 2016 20:58:18:941000	255
+November 12, 2016 20:58:18:943000	(272, 255)
+November 12, 2016 20:58:18:947000	[(211, 227), (435, 199), (599, 219), (272, 255), [640, 480]]
+November 12, 2016 20:58:19:083000	bottommost point: 255
+November 12, 2016 20:58:19:335000	turn angle:  0.135
+November 12, 2016 20:58:19:521000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:19:534000	bottom most position:  
+November 12, 2016 20:58:19:536000	272
+November 12, 2016 20:58:21:565000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:22:666000	bottommost point: 0
+November 12, 2016 20:58:22:691000	turn angle:  0.9
+November 12, 2016 20:58:22:708000	bottom most position:  
+November 12, 2016 20:58:22:720000	0
+November 12, 2016 20:58:24:609000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:58:24:618000	(292, 255)
+November 12, 2016 20:58:24:620000	255
+November 12, 2016 20:58:24:648000	[292, 255]
+November 12, 2016 20:58:24:650000	255
+November 12, 2016 20:58:24:652000	(292, 255)
+November 12, 2016 20:58:24:656000	[(228, 216), (443, 199), (615, 223), (292, 255), [640, 480]]
+November 12, 2016 20:58:24:752000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:24:897000	bottommost point: 255
+November 12, 2016 20:58:24:908000	turn angle:  0.07875
+November 12, 2016 20:58:24:914000	bottom most position:  
+November 12, 2016 20:58:24:918000	292
+November 12, 2016 20:58:26:789000	bottommost point: 0
+November 12, 2016 20:58:26:889000	turn angle:  0.9
+November 12, 2016 20:58:26:945000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:27:018000	bottom most position:  
+November 12, 2016 20:58:27:021000	0
+November 12, 2016 20:58:29:132000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:31:537000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:58:31:551000	(280, 255)
+November 12, 2016 20:58:31:554000	255
+November 12, 2016 20:58:31:556000	[280, 255]
+November 12, 2016 20:58:31:559000	255
+November 12, 2016 20:58:31:562000	(280, 255)
+November 12, 2016 20:58:31:565000	[(215, 219), (480, 196), (603, 219), (280, 255), [640, 480]]
+November 12, 2016 20:58:31:592000	bottommost point: 255
+November 12, 2016 20:58:31:812000	turn angle:  0.1125
+November 12, 2016 20:58:32:060000	bottom most position:  
+November 12, 2016 20:58:32:062000	280
+November 12, 2016 20:58:32:185000	bottommost point: 0
+November 12, 2016 20:58:32:320000	turn angle:  0.9
+November 12, 2016 20:58:32:441000	bottom most position:  
+November 12, 2016 20:58:32:455000	0
+November 12, 2016 20:58:34:103000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:34:497000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:36:699000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:58:36:706000	(264, 255)
+November 12, 2016 20:58:36:708000	255
+November 12, 2016 20:58:36:711000	[264, 255]
+November 12, 2016 20:58:36:716000	255
+November 12, 2016 20:58:36:720000	(264, 255)
+November 12, 2016 20:58:36:729000	[(203, 219), (423, 199), (587, 223), (264, 255), [640, 480]]
+November 12, 2016 20:58:36:863000	bottommost point: 0
+November 12, 2016 20:58:36:892000	turn angle:  0.9
+November 12, 2016 20:58:36:899000	bottom most position:  
+November 12, 2016 20:58:36:910000	0
+November 12, 2016 20:58:36:955000	bottommost point: 255
+November 12, 2016 20:58:36:978000	turn angle:  0.1575
+November 12, 2016 20:58:37:033000	bottom most position:  
+November 12, 2016 20:58:37:038000	264
+November 12, 2016 20:58:38:933000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:39:057000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:40:571000	bottommost point: 0
+November 12, 2016 20:58:40:585000	turn angle:  0.9
+November 12, 2016 20:58:40:590000	bottom most position:  
+November 12, 2016 20:58:40:592000	0
+November 12, 2016 20:58:40:619000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:58:40:622000	(304, 255)
+November 12, 2016 20:58:40:625000	255
+November 12, 2016 20:58:40:629000	[304, 255]
+November 12, 2016 20:58:40:640000	255
+November 12, 2016 20:58:40:647000	(304, 255)
+November 12, 2016 20:58:40:652000	[(243, 223), (487, 199), (635, 219), (304, 255), [640, 480]]
+November 12, 2016 20:58:40:708000	bottommost point: 255
+November 12, 2016 20:58:40:716000	turn angle:  0.045
+November 12, 2016 20:58:40:735000	OBJECT IS IN CENTRE, walking toward it:  0.9375
+November 12, 2016 20:58:40:750000	bottom most position:  
+November 12, 2016 20:58:40:753000	304
+November 12, 2016 20:58:42:610000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:42:782000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:44:468000	bottommost point: 0
+November 12, 2016 20:58:44:487000	turn angle:  0.9
+November 12, 2016 20:58:44:494000	bottom most position:  
+November 12, 2016 20:58:44:499000	0
+November 12, 2016 20:58:44:527000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:58:44:529000	(312, 255)
+November 12, 2016 20:58:44:531000	259
+November 12, 2016 20:58:44:535000	[312, 255]
+November 12, 2016 20:58:44:537000	259
+November 12, 2016 20:58:44:541000	(312, 259)
+November 12, 2016 20:58:44:545000	[(252, 220), (507, 195), (638, 203), (312, 255), [640, 480]]
+November 12, 2016 20:58:44:596000	bottommost point: 259
+November 12, 2016 20:58:44:610000	turn angle:  0.0225
+November 12, 2016 20:58:44:616000	OBJECT IS IN CENTRE, walking toward it:  0.920833333333
+November 12, 2016 20:58:44:630000	bottom most position:  
+November 12, 2016 20:58:44:634000	312
+November 12, 2016 20:58:46:520000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:46:654000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:48:241000	bottommost point: 0
+November 12, 2016 20:58:48:279000	turn angle:  0.9
+November 12, 2016 20:58:48:295000	bottom most position:  
+November 12, 2016 20:58:48:299000	0
+November 12, 2016 20:58:48:316000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:58:48:329000	(336, 235)
+November 12, 2016 20:58:48:333000	235
+November 12, 2016 20:58:48:339000	[336, 235]
+November 12, 2016 20:58:48:342000	235
+November 12, 2016 20:58:48:346000	(336, 235)
+November 12, 2016 20:58:48:349000	[(256, 188), (499, 171), (638, 203), (336, 235), [640, 480]]
+November 12, 2016 20:58:48:433000	bottommost point: 235
+November 12, 2016 20:58:48:477000	turn angle:  -0.045
+November 12, 2016 20:58:48:618000	OBJECT IS IN CENTRE, walking toward it:  1.02083333333
+November 12, 2016 20:58:48:669000	bottom most position:  
+November 12, 2016 20:58:48:679000	336
+November 12, 2016 20:58:50:307000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:50:707000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:52:020000	bottommost point: 0
+November 12, 2016 20:58:52:027000	turn angle:  0.9
+November 12, 2016 20:58:52:097000	bottom most position:  
+November 12, 2016 20:58:52:099000	0
+November 12, 2016 20:58:52:277000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:58:52:280000	(496, 279)
+November 12, 2016 20:58:52:283000	279
+November 12, 2016 20:58:52:307000	[496, 279]
+November 12, 2016 20:58:52:309000	279
+November 12, 2016 20:58:52:311000	(496, 279)
+November 12, 2016 20:58:52:319000	[(403, 233), (519, 219), (638, 271), (496, 279), [640, 480]]
+November 12, 2016 20:58:52:523000	bottommost point: 279
+November 12, 2016 20:58:52:607000	turn angle:  -0.495
+November 12, 2016 20:58:52:643000	bottom most position:  
+November 12, 2016 20:58:52:648000	496
+November 12, 2016 20:58:54:112000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:54:660000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:55:488000	bottommost point: 0
+November 12, 2016 20:58:55:528000	turn angle:  0.9
+November 12, 2016 20:58:55:546000	bottom most position:  
+November 12, 2016 20:58:55:556000	0
+November 12, 2016 20:58:56:219000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:58:56:222000	(496, 295)
+November 12, 2016 20:58:56:226000	295
+November 12, 2016 20:58:56:230000	[496, 295]
+November 12, 2016 20:58:56:234000	295
+November 12, 2016 20:58:56:251000	(496, 295)
+November 12, 2016 20:58:56:255000	[(403, 250), (595, 231), (638, 287), (496, 295), [640, 480]]
+November 12, 2016 20:58:56:341000	bottommost point: 295
+November 12, 2016 20:58:56:359000	turn angle:  -0.495
+November 12, 2016 20:58:56:369000	bottom most position:  
+November 12, 2016 20:58:56:376000	496
+November 12, 2016 20:58:57:571000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:58:389000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:58:59:048000	bottommost point: 0
+November 12, 2016 20:58:59:101000	turn angle:  0.9
+November 12, 2016 20:58:59:243000	bottom most position:  
+November 12, 2016 20:58:59:251000	0
+November 12, 2016 20:59:00:049000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:00:055000	(492, 291)
+November 12, 2016 20:59:00:061000	295
+November 12, 2016 20:59:00:065000	[492, 291]
+November 12, 2016 20:59:00:068000	295
+November 12, 2016 20:59:00:071000	(492, 295)
+November 12, 2016 20:59:00:077000	[(399, 241), (611, 227), (638, 227), (492, 291), [640, 480]]
+November 12, 2016 20:59:00:121000	bottommost point: 295
+November 12, 2016 20:59:00:129000	turn angle:  -0.48375
+November 12, 2016 20:59:00:137000	bottom most position:  
+November 12, 2016 20:59:00:141000	492
+November 12, 2016 20:59:01:281000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:02:207000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:02:790000	bottommost point: 0
+November 12, 2016 20:59:02:862000	turn angle:  0.9
+November 12, 2016 20:59:02:904000	bottom most position:  
+November 12, 2016 20:59:02:906000	0
+November 12, 2016 20:59:03:667000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:03:670000	(436, 283)
+November 12, 2016 20:59:03:675000	283
+November 12, 2016 20:59:03:681000	[436, 283]
+November 12, 2016 20:59:03:685000	283
+November 12, 2016 20:59:03:689000	(436, 283)
+November 12, 2016 20:59:03:693000	[(348, 228), (587, 211), (638, 267), (436, 283), [640, 480]]
+November 12, 2016 20:59:03:720000	bottommost point: 283
+November 12, 2016 20:59:03:742000	turn angle:  -0.32625
+November 12, 2016 20:59:03:749000	bottom most position:  
+November 12, 2016 20:59:03:752000	436
+November 12, 2016 20:59:04:915000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:05:762000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:06:356000	bottommost point: 0
+November 12, 2016 20:59:06:383000	turn angle:  0.9
+November 12, 2016 20:59:06:442000	bottom most position:  
+November 12, 2016 20:59:06:446000	0
+November 12, 2016 20:59:07:267000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:07:275000	(376, 279)
+November 12, 2016 20:59:07:278000	279
+November 12, 2016 20:59:07:282000	[376, 279]
+November 12, 2016 20:59:07:287000	279
+November 12, 2016 20:59:07:297000	(376, 279)
+November 12, 2016 20:59:07:300000	[(287, 231), (547, 203), (638, 247), (376, 279), [640, 480]]
+November 12, 2016 20:59:07:326000	bottommost point: 279
+November 12, 2016 20:59:07:351000	turn angle:  -0.1575
+November 12, 2016 20:59:07:365000	bottom most position:  
+November 12, 2016 20:59:07:369000	376
+November 12, 2016 20:59:08:483000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:09:378000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:09:849000	bottommost point: 0
+November 12, 2016 20:59:09:904000	turn angle:  0.9
+November 12, 2016 20:59:09:931000	bottom most position:  
+November 12, 2016 20:59:09:936000	0
+November 12, 2016 20:59:10:859000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:10:863000	(336, 279)
+November 12, 2016 20:59:10:866000	279
+November 12, 2016 20:59:10:869000	[336, 279]
+November 12, 2016 20:59:10:871000	279
+November 12, 2016 20:59:10:874000	(336, 279)
+November 12, 2016 20:59:10:881000	[(240, 228), (515, 195), (638, 203), (336, 279), [640, 480]]
+November 12, 2016 20:59:10:936000	bottommost point: 279
+November 12, 2016 20:59:11:008000	turn angle:  -0.045
+November 12, 2016 20:59:11:104000	OBJECT IS IN CENTRE, walking toward it:  0.8375
+November 12, 2016 20:59:11:146000	bottom most position:  
+November 12, 2016 20:59:11:149000	336
+November 12, 2016 20:59:11:966000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:13:178000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:13:492000	bottommost point: 0
+November 12, 2016 20:59:13:495000	turn angle:  0.9
+November 12, 2016 20:59:13:510000	bottom most position:  
+November 12, 2016 20:59:13:515000	0
+November 12, 2016 20:59:14:684000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:14:734000	(312, 283)
+November 12, 2016 20:59:14:739000	283
+November 12, 2016 20:59:14:744000	[312, 283]
+November 12, 2016 20:59:14:749000	283
+November 12, 2016 20:59:14:757000	(312, 283)
+November 12, 2016 20:59:14:762000	[(220, 232), (499, 203), (638, 235), (312, 283), [640, 480]]
+November 12, 2016 20:59:14:878000	bottommost point: 283
+November 12, 2016 20:59:14:940000	turn angle:  0.0225
+November 12, 2016 20:59:14:952000	OBJECT IS IN CENTRE, walking toward it:  0.820833333333
+November 12, 2016 20:59:14:977000	bottom most position:  
+November 12, 2016 20:59:14:991000	312
+November 12, 2016 20:59:15:542000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:17:025000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:17:409000	bottommost point: 0
+November 12, 2016 20:59:17:452000	turn angle:  0.9
+November 12, 2016 20:59:17:502000	bottom most position:  
+November 12, 2016 20:59:17:508000	0
+November 12, 2016 20:59:19:120000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:19:123000	(144, 283)
+November 12, 2016 20:59:19:128000	283
+November 12, 2016 20:59:19:146000	[144, 283]
+November 12, 2016 20:59:19:150000	283
+November 12, 2016 20:59:19:152000	(144, 283)
+November 12, 2016 20:59:19:163000	[(44, 228), (347, 187), (483, 211), (144, 283), [640, 480]]
+November 12, 2016 20:59:19:545000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:20:137000	bottommost point: 283
+November 12, 2016 20:59:20:160000	turn angle:  0.495
+November 12, 2016 20:59:20:253000	bottom most position:  
+November 12, 2016 20:59:20:266000	144
+November 12, 2016 20:59:21:567000	bottommost point: 0
+November 12, 2016 20:59:21:624000	turn angle:  0.9
+November 12, 2016 20:59:21:684000	bottom most position:  
+November 12, 2016 20:59:21:686000	0
+November 12, 2016 20:59:22:378000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:23:707000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:24:679000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:24:695000	(208, 291)
+November 12, 2016 20:59:24:701000	291
+November 12, 2016 20:59:24:719000	[208, 291]
+November 12, 2016 20:59:24:732000	291
+November 12, 2016 20:59:24:748000	(208, 291)
+November 12, 2016 20:59:24:752000	[(115, 235), (411, 199), (563, 227), (208, 291), [640, 480]]
+November 12, 2016 20:59:25:900000	bottommost point: 0
+November 12, 2016 20:59:25:922000	turn angle:  0.9
+November 12, 2016 20:59:25:979000	bottommost point: 291
+November 12, 2016 20:59:25:998000	bottom most position:  
+November 12, 2016 20:59:26:002000	0
+November 12, 2016 20:59:26:017000	turn angle:  0.315
+November 12, 2016 20:59:26:072000	bottom most position:  
+November 12, 2016 20:59:26:083000	208
+November 12, 2016 20:59:28:013000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:28:137000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:29:993000	bottommost point: 0
+November 12, 2016 20:59:30:068000	turn angle:  0.9
+November 12, 2016 20:59:30:228000	bottom most position:  
+November 12, 2016 20:59:30:231000	0
+November 12, 2016 20:59:30:241000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:30:262000	(220, 303)
+November 12, 2016 20:59:30:267000	303
+November 12, 2016 20:59:30:276000	[220, 303]
+November 12, 2016 20:59:30:283000	303
+November 12, 2016 20:59:30:319000	(220, 303)
+November 12, 2016 20:59:30:321000	[(127, 247), (403, 207), (579, 231), (220, 303), [640, 480]]
+November 12, 2016 20:59:30:721000	bottommost point: 303
+November 12, 2016 20:59:30:768000	turn angle:  0.28125
+November 12, 2016 20:59:30:835000	bottom most position:  
+November 12, 2016 20:59:30:841000	220
+November 12, 2016 20:59:32:283000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:32:874000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:33:989000	bottommost point: 0
+November 12, 2016 20:59:34:024000	turn angle:  0.9
+November 12, 2016 20:59:34:105000	bottom most position:  
+November 12, 2016 20:59:34:109000	0
+November 12, 2016 20:59:34:911000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:34:920000	(264, 303)
+November 12, 2016 20:59:34:923000	303
+November 12, 2016 20:59:34:926000	[264, 303]
+November 12, 2016 20:59:34:932000	303
+November 12, 2016 20:59:34:935000	(264, 303)
+November 12, 2016 20:59:34:939000	[(172, 240), (463, 207), (631, 223), (264, 303), [640, 480]]
+November 12, 2016 20:59:35:548000	bottommost point: 303
+November 12, 2016 20:59:35:581000	turn angle:  0.1575
+November 12, 2016 20:59:35:612000	bottom most position:  
+November 12, 2016 20:59:35:619000	264
+November 12, 2016 20:59:36:137000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:37:673000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:38:123000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:38:139000	(9, 300)
+November 12, 2016 20:59:38:144000	307
+November 12, 2016 20:59:38:146000	[9, 300]
+November 12, 2016 20:59:38:156000	307
+November 12, 2016 20:59:38:161000	(9, 307)
+November 12, 2016 20:59:38:165000	[(1, 291), (1, 291), (31, 293), (9, 300), [640, 480]]
+November 12, 2016 20:59:38:314000	bottommost point: 307
+November 12, 2016 20:59:38:396000	move head down by x degrees
+November 12, 2016 20:59:39:298000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:39:301000	(320, 303)
+November 12, 2016 20:59:39:305000	303
+November 12, 2016 20:59:39:313000	[320, 303]
+November 12, 2016 20:59:39:321000	303
+November 12, 2016 20:59:39:328000	(320, 303)
+November 12, 2016 20:59:39:337000	[(223, 251), (519, 207), (638, 251), (320, 303), [640, 480]]
+November 12, 2016 20:59:39:532000	bottommost point: 303
+November 12, 2016 20:59:39:551000	turn angle:  0.0
+November 12, 2016 20:59:39:555000	OBJECT IS IN CENTRE, walking toward it:  0.7375
+November 12, 2016 20:59:39:571000	bottom most position:  
+November 12, 2016 20:59:39:574000	320
+November 12, 2016 20:59:39:670000	turn angle:  0.8746875
+November 12, 2016 20:59:39:677000	bottom most position:  
+November 12, 2016 20:59:39:681000	9
+November 12, 2016 20:59:41:580000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:41:713000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:43:492000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:43:500000	(332, 311)
+November 12, 2016 20:59:43:502000	311
+November 12, 2016 20:59:43:502000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:43:504000	[332, 311]
+November 12, 2016 20:59:43:506000	239
+November 12, 2016 20:59:43:508000	(332, 311)
+November 12, 2016 20:59:43:509000	239
+November 12, 2016 20:59:43:512000	[(236, 248), (531, 211), (638, 256), (332, 311), [640, 480]]
+November 12, 2016 20:59:43:515000	[(1, 195), (15, 191), (131, 197), (2, 227), [640, 480]]
+November 12, 2016 20:59:43:536000	bottommost point: 239
+November 12, 2016 20:59:43:560000	turn angle:  0.894375
+November 12, 2016 20:59:43:619000	bottom most position:  
+November 12, 2016 20:59:43:622000	2
+November 12, 2016 20:59:43:822000	bottommost point: 311
+November 12, 2016 20:59:43:848000	turn angle:  -0.03375
+November 12, 2016 20:59:43:907000	OBJECT IS IN CENTRE, walking toward it:  0.704166666667
+November 12, 2016 20:59:43:914000	bottom most position:  
+November 12, 2016 20:59:43:916000	332
+November 12, 2016 20:59:45:632000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:45:922000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:47:573000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:47:579000	(30, 240)
+November 12, 2016 20:59:47:588000	251
+November 12, 2016 20:59:47:598000	[30, 240]
+November 12, 2016 20:59:47:604000	251
+November 12, 2016 20:59:47:609000	(30, 251)
+November 12, 2016 20:59:47:611000	[(1, 211), (103, 191), (203, 197), (30, 240), [640, 480]]
+November 12, 2016 20:59:47:678000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:47:696000	(248, 303)
+November 12, 2016 20:59:47:704000	303
+November 12, 2016 20:59:47:707000	[248, 303]
+November 12, 2016 20:59:47:710000	303
+November 12, 2016 20:59:47:720000	(248, 303)
+November 12, 2016 20:59:47:744000	[(139, 247), (443, 199), (584, 210), (248, 303), [640, 480]]
+November 12, 2016 20:59:47:980000	bottommost point: 251
+November 12, 2016 20:59:47:989000	move head down by x degrees
+November 12, 2016 20:59:47:990000	bottommost point: 303
+November 12, 2016 20:59:47:993000	turn angle:  0.2025
+November 12, 2016 20:59:47:998000	bottom most position:  
+November 12, 2016 20:59:48:002000	248
+November 12, 2016 20:59:49:233000	turn angle:  0.815625
+November 12, 2016 20:59:49:236000	bottom most position:  
+November 12, 2016 20:59:49:239000	30
+November 12, 2016 20:59:50:015000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:51:252000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:51:561000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:51:565000	(260, 315)
+November 12, 2016 20:59:51:571000	315
+November 12, 2016 20:59:51:576000	[260, 315]
+November 12, 2016 20:59:51:582000	315
+November 12, 2016 20:59:51:591000	(260, 315)
+November 12, 2016 20:59:51:602000	[(151, 254), (443, 211), (619, 239), (260, 315), [640, 480]]
+November 12, 2016 20:59:51:643000	bottommost point: 315
+November 12, 2016 20:59:51:656000	turn angle:  0.16875
+November 12, 2016 20:59:51:663000	bottom most position:  
+November 12, 2016 20:59:51:676000	260
+November 12, 2016 20:59:52:971000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:52:980000	(120, 235)
+November 12, 2016 20:59:52:986000	235
+November 12, 2016 20:59:52:996000	[120, 235]
+November 12, 2016 20:59:52:999000	235
+November 12, 2016 20:59:53:001000	(120, 235)
+November 12, 2016 20:59:53:015000	[(16, 204), (203, 179), (299, 191), (120, 235), [640, 480]]
+November 12, 2016 20:59:53:414000	bottommost point: 235
+November 12, 2016 20:59:53:418000	turn angle:  0.5625
+November 12, 2016 20:59:53:421000	bottom most position:  
+November 12, 2016 20:59:53:422000	120
+November 12, 2016 20:59:53:696000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:55:224000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:55:228000	(292, 319)
+November 12, 2016 20:59:55:237000	319
+November 12, 2016 20:59:55:242000	[292, 319]
+November 12, 2016 20:59:55:256000	319
+November 12, 2016 20:59:55:258000	(292, 319)
+November 12, 2016 20:59:55:262000	[(183, 257), (487, 211), (638, 248), (292, 319), [640, 480]]
+November 12, 2016 20:59:55:312000	bottommost point: 319
+November 12, 2016 20:59:55:335000	turn angle:  0.07875
+November 12, 2016 20:59:55:340000	bottom most position:  
+November 12, 2016 20:59:55:350000	292
+November 12, 2016 20:59:55:432000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:57:006000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:57:037000	(124, 231)
+November 12, 2016 20:59:57:046000	231
+November 12, 2016 20:59:57:051000	[124, 231]
+November 12, 2016 20:59:57:067000	231
+November 12, 2016 20:59:57:081000	(124, 231)
+November 12, 2016 20:59:57:083000	[(27, 207), (199, 179), (303, 191), (124, 231), [640, 480]]
+November 12, 2016 20:59:57:367000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:57:566000	bottommost point: 231
+November 12, 2016 20:59:57:590000	turn angle:  0.55125
+November 12, 2016 20:59:57:624000	bottom most position:  
+November 12, 2016 20:59:57:627000	124
+November 12, 2016 20:59:59:199000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 20:59:59:208000	(284, 319)
+November 12, 2016 20:59:59:212000	319
+November 12, 2016 20:59:59:214000	[284, 319]
+November 12, 2016 20:59:59:216000	319
+November 12, 2016 20:59:59:218000	(284, 319)
+November 12, 2016 20:59:59:222000	[(175, 255), (491, 207), (638, 243), (284, 319), [640, 480]]
+November 12, 2016 20:59:59:646000	bottommost point: 319
+November 12, 2016 20:59:59:667000	ending behaviourMoveToCornerOfObject
+November 12, 2016 20:59:59:746000	turn angle:  0.10125
+November 12, 2016 20:59:59:890000	bottom most position:  
+November 12, 2016 20:59:59:902000	284
+November 12, 2016 21:00:01:939000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:02:838000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:02:861000	(173, 232)
+November 12, 2016 21:00:02:880000	231
+November 12, 2016 21:00:02:898000	[173, 232]
+November 12, 2016 21:00:02:902000	231
+November 12, 2016 21:00:02:922000	(173, 231)
+November 12, 2016 21:00:02:927000	[(68, 200), (227, 179), (335, 189), (173, 232), [640, 480]]
+November 12, 2016 21:00:04:538000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:04:543000	(276, 315)
+November 12, 2016 21:00:04:548000	315
+November 12, 2016 21:00:04:554000	[276, 315]
+November 12, 2016 21:00:04:557000	315
+November 12, 2016 21:00:04:565000	(276, 315)
+November 12, 2016 21:00:04:572000	bottommost point: 231
+November 12, 2016 21:00:04:592000	[(171, 251), (455, 211), (638, 243), (276, 315), [640, 480]]
+November 12, 2016 21:00:04:619000	turn angle:  0.4134375
+November 12, 2016 21:00:04:681000	bottom most position:  
+November 12, 2016 21:00:04:685000	173
+November 12, 2016 21:00:04:919000	bottommost point: 315
+November 12, 2016 21:00:04:984000	turn angle:  0.12375
+November 12, 2016 21:00:05:074000	bottom most position:  
+November 12, 2016 21:00:05:076000	276
+November 12, 2016 21:00:06:695000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:07:111000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:08:430000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:08:435000	(180, 231)
+November 12, 2016 21:00:08:439000	231
+November 12, 2016 21:00:08:448000	[180, 231]
+November 12, 2016 21:00:08:457000	231
+November 12, 2016 21:00:08:459000	(180, 231)
+November 12, 2016 21:00:08:462000	[(80, 200), (239, 179), (343, 191), (180, 231), [640, 480]]
+November 12, 2016 21:00:09:293000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:09:296000	(316, 315)
+November 12, 2016 21:00:09:297000	315
+November 12, 2016 21:00:09:300000	[316, 315]
+November 12, 2016 21:00:09:308000	315
+November 12, 2016 21:00:09:320000	(316, 315)
+November 12, 2016 21:00:09:328000	[(211, 254), (519, 207), (638, 251), (316, 315), [640, 480]]
+November 12, 2016 21:00:09:347000	bottommost point: 315
+November 12, 2016 21:00:09:355000	turn angle:  0.01125
+November 12, 2016 21:00:09:358000	OBJECT IS IN CENTRE, walking toward it:  0.6875
+November 12, 2016 21:00:09:408000	bottom most position:  
+November 12, 2016 21:00:09:410000	316
+November 12, 2016 21:00:09:419000	bottommost point: 231
+November 12, 2016 21:00:09:462000	turn angle:  0.39375
+November 12, 2016 21:00:09:512000	bottom most position:  
+November 12, 2016 21:00:09:520000	180
+November 12, 2016 21:00:11:440000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:11:559000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:14:017000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:14:024000	(312, 315)
+November 12, 2016 21:00:14:031000	315
+November 12, 2016 21:00:14:040000	[312, 315]
+November 12, 2016 21:00:14:043000	315
+November 12, 2016 21:00:14:045000	(312, 315)
+November 12, 2016 21:00:14:048000	[(204, 244), (507, 211), (638, 255), (312, 315), [640, 480]]
+November 12, 2016 21:00:14:206000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:14:222000	(220, 227)
+November 12, 2016 21:00:14:225000	227
+November 12, 2016 21:00:14:227000	[220, 227]
+November 12, 2016 21:00:14:229000	227
+November 12, 2016 21:00:14:234000	(220, 227)
+November 12, 2016 21:00:14:236000	[(132, 196), (273, 179), (391, 191), (220, 227), [640, 480]]
+November 12, 2016 21:00:16:055000	bottommost point: 315
+November 12, 2016 21:00:16:188000	turn angle:  0.0225
+November 12, 2016 21:00:16:290000	bottommost point: 227
+November 12, 2016 21:00:16:406000	turn angle:  0.28125
+November 12, 2016 21:00:16:461000	OBJECT IS IN CENTRE, walking toward it:  0.6875
+November 12, 2016 21:00:16:528000	bottom most position:  
+November 12, 2016 21:00:16:532000	220
+November 12, 2016 21:00:16:563000	bottom most position:  
+November 12, 2016 21:00:16:569000	312
+November 12, 2016 21:00:18:581000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:18:609000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:20:280000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:20:280000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:20:282000	(308, 303)
+November 12, 2016 21:00:20:286000	303
+November 12, 2016 21:00:20:287000	(292, 231)
+November 12, 2016 21:00:20:290000	[308, 303]
+November 12, 2016 21:00:20:291000	231
+November 12, 2016 21:00:20:293000	303
+November 12, 2016 21:00:20:296000	[292, 231]
+November 12, 2016 21:00:20:299000	231
+ 303)
+November 12, 2016 21:00:20:302000	[(195, 245), (491, 195), (638, 235), (308, 303), [640, 480]]
+November 12, 2016 21:00:20:304000	(292, 231)
+November 12, 2016 21:00:20:308000	[(195, 203), (351, 179), (459, 191), (292, 231), [640, 480]]
+November 12, 2016 21:00:20:323000	bottommost point: 231
+November 12, 2016 21:00:20:327000	bottommost point: 303
+November 12, 2016 21:00:20:357000	turn angle:  0.07875
+November 12, 2016 21:00:20:360000	turn angle:  0.03375
+November 12, 2016 21:00:20:391000	bottom most position:  
+November 12, 2016 21:00:20:396000	292
+November 12, 2016 21:00:20:420000	OBJECT IS IN CENTRE, walking toward it:  0.7375
+November 12, 2016 21:00:20:455000	bottom most position:  
+November 12, 2016 21:00:20:466000	308
+November 12, 2016 21:00:22:430000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:22:475000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:24:684000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:24:690000	(308, 227)
+November 12, 2016 21:00:24:692000	227
+November 12, 2016 21:00:24:696000	[308, 227]
+November 12, 2016 21:00:24:698000	227
+November 12, 2016 21:00:24:702000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:24:703000	(308, 227)
+November 12, 2016 21:00:24:704000	(376, 327)
+November 12, 2016 21:00:24:705000	327
+, 196), (351, 179), (479, 191), (308, 227), [640, 480]]
+November 12, 2016 21:00:24:712000	[376, 327]
+November 12, 2016 21:00:24:721000	327
+mmost point: 227
+November 12, 2016 21:00:24:726000	turn angle:  0.03375
+November 12, 2016 21:00:24:727000	(376, 327)
+November 12, 2016 21:00:24:729000	[(247, 247), (559, 211), (638, 279), (376, 327), [640, 480]]
+November 12, 2016 21:00:24:735000	bottom most position:  
+November 12, 2016 21:00:24:739000	308
+November 12, 2016 21:00:24:745000	bottommost point: 327
+November 12, 2016 21:00:24:750000	turn angle:  -0.1575
+November 12, 2016 21:00:24:799000	bottom most position:  
+November 12, 2016 21:00:24:802000	376
+November 12, 2016 21:00:26:758000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:26:830000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:28:464000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:28:468000	(292, 243)
+November 12, 2016 21:00:28:471000	243
+November 12, 2016 21:00:28:475000	[292, 243]
+November 12, 2016 21:00:28:479000	243
+November 12, 2016 21:00:28:482000	(292, 243)
+November 12, 2016 21:00:28:485000	[(200, 212), (335, 195), (459, 207), (292, 243), [640, 480]]
+November 12, 2016 21:00:28:514000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:28:531000	(289, 328)
+November 12, 2016 21:00:28:542000	331
+November 12, 2016 21:00:28:544000	[289, 328]
+November 12, 2016 21:00:28:546000	331
+November 12, 2016 21:00:28:548000	(289, 331)
+November 12, 2016 21:00:28:555000	[(159, 255), (483, 203), (638, 215), (289, 328), [640, 480]]
+November 12, 2016 21:00:28:775000	bottommost point: 243
+November 12, 2016 21:00:28:778000	bottommost point: 331
+November 12, 2016 21:00:28:792000	move head down by x degrees
+November 12, 2016 21:00:28:924000	turn angle:  0.0871875
+November 12, 2016 21:00:28:949000	bottom most position:  
+November 12, 2016 21:00:28:956000	289
+November 12, 2016 21:00:30:069000	turn angle:  0.07875
+November 12, 2016 21:00:30:075000	bottom most position:  
+November 12, 2016 21:00:30:078000	292
+November 12, 2016 21:00:30:970000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:32:088000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:32:407000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:32:410000	(315, 308)
+November 12, 2016 21:00:32:413000	339
+November 12, 2016 21:00:32:415000	[315, 308]
+November 12, 2016 21:00:32:420000	339
+November 12, 2016 21:00:32:421000	(315, 339)
+November 12, 2016 21:00:32:425000	[(178, 259), (631, 231), (638, 231), (315, 308), [640, 480]]
+November 12, 2016 21:00:32:573000	bottommost point: 339
+November 12, 2016 21:00:32:584000	turn angle:  0.0140625
+November 12, 2016 21:00:32:602000	OBJECT IS IN CENTRE, walking toward it:  0.5875
+November 12, 2016 21:00:32:610000	bottom most position:  
+November 12, 2016 21:00:32:613000	315
+November 12, 2016 21:00:33:923000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:33:933000	(328, 251)
+November 12, 2016 21:00:33:947000	251
+November 12, 2016 21:00:33:954000	[328, 251]
+November 12, 2016 21:00:33:967000	251
+November 12, 2016 21:00:33:969000	(328, 251)
+November 12, 2016 21:00:33:979000	[(236, 220), (371, 203), (488, 217), (328, 251), [640, 480]]
+November 12, 2016 21:00:34:386000	bottommost point: 251
+November 12, 2016 21:00:34:390000	move head down by x degrees
+November 12, 2016 21:00:34:627000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:35:628000	turn angle:  -0.0225
+November 12, 2016 21:00:35:637000	OBJECT IS IN CENTRE, walking toward it:  0.954166666667
+November 12, 2016 21:00:35:641000	bottom most position:  
+November 12, 2016 21:00:35:644000	328
+November 12, 2016 21:00:36:186000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:36:204000	(304, 339)
+November 12, 2016 21:00:36:209000	339
+November 12, 2016 21:00:36:212000	[304, 339]
+November 12, 2016 21:00:36:219000	339
+November 12, 2016 21:00:36:222000	(304, 339)
+November 12, 2016 21:00:36:225000	[(176, 256), (497, 215), (638, 263), (304, 339), [640, 480]]
+November 12, 2016 21:00:36:652000	bottommost point: 339
+November 12, 2016 21:00:36:681000	turn angle:  0.045
+November 12, 2016 21:00:36:903000	OBJECT IS IN CENTRE, walking toward it:  0.5875
+November 12, 2016 21:00:37:122000	bottom most position:  
+November 12, 2016 21:00:37:139000	304
+November 12, 2016 21:00:37:661000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:39:179000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:39:388000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:39:390000	(292, 231)
+November 12, 2016 21:00:39:393000	231
+November 12, 2016 21:00:39:398000	[292, 231]
+November 12, 2016 21:00:39:407000	231
+November 12, 2016 21:00:39:416000	(292, 231)
+November 12, 2016 21:00:39:420000	[(195, 203), (355, 179), (447, 195), (292, 231), [640, 480]]
+November 12, 2016 21:00:39:501000	bottommost point: 231
+November 12, 2016 21:00:39:508000	turn angle:  0.07875
+November 12, 2016 21:00:39:511000	bottom most position:  
+November 12, 2016 21:00:39:514000	292
+November 12, 2016 21:00:40:809000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:40:814000	(288, 351)
+November 12, 2016 21:00:40:823000	351
+November 12, 2016 21:00:40:827000	[288, 351]
+November 12, 2016 21:00:40:830000	351
+November 12, 2016 21:00:40:834000	(288, 351)
+November 12, 2016 21:00:40:838000	[(159, 274), (475, 219), (638, 259), (288, 351), [640, 480]]
+November 12, 2016 21:00:40:895000	bottommost point: 351
+November 12, 2016 21:00:40:944000	turn angle:  0.09
+November 12, 2016 21:00:40:962000	bottom most position:  
+November 12, 2016 21:00:40:971000	288
+November 12, 2016 21:00:41:518000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:42:991000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:42:994000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:43:016000	219
+November 12, 2016 21:00:43:019000	[276, 219]
+November 12, 2016 21:00:43:022000	219
+November 12, 2016 21:00:43:025000	(276, 219)
+November 12, 2016 21:00:43:029000	[(187, 191), (347, 167), (456, 183), (276, 219), [640, 480]]
+November 12, 2016 21:00:43:405000	bottommost point: 219
+November 12, 2016 21:00:43:408000	turn angle:  0.12375
+November 12, 2016 21:00:43:426000	bottom most position:  
+November 12, 2016 21:00:43:428000	276
+November 12, 2016 21:00:44:811000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:44:813000	(336, 347)
+November 12, 2016 21:00:44:816000	347
+November 12, 2016 21:00:44:821000	[336, 347]
+November 12, 2016 21:00:44:824000	347
+November 12, 2016 21:00:44:826000	(336, 347)
+November 12, 2016 21:00:44:829000	[(207, 265), (527, 223), (638, 287), (336, 347), [640, 480]]
+November 12, 2016 21:00:44:932000	bottommost point: 347
+November 12, 2016 21:00:44:940000	turn angle:  -0.045
+November 12, 2016 21:00:44:962000	OBJECT IS IN CENTRE, walking toward it:  0.554166666667
+November 12, 2016 21:00:45:035000	bottom most position:  
+November 12, 2016 21:00:45:047000	336
+November 12, 2016 21:00:45:441000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:47:066000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:47:300000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:47:310000	(268, 235)
+November 12, 2016 21:00:47:313000	235
+November 12, 2016 21:00:47:319000	[268, 235]
+November 12, 2016 21:00:47:333000	235
+November 12, 2016 21:00:47:350000	(268, 235)
+November 12, 2016 21:00:47:357000	[(167, 207), (327, 179), (443, 189), (268, 235), [640, 480]]
+November 12, 2016 21:00:47:626000	bottommost point: 235
+November 12, 2016 21:00:47:647000	turn angle:  0.14625
+November 12, 2016 21:00:47:663000	bottom most position:  
+November 12, 2016 21:00:47:678000	268
+November 12, 2016 21:00:48:502000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:48:506000	(324, 335)
+November 12, 2016 21:00:48:509000	335
+November 12, 2016 21:00:48:523000	[324, 335]
+November 12, 2016 21:00:48:530000	335
+November 12, 2016 21:00:48:540000	(324, 335)
+November 12, 2016 21:00:48:543000	[(195, 261), (523, 199), (638, 256), (324, 335), [640, 480]]
+November 12, 2016 21:00:49:002000	bottommost point: 335
+November 12, 2016 21:00:49:018000	turn angle:  -0.01125
+November 12, 2016 21:00:49:040000	OBJECT IS IN CENTRE, walking toward it:  0.604166666667
+November 12, 2016 21:00:49:053000	bottom most position:  
+November 12, 2016 21:00:49:058000	324
+November 12, 2016 21:00:49:700000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:51:072000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:51:270000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:51:275000	(320, 227)
+November 12, 2016 21:00:51:278000	227
+November 12, 2016 21:00:51:281000	[320, 227]
+November 12, 2016 21:00:51:297000	227
+November 12, 2016 21:00:51:303000	(320, 227)
+November 12, 2016 21:00:51:310000	[(224, 192), (399, 171), (511, 187), (320, 227), [640, 480]]
+November 12, 2016 21:00:51:387000	bottommost point: 227
+November 12, 2016 21:00:51:413000	turn angle:  0.0
+November 12, 2016 21:00:51:440000	OBJECT IS IN CENTRE, walking toward it:  1.05416666667
+November 12, 2016 21:00:51:481000	bottom most position:  
+November 12, 2016 21:00:51:485000	320
+November 12, 2016 21:00:52:609000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:52:614000	(356, 331)
+November 12, 2016 21:00:52:617000	331
+November 12, 2016 21:00:52:619000	[356, 331]
+November 12, 2016 21:00:52:624000	331
+November 12, 2016 21:00:52:628000	(356, 331)
+November 12, 2016 21:00:52:635000	[(223, 250), (559, 195), (638, 263), (356, 331), [640, 480]]
+November 12, 2016 21:00:52:797000	bottommost point: 331
+November 12, 2016 21:00:52:830000	turn angle:  -0.10125
+November 12, 2016 21:00:52:839000	bottom most position:  
+November 12, 2016 21:00:52:849000	356
+November 12, 2016 21:00:53:522000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:54:898000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:55:343000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:55:348000	(336, 223)
+November 12, 2016 21:00:55:351000	223
+November 12, 2016 21:00:55:356000	[336, 223]
+November 12, 2016 21:00:55:359000	223
+November 12, 2016 21:00:55:375000	(336, 223)
+November 12, 2016 21:00:55:388000	[(232, 188), (407, 163), (511, 179), (336, 223), [640, 480]]
+November 12, 2016 21:00:55:790000	bottommost point: 223
+November 12, 2016 21:00:55:799000	turn angle:  -0.045
+November 12, 2016 21:00:55:840000	OBJECT IS IN CENTRE, walking toward it:  1.07083333333
+November 12, 2016 21:00:55:852000	bottom most position:  
+November 12, 2016 21:00:55:870000	336
+November 12, 2016 21:00:56:610000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:56:625000	(344, 367)
+November 12, 2016 21:00:56:639000	367
+November 12, 2016 21:00:56:652000	[344, 367]
+November 12, 2016 21:00:56:669000	367
+November 12, 2016 21:00:56:674000	(344, 367)
+November 12, 2016 21:00:56:677000	[(195, 279), (531, 219), (638, 267), (344, 367), [640, 480]]
+November 12, 2016 21:00:56:754000	bottommost point: 367
+November 12, 2016 21:00:56:760000	turn angle:  -0.0675
+November 12, 2016 21:00:56:770000	bottom most position:  
+November 12, 2016 21:00:56:777000	344
+November 12, 2016 21:00:57:891000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:58:800000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:00:59:299000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:00:59:302000	(384, 231)
+November 12, 2016 21:00:59:310000	231
+November 12, 2016 21:00:59:312000	[384, 231]
+November 12, 2016 21:00:59:317000	231
+November 12, 2016 21:00:59:319000	(384, 231)
+November 12, 2016 21:00:59:321000	[(272, 192), (455, 167), (567, 183), (384, 231), [640, 480]]
+November 12, 2016 21:00:59:364000	bottommost point: 231
+November 12, 2016 21:00:59:402000	turn angle:  -0.18
+November 12, 2016 21:00:59:411000	bottom most position:  
+November 12, 2016 21:00:59:419000	384
+November 12, 2016 21:01:00:270000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:00:273000	(336, 359)
+November 12, 2016 21:01:00:276000	359
+November 12, 2016 21:01:00:289000	[336, 359]
+November 12, 2016 21:01:00:294000	359
+November 12, 2016 21:01:00:297000	(336, 359)
+November 12, 2016 21:01:00:301000	[(187, 273), (527, 207), (638, 271), (336, 359), [640, 480]]
+November 12, 2016 21:01:00:567000	bottommost point: 359
+November 12, 2016 21:01:00:645000	turn angle:  -0.045
+November 12, 2016 21:01:00:658000	OBJECT IS IN CENTRE, walking toward it:  0.504166666667
+November 12, 2016 21:01:00:710000	bottom most position:  
+November 12, 2016 21:01:00:713000	336
+November 12, 2016 21:01:01:441000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:02:720000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:02:949000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:02:952000	(380, 231)
+November 12, 2016 21:01:02:959000	231
+November 12, 2016 21:01:02:963000	[380, 231]
+November 12, 2016 21:01:02:967000	231
+November 12, 2016 21:01:02:969000	(380, 231)
+November 12, 2016 21:01:02:974000	[(272, 192), (427, 171), (575, 187), (380, 231), [640, 480]]
+November 12, 2016 21:01:03:353000	bottommost point: 231
+November 12, 2016 21:01:03:380000	turn angle:  -0.16875
+November 12, 2016 21:01:03:389000	bottom most position:  
+November 12, 2016 21:01:03:392000	380
+November 12, 2016 21:01:04:193000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:04:206000	(324, 367)
+November 12, 2016 21:01:04:230000	367
+November 12, 2016 21:01:04:249000	[324, 367]
+November 12, 2016 21:01:04:252000	367
+November 12, 2016 21:01:04:256000	(324, 367)
+November 12, 2016 21:01:04:259000	[(175, 273), (499, 219), (638, 279), (324, 367), [640, 480]]
+November 12, 2016 21:01:04:309000	bottommost point: 367
+November 12, 2016 21:01:04:313000	turn angle:  -0.01125
+November 12, 2016 21:01:04:323000	OBJECT IS IN CENTRE, walking toward it:  0.470833333333
+November 12, 2016 21:01:04:338000	bottom most position:  
+November 12, 2016 21:01:04:340000	324
+November 12, 2016 21:01:05:405000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:06:345000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:06:871000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:06:877000	(436, 251)
+November 12, 2016 21:01:06:893000	251
+November 12, 2016 21:01:06:896000	[436, 251]
+November 12, 2016 21:01:06:900000	251
+November 12, 2016 21:01:06:909000	(436, 251)
+November 12, 2016 21:01:06:913000	[(316, 204), (471, 187), (627, 203), (436, 251), [640, 480]]
+November 12, 2016 21:01:07:325000	bottommost point: 251
+November 12, 2016 21:01:07:327000	move head down by x degrees
+November 12, 2016 21:01:07:762000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:07:767000	(300, 387)
+November 12, 2016 21:01:07:771000	387
+November 12, 2016 21:01:07:772000	[300, 387]
+November 12, 2016 21:01:07:776000	387
+November 12, 2016 21:01:07:784000	(300, 387)
+November 12, 2016 21:01:07:786000	[(143, 279), (499, 215), (638, 275), (300, 387), [640, 480]]
+November 12, 2016 21:01:07:869000	bottommost point: 387
+November 12, 2016 21:01:07:935000	turn angle:  0.05625
+November 12, 2016 21:01:07:938000	OBJECT IS IN CENTRE, walking toward it:  0.3875
+November 12, 2016 21:01:07:942000	bottom most position:  
+November 12, 2016 21:01:07:948000	300
+November 12, 2016 21:01:08:598000	turn angle:  -0.32625
+November 12, 2016 21:01:08:604000	bottom most position:  
+November 12, 2016 21:01:08:611000	436
+November 12, 2016 21:01:09:955000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:10:629000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:11:493000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:11:497000	(304, 387)
+November 12, 2016 21:01:11:500000	391
+November 12, 2016 21:01:11:506000	[304, 387]
+November 12, 2016 21:01:11:510000	391
+November 12, 2016 21:01:11:515000	(304, 391)
+November 12, 2016 21:01:11:519000	[(148, 272), (503, 219), (638, 263), (304, 387), [640, 480]]
+November 12, 2016 21:01:11:592000	bottommost point: 391
+November 12, 2016 21:01:11:599000	turn angle:  0.045
+November 12, 2016 21:01:11:722000	OBJECT IS IN CENTRE, walking toward it:  0.370833333333
+November 12, 2016 21:01:11:776000	bottom most position:  
+November 12, 2016 21:01:11:779000	304
+November 12, 2016 21:01:12:300000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:12:308000	(480, 259)
+November 12, 2016 21:01:12:312000	259
+November 12, 2016 21:01:12:317000	[480, 259]
+November 12, 2016 21:01:12:320000	259
+November 12, 2016 21:01:12:322000	(480, 259)
+November 12, 2016 21:01:12:327000	[(352, 212), (539, 187), (638, 216), (480, 259), [640, 480]]
+November 12, 2016 21:01:12:505000	bottommost point: 259
+November 12, 2016 21:01:12:582000	turn angle:  -0.45
+November 12, 2016 21:01:12:671000	bottom most position:  
+November 12, 2016 21:01:12:673000	480
+November 12, 2016 21:01:13:807000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:14:699000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:15:421000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:15:425000	(288, 403)
+November 12, 2016 21:01:15:427000	403
+November 12, 2016 21:01:15:430000	[288, 403]
+November 12, 2016 21:01:15:434000	403
+November 12, 2016 21:01:15:439000	(288, 403)
+November 12, 2016 21:01:15:446000	[(107, 289), (451, 223), (638, 252), (288, 403), [640, 480]]
+November 12, 2016 21:01:15:477000	bottommost point: 403
+November 12, 2016 21:01:15:492000	turn angle:  0.09
+November 12, 2016 21:01:15:497000	bottom most position:  
+November 12, 2016 21:01:15:502000	288
+November 12, 2016 21:01:16:194000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:16:199000	(392, 259)
+November 12, 2016 21:01:16:204000	259
+November 12, 2016 21:01:16:214000	[392, 259]
+November 12, 2016 21:01:16:218000	259
+November 12, 2016 21:01:16:222000	(392, 259)
+November 12, 2016 21:01:16:234000	[(271, 215), (449, 191), (591, 211), (392, 259), [640, 480]]
+November 12, 2016 21:01:16:282000	bottommost point: 259
+November 12, 2016 21:01:16:299000	turn angle:  -0.2025
+November 12, 2016 21:01:16:339000	bottom most position:  
+November 12, 2016 21:01:16:350000	392
+November 12, 2016 21:01:17:510000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:18:400000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:19:000000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:19:009000	(304, 407)
+November 12, 2016 21:01:19:012000	407
+November 12, 2016 21:01:19:014000	[304, 407]
+November 12, 2016 21:01:19:020000	407
+November 12, 2016 21:01:19:024000	(304, 407)
+November 12, 2016 21:01:19:027000	[(127, 294), (471, 219), (638, 227), (304, 407), [640, 480]]
+November 12, 2016 21:01:19:363000	bottommost point: 407
+November 12, 2016 21:01:19:374000	turn angle:  0.045
+November 12, 2016 21:01:19:377000	OBJECT IS IN CENTRE, walking toward it:  0.304166666667
+November 12, 2016 21:01:19:381000	bottom most position:  
+November 12, 2016 21:01:19:388000	304
+November 12, 2016 21:01:19:922000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:19:931000	(364, 251)
+November 12, 2016 21:01:19:951000	251
+November 12, 2016 21:01:19:962000	[364, 251]
+November 12, 2016 21:01:19:968000	251
+November 12, 2016 21:01:19:971000	(364, 251)
+November 12, 2016 21:01:19:976000	[(252, 212), (427, 183), (560, 197), (364, 251), [640, 480]]
+November 12, 2016 21:01:20:041000	bottommost point: 251
+November 12, 2016 21:01:20:102000	turn angle:  -0.12375
+November 12, 2016 21:01:20:132000	bottom most position:  
+November 12, 2016 21:01:20:140000	364
+November 12, 2016 21:01:21:404000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:22:168000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:22:829000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:22:837000	(312, 403)
+November 12, 2016 21:01:22:841000	403
+November 12, 2016 21:01:22:843000	[312, 403]
+November 12, 2016 21:01:22:845000	403
+November 12, 2016 21:01:22:847000	(312, 403)
+November 12, 2016 21:01:22:850000	[(131, 291), (467, 223), (638, 263), (312, 403), [640, 480]]
+November 12, 2016 21:01:23:282000	bottommost point: 403
+November 12, 2016 21:01:23:311000	turn angle:  0.0225
+November 12, 2016 21:01:23:386000	OBJECT IS IN CENTRE, walking toward it:  0.320833333333
+November 12, 2016 21:01:23:498000	bottom most position:  
+November 12, 2016 21:01:23:502000	312
+November 12, 2016 21:01:23:826000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:23:838000	(348, 259)
+November 12, 2016 21:01:23:855000	259
+November 12, 2016 21:01:23:857000	[348, 259]
+November 12, 2016 21:01:23:859000	259
+November 12, 2016 21:01:23:862000	(348, 259)
+November 12, 2016 21:01:23:870000	[(220, 212), (415, 183), (527, 199), (348, 259), [640, 480]]
+November 12, 2016 21:01:23:901000	bottommost point: 259
+November 12, 2016 21:01:23:920000	turn angle:  -0.07875
+November 12, 2016 21:01:23:924000	bottom most position:  
+November 12, 2016 21:01:23:927000	348
+November 12, 2016 21:01:25:521000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:25:943000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:27:271000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:27:275000	(324, 411)
+November 12, 2016 21:01:27:278000	411
+November 12, 2016 21:01:27:282000	[324, 411]
+November 12, 2016 21:01:27:285000	411
+November 12, 2016 21:01:27:291000	(324, 411)
+November 12, 2016 21:01:27:301000	[(135, 298), (487, 219), (638, 283), (324, 411), [640, 480]]
+November 12, 2016 21:01:27:732000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:27:737000	(324, 255)
+November 12, 2016 21:01:27:739000	255
+November 12, 2016 21:01:27:741000	[324, 255]
+November 12, 2016 21:01:27:754000	255
+November 12, 2016 21:01:27:768000	(324, 255)
+November 12, 2016 21:01:27:776000	[(204, 212), (395, 183), (504, 201), (324, 255), [640, 480]]
+November 12, 2016 21:01:27:869000	bottommost point: 411
+November 12, 2016 21:01:27:930000	turn angle:  -0.01125
+November 12, 2016 21:01:27:965000	OBJECT IS IN CENTRE, walking toward it:  0.2875
+November 12, 2016 21:01:27:971000	bottom most position:  
+November 12, 2016 21:01:27:978000	324
+November 12, 2016 21:01:28:030000	bottommost point: 255
+November 12, 2016 21:01:28:034000	turn angle:  -0.01125
+November 12, 2016 21:01:28:046000	OBJECT IS IN CENTRE, walking toward it:  0.9375
+November 12, 2016 21:01:28:078000	bottom most position:  
+November 12, 2016 21:01:28:087000	324
+November 12, 2016 21:01:29:990000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:30:115000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:31:733000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:31:750000	(332, 419)
+November 12, 2016 21:01:31:761000	423
+November 12, 2016 21:01:31:765000	[332, 419]
+November 12, 2016 21:01:31:769000	423
+November 12, 2016 21:01:31:775000	(332, 423)
+November 12, 2016 21:01:31:777000	[(143, 302), (487, 223), (638, 231), (332, 419), [640, 480]]
+November 12, 2016 21:01:31:790000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:31:793000	(316, 259)
+November 12, 2016 21:01:31:796000	259
+November 12, 2016 21:01:31:799000	[316, 259]
+November 12, 2016 21:01:31:812000	259
+November 12, 2016 21:01:31:819000	(316, 259)
+November 12, 2016 21:01:31:822000	[(183, 219), (359, 187), (487, 203), (316, 259), [640, 480]]
+November 12, 2016 21:01:31:875000	bottommost point: 423
+November 12, 2016 21:01:31:889000	turn angle:  -0.03375
+November 12, 2016 21:01:31:906000	bottommost point: 259
+November 12, 2016 21:01:31:908000	OBJECT IS IN CENTRE, walking toward it:  0.2375
+November 12, 2016 21:01:31:916000	bottom most position:  
+November 12, 2016 21:01:31:918000	332
+November 12, 2016 21:01:31:921000	turn angle:  0.01125
+November 12, 2016 21:01:32:052000	OBJECT IS IN CENTRE, walking toward it:  0.920833333333
+November 12, 2016 21:01:32:112000	bottom most position:  
+November 12, 2016 21:01:32:115000	316
+November 12, 2016 21:01:33:944000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:34:139000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:35:582000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:35:589000	(328, 419)
+November 12, 2016 21:01:35:611000	423
+November 12, 2016 21:01:35:630000	[328, 419]
+November 12, 2016 21:01:35:635000	423
+November 12, 2016 21:01:35:638000	(328, 423)
+November 12, 2016 21:01:35:640000	[(136, 288), (499, 219), (638, 231), (328, 419), [640, 480]]
+November 12, 2016 21:01:35:672000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:35:678000	(300, 271)
+November 12, 2016 21:01:35:689000	271
+November 12, 2016 21:01:35:697000	[300, 271]
+November 12, 2016 21:01:35:702000	271
+November 12, 2016 21:01:35:704000	(300, 271)
+November 12, 2016 21:01:35:707000	[(168, 224), (359, 195), (487, 211), (300, 271), [640, 480]]
+November 12, 2016 21:01:35:991000	bottommost point: 423
+November 12, 2016 21:01:36:039000	turn angle:  -0.0125
+November 12, 2016 21:01:36:066000	OBJECT IS IN CENTRE, walking toward it:  0.2375
+November 12, 2016 21:01:36:089000	bottom most position:  
+November 12, 2016 21:01:36:101000	328
+November 12, 2016 21:01:36:115000	bottommost point: 271
+November 12, 2016 21:01:36:118000	turn angle:  0.05625
+November 12, 2016 21:01:36:122000	OBJECT IS IN CENTRE, walking toward it:  0.870833333333
+November 12, 2016 21:01:36:125000	bottom most position:  
+November 12, 2016 21:01:36:128000	300
+November 12, 2016 21:01:38:114000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:38:147000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:39:806000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:39:810000	(352, 415)
+November 12, 2016 21:01:39:813000	415
+November 12, 2016 21:01:39:823000	[352, 415]
+November 12, 2016 21:01:39:831000	415
+November 12, 2016 21:01:39:838000	(352, 415)
+November 12, 2016 21:01:39:841000	[(147, 301), (491, 215), (638, 288), (352, 415), [640, 480]]
+November 12, 2016 21:01:39:869000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:39:872000	(467, 276)
+November 12, 2016 21:01:39:888000	275
+November 12, 2016 21:01:39:894000	[467, 276]
+November 12, 2016 21:01:39:896000	275
+November 12, 2016 21:01:39:901000	(467, 275)
+November 12, 2016 21:01:39:903000	[(327, 221), (531, 195), (638, 232), (467, 276), [640, 480]]
+November 12, 2016 21:01:40:092000	bottommost point: 415
+November 12, 2016 21:01:40:155000	turn angle:  -0.05
+November 12, 2016 21:01:40:301000	bottom most position:  
+November 12, 2016 21:01:40:310000	352
+November 12, 2016 21:01:40:354000	bottommost point: 275
+November 12, 2016 21:01:40:404000	turn angle:  -0.4134375
+November 12, 2016 21:01:40:413000	bottom most position:  
+November 12, 2016 21:01:40:416000	467
+November 12, 2016 21:01:42:361000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:42:439000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:43:985000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:43:991000	(348, 427)
+November 12, 2016 21:01:43:994000	427
+November 12, 2016 21:01:43:997000	[348, 427]
+November 12, 2016 21:01:44:000000	427
+November 12, 2016 21:01:44:009000	(348, 427)
+November 12, 2016 21:01:44:021000	[(135, 297), (495, 219), (638, 231), (348, 427), [640, 480]]
+November 12, 2016 21:01:44:160000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:44:173000	(492, 283)
+November 12, 2016 21:01:44:177000	283
+November 12, 2016 21:01:44:180000	[492, 283]
+November 12, 2016 21:01:44:184000	283
+November 12, 2016 21:01:44:191000	(492, 283)
+November 12, 2016 21:01:44:194000	[(343, 229), (545, 195), (638, 239), (492, 283), [640, 480]]
+November 12, 2016 21:01:44:242000	bottommost point: 427
+November 12, 2016 21:01:44:258000	turn angle:  -0.04375
+November 12, 2016 21:01:44:267000	bottom most position:  
+November 12, 2016 21:01:44:277000	348
+November 12, 2016 21:01:44:310000	bottommost point: 283
+November 12, 2016 21:01:44:517000	turn angle:  -0.48375
+November 12, 2016 21:01:44:521000	bottom most position:  
+November 12, 2016 21:01:44:524000	492
+November 12, 2016 21:01:46:284000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:46:531000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:47:899000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:47:919000	(348, 427)
+November 12, 2016 21:01:47:934000	427
+November 12, 2016 21:01:47:938000	[348, 427]
+November 12, 2016 21:01:47:941000	427
+November 12, 2016 21:01:47:943000	(348, 427)
+November 12, 2016 21:01:47:947000	[(132, 288), (483, 223), (638, 295), (348, 427), [640, 480]]
+November 12, 2016 21:01:48:076000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:48:082000	(384, 283)
+November 12, 2016 21:01:48:095000	283
+November 12, 2016 21:01:48:105000	[384, 283]
+November 12, 2016 21:01:48:108000	283
+November 12, 2016 21:01:48:110000	(384, 283)
+November 12, 2016 21:01:48:113000	[(223, 227), (448, 188), (587, 211), (384, 283), [640, 480]]
+November 12, 2016 21:01:48:209000	bottommost point: 427
+November 12, 2016 21:01:48:227000	turn angle:  -0.04375
+November 12, 2016 21:01:48:239000	bottom most position:  
+November 12, 2016 21:01:48:250000	348
+November 12, 2016 21:01:48:402000	bottommost point: 283
+November 12, 2016 21:01:48:484000	turn angle:  -0.18
+November 12, 2016 21:01:48:521000	bottom most position:  
+November 12, 2016 21:01:48:542000	384
+November 12, 2016 21:01:50:262000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:50:579000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:51:875000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:51:878000	(340, 435)
+November 12, 2016 21:01:51:889000	435
+November 12, 2016 21:01:51:903000	[340, 435]
+November 12, 2016 21:01:51:907000	435
+November 12, 2016 21:01:51:927000	(340, 435)
+November 12, 2016 21:01:51:943000	[(115, 306), (463, 223), (638, 231), (340, 435), [640, 480]]
+November 12, 2016 21:01:52:212000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:52:216000	(356, 287)
+November 12, 2016 21:01:52:219000	287
+November 12, 2016 21:01:52:232000	[356, 287]
+November 12, 2016 21:01:52:238000	287
+November 12, 2016 21:01:52:241000	(356, 287)
+November 12, 2016 21:01:52:249000	[(200, 228), (409, 191), (548, 209), (356, 287), [640, 480]]
+November 12, 2016 21:01:52:458000	bottommost point: 435
+November 12, 2016 21:01:52:538000	turn angle:  -0.03125
+November 12, 2016 21:01:52:559000	bottom most position:  
+November 12, 2016 21:01:52:561000	340
+November 12, 2016 21:01:52:601000	bottommost point: 287
+November 12, 2016 21:01:52:609000	turn angle:  -0.10125
+November 12, 2016 21:01:52:613000	bottom most position:  
+November 12, 2016 21:01:52:615000	356
+November 12, 2016 21:01:54:580000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:54:627000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:56:272000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:56:275000	(340, 435)
+November 12, 2016 21:01:56:277000	435
+November 12, 2016 21:01:56:295000	[340, 435]
+November 12, 2016 21:01:56:297000	435
+November 12, 2016 21:01:56:303000	(340, 435)
+November 12, 2016 21:01:56:307000	[(111, 306), (455, 223), (638, 280), (340, 435), [640, 480]]
+November 12, 2016 21:01:56:315000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:56:320000	(292, 287)
+November 12, 2016 21:01:56:340000	287
+November 12, 2016 21:01:56:352000	[292, 287]
+November 12, 2016 21:01:56:354000	287
+November 12, 2016 21:01:56:361000	(292, 287)
+November 12, 2016 21:01:56:365000	[(148, 232), (367, 191), (503, 207), (292, 287), [640, 480]]
+November 12, 2016 21:01:56:473000	bottommost point: 435
+November 12, 2016 21:01:56:491000	turn angle:  -0.03125
+November 12, 2016 21:01:56:495000	bottommost point: 287
+November 12, 2016 21:01:56:498000	bottom most position:  
+November 12, 2016 21:01:56:502000	340
+November 12, 2016 21:01:56:514000	turn angle:  0.07875
+November 12, 2016 21:01:56:533000	bottom most position:  
+November 12, 2016 21:01:56:536000	292
+November 12, 2016 21:01:58:513000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:58:549000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:01:59:970000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:01:59:976000	(336, 435)
+November 12, 2016 21:01:59:981000	439
+November 12, 2016 21:01:59:986000	[336, 435]
+November 12, 2016 21:01:59:991000	439
+November 12, 2016 21:01:59:999000	(336, 439)
+November 12, 2016 21:02:00:012000	[(104, 296), (455, 223), (638, 239), (336, 435), [640, 480]]
+November 12, 2016 21:02:00:327000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:00:332000	(300, 287)
+November 12, 2016 21:02:00:338000	287
+November 12, 2016 21:02:00:344000	[300, 287]
+November 12, 2016 21:02:00:348000	287
+November 12, 2016 21:02:00:354000	(300, 287)
+November 12, 2016 21:02:00:365000	[(140, 228), (355, 191), (492, 208), (300, 287), [640, 480]]
+November 12, 2016 21:02:00:606000	bottommost point: 439
+November 12, 2016 21:02:00:615000	turn angle:  -0.025
+November 12, 2016 21:02:00:630000	bottom most position:  
+November 12, 2016 21:02:00:635000	336
+November 12, 2016 21:02:00:649000	bottommost point: 287
+November 12, 2016 21:02:00:671000	turn angle:  0.05625
+November 12, 2016 21:02:00:751000	OBJECT IS IN CENTRE, walking toward it:  0.804166666667
+November 12, 2016 21:02:00:768000	bottom most position:  
+November 12, 2016 21:02:00:774000	300
+November 12, 2016 21:02:02:648000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:02:809000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:04:342000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:04:350000	(348, 443)
+November 12, 2016 21:02:04:360000	443
+November 12, 2016 21:02:04:365000	[348, 443]
+November 12, 2016 21:02:04:367000	443
+November 12, 2016 21:02:04:369000	(348, 443)
+November 12, 2016 21:02:04:372000	[(99, 314), (451, 219), (638, 227), (348, 443), [640, 480]]
+November 12, 2016 21:02:04:509000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:04:517000	(312, 295)
+November 12, 2016 21:02:04:526000	295
+November 12, 2016 21:02:04:533000	[312, 295]
+November 12, 2016 21:02:04:544000	295
+November 12, 2016 21:02:04:550000	(312, 295)
+November 12, 2016 21:02:04:553000	[(147, 241), (375, 195), (503, 215), (312, 295), [640, 480]]
+November 12, 2016 21:02:04:616000	bottommost point: 443
+November 12, 2016 21:02:04:635000	turn angle:  -0.04375
+November 12, 2016 21:02:04:640000	bottom most position:  
+November 12, 2016 21:02:04:643000	bottommost point: 295
+November 12, 2016 21:02:04:652000	turn angle:  0.0225
+November 12, 2016 21:02:04:791000	OBJECT IS IN CENTRE, walking toward it:  0.770833333333
+November 12, 2016 21:02:04:862000	bottom most position:  
+November 12, 2016 21:02:04:874000	312
+November 12, 2016 21:02:06:650000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:06:907000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:08:360000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:08:363000	(336, 443)
+November 12, 2016 21:02:08:366000	443
+November 12, 2016 21:02:08:369000	[336, 443]
+November 12, 2016 21:02:08:378000	443
+November 12, 2016 21:02:08:385000	(336, 443)
+November 12, 2016 21:02:08:388000	[(88, 304), (451, 219), (638, 264), (336, 443), [640, 480]]
+November 12, 2016 21:02:08:483000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:08:486000	(300, 311)
+November 12, 2016 21:02:08:489000	311
+November 12, 2016 21:02:08:493000	[300, 311]
+November 12, 2016 21:02:08:497000	311
+November 12, 2016 21:02:08:502000	(300, 311)
+November 12, 2016 21:02:08:515000	[(120, 244), (339, 207), (483, 227), (300, 311), [640, 480]]
+November 12, 2016 21:02:08:620000	bottommost point: 443
+November 12, 2016 21:02:08:629000	turn angle:  -0.025
+November 12, 2016 21:02:08:661000	bottom most position:  
+November 12, 2016 21:02:08:663000	336
+November 12, 2016 21:02:08:678000	bottommost point: 311
+November 12, 2016 21:02:08:686000	turn angle:  0.05625
+November 12, 2016 21:02:08:805000	OBJECT IS IN CENTRE, walking toward it:  0.704166666667
+November 12, 2016 21:02:08:886000	bottom most position:  
+November 12, 2016 21:02:08:894000	300
+November 12, 2016 21:02:10:677000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:10:917000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:12:479000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:12:484000	(340, 447)
+November 12, 2016 21:02:12:487000	447
+November 12, 2016 21:02:12:490000	[340, 447]
+November 12, 2016 21:02:12:502000	447
+November 12, 2016 21:02:12:508000	(340, 447)
+November 12, 2016 21:02:12:511000	[(83, 317), (443, 219), (638, 240), (340, 447), [640, 480]]
+November 12, 2016 21:02:12:577000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:12:581000	(272, 303)
+November 12, 2016 21:02:12:590000	303
+November 12, 2016 21:02:12:593000	[272, 303]
+November 12, 2016 21:02:12:600000	303
+November 12, 2016 21:02:12:602000	(272, 303)
+November 12, 2016 21:02:12:605000	[(80, 232), (315, 187), (467, 203), (272, 303), [640, 480]]
+November 12, 2016 21:02:12:908000	bottommost point: 447
+November 12, 2016 21:02:12:911000	turn angle:  -0.03125
+November 12, 2016 21:02:12:916000	bottom most position:  
+November 12, 2016 21:02:12:923000	340
+November 12, 2016 21:02:12:941000	bottommost point: 303
+November 12, 2016 21:02:12:950000	turn angle:  0.135
+November 12, 2016 21:02:12:981000	bottom most position:  
+November 12, 2016 21:02:12:984000	272
+November 12, 2016 21:02:14:937000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:15:010000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:16:637000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:16:642000	(352, 447)
+November 12, 2016 21:02:16:647000	447
+November 12, 2016 21:02:16:663000	[352, 447]
+November 12, 2016 21:02:16:673000	447
+November 12, 2016 21:02:16:682000	(352, 447)
+November 12, 2016 21:02:16:691000	[(83, 321), (441, 215), (638, 252), (352, 447), [640, 480]]
+November 12, 2016 21:02:16:721000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:16:724000	(304, 307)
+November 12, 2016 21:02:16:729000	307
+November 12, 2016 21:02:16:732000	[304, 307]
+November 12, 2016 21:02:16:735000	307
+November 12, 2016 21:02:16:739000	(304, 307)
+November 12, 2016 21:02:16:745000	[(123, 241), (377, 191), (519, 215), (304, 307), [640, 480]]
+November 12, 2016 21:02:16:836000	bottommost point: 447
+November 12, 2016 21:02:16:853000	turn angle:  -0.05
+November 12, 2016 21:02:16:912000	bottom most position:  
+November 12, 2016 21:02:16:919000	352
+November 12, 2016 21:02:16:932000	bottommost point: 307
+November 12, 2016 21:02:16:954000	turn angle:  0.045
+November 12, 2016 21:02:16:963000	OBJECT IS IN CENTRE, walking toward it:  0.720833333333
+November 12, 2016 21:02:16:970000	bottom most position:  
+November 12, 2016 21:02:16:976000	304
+November 12, 2016 21:02:18:927000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:19:027000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:20:570000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:20:581000	(348, 447)
+November 12, 2016 21:02:20:585000	447
+November 12, 2016 21:02:20:595000	[348, 447]
+November 12, 2016 21:02:20:597000	447
+November 12, 2016 21:02:20:600000	(348, 447)
+November 12, 2016 21:02:20:603000	[(79, 317), (440, 216), (638, 227), (348, 447), [640, 480]]
+November 12, 2016 21:02:21:389000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:21:404000	(332, 319)
+November 12, 2016 21:02:21:412000	319
+November 12, 2016 21:02:21:421000	[332, 319]
+November 12, 2016 21:02:21:424000	319
+November 12, 2016 21:02:21:428000	(332, 319)
+November 12, 2016 21:02:21:432000	[(151, 249), (387, 199), (547, 219), (332, 319), [640, 480]]
+November 12, 2016 21:02:22:031000	bottommost point: 447
+November 12, 2016 21:02:22:051000	turn angle:  -0.04375
+November 12, 2016 21:02:22:120000	bottom most position:  
+November 12, 2016 21:02:22:126000	348
+November 12, 2016 21:02:22:223000	bottommost point: 319
+November 12, 2016 21:02:22:275000	turn angle:  -0.03375
+November 12, 2016 21:02:22:346000	OBJECT IS IN CENTRE, walking toward it:  0.670833333333
+November 12, 2016 21:02:22:475000	bottom most position:  
+November 12, 2016 21:02:22:478000	332
+November 12, 2016 21:02:24:147000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:24:522000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:26:440000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:26:443000	(340, 455)
+November 12, 2016 21:02:26:447000	455
+November 12, 2016 21:02:26:456000	[340, 455]
+November 12, 2016 21:02:26:462000	455
+November 12, 2016 21:02:26:463000	(340, 455)
+November 12, 2016 21:02:26:466000	[(67, 318), (432, 220), (632, 236), (340, 455), [640, 480]]
+November 12, 2016 21:02:27:342000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:27:348000	(252, 287)
+November 12, 2016 21:02:27:350000	287
+November 12, 2016 21:02:27:352000	[252, 287]
+November 12, 2016 21:02:27:366000	287
+November 12, 2016 21:02:27:378000	(252, 287)
+November 12, 2016 21:02:27:410000	[(56, 212), (311, 163), (467, 183), (252, 287), [640, 480]]
+November 12, 2016 21:02:28:203000	bottommost point: 455
+November 12, 2016 21:02:28:421000	right side is longer
+November 12, 2016 21:02:28:754000	Initial longer side is 
+November 12, 2016 21:02:28:771000	RIGHT
+November 12, 2016 21:02:28:829000	reached corner of object
+November 12, 2016 21:02:28:832000	FIND LONGER SIDE OF TABLE
+November 12, 2016 21:02:29:286000	bottommost point: 287
+November 12, 2016 21:02:29:360000	turn angle:  0.19125
+November 12, 2016 21:02:29:550000	bottom most position:  
+November 12, 2016 21:02:29:576000	252
+November 12, 2016 21:02:31:610000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:34:397000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:34:399000	(272, 335)
+November 12, 2016 21:02:34:405000	335
+November 12, 2016 21:02:34:407000	[272, 335]
+November 12, 2016 21:02:34:413000	335
+November 12, 2016 21:02:34:415000	(272, 335)
+November 12, 2016 21:02:34:417000	[(92, 260), (347, 215), (480, 236), (272, 335), [640, 480]]
+November 12, 2016 21:02:34:500000	bottommost point: 335
+November 12, 2016 21:02:34:508000	turn angle:  0.135
+November 12, 2016 21:02:34:517000	bottom most position:  
+November 12, 2016 21:02:34:525000	272
+November 12, 2016 21:02:36:540000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:37:778000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:37:780000	(632, 307)
+November 12, 2016 21:02:37:806000	355
+November 12, 2016 21:02:37:820000	[632, 307]
+November 12, 2016 21:02:37:828000	355
+November 12, 2016 21:02:37:856000	(632, 355)
+November 12, 2016 21:02:37:861000	[(333, 163), (333, 163), (638, 307), (632, 307), [640, 480]]
+November 12, 2016 21:02:39:454000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:39:456000	(284, 319)
+November 12, 2016 21:02:39:461000	319
+November 12, 2016 21:02:39:463000	[284, 319]
+November 12, 2016 21:02:39:464000	319
+November 12, 2016 21:02:39:466000	(284, 319)
+November 12, 2016 21:02:39:468000	[(87, 245), (348, 192), (487, 215), (284, 319), [640, 480]]
+November 12, 2016 21:02:39:483000	bottommost point: 319
+November 12, 2016 21:02:39:492000	turn angle:  0.10125
+November 12, 2016 21:02:39:567000	bottom most position:  
+November 12, 2016 21:02:39:570000	284
+November 12, 2016 21:02:39:637000	[(333, 163), (333, 163), (638, 307), (632, 307), [640, 480]]
+November 12, 2016 21:02:39:646000	hypot left 331.868950039
+November 12, 2016 21:02:41:621000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:44:475000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:44:479000	(284, 319)
+November 12, 2016 21:02:44:481000	319
+November 12, 2016 21:02:44:490000	[284, 319]
+November 12, 2016 21:02:44:498000	319
+November 12, 2016 21:02:44:506000	(284, 319)
+November 12, 2016 21:02:44:509000	[(91, 249), (343, 195), (495, 215), (284, 319), [640, 480]]
+November 12, 2016 21:02:44:828000	bottommost point: 319
+November 12, 2016 21:02:44:928000	turn angle:  0.10125
+November 12, 2016 21:02:45:127000	bottom most position:  
+November 12, 2016 21:02:45:141000	284
+November 12, 2016 21:02:47:223000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:48:631000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:48:633000	(636, 323)
+November 12, 2016 21:02:48:639000	323
+November 12, 2016 21:02:48:642000	[636, 323]
+November 12, 2016 21:02:48:649000	323
+November 12, 2016 21:02:48:657000	(636, 323)
+November 12, 2016 21:02:48:670000	[(387, 155), (619, 127), (638, 323), (636, 323), [640, 480]]
+November 12, 2016 21:02:49:599000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:49:601000	(288, 319)
+November 12, 2016 21:02:49:609000	319
+November 12, 2016 21:02:49:613000	[288, 319]
+November 12, 2016 21:02:49:616000	319
+November 12, 2016 21:02:49:624000	(288, 319)
+November 12, 2016 21:02:49:630000	[(99, 251), (355, 195), (495, 219), (288, 319), [640, 480]]
+November 12, 2016 21:02:49:941000	[(387, 155), (619, 127), (638, 323), (636, 323), [640, 480]]
+November 12, 2016 21:02:49:946000	hypot right 2.0
+November 12, 2016 21:02:50:603000	bottommost point: 319
+November 12, 2016 21:02:50:657000	turn angle:  0.09
+November 12, 2016 21:02:50:758000	bottom most position:  
+November 12, 2016 21:02:50:767000	288
+November 12, 2016 21:02:52:843000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:54:641000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:54:664000	(316, 319)
+November 12, 2016 21:02:54:669000	319
+November 12, 2016 21:02:54:675000	[316, 319]
+November 12, 2016 21:02:54:679000	319
+November 12, 2016 21:02:54:681000	(316, 319)
+November 12, 2016 21:02:54:683000	[(123, 247), (375, 195), (519, 219), (316, 319), [640, 480]]
+November 12, 2016 21:02:54:721000	bottommost point: 319
+November 12, 2016 21:02:54:728000	turn angle:  0.01125
+November 12, 2016 21:02:54:739000	OBJECT IS IN CENTRE, walking toward it:  0.670833333333
+November 12, 2016 21:02:54:745000	bottom most position:  
+November 12, 2016 21:02:54:748000	316
+November 12, 2016 21:02:56:770000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:02:57:309000	right side is longer
+November 12, 2016 21:02:58:805000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:02:58:809000	(320, 319)
+November 12, 2016 21:02:58:816000	319
+November 12, 2016 21:02:58:827000	[320, 319]
+November 12, 2016 21:02:58:831000	319
+November 12, 2016 21:02:58:848000	(320, 319)
+November 12, 2016 21:02:58:860000	[(132, 240), (384, 196), (531, 219), (320, 319), [640, 480]]
+November 12, 2016 21:02:59:562000	bottommost point: 319
+November 12, 2016 21:02:59:610000	turn angle:  0.0
+November 12, 2016 21:02:59:717000	OBJECT IS IN CENTRE, walking toward it:  0.670833333333
+November 12, 2016 21:02:59:820000	bottom most position:  
+November 12, 2016 21:02:59:821000	320
+November 12, 2016 21:03:01:834000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:03:03:807000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:03:811000	(300, 319)
+November 12, 2016 21:03:03:816000	319
+November 12, 2016 21:03:03:820000	[300, 319]
+November 12, 2016 21:03:03:822000	319
+November 12, 2016 21:03:03:827000	(300, 319)
+November 12, 2016 21:03:03:832000	[(111, 254), (367, 195), (512, 219), (300, 319), [640, 480]]
+November 12, 2016 21:03:04:005000	bottommost point: 319
+November 12, 2016 21:03:04:064000	turn angle:  0.05625
+November 12, 2016 21:03:04:122000	OBJECT IS IN CENTRE, walking toward it:  0.670833333333
+November 12, 2016 21:03:04:126000	bottom most position:  
+November 12, 2016 21:03:04:137000	300
+November 12, 2016 21:03:06:152000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:03:08:107000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:08:116000	(312, 339)
+November 12, 2016 21:03:08:149000	339
+November 12, 2016 21:03:08:161000	[312, 339]
+November 12, 2016 21:03:08:165000	339
+November 12, 2016 21:03:08:198000	(312, 339)
+November 12, 2016 21:03:08:211000	[(107, 261), (359, 207), (515, 231), (312, 339), [640, 480]]
+November 12, 2016 21:03:08:890000	bottommost point: 339
+November 12, 2016 21:03:08:939000	turn angle:  0.0225
+November 12, 2016 21:03:08:963000	OBJECT IS IN CENTRE, walking toward it:  0.5875
+November 12, 2016 21:03:08:971000	bottom most position:  
+November 12, 2016 21:03:08:981000	312
+November 12, 2016 21:03:10:540000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:10:544000	(230, 327)
+November 12, 2016 21:03:10:546000	327
+November 12, 2016 21:03:10:548000	[230, 327]
+November 12, 2016 21:03:10:554000	327
+November 12, 2016 21:03:10:556000	(230, 327)
+November 12, 2016 21:03:10:559000	[(1, 203), (1, 203), (319, 231), (230, 327), [640, 480]]
+November 12, 2016 21:03:10:574000	[(1, 203), (1, 203), (319, 231), (230, 327), [640, 480]]
+November 12, 2016 21:03:11:012000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:03:13:432000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:13:439000	(272, 335)
+November 12, 2016 21:03:13:442000	335
+November 12, 2016 21:03:13:445000	[272, 335]
+November 12, 2016 21:03:13:449000	335
+November 12, 2016 21:03:13:453000	(272, 335)
+November 12, 2016 21:03:13:456000	[(64, 252), (339, 195), (487, 219), (272, 335), [640, 480]]
+November 12, 2016 21:03:13:504000	bottommost point: 335
+November 12, 2016 21:03:13:509000	turn angle:  0.135
+November 12, 2016 21:03:13:520000	bottom most position:  
+November 12, 2016 21:03:13:522000	272
+November 12, 2016 21:03:15:543000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:03:17:657000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:17:666000	(312, 347)
+November 12, 2016 21:03:17:671000	347
+November 12, 2016 21:03:17:680000	[312, 347]
+November 12, 2016 21:03:17:682000	347
+November 12, 2016 21:03:17:702000	(312, 347)
+November 12, 2016 21:03:17:708000	[(91, 253), (355, 199), (527, 223), (312, 347), [640, 480]]
+November 12, 2016 21:03:17:729000	bottommost point: 347
+November 12, 2016 21:03:17:743000	turn angle:  0.0225
+November 12, 2016 21:03:17:898000	OBJECT IS IN CENTRE, walking toward it:  0.554166666667
+November 12, 2016 21:03:17:981000	bottom most position:  
+November 12, 2016 21:03:17:984000	312
+November 12, 2016 21:03:19:899000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:19:903000	(632, 319)
+November 12, 2016 21:03:19:906000	319
+November 12, 2016 21:03:19:908000	[632, 319]
+November 12, 2016 21:03:19:913000	319
+November 12, 2016 21:03:19:920000	(632, 319)
+November 12, 2016 21:03:19:925000	[(452, 172), (606, 143), (638, 319), (632, 319), [640, 480]]
+November 12, 2016 21:03:20:007000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:03:21:953000	[(452, 172), (606, 143), (638, 319), (632, 319), [640, 480]]
+November 12, 2016 21:03:22:142000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:22:145000	(304, 363)
+November 12, 2016 21:03:22:147000	363
+November 12, 2016 21:03:22:149000	[304, 363]
+November 12, 2016 21:03:22:152000	363
+November 12, 2016 21:03:22:155000	(304, 363)
+November 12, 2016 21:03:22:158000	[(87, 278), (375, 207), (531, 231), (304, 363), [640, 480]]
+November 12, 2016 21:03:22:215000	bottommost point: 363
+November 12, 2016 21:03:22:240000	turn angle:  0.045
+November 12, 2016 21:03:22:245000	OBJECT IS IN CENTRE, walking toward it:  0.4875
+November 12, 2016 21:03:22:255000	bottom most position:  
+November 12, 2016 21:03:22:257000	304
+November 12, 2016 21:03:24:278000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:03:25:095000	left most x and right most x points
+November 12, 2016 21:03:25:100000	639
+November 12, 2016 21:03:25:103000	638
+November 12, 2016 21:03:26:318000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:26:335000	(252, 347)
+November 12, 2016 21:03:26:338000	347
+November 12, 2016 21:03:26:341000	[252, 347]
+November 12, 2016 21:03:26:344000	347
+November 12, 2016 21:03:26:347000	(252, 347)
+November 12, 2016 21:03:26:359000	[(27, 257), (327, 187), (487, 211), (252, 347), [640, 480]]
+November 12, 2016 21:03:26:678000	bottommost point: 347
+November 12, 2016 21:03:26:705000	turn angle:  0.19125
+November 12, 2016 21:03:26:769000	bottom most position:  
+November 12, 2016 21:03:26:782000	252
+November 12, 2016 21:03:28:800000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:03:30:612000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:30:630000	(292, 359)
+November 12, 2016 21:03:30:632000	359
+November 12, 2016 21:03:30:641000	[292, 359]
+November 12, 2016 21:03:30:647000	359
+November 12, 2016 21:03:30:655000	(292, 359)
+November 12, 2016 21:03:30:676000	[(75, 269), (353, 203), (524, 223), (292, 359), [640, 480]]
+November 12, 2016 21:03:31:320000	bottommost point: 359
+November 12, 2016 21:03:31:331000	turn angle:  0.07875
+November 12, 2016 21:03:31:343000	bottom most position:  
+November 12, 2016 21:03:31:347000	292
+November 12, 2016 21:03:32:470000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:03:33:365000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:03:35:235000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:35:249000	(284, 359)
+November 12, 2016 21:03:35:257000	359
+November 12, 2016 21:03:35:262000	[284, 359]
+November 12, 2016 21:03:35:265000	359
+November 12, 2016 21:03:35:271000	(284, 359)
+November 12, 2016 21:03:35:300000	[(68, 260), (347, 203), (515, 227), (284, 359), [640, 480]]
+November 12, 2016 21:03:35:547000	bottommost point: 359
+November 12, 2016 21:03:35:587000	turn angle:  0.10125
+November 12, 2016 21:03:35:633000	bottom most position:  
+November 12, 2016 21:03:35:652000	284
+November 12, 2016 21:03:36:587000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:36:590000	(554, 35)
+November 12, 2016 21:03:36:594000	103
+November 12, 2016 21:03:36:598000	[554, 35]
+November 12, 2016 21:03:36:604000	103
+November 12, 2016 21:03:36:615000	(554, 103)
+November 12, 2016 21:03:36:617000	[(536, 26), (576, 12), (638, 15), (554, 35), [640, 480]]
+November 12, 2016 21:03:37:789000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:03:38:483000	Longer side is 
+November 12, 2016 21:03:38:485000	RIGHT
+November 12, 2016 21:03:38:488000	contour details are
+November 12, 2016 21:03:38:492000	[(536, 26), (576, 12), (638, 15), (554, 35), [640, 480]]
+November 12, 2016 21:03:41:244000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:41:246000	(290, 359)
+November 12, 2016 21:03:41:269000	359
+November 12, 2016 21:03:41:273000	[290, 359]
+November 12, 2016 21:03:41:280000	359
+November 12, 2016 21:03:41:283000	(290, 359)
+November 12, 2016 21:03:41:294000	[(60, 260), (356, 200), (512, 223), (290, 359), [640, 480]]
+November 12, 2016 21:03:42:616000	bottommost point: 359
+November 12, 2016 21:03:42:668000	turn angle:  0.084375
+November 12, 2016 21:03:42:776000	bottom most position:  
+November 12, 2016 21:03:42:793000	290
+November 12, 2016 21:03:44:855000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:03:46:840000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:46:842000	(300, 363)
+November 12, 2016 21:03:46:843000	363
+November 12, 2016 21:03:46:862000	[300, 363]
+November 12, 2016 21:03:46:871000	363
+November 12, 2016 21:03:46:878000	(300, 363)
+November 12, 2016 21:03:46:881000	[(76, 260), (355, 203), (531, 227), (300, 363), [640, 480]]
+November 12, 2016 21:03:47:588000	(554, 103)
+November 12, 2016 21:03:48:558000	bottommost point: 363
+November 12, 2016 21:03:48:658000	turn angle:  0.05625
+November 12, 2016 21:03:48:720000	OBJECT IS IN CENTRE, walking toward it:  0.4875
+November 12, 2016 21:03:48:768000	bottom most position:  
+November 12, 2016 21:03:48:777000	300
+November 12, 2016 21:03:50:787000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:03:51:409000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:03:52:865000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:52:870000	(320, 363)
+November 12, 2016 21:03:52:873000	363
+November 12, 2016 21:03:52:879000	[320, 363]
+November 12, 2016 21:03:52:884000	363
+November 12, 2016 21:03:52:895000	(320, 363)
+November 12, 2016 21:03:52:897000	[(95, 271), (371, 203), (548, 224), (320, 363), [640, 480]]
+November 12, 2016 21:03:53:018000	bottommost point: 363
+November 12, 2016 21:03:53:557000	turn angle:  0.0
+November 12, 2016 21:03:54:233000	OBJECT IS IN CENTRE, walking toward it:  0.4875
+November 12, 2016 21:03:54:535000	bottom most position:  
+November 12, 2016 21:03:54:549000	320
+November 12, 2016 21:03:55:907000	countour list is empty
+November 12, 2016 21:03:56:626000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:03:59:473000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:03:59:558000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:03:59:567000	(316, 359)
+November 12, 2016 21:03:59:568000	359
+November 12, 2016 21:03:59:572000	[316, 359]
+November 12, 2016 21:03:59:573000	359
+November 12, 2016 21:03:59:581000	(316, 359)
+November 12, 2016 21:03:59:588000	[(88, 256), (380, 196), (539, 223), (316, 359), [640, 480]]
+November 12, 2016 21:04:00:788000	bottommost point: 359
+November 12, 2016 21:04:00:885000	turn angle:  0.01125
+November 12, 2016 21:04:01:295000	OBJECT IS IN CENTRE, walking toward it:  0.504166666667
+November 12, 2016 21:04:01:521000	bottom most position:  
+November 12, 2016 21:04:01:527000	316
+November 12, 2016 21:04:03:586000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:04:03:739000	countour list is empty
+November 12, 2016 21:04:05:282000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:04:05:296000	(296, 363)
+November 12, 2016 21:04:05:320000	363
+November 12, 2016 21:04:05:330000	[296, 363]
+November 12, 2016 21:04:05:341000	363
+November 12, 2016 21:04:05:343000	(296, 363)
+November 12, 2016 21:04:05:345000	[(76, 260), (361, 203), (532, 227), (296, 363), [640, 480]]
+November 12, 2016 21:04:05:411000	bottommost point: 363
+November 12, 2016 21:04:05:415000	turn angle:  0.0675
+November 12, 2016 21:04:05:419000	bottom most position:  
+November 12, 2016 21:04:05:422000	296
+November 12, 2016 21:04:06:915000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:04:07:439000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:04:09:970000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:04:09:974000	(304, 363)
+November 12, 2016 21:04:09:983000	363
+November 12, 2016 21:04:09:987000	[304, 363]
+November 12, 2016 21:04:09:992000	363
+November 12, 2016 21:04:10:000000	(304, 363)
+November 12, 2016 21:04:10:002000	[(80, 260), (363, 203), (535, 227), (304, 363), [640, 480]]
+November 12, 2016 21:04:10:838000	bottommost point: 363
+November 12, 2016 21:04:10:945000	turn angle:  0.045
+November 12, 2016 21:04:11:071000	OBJECT IS IN CENTRE, walking toward it:  0.4875
+November 12, 2016 21:04:11:253000	countour list is empty
+November 12, 2016 21:04:11:265000	bottom most position:  
+November 12, 2016 21:04:11:288000	304
+November 12, 2016 21:04:13:319000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:04:14:478000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:04:14:984000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:04:14:988000	(304, 363)
+November 12, 2016 21:04:14:991000	363
+November 12, 2016 21:04:15:008000	[304, 363]
+November 12, 2016 21:04:15:021000	363
+November 12, 2016 21:04:15:033000	(304, 363)
+November 12, 2016 21:04:15:041000	[(80, 260), (363, 203), (535, 227), (304, 363), [640, 480]]
+November 12, 2016 21:04:15:398000	bottommost point: 363
+November 12, 2016 21:04:15:407000	turn angle:  0.045
+November 12, 2016 21:04:15:420000	OBJECT IS IN CENTRE, walking toward it:  0.4875
+November 12, 2016 21:04:15:425000	bottom most position:  
+November 12, 2016 21:04:15:428000	304
+November 12, 2016 21:04:17:436000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:04:18:410000	countour list is empty
+November 12, 2016 21:04:19:615000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:04:19:617000	(312, 363)
+November 12, 2016 21:04:19:620000	363
+November 12, 2016 21:04:19:641000	[312, 363]
+November 12, 2016 21:04:19:647000	363
+November 12, 2016 21:04:19:652000	(312, 363)
+November 12, 2016 21:04:19:661000	[(95, 267), (379, 203), (547, 227), (312, 363), [640, 480]]
+November 12, 2016 21:04:20:387000	bottommost point: 363
+November 12, 2016 21:04:20:462000	turn angle:  0.0225
+November 12, 2016 21:04:20:600000	OBJECT IS IN CENTRE, walking toward it:  0.4875
+November 12, 2016 21:04:20:638000	bottom most position:  
+November 12, 2016 21:04:20:642000	312
+November 12, 2016 21:04:21:580000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:04:22:692000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:04:24:344000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:04:24:349000	(332, 347)
+November 12, 2016 21:04:24:357000	347
+November 12, 2016 21:04:24:370000	[332, 347]
+November 12, 2016 21:04:24:372000	347
+November 12, 2016 21:04:24:381000	(332, 347)
+November 12, 2016 21:04:24:389000	[(104, 240), (395, 183), (567, 211), (332, 347), [640, 480]]
+November 12, 2016 21:04:24:452000	bottommost point: 347
+November 12, 2016 21:04:24:461000	turn angle:  -0.03375
+November 12, 2016 21:04:24:465000	OBJECT IS IN CENTRE, walking toward it:  0.554166666667
+November 12, 2016 21:04:24:472000	bottom most position:  
+November 12, 2016 21:04:24:476000	332
+November 12, 2016 21:04:25:717000	countour list is empty
+November 12, 2016 21:04:26:487000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:04:29:014000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:04:29:219000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:04:29:252000	(316, 387)
+November 12, 2016 21:04:29:277000	387
+November 12, 2016 21:04:29:280000	[316, 387]
+November 12, 2016 21:04:29:349000	387
+November 12, 2016 21:04:29:368000	(316, 387)
+November 12, 2016 21:04:29:377000	[(87, 293), (371, 223), (531, 247), (316, 387), [640, 480]]
+November 12, 2016 21:04:31:460000	bottommost point: 387
+November 12, 2016 21:04:31:644000	turn angle:  0.01125
+November 12, 2016 21:04:31:968000	OBJECT IS IN CENTRE, walking toward it:  0.3875
+November 12, 2016 21:04:32:085000	bottom most position:  
+November 12, 2016 21:04:32:106000	316
+November 12, 2016 21:04:33:768000	countour list is empty
+November 12, 2016 21:04:34:191000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:04:35:968000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:04:35:974000	(340, 371)
+November 12, 2016 21:04:36:003000	371
+November 12, 2016 21:04:36:008000	[340, 371]
+November 12, 2016 21:04:36:015000	371
+November 12, 2016 21:04:36:018000	(340, 371)
+November 12, 2016 21:04:36:022000	[(123, 282), (407, 211), (564, 237), (340, 371), [640, 480]]
+November 12, 2016 21:04:36:094000	bottommost point: 371
+November 12, 2016 21:04:36:112000	turn angle:  -0.05625
+November 12, 2016 21:04:36:117000	OBJECT IS IN CENTRE, walking toward it:  0.454166666667
+November 12, 2016 21:04:36:130000	bottom most position:  
+November 12, 2016 21:04:36:132000	340
+November 12, 2016 21:04:37:061000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:04:38:139000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:04:40:066000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:04:40:068000	(316, 371)
+November 12, 2016 21:04:40:074000	371
+November 12, 2016 21:04:40:080000	[316, 371]
+November 12, 2016 21:04:40:086000	371
+November 12, 2016 21:04:40:088000	(316, 371)
+November 12, 2016 21:04:40:099000	[(95, 282), (371, 211), (543, 235), (316, 371), [640, 480]]
+November 12, 2016 21:04:41:508000	countour list is empty
+November 12, 2016 21:04:41:544000	bottommost point: 371
+November 12, 2016 21:04:41:609000	turn angle:  0.01125
+November 12, 2016 21:04:41:668000	OBJECT IS IN CENTRE, walking toward it:  0.454166666667
+November 12, 2016 21:04:41:821000	bottom most position:  
+November 12, 2016 21:04:41:828000	316
+November 12, 2016 21:04:43:880000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:04:44:619000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:04:45:584000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:04:45:587000	(316, 367)
+November 12, 2016 21:04:45:596000	367
+November 12, 2016 21:04:45:601000	[316, 367]
+November 12, 2016 21:04:45:620000	367
+November 12, 2016 21:04:45:629000	(316, 367)
+November 12, 2016 21:04:45:634000	[(83, 274), (367, 203), (535, 227), (316, 367), [640, 480]]
+November 12, 2016 21:04:45:767000	bottommost point: 367
+November 12, 2016 21:04:45:779000	turn angle:  0.01125
+November 12, 2016 21:04:45:783000	OBJECT IS IN CENTRE, walking toward it:  0.470833333333
+November 12, 2016 21:04:45:791000	bottom most position:  
+November 12, 2016 21:04:45:793000	316
+November 12, 2016 21:04:47:807000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:04:49:085000	countour list is empty
+November 12, 2016 21:04:50:233000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:04:50:236000	(312, 367)
+November 12, 2016 21:04:50:256000	367
+November 12, 2016 21:04:50:268000	[312, 367]
+November 12, 2016 21:04:50:271000	367
+November 12, 2016 21:04:50:286000	(312, 367)
+November 12, 2016 21:04:50:291000	[(83, 270), (359, 203), (535, 227), (312, 367), [640, 480]]
+November 12, 2016 21:04:50:692000	bottommost point: 367
+November 12, 2016 21:04:50:709000	turn angle:  0.0225
+November 12, 2016 21:04:50:841000	OBJECT IS IN CENTRE, walking toward it:  0.470833333333
+November 12, 2016 21:04:50:864000	bottom most position:  
+November 12, 2016 21:04:50:867000	312
+November 12, 2016 21:04:52:350000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:04:52:895000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:04:54:638000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:04:54:641000	(336, 371)
+November 12, 2016 21:04:54:644000	371
+November 12, 2016 21:04:54:651000	[336, 371]
+November 12, 2016 21:04:54:661000	371
+November 12, 2016 21:04:54:663000	(336, 371)
+November 12, 2016 21:04:54:666000	[(103, 281), (391, 203), (556, 229), (336, 371), [640, 480]]
+November 12, 2016 21:04:54:716000	bottommost point: 371
+November 12, 2016 21:04:54:722000	turn angle:  -0.045
+November 12, 2016 21:04:54:778000	OBJECT IS IN CENTRE, walking toward it:  0.454166666667
+November 12, 2016 21:04:54:786000	bottom most position:  
+November 12, 2016 21:04:54:789000	336
+November 12, 2016 21:04:55:930000	countour list is empty
+November 12, 2016 21:04:56:814000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:04:59:267000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:05:00:110000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:00:120000	(344, 387)
+November 12, 2016 21:05:00:122000	387
+November 12, 2016 21:05:00:125000	[344, 387]
+November 12, 2016 21:05:00:127000	387
+November 12, 2016 21:05:00:129000	(344, 387)
+November 12, 2016 21:05:00:131000	[(107, 293), (395, 211), (571, 235), (344, 387), [640, 480]]
+November 12, 2016 21:05:00:172000	bottommost point: 387
+November 12, 2016 21:05:00:176000	turn angle:  -0.0675
+November 12, 2016 21:05:00:179000	bottom most position:  
+November 12, 2016 21:05:00:180000	344
+November 12, 2016 21:05:02:271000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:05:05:610000	countour list is empty
+November 12, 2016 21:05:06:207000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:06:232000	(328, 363)
+November 12, 2016 21:05:06:250000	363
+November 12, 2016 21:05:06:254000	[328, 363]
+November 12, 2016 21:05:06:285000	363
+November 12, 2016 21:05:06:300000	(328, 363)
+November 12, 2016 21:05:06:336000	[(91, 266), (383, 191), (547, 219), (328, 363), [640, 480]]
+November 12, 2016 21:05:08:863000	bottommost point: 363
+November 12, 2016 21:05:08:980000	turn angle:  -0.0225
+November 12, 2016 21:05:09:509000	OBJECT IS IN CENTRE, walking toward it:  0.4875
+November 12, 2016 21:05:09:631000	bottom most position:  
+November 12, 2016 21:05:09:651000	328
+November 12, 2016 21:05:09:714000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:05:11:708000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:05:14:349000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:14:363000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:14:367000	(336, 371)
+November 12, 2016 21:05:14:380000	3
+November 12, 2016 21:05:14:383000	371
+]
+November 12, 2016 21:05:14:386000	3
+November 12, 2016 21:05:14:387000	[336, 371]
+November 12, 2016 21:05:14:389000	(2, 3)
+November 12, 2016 21:05:14:390000	371
+November 12, 2016 21:05:14:391000	[(1, 3), (3, 1), (3, 1), (2, 3), [640, 480]]
+November 12, 2016 21:05:14:392000	(336, 371)
+November 12, 2016 21:05:14:395000	[(99, 271), (387, 203), (551, 231), (336, 371), [640, 480]]
+November 12, 2016 21:05:15:560000	bottommost point: 371
+November 12, 2016 21:05:15:929000	turn angle:  -0.045
+November 12, 2016 21:05:16:020000	Longer side is 
+November 12, 2016 21:05:16:028000	RIGHT
+November 12, 2016 21:05:16:042000	contour details are
+November 12, 2016 21:05:16:052000	[(1, 3), (3, 1), (3, 1), (2, 3), [640, 480]]
+November 12, 2016 21:05:16:056000	(2, 3)
+November 12, 2016 21:05:16:064000	OBJECT IS IN CENTRE, walking toward it:  0.454166666667
+November 12, 2016 21:05:16:187000	bottom most position:  
+November 12, 2016 21:05:16:190000	336
+November 12, 2016 21:05:18:215000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:05:19:412000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:05:21:018000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:21:033000	(340, 375)
+November 12, 2016 21:05:21:049000	375
+November 12, 2016 21:05:21:052000	[340, 375]
+November 12, 2016 21:05:21:055000	375
+November 12, 2016 21:05:21:061000	(340, 375)
+November 12, 2016 21:05:21:070000	[(99, 273), (379, 203), (556, 229), (340, 375), [640, 480]]
+November 12, 2016 21:05:22:115000	bottommost point: 375
+November 12, 2016 21:05:22:227000	turn angle:  -0.05625
+November 12, 2016 21:05:22:446000	OBJECT IS IN CENTRE, walking toward it:  0.4375
+November 12, 2016 21:05:22:622000	bottom most position:  
+November 12, 2016 21:05:22:637000	340
+November 12, 2016 21:05:23:788000	countour list is empty
+November 12, 2016 21:05:24:685000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:05:26:517000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:26:520000	(368, 383)
+November 12, 2016 21:05:26:532000	383
+November 12, 2016 21:05:26:546000	[368, 383]
+November 12, 2016 21:05:26:548000	383
+November 12, 2016 21:05:26:551000	(368, 383)
+November 12, 2016 21:05:26:554000	[(123, 278), (411, 203), (587, 229), (368, 383), [640, 480]]
+November 12, 2016 21:05:27:115000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:05:27:848000	bottommost point: 383
+November 12, 2016 21:05:27:893000	turn angle:  -0.135
+November 12, 2016 21:05:27:981000	bottom most position:  
+November 12, 2016 21:05:27:986000	368
+November 12, 2016 21:05:29:998000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:05:32:306000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:32:318000	(2, 99)
+November 12, 2016 21:05:32:321000	99
+November 12, 2016 21:05:32:325000	[2, 99]
+November 12, 2016 21:05:32:334000	99
+November 12, 2016 21:05:32:337000	(2, 99)
+November 12, 2016 21:05:32:341000	[(1, 99), (95, 1), (95, 1), (2, 99), [640, 480]]
+November 12, 2016 21:05:33:480000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:33:485000	(404, 383)
+November 12, 2016 21:05:33:488000	383
+November 12, 2016 21:05:33:492000	[404, 383]
+November 12, 2016 21:05:33:496000	383
+November 12, 2016 21:05:33:498000	(404, 383)
+November 12, 2016 21:05:33:501000	[(159, 274), (431, 207), (627, 235), (404, 383), [640, 480]]
+November 12, 2016 21:05:33:630000	Longer side is 
+November 12, 2016 21:05:33:632000	RIGHT
+November 12, 2016 21:05:33:636000	contour details are
+November 12, 2016 21:05:33:639000	[(1, 99), (95, 1), (95, 1), (2, 99), [640, 480]]
+November 12, 2016 21:05:33:642000	(2, 99)
+November 12, 2016 21:05:34:030000	bottommost point: 383
+November 12, 2016 21:05:34:213000	turn angle:  -0.23625
+November 12, 2016 21:05:34:649000	bottom most position:  
+November 12, 2016 21:05:34:652000	404
+November 12, 2016 21:05:36:719000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:05:37:178000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:05:39:036000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:39:051000	(372, 387)
+November 12, 2016 21:05:39:068000	387
+November 12, 2016 21:05:39:070000	[372, 387]
+November 12, 2016 21:05:39:073000	387
+November 12, 2016 21:05:39:092000	(372, 387)
+November 12, 2016 21:05:39:102000	[(119, 277), (415, 203), (587, 231), (372, 387), [640, 480]]
+November 12, 2016 21:05:40:202000	bottommost point: 387
+November 12, 2016 21:05:40:299000	turn angle:  -0.14625
+November 12, 2016 21:05:40:391000	bottom most position:  
+November 12, 2016 21:05:40:412000	372
+November 12, 2016 21:05:41:624000	countour list is empty
+November 12, 2016 21:05:42:445000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:05:44:884000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:05:45:304000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:45:311000	(368, 383)
+November 12, 2016 21:05:45:315000	383
+November 12, 2016 21:05:45:321000	[368, 383]
+November 12, 2016 21:05:45:325000	383
+November 12, 2016 21:05:45:350000	(368, 383)
+November 12, 2016 21:05:45:358000	[(123, 278), (412, 204), (584, 233), (368, 383), [640, 480]]
+November 12, 2016 21:05:45:701000	bottommost point: 383
+November 12, 2016 21:05:45:809000	turn angle:  -0.135
+November 12, 2016 21:05:45:962000	bottom most position:  
+November 12, 2016 21:05:45:966000	368
+November 12, 2016 21:05:47:978000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:05:48:850000	countour list is empty
+November 12, 2016 21:05:50:097000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:50:101000	(352, 383)
+November 12, 2016 21:05:50:106000	383
+November 12, 2016 21:05:50:111000	[352, 383]
+November 12, 2016 21:05:50:115000	383
+November 12, 2016 21:05:50:118000	(352, 383)
+November 12, 2016 21:05:50:121000	[(103, 278), (391, 203), (564, 229), (352, 383), [640, 480]]
+November 12, 2016 21:05:50:707000	bottommost point: 383
+November 12, 2016 21:05:50:798000	turn angle:  -0.09
+November 12, 2016 21:05:50:893000	bottom most position:  
+November 12, 2016 21:05:50:902000	352
+November 12, 2016 21:05:52:096000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:05:52:923000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:05:54:610000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:54:617000	(360, 383)
+November 12, 2016 21:05:54:622000	383
+November 12, 2016 21:05:54:625000	[360, 383]
+November 12, 2016 21:05:54:628000	383
+November 12, 2016 21:05:54:633000	(360, 383)
+November 12, 2016 21:05:54:641000	[(108, 268), (400, 204), (575, 231), (360, 383), [640, 480]]
+November 12, 2016 21:05:54:728000	bottommost point: 383
+November 12, 2016 21:05:54:746000	turn angle:  -0.1125
+November 12, 2016 21:05:54:767000	bottom most position:  
+November 12, 2016 21:05:54:774000	360
+November 12, 2016 21:05:56:136000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:56:138000	(2, 47)
+November 12, 2016 21:05:56:140000	47
+November 12, 2016 21:05:56:142000	[2, 47]
+November 12, 2016 21:05:56:145000	47
+November 12, 2016 21:05:56:156000	(2, 47)
+November 12, 2016 21:05:56:160000	[(1, 47), (27, 1), (27, 1), (2, 47), [640, 480]]
+November 12, 2016 21:05:56:306000	Longer side is 
+November 12, 2016 21:05:56:312000	RIGHT
+November 12, 2016 21:05:56:317000	contour details are
+November 12, 2016 21:05:56:320000	[(1, 47), (27, 1), (27, 1), (2, 47), [640, 480]]
+November 12, 2016 21:05:56:326000	(2, 47)
+November 12, 2016 21:05:56:790000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:05:58:717000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:05:58:724000	(360, 391)
+November 12, 2016 21:05:58:729000	391
+November 12, 2016 21:05:58:749000	[360, 391]
+November 12, 2016 21:05:58:761000	391
+November 12, 2016 21:05:58:767000	(360, 391)
+November 12, 2016 21:05:58:784000	[(99, 278), (391, 203), (563, 231), (360, 391), [640, 480]]
+November 12, 2016 21:05:59:333000	bottommost point: 391
+November 12, 2016 21:05:59:470000	turn angle:  -0.1125
+November 12, 2016 21:05:59:488000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:05:59:696000	bottom most position:  
+November 12, 2016 21:05:59:717000	360
+November 12, 2016 21:06:01:778000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:06:04:572000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:04:579000	(35, 36)
+November 12, 2016 21:06:04:584000	307
+November 12, 2016 21:06:04:614000	[35, 36]
+November 12, 2016 21:06:04:624000	307
+November 12, 2016 21:06:04:636000	(35, 307)
+November 12, 2016 21:06:04:651000	[(32, 32), (36, 28), (40, 32), (35, 36), [640, 480]]
+November 12, 2016 21:06:04:711000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:04:718000	(304, 383)
+November 12, 2016 21:06:04:730000	383
+November 12, 2016 21:06:04:732000	[304, 383]
+November 12, 2016 21:06:04:738000	383
+November 12, 2016 21:06:04:741000	(304, 383)
+November 12, 2016 21:06:04:748000	[(75, 281), (379, 211), (567, 235), (304, 383), [640, 480]]
+November 12, 2016 21:06:04:815000	Longer side is 
+November 12, 2016 21:06:04:820000	RIGHT
+November 12, 2016 21:06:04:831000	contour details are
+November 12, 2016 21:06:04:835000	[(32, 32), (36, 28), (40, 32), (35, 36), [640, 480]]
+November 12, 2016 21:06:04:874000	bottommost point: 383
+November 12, 2016 21:06:04:916000	turn angle:  0.045
+November 12, 2016 21:06:04:950000	OBJECT IS IN CENTRE, walking toward it:  0.404166666667
+November 12, 2016 21:06:04:978000	bottom most position:  
+November 12, 2016 21:06:04:981000	304
+November 12, 2016 21:06:06:994000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:06:09:138000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:09:167000	(300, 399)
+November 12, 2016 21:06:09:191000	399
+November 12, 2016 21:06:09:194000	[300, 399]
+November 12, 2016 21:06:09:197000	399
+November 12, 2016 21:06:09:200000	(300, 399)
+November 12, 2016 21:06:09:215000	[(68, 280), (383, 211), (564, 235), (300, 399), [640, 480]]
+November 12, 2016 21:06:09:926000	bottommost point: 399
+November 12, 2016 21:06:09:981000	turn angle:  0.05625
+November 12, 2016 21:06:10:243000	OBJECT IS IN CENTRE, walking toward it:  0.3375
+November 12, 2016 21:06:10:285000	bottom most position:  
+November 12, 2016 21:06:10:307000	300
+November 12, 2016 21:06:12:336000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:06:14:449000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:14:455000	(316, 407)
+November 12, 2016 21:06:14:461000	407
+November 12, 2016 21:06:14:475000	[316, 407]
+November 12, 2016 21:06:14:483000	407
+November 12, 2016 21:06:14:490000	(316, 407)
+November 12, 2016 21:06:14:492000	[(75, 290), (391, 211), (568, 237), (316, 407), [640, 480]]
+November 12, 2016 21:06:14:656000	bottommost point: 407
+November 12, 2016 21:06:14:676000	turn angle:  0.01125
+November 12, 2016 21:06:14:685000	OBJECT IS IN CENTRE, walking toward it:  0.304166666667
+November 12, 2016 21:06:14:691000	bottom most position:  
+November 12, 2016 21:06:14:697000	316
+November 12, 2016 21:06:16:112000	(35, 307)
+November 12, 2016 21:06:16:737000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:06:18:900000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:18:917000	(304, 407)
+November 12, 2016 21:06:18:924000	407
+November 12, 2016 21:06:18:927000	[304, 407]
+November 12, 2016 21:06:18:937000	407
+November 12, 2016 21:06:18:939000	(304, 407)
+November 12, 2016 21:06:18:956000	[(63, 283), (383, 207), (560, 233), (304, 407), [640, 480]]
+November 12, 2016 21:06:18:998000	bottommost point: 407
+November 12, 2016 21:06:19:001000	turn angle:  0.045
+November 12, 2016 21:06:19:004000	OBJECT IS IN CENTRE, walking toward it:  0.304166666667
+November 12, 2016 21:06:19:029000	bottom most position:  
+November 12, 2016 21:06:19:051000	304
+November 12, 2016 21:06:19:336000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:06:21:117000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:06:25:548000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:25:551000	(316, 407)
+November 12, 2016 21:06:25:563000	407
+November 12, 2016 21:06:25:577000	[316, 407]
+November 12, 2016 21:06:25:589000	407
+November 12, 2016 21:06:25:604000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:25:607000	(316, 407)
+November 12, 2016 21:06:25:610000	139
+November 12, 2016 21:06:25:611000	[(71, 280), (387, 207), (571, 235), (316, 407), [640, 480]]
+November 12, 2016 21:06:25:612000	[2, 139]
+November 12, 2016 21:06:25:615000	139
+November 12, 2016 21:06:25:617000	(2, 139)
+November 12, 2016 21:06:25:620000	[(1, 139), (99, 1), (99, 1), (2, 139), [640, 480]]
+November 12, 2016 21:06:25:638000	bottommost point: 407
+November 12, 2016 21:06:25:641000	RIGHT
+November 12, 2016 21:06:25:641000	turn angle:  0.01125
+November 12, 2016 21:06:25:645000	OBJECT IS IN CENTRE, walking toward it:  0.304166666667
+November 12, 2016 21:06:25:648000	bottom most position:  
+November 12, 2016 21:06:25:651000	316
+November 12, 2016 21:06:25:669000	contour details are
+November 12, 2016 21:06:25:682000	[(1, 139), (99, 1), (99, 1), (2, 139), [640, 480]]
+November 12, 2016 21:06:25:684000	(2, 139)
+November 12, 2016 21:06:27:699000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:06:28:908000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:06:30:311000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:30:314000	(312, 403)
+November 12, 2016 21:06:30:322000	403
+November 12, 2016 21:06:30:332000	[312, 403]
+November 12, 2016 21:06:30:335000	403
+November 12, 2016 21:06:30:354000	(312, 403)
+November 12, 2016 21:06:30:361000	[(71, 281), (391, 207), (564, 237), (312, 403), [640, 480]]
+November 12, 2016 21:06:31:484000	bottommost point: 403
+November 12, 2016 21:06:31:564000	turn angle:  0.0225
+November 12, 2016 21:06:31:657000	OBJECT IS IN CENTRE, walking toward it:  0.320833333333
+November 12, 2016 21:06:31:700000	bottom most position:  
+November 12, 2016 21:06:31:704000	312
+November 12, 2016 21:06:33:739000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:06:33:842000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:33:863000	(2, 91)
+November 12, 2016 21:06:33:867000	259
+November 12, 2016 21:06:33:908000	[2, 91]
+November 12, 2016 21:06:33:918000	259
+November 12, 2016 21:06:33:920000	(2, 259)
+November 12, 2016 21:06:33:923000	[(1, 91), (83, 1), (83, 1), (2, 91), [640, 480]]
+November 12, 2016 21:06:36:064000	Longer side is 
+November 12, 2016 21:06:36:068000	RIGHT
+November 12, 2016 21:06:36:073000	contour details are
+November 12, 2016 21:06:36:078000	[(1, 91), (83, 1), (83, 1), (2, 91), [640, 480]]
+November 12, 2016 21:06:36:082000	(2, 259)
+November 12, 2016 21:06:36:340000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:36:348000	(310, 372)
+November 12, 2016 21:06:36:358000	407
+November 12, 2016 21:06:36:361000	[310, 372]
+November 12, 2016 21:06:36:363000	407
+November 12, 2016 21:06:36:366000	(310, 407)
+November 12, 2016 21:06:36:369000	[(54, 279), (551, 234), (551, 234), (310, 372), [640, 480]]
+November 12, 2016 21:06:36:800000	bottommost point: 407
+November 12, 2016 21:06:37:116000	turn angle:  0.028125
+November 12, 2016 21:06:37:646000	OBJECT IS IN CENTRE, walking toward it:  0.304166666667
+November 12, 2016 21:06:37:887000	bottom most position:  
+November 12, 2016 21:06:37:888000	310
+November 12, 2016 21:06:39:779000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:06:39:947000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:06:42:655000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:42:661000	(296, 407)
+November 12, 2016 21:06:42:671000	407
+November 12, 2016 21:06:42:679000	[296, 407]
+November 12, 2016 21:06:42:685000	407
+November 12, 2016 21:06:42:694000	(296, 407)
+November 12, 2016 21:06:42:697000	[(43, 283), (363, 207), (547, 235), (296, 407), [640, 480]]
+November 12, 2016 21:06:43:530000	bottommost point: 407
+November 12, 2016 21:06:43:608000	turn angle:  0.0675
+November 12, 2016 21:06:43:724000	bottom most position:  
+November 12, 2016 21:06:43:728000	296
+November 12, 2016 21:06:43:929000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:43:932000	(2, 255)
+November 12, 2016 21:06:43:940000	255
+November 12, 2016 21:06:43:957000	[2, 255]
+November 12, 2016 21:06:43:973000	255
+November 12, 2016 21:06:43:983000	(2, 255)
+November 12, 2016 21:06:43:990000	[(1, 255), (195, 1), (195, 1), (2, 255), [640, 480]]
+November 12, 2016 21:06:44:461000	Longer side is 
+November 12, 2016 21:06:44:470000	RIGHT
+November 12, 2016 21:06:44:479000	contour details are
+November 12, 2016 21:06:44:494000	[(1, 255), (195, 1), (195, 1), (2, 255), [640, 480]]
+November 12, 2016 21:06:44:497000	(2, 255)
+November 12, 2016 21:06:45:763000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:06:48:081000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:06:48:910000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:48:919000	(244, 403)
+November 12, 2016 21:06:48:921000	403
+November 12, 2016 21:06:48:928000	[244, 403]
+November 12, 2016 21:06:48:944000	403
+November 12, 2016 21:06:48:946000	(244, 403)
+November 12, 2016 21:06:48:949000	[(44, 272), (387, 207), (563, 239), (244, 403), [640, 480]]
+November 12, 2016 21:06:49:697000	bottommost point: 403
+November 12, 2016 21:06:49:782000	turn angle:  0.21375
+November 12, 2016 21:06:49:785000	bottom most position:  
+November 12, 2016 21:06:49:786000	244
+November 12, 2016 21:06:51:810000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:06:52:311000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:52:313000	(2, 47)
+November 12, 2016 21:06:52:315000	47
+November 12, 2016 21:06:52:321000	[2, 47]
+November 12, 2016 21:06:52:328000	47
+November 12, 2016 21:06:52:331000	(2, 47)
+November 12, 2016 21:06:52:338000	[(1, 47), (47, 1), (47, 1), (2, 47), [640, 480]]
+November 12, 2016 21:06:52:913000	Longer side is 
+November 12, 2016 21:06:52:917000	RIGHT
+November 12, 2016 21:06:52:921000	contour details are
+November 12, 2016 21:06:52:930000	[(1, 47), (47, 1), (47, 1), (2, 47), [640, 480]]
+November 12, 2016 21:06:52:934000	(2, 47)
+November 12, 2016 21:06:54:061000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:54:063000	(248, 403)
+November 12, 2016 21:06:54:068000	403
+November 12, 2016 21:06:54:076000	[248, 403]
+November 12, 2016 21:06:54:078000	403
+November 12, 2016 21:06:54:081000	(248, 403)
+November 12, 2016 21:06:54:086000	[(47, 275), (383, 207), (568, 239), (248, 403), [640, 480]]
+November 12, 2016 21:06:54:241000	bottommost point: 403
+November 12, 2016 21:06:54:249000	turn angle:  0.2025
+November 12, 2016 21:06:54:259000	bottom most position:  
+November 12, 2016 21:06:54:263000	248
+November 12, 2016 21:06:56:289000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:06:56:646000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:06:58:167000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:06:58:172000	(296, 403)
+November 12, 2016 21:06:58:174000	403
+November 12, 2016 21:06:58:178000	[296, 403]
+November 12, 2016 21:06:58:180000	403
+November 12, 2016 21:06:58:183000	(296, 403)
+November 12, 2016 21:06:58:187000	[(91, 270), (407, 211), (607, 241), (296, 403), [640, 480]]
+November 12, 2016 21:06:58:890000	bottommost point: 403
+November 12, 2016 21:06:58:902000	turn angle:  0.0675
+November 12, 2016 21:06:58:970000	bottom most position:  
+November 12, 2016 21:06:58:973000	296
+November 12, 2016 21:07:00:739000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:00:747000	(2, 179)
+November 12, 2016 21:07:00:756000	179
+November 12, 2016 21:07:00:765000	[2, 179]
+November 12, 2016 21:07:00:781000	179
+November 12, 2016 21:07:00:783000	(2, 179)
+November 12, 2016 21:07:00:786000	[(1, 179), (175, 1), (175, 1), (2, 179), [640, 480]]
+November 12, 2016 21:07:00:820000	Longer side is 
+November 12, 2016 21:07:00:828000	RIGHT
+November 12, 2016 21:07:00:840000	contour details are
+November 12, 2016 21:07:00:849000	[(1, 179), (175, 1), (175, 1), (2, 179), [640, 480]]
+November 12, 2016 21:07:00:857000	(2, 179)
+November 12, 2016 21:07:00:994000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:02:698000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:02:702000	(340, 403)
+November 12, 2016 21:07:02:706000	403
+November 12, 2016 21:07:02:713000	[340, 403]
+November 12, 2016 21:07:02:717000	403
+November 12, 2016 21:07:02:719000	(340, 403)
+November 12, 2016 21:07:02:726000	[(139, 267), (472, 208), (638, 256), (340, 403), [640, 480]]
+November 12, 2016 21:07:02:882000	bottommost point: 403
+November 12, 2016 21:07:02:897000	turn angle:  -0.05625
+November 12, 2016 21:07:02:916000	OBJECT IS IN CENTRE, walking toward it:  0.320833333333
+November 12, 2016 21:07:02:921000	bottom most position:  
+November 12, 2016 21:07:02:925000	340
+November 12, 2016 21:07:04:446000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:07:04:937000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:06:451000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:06:454000	(320, 399)
+November 12, 2016 21:07:06:457000	399
+November 12, 2016 21:07:06:461000	[320, 399]
+November 12, 2016 21:07:06:463000	399
+November 12, 2016 21:07:06:466000	(320, 399)
+November 12, 2016 21:07:06:469000	[(119, 269), (449, 207), (638, 243), (320, 399), [640, 480]]
+November 12, 2016 21:07:06:711000	bottommost point: 399
+November 12, 2016 21:07:06:729000	turn angle:  0.0
+November 12, 2016 21:07:06:784000	OBJECT IS IN CENTRE, walking toward it:  0.3375
+November 12, 2016 21:07:06:822000	bottom most position:  
+November 12, 2016 21:07:06:831000	320
+November 12, 2016 21:07:08:282000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:08:303000	(2, 135)
+November 12, 2016 21:07:08:325000	135
+November 12, 2016 21:07:08:327000	[2, 135]
+November 12, 2016 21:07:08:328000	135
+November 12, 2016 21:07:08:330000	(2, 135)
+November 12, 2016 21:07:08:337000	[(1, 135), (143, 1), (143, 1), (2, 135), [640, 480]]
+November 12, 2016 21:07:08:850000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:08:957000	Longer side is 
+November 12, 2016 21:07:08:963000	RIGHT
+November 12, 2016 21:07:08:973000	contour details are
+November 12, 2016 21:07:08:977000	[(1, 135), (143, 1), (143, 1), (2, 135), [640, 480]]
+November 12, 2016 21:07:09:004000	(2, 135)
+November 12, 2016 21:07:10:682000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:10:689000	(316, 399)
+November 12, 2016 21:07:10:697000	399
+November 12, 2016 21:07:10:700000	[316, 399]
+November 12, 2016 21:07:10:706000	399
+November 12, 2016 21:07:10:711000	(316, 399)
+November 12, 2016 21:07:10:714000	[(119, 267), (435, 211), (638, 244), (316, 399), [640, 480]]
+November 12, 2016 21:07:11:399000	bottommost point: 399
+November 12, 2016 21:07:11:423000	turn angle:  0.01125
+November 12, 2016 21:07:11:530000	OBJECT IS IN CENTRE, walking toward it:  0.3375
+November 12, 2016 21:07:11:621000	bottom most position:  
+November 12, 2016 21:07:11:624000	316
+November 12, 2016 21:07:12:380000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:07:13:691000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:15:788000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:15:801000	(316, 399)
+November 12, 2016 21:07:15:806000	399
+November 12, 2016 21:07:15:809000	[316, 399]
+November 12, 2016 21:07:15:812000	399
+November 12, 2016 21:07:15:815000	(316, 399)
+November 12, 2016 21:07:15:821000	[(119, 267), (447, 207), (638, 243), (316, 399), [640, 480]]
+November 12, 2016 21:07:16:090000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:16:098000	(39, 20)
+November 12, 2016 21:07:16:105000	203
+November 12, 2016 21:07:16:109000	[39, 20]
+November 12, 2016 21:07:16:111000	203
+November 12, 2016 21:07:16:114000	(39, 203)
+November 12, 2016 21:07:16:116000	[(4, 8), (16, 1), (44, 20), (39, 20), [640, 480]]
+November 12, 2016 21:07:16:152000	bottommost point: 399
+November 12, 2016 21:07:16:160000	turn angle:  0.01125
+November 12, 2016 21:07:16:248000	OBJECT IS IN CENTRE, walking toward it:  0.3375
+November 12, 2016 21:07:16:253000	bottom most position:  
+November 12, 2016 21:07:16:265000	316
+November 12, 2016 21:07:16:408000	Longer side is 
+November 12, 2016 21:07:16:413000	RIGHT
+November 12, 2016 21:07:16:422000	contour details are
+November 12, 2016 21:07:16:431000	[(4, 8), (16, 1), (44, 20), (39, 20), [640, 480]]
+November 12, 2016 21:07:16:441000	(39, 203)
+November 12, 2016 21:07:18:305000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:19:614000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:07:20:436000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:20:442000	(332, 407)
+November 12, 2016 21:07:20:450000	407
+November 12, 2016 21:07:20:453000	[332, 407]
+November 12, 2016 21:07:20:455000	407
+November 12, 2016 21:07:20:462000	(332, 407)
+November 12, 2016 21:07:20:469000	[(124, 264), (455, 207), (638, 248), (332, 407), [640, 480]]
+November 12, 2016 21:07:21:066000	bottommost point: 407
+November 12, 2016 21:07:21:195000	turn angle:  -0.03375
+November 12, 2016 21:07:21:330000	OBJECT IS IN CENTRE, walking toward it:  0.304166666667
+November 12, 2016 21:07:21:489000	bottom most position:  
+November 12, 2016 21:07:21:498000	332
+November 12, 2016 21:07:23:530000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:24:386000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:24:392000	(2, 219)
+November 12, 2016 21:07:24:398000	219
+November 12, 2016 21:07:24:402000	[2, 219]
+November 12, 2016 21:07:24:405000	219
+November 12, 2016 21:07:24:408000	(2, 219)
+November 12, 2016 21:07:24:412000	[(1, 219), (207, 1), (207, 1), (2, 219), [640, 480]]
+November 12, 2016 21:07:24:457000	Longer side is 
+November 12, 2016 21:07:24:461000	RIGHT
+November 12, 2016 21:07:24:472000	contour details are
+November 12, 2016 21:07:24:478000	[(1, 219), (207, 1), (207, 1), (2, 219), [640, 480]]
+November 12, 2016 21:07:24:482000	(2, 219)
+November 12, 2016 21:07:25:339000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:25:347000	(296, 419)
+November 12, 2016 21:07:25:350000	419
+November 12, 2016 21:07:25:354000	[296, 419]
+November 12, 2016 21:07:25:358000	419
+November 12, 2016 21:07:25:362000	(296, 419)
+November 12, 2016 21:07:25:373000	[(87, 283), (423, 211), (616, 243), (296, 419), [640, 480]]
+November 12, 2016 21:07:25:427000	bottommost point: 419
+November 12, 2016 21:07:25:430000	turn angle:  0.0675
+November 12, 2016 21:07:25:437000	bottom most position:  
+November 12, 2016 21:07:25:442000	296
+November 12, 2016 21:07:27:456000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:27:598000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:07:29:632000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:29:639000	(300, 415)
+November 12, 2016 21:07:29:649000	415
+November 12, 2016 21:07:29:662000	[300, 415]
+November 12, 2016 21:07:29:668000	415
+November 12, 2016 21:07:29:671000	(300, 415)
+November 12, 2016 21:07:29:678000	[(95, 283), (435, 207), (624, 236), (300, 415), [640, 480]]
+November 12, 2016 21:07:30:689000	bottommost point: 415
+November 12, 2016 21:07:30:697000	turn angle:  0.05625
+November 12, 2016 21:07:30:864000	OBJECT IS IN CENTRE, walking toward it:  0.270833333333
+November 12, 2016 21:07:31:075000	bottom most position:  
+November 12, 2016 21:07:31:084000	300
+November 12, 2016 21:07:31:936000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:31:949000	(2, 319)
+November 12, 2016 21:07:31:961000	319
+November 12, 2016 21:07:31:974000	[2, 319]
+November 12, 2016 21:07:31:977000	319
+November 12, 2016 21:07:31:985000	(2, 319)
+November 12, 2016 21:07:31:989000	[(1, 319), (259, 1), (259, 1), (2, 319), [640, 480]]
+November 12, 2016 21:07:32:890000	Longer side is 
+November 12, 2016 21:07:32:893000	RIGHT
+November 12, 2016 21:07:32:897000	contour details are
+November 12, 2016 21:07:32:905000	[(1, 319), (259, 1), (259, 1), (2, 319), [640, 480]]
+November 12, 2016 21:07:32:913000	(2, 319)
+November 12, 2016 21:07:33:127000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:34:533000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:34:535000	(304, 411)
+November 12, 2016 21:07:34:538000	411
+November 12, 2016 21:07:34:542000	[304, 411]
+November 12, 2016 21:07:34:549000	411
+November 12, 2016 21:07:34:556000	(304, 411)
+November 12, 2016 21:07:34:563000	[(95, 276), (436, 208), (623, 243), (304, 411), [640, 480]]
+November 12, 2016 21:07:34:726000	bottommost point: 411
+November 12, 2016 21:07:34:731000	turn angle:  0.045
+November 12, 2016 21:07:34:736000	OBJECT IS IN CENTRE, walking toward it:  0.2875
+November 12, 2016 21:07:34:739000	bottom most position:  
+November 12, 2016 21:07:34:747000	304
+November 12, 2016 21:07:36:091000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:07:36:765000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:38:647000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:38:656000	(316, 415)
+November 12, 2016 21:07:38:658000	415
+November 12, 2016 21:07:38:661000	[316, 415]
+November 12, 2016 21:07:38:664000	415
+November 12, 2016 21:07:38:667000	(316, 415)
+November 12, 2016 21:07:38:669000	[(95, 281), (423, 207), (619, 235), (316, 415), [640, 480]]
+November 12, 2016 21:07:39:151000	bottommost point: 415
+November 12, 2016 21:07:39:259000	turn angle:  0.01125
+November 12, 2016 21:07:39:610000	OBJECT IS IN CENTRE, walking toward it:  0.270833333333
+November 12, 2016 21:07:39:719000	bottom most position:  
+November 12, 2016 21:07:39:736000	316
+November 12, 2016 21:07:40:626000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:40:636000	(40, 95)
+November 12, 2016 21:07:40:648000	427
+November 12, 2016 21:07:40:661000	[40, 95]
+November 12, 2016 21:07:40:664000	427
+November 12, 2016 21:07:40:672000	(40, 427)
+November 12, 2016 21:07:40:682000	[(15, 59), (19, 55), (67, 83), (40, 95), [640, 480]]
+November 12, 2016 21:07:41:582000	Longer side is 
+November 12, 2016 21:07:41:587000	RIGHT
+November 12, 2016 21:07:41:597000	contour details are
+November 12, 2016 21:07:41:608000	[(15, 59), (19, 55), (67, 83), (40, 95), [640, 480]]
+November 12, 2016 21:07:41:788000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:44:532000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:44:547000	(325, 376)
+November 12, 2016 21:07:44:563000	407
+November 12, 2016 21:07:44:565000	[325, 376]
+November 12, 2016 21:07:44:578000	407
+November 12, 2016 21:07:44:580000	(325, 407)
+November 12, 2016 21:07:44:582000	[(128, 282), (636, 240), (638, 240), (325, 376), [640, 480]]
+November 12, 2016 21:07:44:948000	bottommost point: 407
+November 12, 2016 21:07:45:029000	turn angle:  -0.0140625
+November 12, 2016 21:07:45:233000	OBJECT IS IN CENTRE, walking toward it:  0.304166666667
+November 12, 2016 21:07:45:397000	bottom most position:  
+November 12, 2016 21:07:45:402000	325
+November 12, 2016 21:07:47:416000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:49:688000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:49:692000	(300, 407)
+November 12, 2016 21:07:49:717000	407
+November 12, 2016 21:07:49:726000	[300, 407]
+November 12, 2016 21:07:49:732000	407
+November 12, 2016 21:07:49:735000	(300, 407)
+November 12, 2016 21:07:49:739000	[(107, 291), (447, 207), (636, 229), (300, 407), [640, 480]]
+November 12, 2016 21:07:50:236000	bottommost point: 407
+November 12, 2016 21:07:50:387000	turn angle:  0.05625
+November 12, 2016 21:07:50:549000	OBJECT IS IN CENTRE, walking toward it:  0.304166666667
+November 12, 2016 21:07:50:649000	bottom most position:  
+November 12, 2016 21:07:50:651000	300
+November 12, 2016 21:07:52:705000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:53:181000	(40, 427)
+November 12, 2016 21:07:53:222000	height of pic: 480
+November 12, 2016 21:07:53:382000	bot most yof BOTTOM CA<MERA: 95
+November 12, 2016 21:07:54:342000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:54:355000	(320, 411)
+November 12, 2016 21:07:54:357000	411
+November 12, 2016 21:07:54:360000	[320, 411]
+November 12, 2016 21:07:54:362000	411
+November 12, 2016 21:07:54:364000	(320, 411)
+November 12, 2016 21:07:54:366000	[(123, 285), (451, 211), (638, 248), (320, 411), [640, 480]]
+November 12, 2016 21:07:54:510000	bottommost point: 411
+November 12, 2016 21:07:54:525000	turn angle:  0.0
+November 12, 2016 21:07:54:601000	OBJECT IS IN CENTRE, walking toward it:  0.2875
+November 12, 2016 21:07:54:605000	bottom most position:  
+November 12, 2016 21:07:54:607000	320
+November 12, 2016 21:07:56:629000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:07:58:712000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:07:58:720000	(328, 411)
+November 12, 2016 21:07:58:728000	411
+November 12, 2016 21:07:58:731000	[328, 411]
+November 12, 2016 21:07:58:735000	411
+November 12, 2016 21:07:58:738000	(328, 411)
+November 12, 2016 21:07:58:757000	[(135, 286), (483, 203), (638, 248), (328, 411), [640, 480]]
+November 12, 2016 21:07:58:771000	STARTING MoveTable
+November 12, 2016 21:07:58:798000	STARTING LiftTable
+November 12, 2016 21:07:59:709000	bottommost point: 411
+November 12, 2016 21:07:59:751000	turn angle:  -0.0225
+November 12, 2016 21:07:59:766000	OBJECT IS IN CENTRE, walking toward it:  0.2875
+November 12, 2016 21:07:59:896000	bottom most position:  
+November 12, 2016 21:07:59:909000	328
+November 12, 2016 21:08:01:941000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:08:04:601000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:08:04:607000	(340, 423)
+November 12, 2016 21:08:04:609000	423
+November 12, 2016 21:08:04:612000	[340, 423]
+November 12, 2016 21:08:04:619000	423
+November 12, 2016 21:08:04:621000	(340, 423)
+November 12, 2016 21:08:04:626000	[(119, 301), (455, 207), (638, 236), (340, 423), [640, 480]]
+November 12, 2016 21:08:04:780000	bottommost point: 423
+November 12, 2016 21:08:04:790000	turn angle:  -0.05625
+November 12, 2016 21:08:04:799000	OBJECT IS IN CENTRE, walking toward it:  0.2375
+November 12, 2016 21:08:04:822000	bottom most position:  
+November 12, 2016 21:08:04:828000	340
+November 12, 2016 21:08:06:867000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:08:09:347000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:08:09:350000	(296, 447)
+November 12, 2016 21:08:09:360000	447
+November 12, 2016 21:08:09:362000	[296, 447]
+November 12, 2016 21:08:09:371000	447
+November 12, 2016 21:08:09:389000	(296, 447)
+November 12, 2016 21:08:09:401000	[(87, 302), (455, 203), (638, 240), (296, 447), [640, 480]]
+November 12, 2016 21:08:09:741000	bottommost point: 447
+November 12, 2016 21:08:09:761000	turn angle:  0.0375
+November 12, 2016 21:08:09:840000	bottom most position:  
+November 12, 2016 21:08:09:847000	296
+November 12, 2016 21:08:11:668000	STARTING SmallStepSideways
+November 12, 2016 21:08:11:873000	ending behaviourMoveToCornerOfObject
+November 12, 2016 21:08:14:084000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:08:14:099000	(248, 447)
+November 12, 2016 21:08:14:102000	479
+November 12, 2016 21:08:14:110000	[248, 447]
+November 12, 2016 21:08:14:120000	479
+November 12, 2016 21:08:14:125000	(248, 479)
+November 12, 2016 21:08:14:131000	[(63, 303), (455, 171), (638, 211), (248, 447), [640, 480]]
+November 12, 2016 21:08:14:189000	bottommost point: 479
+November 12, 2016 21:08:14:240000	right side is longer
+November 12, 2016 21:08:14:311000	Initial longer side is 
+November 12, 2016 21:08:14:314000	RIGHT
+November 12, 2016 21:08:14:328000	reached corner of object
+November 12, 2016 21:08:14:425000	FIND LONGER SIDE OF TABLE
+November 12, 2016 21:08:17:690000	STARTING LandTable
+November 12, 2016 21:08:22:190000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:08:22:193000	(504, 343)
+November 12, 2016 21:08:22:197000	343
+November 12, 2016 21:08:22:209000	[504, 343]
+November 12, 2016 21:08:22:215000	343
+November 12, 2016 21:08:22:217000	(504, 343)
+November 12, 2016 21:08:22:225000	[(339, 153), (340, 148), (528, 334), (504, 343), [640, 480]]
+November 12, 2016 21:08:22:295000	[(339, 153), (340, 148), (528, 334), (504, 343), [640, 480]]
+November 12, 2016 21:08:22:299000	hypot left 251.644590643
+November 12, 2016 21:08:30:409000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:08:30:413000	(624, 351)
+November 12, 2016 21:08:30:415000	351
+November 12, 2016 21:08:30:417000	[624, 351]
+November 12, 2016 21:08:30:421000	351
+November 12, 2016 21:08:30:427000	(624, 351)
+November 12, 2016 21:08:30:431000	[(407, 145), (589, 123), (638, 339), (624, 351), [640, 480]]
+November 12, 2016 21:08:30:840000	[(407, 145), (589, 123), (638, 339), (624, 351), [640, 480]]
+November 12, 2016 21:08:30:846000	hypot right 18.4390889146
+November 12, 2016 21:08:34:693000	MoveTable COMPLETE
+November 12, 2016 21:08:38:101000	right side is longer
+November 12, 2016 21:08:51:227000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:08:51:239000	(2, 303)
+November 12, 2016 21:08:51:251000	347
+November 12, 2016 21:08:51:254000	[2, 303]
+November 12, 2016 21:08:51:256000	347
+November 12, 2016 21:08:51:258000	(2, 347)
+November 12, 2016 21:08:51:260000	[(1, 131), (231, 75), (415, 93), (2, 303), [640, 480]]
+November 12, 2016 21:08:51:298000	[(1, 131), (231, 75), (415, 93), (2, 303), [640, 480]]
+November 12, 2016 21:09:00:388000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:09:00:417000	(452, 319)
+November 12, 2016 21:09:00:428000	319
+November 12, 2016 21:09:00:431000	[452, 319]
+November 12, 2016 21:09:00:434000	319
+November 12, 2016 21:09:00:437000	(452, 319)
+November 12, 2016 21:09:00:440000	[(339, 139), (591, 115), (638, 115), (452, 319), [640, 480]]
+November 12, 2016 21:09:01:417000	[(339, 139), (591, 115), (638, 115), (452, 319), [640, 480]]
+November 12, 2016 21:09:04:474000	left most x and right most x points
+November 12, 2016 21:09:04:485000	639
+November 12, 2016 21:09:04:495000	638
+November 12, 2016 21:09:11:801000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:09:15:450000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:09:15:452000	(212, 59)
+November 12, 2016 21:09:15:454000	59
+November 12, 2016 21:09:15:459000	[212, 59]
+November 12, 2016 21:09:15:462000	59
+November 12, 2016 21:09:15:466000	(212, 59)
+November 12, 2016 21:09:15:469000	[(144, 1), (144, 1), (235, 41), (212, 59), [640, 480]]
+November 12, 2016 21:09:15:646000	Longer side is 
+November 12, 2016 21:09:15:649000	RIGHT
+November 12, 2016 21:09:15:651000	contour details are
+November 12, 2016 21:09:15:658000	[(144, 1), (144, 1), (235, 41), (212, 59), [640, 480]]
+November 12, 2016 21:09:26:799000	(212, 59)
+November 12, 2016 21:09:29:866000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:09:33:309000	countour list is empty
+November 12, 2016 21:09:36:347000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:09:40:532000	countour list is empty
+November 12, 2016 21:09:44:007000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:09:47:408000	countour list is empty
+November 12, 2016 21:09:50:436000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:09:54:892000	countour list is empty
+November 12, 2016 21:09:57:976000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:10:01:946000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:10:01:950000	(536, 19)
+November 12, 2016 21:10:01:966000	19
+November 12, 2016 21:10:01:971000	[536, 19]
+November 12, 2016 21:10:01:974000	19
+November 12, 2016 21:10:01:983000	(536, 19)
+November 12, 2016 21:10:01:987000	[(527, 1), (527, 1), (547, 7), (536, 19), [640, 480]]
+November 12, 2016 21:10:02:303000	Longer side is 
+November 12, 2016 21:10:02:311000	RIGHT
+November 12, 2016 21:10:02:314000	contour details are
+November 12, 2016 21:10:02:317000	[(527, 1), (527, 1), (547, 7), (536, 19), [640, 480]]
+November 12, 2016 21:10:09:164000	(536, 19)
+November 12, 2016 21:10:12:449000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:10:15:826000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:10:15:830000	(460, 111)
+November 12, 2016 21:10:15:833000	111
+November 12, 2016 21:10:15:838000	[460, 111]
+November 12, 2016 21:10:15:848000	111
+November 12, 2016 21:10:15:850000	(460, 111)
+November 12, 2016 21:10:15:853000	[(412, 1), (412, 1), (495, 65), (460, 111), [640, 480]]
+November 12, 2016 21:10:15:929000	Longer side is 
+November 12, 2016 21:10:15:936000	RIGHT
+November 12, 2016 21:10:15:949000	contour details are
+November 12, 2016 21:10:15:958000	[(412, 1), (412, 1), (495, 65), (460, 111), [640, 480]]
+November 12, 2016 21:10:23:186000	(460, 111)
+November 12, 2016 21:10:26:330000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:10:30:026000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:10:30:029000	(392, 11)
+November 12, 2016 21:10:30:041000	107
+November 12, 2016 21:10:30:043000	[392, 11]
+November 12, 2016 21:10:30:045000	107
+November 12, 2016 21:10:30:047000	(392, 107)
+November 12, 2016 21:10:30:049000	[(388, 4), (388, 4), (395, 11), (392, 11), [640, 480]]
+November 12, 2016 21:10:31:024000	Longer side is 
+November 12, 2016 21:10:31:031000	RIGHT
+November 12, 2016 21:10:31:033000	contour details are
+November 12, 2016 21:10:31:037000	[(388, 4), (388, 4), (395, 11), (392, 11), [640, 480]]
+November 12, 2016 21:10:38:495000	(392, 107)
+November 12, 2016 21:10:41:672000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:10:45:413000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:10:45:416000	(284, 95)
+November 12, 2016 21:10:45:419000	95
+November 12, 2016 21:10:45:422000	[284, 95]
+November 12, 2016 21:10:45:428000	95
+November 12, 2016 21:10:45:430000	(284, 95)
+November 12, 2016 21:10:45:433000	[(251, 1), (251, 1), (293, 41), (284, 95), [640, 480]]
+November 12, 2016 21:10:45:456000	Longer side is 
+November 12, 2016 21:10:45:460000	RIGHT
+November 12, 2016 21:10:45:463000	contour details are
+November 12, 2016 21:10:45:467000	[(251, 1), (251, 1), (293, 41), (284, 95), [640, 480]]
+November 12, 2016 21:10:50:618000	(284, 95)
+November 12, 2016 21:10:53:812000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:10:57:292000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:10:57:295000	(356, 51)
+November 12, 2016 21:10:57:297000	175
+November 12, 2016 21:10:57:302000	[356, 51]
+November 12, 2016 21:10:57:305000	175
+November 12, 2016 21:10:57:307000	(356, 175)
+November 12, 2016 21:10:57:310000	[(340, 1), (340, 1), (364, 32), (356, 51), [640, 480]]
+November 12, 2016 21:10:57:345000	Longer side is 
+November 12, 2016 21:10:57:348000	RIGHT
+November 12, 2016 21:10:57:351000	contour details are
+November 12, 2016 21:10:57:355000	[(340, 1), (340, 1), (364, 32), (356, 51), [640, 480]]
+November 12, 2016 21:11:04:829000	(356, 175)
+November 12, 2016 21:11:07:890000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:11:12:051000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:11:12:060000	(504, 155)
+November 12, 2016 21:11:12:066000	319
+November 12, 2016 21:11:12:092000	[504, 155]
+November 12, 2016 21:11:12:095000	319
+November 12, 2016 21:11:12:104000	(504, 319)
+November 12, 2016 21:11:12:115000	[(480, 96), (480, 96), (516, 136), (504, 155), [640, 480]]
+November 12, 2016 21:11:12:471000	Longer side is 
+November 12, 2016 21:11:12:483000	RIGHT
+November 12, 2016 21:11:12:487000	contour details are
+November 12, 2016 21:11:12:501000	[(480, 96), (480, 96), (516, 136), (504, 155), [640, 480]]
+November 12, 2016 21:11:19:949000	(504, 319)
+November 12, 2016 21:11:23:185000	KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM
+November 12, 2016 21:11:26:863000	PRINTING BOTTOMMOST POINTS BELOW:::::
+November 12, 2016 21:11:26:866000	(408, 235)
+November 12, 2016 21:11:26:869000	351
+November 12, 2016 21:11:26:872000	[408, 235]
+November 12, 2016 21:11:26:876000	351
+November 12, 2016 21:11:26:880000	(408, 351)
+November 12, 2016 21:11:26:883000	[(388, 168), (388, 168), (420, 208), (408, 235), [640, 480]]
+November 12, 2016 21:11:26:966000	Longer side is 
+November 12, 2016 21:11:26:972000	RIGHT
+November 12, 2016 21:11:26:976000	contour details are
+November 12, 2016 21:11:26:985000	[(388, 168), (388, 168), (420, 208), (408, 235), [640, 480]]
+November 12, 2016 21:11:34:488000	(408, 351)
+November 12, 2016 21:11:34:496000	height of pic: 480
+November 12, 2016 21:11:34:519000	bot most yof BOTTOM CA<MERA: 235
+November 12, 2016 21:11:39:616000	STARTING MoveTable
+November 12, 2016 21:11:39:619000	STARTING LiftTable
+November 12, 2016 21:11:51:672000	STARTING SmallStepSideways
+November 12, 2016 21:12:16:091000	STARTING LandTable
+November 12, 2016 21:12:25:589000	MoveTable COMPLETE

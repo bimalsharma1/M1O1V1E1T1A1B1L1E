@@ -40,8 +40,10 @@ def HeadInitialise(motionProxy): #straighten up head
     isAbsolute = True
     angle = 0
     motionProxy.angleInterpolation(names, angle, times, isAbsolute)   
+    motionProxy.waitUntilMoveIsFinished()
     names = "HeadYaw"
     motionProxy.angleInterpolation(names, angle, times, isAbsolute)
+    motionProxy.waitUntilMoveIsFinished()
 
 def LiftWithElbowAndShouldersPutObjectDown(motionProxy):
     #Lshoulder roll goes up to 76 degrees out and LElbow roll goes inwards up tp -88 degrees
@@ -51,7 +53,7 @@ def LiftWithElbowAndShouldersPutObjectDown(motionProxy):
     pFractionMaxSpeed = 0.02
     
     JointNames = ["LShoulderPitch", "RShoulderPitch"]
-    Arm = [70,  70]  #40
+    Arm = [90,  90]  #40
     Arm = [ x * motion.TO_RAD for x in Arm]
     motionProxy.angleInterpolationWithSpeed(JointNames, Arm, pFractionMaxSpeed)
 
