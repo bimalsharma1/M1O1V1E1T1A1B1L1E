@@ -1,4 +1,4 @@
-import WalkToPosition
+from Utils import Helper as h
 import Logger
 import time
 
@@ -8,7 +8,7 @@ class SmallStepSideways:
         Logger.Log("STARTING SmallStepSideways")
         time.sleep(1)
         print "move arms"
-        WalkToPosition.WalkToPositionWithHandsUp(motionProxy, X, Y, Theta)
+        h.WalkToPositionWithHandsUp(motionProxy, X, Y, Theta)
         motionProxy.waitUntilMoveIsFinished()
         time.sleep(5)
 

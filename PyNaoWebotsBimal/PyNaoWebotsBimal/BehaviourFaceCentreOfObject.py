@@ -7,7 +7,7 @@ import config
 import vision_getandsaveimage
 import DetectRedBlueYellowGrey
 import InitialiseHeadAndShoulders
-import WalkToPosition 
+from Utils import Helper as h
 import sys
 import findObjectOfInterest
 import os
@@ -48,12 +48,12 @@ def behaviourFaceCentreOfObject(motionProxy, portName):
         
             if (br[0]>639 or tr[0]>639):
                 if (bl[0]>1 and tl[0]>1):
-                    WalkToPosition.WalkToPosition(motionProxy, 0, 0, -turnAngle)
+                    h.WalkToPosition(motionProxy, 0, 0, -turnAngle)
                     wholeObjectInTopPicture = False
 
             if (bl[0]<1 or tl[0]<1):
                 if (br[0]<639 and tr[0]<639):
-                    WalkToPosition.WalkToPosition(motionProxy, 0, 0, turnAngle)
+                    h.WalkToPosition(motionProxy, 0, 0, turnAngle)
                     wholeObjectInTopPicture = False
                
             if (br[0]<640 and tr[0]<640 and bl[0]>0 and tl[0]>0):

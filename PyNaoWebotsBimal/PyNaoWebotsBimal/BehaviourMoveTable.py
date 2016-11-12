@@ -9,6 +9,7 @@ import almath as m # python's wrapping of almath
 import time
 import Logger
 import findNaoObjectPositions
+from Utils import Helper as h
 
 def LiftTable(motionProxy, portName):
     time.sleep(2)
@@ -17,7 +18,7 @@ def LiftTable(motionProxy, portName):
     print readyToLift
 
     Y = 1
-    WalkToPosition.WalkToPosition(motionProxy,0, Y, 0)
+    h.WalkToPosition(motionProxy,0, Y, 0)
 
 
 def BehaviourMoveTable(motionProxy,  X, Y, Theta):

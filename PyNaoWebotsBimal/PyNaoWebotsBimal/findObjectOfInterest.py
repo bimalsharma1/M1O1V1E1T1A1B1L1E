@@ -17,10 +17,10 @@ import DetectRedBlueYellowGrey
 import InitialiseHeadAndShoulders
 import Logger
 import sys
-import Helper
 import math
 from Utils import ImageProcessing as ip
 from Utils import InitialiseNaoRobot
+from Utils import Helper as h
 
 def findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCamera):
     objectFound = False
@@ -67,15 +67,15 @@ def findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
             headDown = False
             headDownChecked = False
             time.sleep(3)
-            Helper.HeadInitialise(InitialiseNaoRobot.motionProxy)
-            Helper.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(angleOfHead))
-            Helper.HeadPitchMove(InitialiseNaoRobot.motionProxy,math.radians(29.5))   # move head down to get better view of surroundings
+            h.HeadInitialise(InitialiseNaoRobot.motionProxy)
+            h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(angleOfHead))
+            h.HeadPitchMove(InitialiseNaoRobot.motionProxy,math.radians(29.5))   # move head down to get better view of surroundings
             while (angleOfHead >= -100):  # and headDownChecked == False):
                 #check if the bottom camera can see object 
                 print "checking straight ahead"
                 headLookingPosition = 'CENTRE'
                 # imB =  vision_getandsaveimage.showNaoImageBottomCam(config.ipAddress, config.ports[portName], filenameBottomCamera)
-                imB = ip.getImage(InitialiseNaoRobot, "BOTTOM", filenameTopCamera)
+                imB = ip.getImage(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)
                 xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameBottomCamera + ".png", "BOTTOM",imB)
                 if (xCentrePostion > 0):
                     print "OBJECT FOUND"
@@ -85,8 +85,8 @@ def findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                     print "checking from bottom camera"
                     Logger.Log("bottom cam")
                     print xCentrePostion, yCentrePosition, objectFoundOnBottomCamera,bottomMostPoint
-                    WalkToPosition.WalkToPosition(motionProxy, 0.0, 0, math.radians(angleOfHead))
-                    Helper.HeadInitialise(InitialiseNaoRobot.motionProxy)
+                    h.WalkToPosition(motionProxy, 0.0, 0, math.radians(angleOfHead))
+                    h.HeadInitialise(InitialiseNaoRobot.motionProxy)
                     time.sleep(2)
                     return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound, bottomMostPoint)
                 time.sleep(2)
@@ -106,7 +106,7 @@ def findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                     cameraPosition = 'TOP'
                     print "top camera values"
                     print xCentrePostion, yCentrePosition, objectFoundOnBottomCamera
-                    WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead)*1.5)
+                    h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead)*1.5)
                     time.sleep(3)
                     #keep turning until centre of table is mid way
                     # imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
@@ -116,7 +116,7 @@ def findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                     #     imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
                     # xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
 
-                    Helper.HeadInitialise(InitialiseNaoRobot.motionProxy)
+                    h.HeadInitialise(InitialiseNaoRobot.motionProxy)
                     time.sleep(3)
                     return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound, bottomMostPoint)   
     
@@ -127,16 +127,16 @@ def findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                 print "angle of head"
                 print angleOfHead
                 Logger.Log(str(angleOfHead))
-                Helper.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(angleOfHead))
+                h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(angleOfHead))
                 time.sleep(2)
 
             print "out of inner loop"
          
-            WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(180))
+            h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(180))
             turnCounter = turnCounter + 1
             time.sleep(4)
             if (turnCounter % 2 == 0):
-                WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy, 1, 0, 0)
+                h.WalkToPosition(InitialiseNaoRobot.motionProxy, 1, 0, 0)
                 time.sleep(3)
             
   

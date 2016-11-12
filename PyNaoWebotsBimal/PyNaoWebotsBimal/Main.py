@@ -11,7 +11,6 @@ import config
 import vision_getandsaveimage
 import DetectRedBlueYellowGrey
 import InitialiseHeadAndShoulders
-import WalkToPosition 
 import sys
 import findObjectOfInterest
 import os

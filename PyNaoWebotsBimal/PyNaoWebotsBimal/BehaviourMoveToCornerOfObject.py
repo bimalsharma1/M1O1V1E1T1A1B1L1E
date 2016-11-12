@@ -7,7 +7,7 @@ import config
 import vision_getandsaveimage
 import DetectRedBlueYellowGrey
 import InitialiseHeadAndShoulders
-import WalkToPosition 
+from Utils import Helper as h
 import sys
 import findObjectOfInterest
 import os
@@ -107,7 +107,7 @@ def behaviourMoveToCornerOfObject(InitialiseNaoRobot):
                 print bottomMostPoint[1]
 
                 X = ((480.0-bottomMostPoint[1])/float(480.0)) * X
-                #WalkToPosition.WalkToPosition(motionProxy, X, 0, 0) 
+                #h.WalkToPosition(motionProxy, X, 0, 0) 
                 print "OBJECT IS IN CENTRE, walking toward it"
                 print X
                 Logger.Log("OBJECT IS IN CENTRE, walking toward it:  "+ str(X))
@@ -122,7 +122,7 @@ def behaviourMoveToCornerOfObject(InitialiseNaoRobot):
             print "horizontal pixel position:  ", str(bottomMostPoint[0])
             Logger.Log("bottom most position:  ")
             Logger.Log( str(bottomMostPoint[0]))
-            WalkToPosition.WalkToPosition(InitialiseNaoRobot.motionProxy, X, 0, turnAngle)   
+            h.WalkToPosition(InitialiseNaoRobot.motionProxy, X, 0, turnAngle)   
             time.sleep(2)
             Logger.Log("ending behaviourMoveToCornerOfObject")
         

@@ -7,12 +7,12 @@ import config
 import vision_getandsaveimage
 import DetectRedBlueYellowGrey
 import InitialiseHeadAndShoulders
-import WalkToPosition 
 import sys
 import findObjectOfInterest
 import os
 import DetectCornersFast
 import Logger
+from Utils import Helper as h
 
 def behaviourMoveToTopCornerOfObject(motionProxy,portName):
         lastKnownPositionOfObject = ""

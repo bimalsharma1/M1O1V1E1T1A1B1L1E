@@ -8,7 +8,7 @@ import config
 import vision_getandsaveimage
 import DetectRedBlueYellowGrey
 import InitialiseHeadAndShoulders
-import WalkToPosition 
+from Utils import Helper as h
 import sys
 import findObjectOfInterest
 import os
@@ -16,8 +16,6 @@ import DetectCornersFast
 import Logger
 import BehaviourMoveTable
 import findNaoObjectPositions
-import WalkToPosition
-import Helper
 
 def LiftObject(motionProxy, portName, X, Y, Theta):
     time.sleep(2)
@@ -33,11 +31,11 @@ def LiftObject(motionProxy, portName, X, Y, Theta):
         #LIFT WITH ARMS AND SHOULDERS
         time.sleep(1)
         print "move arms"
-        WalkToPosition.WalkToPositionWithHandsUp(motionProxy, X, Y, Theta)
+        h.WalkToPositionWithHandsUp(motionProxy, X, Y, Theta)
         time.sleep(3)
         Helper.LiftWithElbowAndShouldersPutObjectDown(motionProxy)
         time.sleep(3)
-        WalkToPosition.WalkToPosition(motionProxy, -0.1, 0, 0)
+        h.WalkToPosition(motionProxy, -0.1, 0, 0)
 
 def behaviourWalkToLiftRangeOfObject(motionProxy,portName): 
         #InitialiseHeadAndShoulders.InitialiseHeadAndShoulders(motionProxy,motionProxy1)
@@ -60,7 +58,7 @@ def behaviourWalkToLiftRangeOfObject(motionProxy,portName):
         print "START OF WALK TO RANGE OF OBJECT"
         X=0.05
         print "walk ahead"
-        #WalkToPosition.WalkToPosition(motionProxy, X, 0,0) 
+        #h.WalkToPosition(motionProxy, X, 0,0) 
         Y = -0.0 # move left or right
         #positive theta is anticlockwise
         Theta = 1 # amount to turn around in radians
@@ -74,9 +72,9 @@ def behaviourWalkToLiftRangeOfObject(motionProxy,portName):
         #    #angleToTurn,distanceToWalk,longerSide = DetectCornersFast.GetTurnAngleAndWalkDistanceWhenCloserToObject(filenameTopCamera + ".png",imB)
         #    print bottomMostPoint
         #    Logger.Log(bottomMostPoint)
-        #    #WalkToPosition.WalkToPosition(motionProxy, 0, 0, turnAngle)   
+        #    #h.WalkToPosition(motionProxy, 0, 0, turnAngle)   
         #    if (bottomMostPoint[1]<460):
-        #        WalkToPosition.WalkToPosition(motionProxy, X, 0,0)                     
+        #        h.WalkToPosition(motionProxy, X, 0,0)                     
         #    else:
         #        ObjectCanBeSeenFromBottomCamera=True
         #detect NAO
