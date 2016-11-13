@@ -61,7 +61,7 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
         except Exception as e:
             hypotLeft=0
             print "hypot left is 0"
-        time.sleep(3)
+        time.sleep(1)
 
         try:
             # Look RIGHT and find length

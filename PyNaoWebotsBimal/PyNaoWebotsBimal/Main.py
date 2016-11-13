@@ -5,7 +5,6 @@
 import almath as m # python's wrapping of almath
 from naoqi import ALProxy
 import time
-import InitialiseNao
 import ALPhotoCapture
 import config
 import vision_getandsaveimage
@@ -18,15 +17,11 @@ import moveTowardObjectOfInterest
 import thread
 import DetectCornersFast
 import math
-import DetectRedBlueYellowGrey
 import numpy as np
 import cv2
 import Logger
 import Helper
 import BehaviourWalkToLiftRangeOfObject
-import threading 
-import sys
-import config
 import ClassesMoveTable
 from ClassesMoveTable import LookForTable
 from ClassesMoveTable import GoToTable

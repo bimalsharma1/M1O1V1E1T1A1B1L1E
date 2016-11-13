@@ -20,3 +20,5 @@ imageHeight = 480
 
 InitialLongerSideOfTable = ""
 Leader = ""   # config is updated witht he leader name
+
+WirelessMessages = [] #storage for simulated wireless

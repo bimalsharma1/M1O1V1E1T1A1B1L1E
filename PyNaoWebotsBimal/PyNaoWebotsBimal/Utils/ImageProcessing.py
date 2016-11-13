@@ -9,21 +9,6 @@ from Utils import InitialiseNaoRobot
 from naoqi import ALProxy
 import cv2
 import vision_definitions
-#class ImageProcessing(InitialiseNaoRobot.InitialiseNaoRobot):
-
-    # def __init__(self):       
-        # motionProxy = None
-        # postureProxy = None
-        # camProxy = camProxy = None
-        # tts = None
-        # topVideoClient = None
-        # bottomVideoClient = None
-        # motionProxy = ALProxy("ALMotion", config.ipAddress, config.ports['port1'])
-        # postureProxy = ALProxy("ALRobotPosture", config.ipAddress, config.ports['port1']) 
-        # camProxy = camProxy = ALProxy("ALVideoDevice", IP, PORT)
-        # tts = ALProxy("ALTextToSpeech", config.ipAddress, config.ports['port1'])
-        # topVideoClient = camProxy.subscribeCamera("python_client",vision_definitions.kTopCamera, resolution, colorSpace, 5)
-        # bottomVideoClient = camProxy.subscribeCamera("python_client",vision_definitions.kBottomCamera , resolution, colorSpace, 5)
 
 def getImage(InitialiseNaoRobot, camera, FILENAME = None): 
         camProxy = InitialiseNaoRobot.camProxy

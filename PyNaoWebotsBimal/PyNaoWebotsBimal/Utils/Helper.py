@@ -9,7 +9,6 @@ import config
 import vision_getandsaveimage
 import DetectRedBlueYellowGrey
 import InitialiseHeadAndShoulders
-import WalkToPosition 
 import sys
 import findObjectOfInterest
 import os
@@ -21,6 +20,7 @@ import comms9557
 import comms9559
 import argparse
 import almath as m # python's wrapping of almath
+import InitialiseNaoRobot
 
 def HeadYawMove(motionProxy, angle): #get angle in degrees (+ve value to turn left, -ve to turn right)
     names = "HeadYaw"   # looking left and right
@@ -130,22 +130,24 @@ def CommunicateReadyToLift(motionProxy):
     motionProxy.angleInterpolationWithSpeed(JointNames, Arm, pFractionMaxSpeed)
 
 
-def AddNao(ipAddress, port): #get angle in degrees (+ve value to look down, -ve to look up)
-    ipList = ipAddress+':'+str(port)
-    comms9557.ListOfNaosDetected.append([ipList,"",""])
-    comms9559.ListOfNaosDetected.append([ipList,"",""])
-    SelectLeader(ipAddress, port)
+def AddNao(InitialiseNaoRobot): #get angle in degrees (+ve value to look down, -ve to look up)
+    ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
+    # nao = InitialiseNaoRobot.InitialiseNaoRobot
+    config.WirelessMessages.append([ipList,0,"New Nao"])
+    InitialiseNaoRobot.ListOfNaosDetected.append([ipList,0,"New Nao"])
+    print InitialiseNaoRobot.ListOfNaosDetected
+    SelectLeader(InitialiseNaoRobot)
 
-def SelectLeader(ipAddress, port): #get angle in degrees (+ve value to look down, -ve to look up)
-    ipList = ipAddress+':'+str(port)
-    if(port == 9557):
-        config.Leader = max(sublist[0] for sublist in comms9557.ListOfNaosDetected)
-    if(port == 9559):
-        config.Leader = max(sublist[0] for sublist in comms9559.ListOfNaosDetected)
+def SelectLeader(InitialiseNaoRobot): #get angle in degrees (+ve value to look down, -ve to look up)
+
+    ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
+    leader = max(sublist[0] for sublist in InitialiseNaoRobot.ListOfNaosDetected)
+    if (leader == ipList):
+        InitialiseNaoRobot.isLeader = True
     print "THE LEADER IS: "
     Logger.Log("THE LEADER IS: ")
-    print config.Leader
-    Logger.Log(config.Leader)
+    print leader
+    Logger.Log(leader)
 
 def SendMessage(ipAddress, port):
     config.ListOfNaosDetected.append([config.ipAddress+str(config.ports['port1']), [MsgReceived], [MsgSent]])
@@ -153,3 +155,6 @@ def SendMessage(ipAddress, port):
 def ReadMessage(ipAddress, port):
     config.ListOfNaosDetected.append([config.ipAddress+str(config.ports['port1']), [MsgReceived], [MsgSent]])
 
+def ReadyToLift():
+    for port in config.ports:
+        print port

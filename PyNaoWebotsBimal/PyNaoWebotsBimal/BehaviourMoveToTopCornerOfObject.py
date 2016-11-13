@@ -81,7 +81,7 @@ def behaviourMoveToTopCornerOfObject(motionProxy,portName):
                 print bottomMostPoint[1]
 
                 X = ((480.0-bottomMostPoint[1])/float(480.0)) * X
-                #WalkToPosition.WalkToPosition(motionProxy, X, 0, 0) 
+                #h.WalkToPosition(motionProxy, X, 0, 0) 
                 print "OBJECT IS IN CENTRE, walking toward it"
                 print X
                 Logger.Log("OBJECT IS IN CENTRE, walking toward it:  "+ str(X))
@@ -96,9 +96,9 @@ def behaviourMoveToTopCornerOfObject(motionProxy,portName):
             print "horizontal pixel position:  ", str(bottomMostPoint[0])
             Logger.Log("bottom most position:  ")
             Logger.Log( str(bottomMostPoint[0]))
-            WalkToPosition.WalkToPosition(motionProxy, X, 0, turnAngle)   
+            h.WalkToPosition(motionProxy, X, 0, turnAngle)   
             time.sleep(2)
             Logger.Log("ending behaviourMoveToCornerOfObject")
         #turn and walk until table out of view
-        WalkToPosition.WalkToPosition(motionProxy, 0,0, -math.radians(75)) #+ve 45 degrees turn
+        h.WalkToPosition(motionProxy, 0,0, -math.radians(75)) #+ve 45 degrees turn
         

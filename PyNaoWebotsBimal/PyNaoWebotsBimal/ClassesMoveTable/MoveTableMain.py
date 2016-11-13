@@ -8,6 +8,7 @@ import PositionToCentreOfTableSide
 import SmallStepSideways
 import Logger
 from Utils import InitialiseNaoRobot
+from Utils import Helper as h
 from Queue import Queue
 import threading 
 import thread
@@ -21,6 +22,7 @@ class MoveTableMain:
         print "MOVE  NAO"
         initNao = InitialiseNaoRobot.InitialiseNaoRobot(port)
         initNao.wakeUpRobot(port)
+        h.AddNao(initNao)
 
         print "look for table"
         lookForTable = LookForTable.LookForTable() 
