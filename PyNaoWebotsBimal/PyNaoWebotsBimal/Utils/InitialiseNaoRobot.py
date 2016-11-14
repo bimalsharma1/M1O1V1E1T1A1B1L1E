@@ -18,6 +18,7 @@ class InitialiseNaoRobot:
     ipAddress = None
     isLeader = False
     ListOfNaosDetected = []
+    ReadyToLiftMessages = []
     MessagesSent = []
     MessagesReceived = []
     #collection of all Nao robots detected, can make multi dim by adding ListOfNaosDetected.append([id,leader])
@@ -33,14 +34,14 @@ class InitialiseNaoRobot:
         InitialiseNaoRobot.tts = ALProxy("ALTextToSpeech", config.ipAddress, config.ports[port])
         InitialiseNaoRobot.topVideoClient = camProxy.subscribeCamera("python_client",vision_definitions.kTopCamera, config.resolution, config.colorSpace, 5)
         InitialiseNaoRobot.bottomVideoClient = camProxy.subscribeCamera("python_client",vision_definitions.kBottomCamera , config.resolution, config.colorSpace, 5)
-        InitialiseNaoRobot.portName = port
+        InitialiseNaoRobot.portName = config.ports[port]
         InitialiseNaoRobot.ipAddress = config.ipAddress
         isLeader = False
         ListOfNaosDetected = []
+        ReadyToLiftMessages = []
         MessagesSent = []
         MessagesReceived = []
 
-        
     # @staticmethod 
     def wakeUpRobot(self, port):
         print "wake up robot"

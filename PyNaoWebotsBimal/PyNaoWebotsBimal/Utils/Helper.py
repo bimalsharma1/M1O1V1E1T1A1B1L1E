@@ -131,15 +131,12 @@ def CommunicateReadyToLift(motionProxy):
 
 
 def AddNao(InitialiseNaoRobot): #get angle in degrees (+ve value to look down, -ve to look up)
-    ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
-    # nao = InitialiseNaoRobot.InitialiseNaoRobot
-    config.WirelessMessages.append([ipList,0,"New Nao"])
-    InitialiseNaoRobot.ListOfNaosDetected.append([ipList,0,"New Nao"])
-    print InitialiseNaoRobot.ListOfNaosDetected
+    SendMessage(InitialiseNaoRobot, "NEW NAO")
+    print "call read msg"
+    ReadMessage(InitialiseNaoRobot)
     SelectLeader(InitialiseNaoRobot)
 
 def SelectLeader(InitialiseNaoRobot): #get angle in degrees (+ve value to look down, -ve to look up)
-
     ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
     leader = max(sublist[0] for sublist in InitialiseNaoRobot.ListOfNaosDetected)
     if (leader == ipList):
@@ -149,12 +146,40 @@ def SelectLeader(InitialiseNaoRobot): #get angle in degrees (+ve value to look d
     print leader
     Logger.Log(leader)
 
-def SendMessage(ipAddress, port):
-    config.ListOfNaosDetected.append([config.ipAddress+str(config.ports['port1']), [MsgReceived], [MsgSent]])
+def SendMessage(InitialiseNaoRobot, msg):
+    ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
+    config.WirelessMessages.append([ipList,msg])
+    InitialiseNaoRobot.ListOfNaosDetected.append([ipList,msg])
 
-def ReadMessage(ipAddress, port):
-    config.ListOfNaosDetected.append([config.ipAddress+str(config.ports['port1']), [MsgReceived], [MsgSent]])
+def ReadMessage(InitialiseNaoRobot):
+    print "ReadMessage def in helper"
+    NaoName = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
+    for message in InitialiseNaoRobot.ListOfNaosDetected:
+        Logger.Log("read messages")
+        print str(message)
+        Logger.Log(str(message))
 
-def ReadyToLift():
-    for port in config.ports:
-        print port
+def SendReadyToLiftMessage(InitialiseNaoRobot, msg):
+    ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
+    InitialiseNaoRobot.ReadyToLiftMessages.append([ipList,msg])
+
+def GetReadyToLift(InitialiseNaoRobot):
+    counter = 0
+    #read all messages
+    for msg in config.WirelessMessages:
+        for message in InitialiseNaoRobot.ReadyToLiftMessages:
+            if (message[0] != msg[0]):
+                InitialiseNaoRobot.ListOfNaosDetected.append([msg[0], msg[1]])
+
+    for message in InitialiseNaoRobot.ReadyToLiftMessages:
+        if (message[1] == "READYTOLIFT"):
+            Logger.Log(str(message[1]))
+            print message[1]
+            counter = counter + 1
+    print counter       
+    if (counter >= 2):
+        return True
+        Logger.Log(str(counter))
+        print counter
+    else: return False
+    

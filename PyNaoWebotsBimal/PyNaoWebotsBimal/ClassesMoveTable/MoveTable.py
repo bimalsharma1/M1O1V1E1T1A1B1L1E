@@ -2,12 +2,17 @@ import LiftTable
 import SmallStepSideways
 import LandTable
 import Logger
+import time
 from Utils import InitialiseNaoRobot
+from Utils import Helper as h
 
 class MoveTable:
     def MoveTableDef(self, InitialiseNaoRobot, X, Y, Theta):
         print "in function"
         Logger.Log("STARTING MoveTable")
+
+        while h.GetReadyToLift(InitialiseNaoRobot) == False:
+            time.sleep(1)
 
         print "lifting table"
         liftTable = LiftTable.LiftTable()
