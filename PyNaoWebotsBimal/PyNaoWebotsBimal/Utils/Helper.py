@@ -162,10 +162,13 @@ def ReadMessage(InitialiseNaoRobot):
 def SendReadyToLiftMessage(InitialiseNaoRobot, msg):
     ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
     InitialiseNaoRobot.ReadyToLiftMessages.append([ipList,msg])
+    config.WirelessMessages.append([ipList,msg])
 
 def GetReadyToLift(InitialiseNaoRobot):
     counter = 0
     #read all messages
+    print "config list"
+    print config.WirelessMessages
     for msg in config.WirelessMessages:
         for message in InitialiseNaoRobot.ReadyToLiftMessages:
             if (message[0] != msg[0]):
