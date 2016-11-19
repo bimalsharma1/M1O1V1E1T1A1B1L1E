@@ -1,21 +1,19 @@
 import almath # python's wrapping of almath
 from naoqi import ALProxy
 import time
-import InitialiseNao
 import ALPhotoCapture
 import config
 import vision_getandsaveimage
-import DetectRedBlueYellowGrey
+from Utils import DetectColourInImage as d
 import InitialiseHeadAndShoulders
 from Utils import Helper as h
 import sys
-import findObjectOfInterest
 import os
 import DetectCornersFast
 import Logger
 from Utils import ImageProcessing as ip
 
-def behaviourMoveToCornerOfObject(InitialiseNaoRobot):
+def MoveToCornerOfObject(InitialiseNaoRobot):
         lastKnownPositionOfObject = ""
         filenameTopCamera = "naoImageTopCamera"
         filenameBottomCamera = "naoImageBottomCamera"
@@ -44,7 +42,7 @@ def behaviourMoveToCornerOfObject(InitialiseNaoRobot):
             #use top camera only if bottom camera cannot see ...
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             # imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
-            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "",imT)   
+            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",imT)   
             print "bottommost point"
             print bottomMostPoint[1]
             Logger.Log("bottommost point: "+ str(bottomMostPoint[1]))

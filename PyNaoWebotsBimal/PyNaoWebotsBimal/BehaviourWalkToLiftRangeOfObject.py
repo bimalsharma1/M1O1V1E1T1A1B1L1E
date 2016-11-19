@@ -1,25 +1,23 @@
 import almath # python's wrapping of almath
 from naoqi import ALProxy
 import time
-import InitialiseNao
 import Helper
 import ALPhotoCapture
 import config
 import vision_getandsaveimage
-import DetectRedBlueYellowGrey
+from Utils import DetectColourInImage
 import InitialiseHeadAndShoulders
 from Utils import Helper as h
 import sys
-import findObjectOfInterest
 import os
 import DetectCornersFast
 import Logger
 import BehaviourMoveTable
-import findNaoObjectPositions
+from SimpleBehaviours import FindObjectOfInterest as f
 
 def LiftObject(motionProxy, portName, X, Y, Theta):
     time.sleep(2)
-    readyToLift = findNaoObjectPositions.findIfNaoBehindObject(motionProxy, portName)
+    readyToLift = f.FindIfNaoBehindObject(motionProxy, portName)
     print "ready STATUS"
     
 

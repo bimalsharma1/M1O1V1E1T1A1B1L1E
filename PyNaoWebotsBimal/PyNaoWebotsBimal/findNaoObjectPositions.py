@@ -10,9 +10,8 @@ import config
 import sys
 import os
 import BehaviourFindObject
-import BehaviourMoveToCornerOfObject
 import BehaviourFaceCentreOfObject
-import BehaviourAlignToLongerSideOfObject
+from SimpleBehaviours import AlignToLongerSideOfObject as a
 import BehaviourWalkToLiftRangeOfObject
 import BehaviourMoveTable
 import cv2
@@ -21,7 +20,7 @@ import Logger
 from datetime import datetime
 import config
 import Helper
-import DetectRedBlueYellowGrey
+from Utils import DetectColourInImage as d
 import vision_getandsaveimage
 
 def findIfNaoBehindObject(motionProxy, portName):
@@ -29,7 +28,7 @@ def findIfNaoBehindObject(motionProxy, portName):
         filenameTopCamera = "naoImageTopCamera"
 
         imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
-        cx, cy, objectFound, bottomMostPoint, contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject( "cropTop.png", "", imT,"RED")
+        cx, cy, objectFound, bottomMostPoint, contourList,bl,br,tl,tr = d.DetectColour( "cropTop.png", "", imT,"RED")
         print cx, cy, objectFound, bottomMostPoint, contourList,bl,br,tl,tr
 
         image = cv2.imdecode(np.fromstring(imT, dtype='uint8'), cv2.IMREAD_UNCHANGED)
@@ -49,7 +48,7 @@ def findIfNaoBehindObject(motionProxy, portName):
 
         print "cropping done"
         #find blue in picture
-        colourFound = DetectRedBlueYellowGrey.detectColouredObjectWithoutDetails(cropped,"BLUE")
+        colourFound = d.DetectColourWithoutDetails(cropped,"BLUE")
         print colourFound
         return colourFound
       
@@ -63,7 +62,7 @@ def findIfOtherNaoReadyToMoveTable(motionProxy, portName):
         filenameTopCamera = "naoImageTopCamera"
 
         imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
-        cx, cy, objectFound, bottomMostPoint, contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject( "cropReadyToMove.png", "", imT,"RED")
+        cx, cy, objectFound, bottomMostPoint, contourList,bl,br,tl,tr = d.DetectColour( "cropReadyToMove.png", "", imT,"RED")
         print cx, cy, objectFound, bottomMostPoint, contourList,bl,br,tl,tr
 
         image = cv2.imdecode(np.fromstring(imT, dtype='uint8'), cv2.IMREAD_UNCHANGED)
@@ -89,7 +88,7 @@ def findIfOtherNaoReadyToMoveTable(motionProxy, portName):
        
         print "cropping done"
         #find blue in picture
-        colourFound = DetectRedBlueYellowGrey.detectColouredObjectWithoutDetails(croppedReadyToMove,"RED")
+        colourFound = d.DetectColourWithoutDetails(croppedReadyToMove,"RED")
         print colourFound
         return colourFound
       

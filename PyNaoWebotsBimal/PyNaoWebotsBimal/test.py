@@ -9,7 +9,6 @@ import Logger
 import config
 import Helper
 import Logger
-import InitialiseNao
 from Queue import Queue
 import threading 
 import thread

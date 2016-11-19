@@ -3,17 +3,15 @@ import numpy as np
 import cv2
 import GetCentrePixelPositionOfContour
 import config
-import DetectRedBlueYellowGrey
 import InitialiseHeadAndShoulders
 import vision_getandsaveimage
 import almath as m # python's wrapping of almath
 from naoqi import ALProxy
 import time
-import InitialiseNao
 import ALPhotoCapture
 import config
 import vision_getandsaveimage
-import DetectRedBlueYellowGrey
+from Utils import DetectColourInImage
 import InitialiseHeadAndShoulders
 import Logger
 import sys
@@ -21,8 +19,9 @@ import math
 from Utils import ImageProcessing as ip
 from Utils import InitialiseNaoRobot
 from Utils import Helper as h
+from Utils import DetectColourInImage as d
 
-def findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCamera):
+def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCamera):
     objectFound = False
     try:        
 
@@ -34,9 +33,9 @@ def findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
         Y = -0.0 # move left or right
         Theta = 1
         X = 0.0
-        xCentrePostion = 0
-        yCentrePosition = 0
-        percentOfImageCoveredWithContour=0
+        xCntrPos = 0
+        yCntrPos = 0
+        pcntImgCovrd=0
 
         #SET LOOP VARIABLES
         headDown = False
@@ -49,17 +48,17 @@ def findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
         # imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
         print "take first top pic"
         imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-        xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
+        xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT) 
         print "initial top cam"
         Logger.Log("initial top cam")
         time.sleep(2)       
-        if (xCentrePostion > 0):
+        if (xCntrPos > 0):
             print "OBJECT FOUND"
             Logger.Log("object found")
-            print xCentrePostion
+            print xCntrPos
             ObjectFound = True
             cameraPosition = 'TOP'
-            return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound, bottomMostPoint)   
+            return (xCntrPos, yCntrPos, headLookingPosition, ObjectFound, botMostPnt)   
         
 
         while not (objectFound):
@@ -76,51 +75,51 @@ def findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                 headLookingPosition = 'CENTRE'
                 # imB =  vision_getandsaveimage.showNaoImageBottomCam(config.ipAddress, config.ports[portName], filenameBottomCamera)
                 imB = ip.getImage(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)
-                xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameBottomCamera + ".png", "BOTTOM",imB)
-                if (xCentrePostion > 0):
+                xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameBottomCamera + ".png", "BOTTOM",imB)
+                if (xCntrPos > 0):
                     print "OBJECT FOUND"
-                    print xCentrePostion
+                    print xCntrPos
                     cameraPosition = 'BOTTOM'
                     ObjectFound = True
                     print "checking from bottom camera"
                     Logger.Log("bottom cam")
-                    print xCentrePostion, yCentrePosition, objectFoundOnBottomCamera,bottomMostPoint
+                    print xCntrPos, yCntrPos, objFoundBtmCam,botMostPnt
                     h.WalkToPosition(motionProxy, 0.0, 0, math.radians(angleOfHead))
                     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
                     time.sleep(2)
-                    return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound, bottomMostPoint)
+                    return (xCntrPos, yCntrPos, headLookingPosition, ObjectFound, botMostPnt)
                 time.sleep(2)
                 
-                if (xCentrePostion <= 0):
+                if (xCntrPos <= 0):
                     #use top camera only if bottom camera cannot see ...
                     # imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
                     imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-                    xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
+                    xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT) 
                     print "top cam"
                     Logger.Log("top cam")
                     time.sleep(2)       
-                if (xCentrePostion > 0):
+                if (xCntrPos > 0):
                     print "OBJECT FOUND"
-                    print xCentrePostion
+                    print xCntrPos
                     ObjectFound = True
                     cameraPosition = 'TOP'
                     print "top camera values"
-                    print xCentrePostion, yCentrePosition, objectFoundOnBottomCamera
+                    print xCntrPos, yCntrPos, objFoundBtmCam
                     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
                     h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead)*1.5)
                     #keep turning until centre of table is mid way
                     imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-                    xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
-                    while(xCentrePostion < (config.imageWidth/2)):
+                    xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT) 
+                    while(xCntrPos < (config.imageWidth/2)):
                         h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead))#20 degrees
                         imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-                        xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT) 
+                        xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT) 
 
                     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
-                    return (xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound, bottomMostPoint)   
+                    return (xCntrPos, yCntrPos, headLookingPosition, ObjectFound, botMostPnt)   
     
                 print "values found in this turn"
-                print xCentrePostion, yCentrePosition, objectFoundOnBottomCamera
+                print xCntrPos, yCntrPos, objFoundBtmCam
 
                 angleOfHead = angleOfHead - 50
                 print "angle of head"
@@ -140,4 +139,4 @@ def findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
   
     except Exception as e:
         print e
-        return (xCentrePostion, yCentrePosition,"", False,0)
+        return (xCntrPos, yCntrPos,"", False,0)

@@ -3,14 +3,12 @@
 import almath # python's wrapping of almath
 from naoqi import ALProxy
 import time
-import InitialiseNao
 import ALPhotoCapture
 import config
 import vision_getandsaveimage
-import DetectRedBlueYellowGrey
+from Utils import DetectColourInImage
 import InitialiseHeadAndShoulders
 import sys
-import findObjectOfInterest
 import os
 import DetectCornersFast
 import Logger

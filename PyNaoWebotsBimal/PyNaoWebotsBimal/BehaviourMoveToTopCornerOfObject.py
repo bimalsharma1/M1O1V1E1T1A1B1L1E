@@ -1,14 +1,12 @@
 import almath # python's wrapping of almath
 from naoqi import ALProxy
 import time
-import InitialiseNao
 import ALPhotoCapture
 import config
 import vision_getandsaveimage
-import DetectRedBlueYellowGrey
+from Utils import DetectColourInImage as d
 import InitialiseHeadAndShoulders
 import sys
-import findObjectOfInterest
 import os
 import DetectCornersFast
 import Logger
@@ -42,7 +40,7 @@ def behaviourMoveToTopCornerOfObject(motionProxy,portName):
 
             #use top camera only if bottom camera cannot see ...
             imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
-            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "",imT)  
+            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",imT)  
 
             #find closest top corner
             if(abs(tl[0] - bottomMostPoint[0]) < abs(tr[0] - bottomMostPoint[0])):

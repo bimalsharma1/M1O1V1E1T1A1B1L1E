@@ -24,9 +24,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ALPhotoCapture.py" />
-    <Compile Include="BehaviourAlignToLongerSideOfObject.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="BehaviourCommunicateReadyToLiftStatus.py">
       <SubType>Code</SubType>
     </Compile>
@@ -34,9 +31,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BehaviourFindObject.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BehaviourMoveToCornerOfObject.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BehaviourWalkToLiftRangeOfObject.py">
@@ -76,11 +70,7 @@
     <Compile Include="comms9559.py" />
     <Compile Include="config.py" />
     <Compile Include="DetectCornersFast.py" />
-    <Compile Include="DetectRedBlueYellowGrey.py" />
     <Compile Include="DetectTemplate.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="findObjectOfInterest.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GetCentreOfColourDetected.py" />
@@ -94,7 +84,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BehaviourMoveTable.py" />
-    <Compile Include="findNaoObjectPositions.py" />
     <Compile Include="moveTowardObjectOfInterest.py">
       <SubType>Code</SubType>
     </Compile>

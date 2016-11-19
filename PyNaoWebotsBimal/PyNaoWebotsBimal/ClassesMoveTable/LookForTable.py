@@ -1,6 +1,6 @@
-import findObjectOfInterest
 import Logger
 from Utils import InitialiseNaoRobot
+from SimpleBehaviours import FindObjectOfInterest as f
 
 class LookForTable:
     """description of class"""
@@ -10,5 +10,5 @@ class LookForTable:
         print "STARTING LOOKFORTABLE"
         filenameTopCamera = "naoImageTopCamera"
         filenameBottomCamera = "naoImageBottomCamera"
-        xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound, bottomMostPoint = findObjectOfInterest.findObjectOfInterest(InitialiseNaoRobot, filenameTopCamera,filenameBottomCamera)
+        xCntrPos, yCntrePos, headPos, objFound, btmPnt = f.FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera,filenameBottomCamera)
         print "ENDING LOOKFORTABLE"

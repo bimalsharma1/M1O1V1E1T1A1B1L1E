@@ -8,10 +8,9 @@ import time
 import ALPhotoCapture
 import config
 import vision_getandsaveimage
-import DetectRedBlueYellowGrey
+from Utils import DetectColourInImage
 import InitialiseHeadAndShoulders
 import sys
-import findObjectOfInterest
 import os
 import moveTowardObjectOfInterest
 import thread
@@ -33,17 +32,18 @@ from ClassesMoveTable import PositionToCentreOfTableSide
 from ClassesMoveTable import SmallStepSideways
 from ClassesMoveTable import MoveTableMain
 import Logger
-import InitialiseNao
 from Queue import Queue
 import threading 
 import thread
 import time
-import BehaviourMoveToTopCornerOfObject
+from SimpleBehaviours import MoveToCornerOfObject as m
+from SimpleBehaviours import AlignToLongerSideOfObject as a
 from Utils import InitialiseNaoRobot 
 from Queue import Queue
 exitFlag = 0
 print sys.argv
 from multiprocessing import Process, Value, Array
+from SimpleBehaviours import AlignToLongerSideOfObject as a
 
 def mainMenu():
     try:
@@ -227,8 +227,7 @@ def PerformIndividualBehaviour():
         t2.join()#for concurrency
         t.join()
     elif ("2" in inputSubChoice):
-        # BehaviourMoveToCornerOfObject.behaviourMoveToCornerOfObject(motionProxy, portName)
-        BehaviourAlignToLongerSideOfObject.behaviourAlignToLongerSideOfObject(motionProxy, portName)   
+        a.AlignToLongerSideOfObject(motionProxy, portName)   
     elif ("3" in inputSubChoice):
         print "calling MoveTable class"
         moveTable1 = MoveTable.MoveTable()

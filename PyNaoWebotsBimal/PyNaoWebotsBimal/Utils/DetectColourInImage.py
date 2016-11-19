@@ -9,7 +9,7 @@ import Logger
 import config
 import datetime
 
-def detectColouredObject(FILENAME,CAMERANAME, im, colourToDetect = None):
+def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
     image = cv2.imdecode(np.fromstring(im, dtype='uint8'), cv2.IMREAD_UNCHANGED)
     
     #print "het height and width" 

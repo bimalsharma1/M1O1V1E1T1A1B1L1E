@@ -1,15 +1,13 @@
 import almath # python's wrapping of almath
 from naoqi import ALProxy
 import time
-import InitialiseNao
 import ALPhotoCapture
 import config
 import vision_getandsaveimage
-import DetectRedBlueYellowGrey
 import InitialiseHeadAndShoulders
 from Utils import Helper as h
+from Utils import DetectColourInImage as d
 import sys
-import findObjectOfInterest
 import os
 import DetectCornersFast
 import Logger
@@ -39,7 +37,7 @@ def behaviourFaceCentreOfObject(motionProxy, portName):
             bottomMostPoint=[0,0]       
             #use top camera only if bottom camera cannot see ...
             imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
-            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)   
+            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)   
             print "bottommost point"
             print bottomMostPoint[0]
             turnAngle = 0.2

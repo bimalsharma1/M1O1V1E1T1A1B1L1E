@@ -1,22 +1,21 @@
 import almath # python's wrapping of almath
 from naoqi import ALProxy
 import time
-import InitialiseNao
 import ALPhotoCapture
 import config
 import vision_getandsaveimage
-import DetectRedBlueYellowGrey
+from Utils import DetectColourInImage
 import InitialiseHeadAndShoulders
 import sys
-import findObjectOfInterest
 import os
 import DetectCornersFast
 import Logger
 from Utils import Helper as h
 import math
 from Utils import ImageProcessing as ip
+from Utils import DetectColourInImage as d
 
-def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot): 
+def AlignToLongerSideOfObject(InitialiseNaoRobot): 
         #InitialiseHeadAndShoulders.InitialiseHeadAndShoulders(motionProxy,motionProxy1)
         lastKnownPositionOfObject = ""
         filenameTopCamera = "naoImageTopCamera"
@@ -39,7 +38,7 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
             #contourList[0]    #leftmost
             #contourList[1]    #topmost
             #contourList[2]    #rightmost
-            #contourList[3] = bottomMostPoint   #bottomMOst
+            #contourList[3] = closestPnt   #bottomMOst
             ##contourList[4] HAS HEIGHT AND WIDTH 
 
         #GET rect longer side
@@ -54,7 +53,7 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
             time.sleep(2)
             #imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)            
+            xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)            
             hypotLeft = math.hypot(abs(abs(contourList[0][0]) - abs(contourList[3][0])), abs(abs(contourList[0][1]) - abs(contourList[3][1])))
             Logger.Log(str(contourList))
             Logger.Log("hypot left " + str(hypotLeft))
@@ -70,7 +69,7 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
             # imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             time.sleep(2)
-            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)            
+            xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)            
             hypotRight = math.hypot(abs(abs(contourList[2][0]) - abs(contourList[3][0])), abs(abs(contourList[2][1]) - abs(contourList[3][1])))
             Logger.Log(str(contourList))
             Logger.Log("hypot right " + str(hypotRight))
@@ -115,7 +114,7 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
             time.sleep(2)
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             # imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
-            xCentrePostion, yCentrePosition, maxPossibleAreaOfBottomCameraCovered, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)    
+            xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)    
             print "array contour list LEFT"
             if not contourList:
                 leftMostX = 0
@@ -137,7 +136,7 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
             time.sleep(2)
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             # imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.portName], filenameTopCamera)
-            xCentrePostion, yCentrePosition, maxPossibleAreaOfBottomCameraCovered, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameTopCamera + ".png", "", imT)    
+            xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)    
             print "array contour list RIGHT"
             
             if not contourList:
@@ -230,7 +229,7 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
             time.sleep(2)
             imB = ip.getImage(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)
             # imB = vision_getandsaveimage.showNaoImageBottomCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.portName], filenameBottomCamera)
-            xCentrePostion, yCentrePosition, maxPossibleAreaOfBottomCameraCovered, bottomMostPoint,contourList,bl,br,tl,tr = DetectRedBlueYellowGrey.detectColouredObject(filenameBottomCamera + ".png", "", imB)  
+            xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameBottomCamera + ".png", "", imB)  
             
 
             try:
@@ -258,18 +257,18 @@ def behaviourAlignToLongerSideOfObject(InitialiseNaoRobot):
                             h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy,0, 0, adjustAngle)
                         h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy,0, 0.2, 0)
 
-                    # if (contourList[3][1] >= maxClosestPoint):  # ( (contourList[4][1] - bottomMostPoint[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
-                    if (bottomMostPoint[1] >= maxClosestPoint):  # ( (contourList[4][1] - bottomMostPoint[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
+                    # if (contourList[3][1] >= maxClosestPoint):  # ( (contourList[4][1] - closestPnt[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
+                    if (closestPnt[1] >= maxClosestPoint):  # ( (contourList[4][1] - closestPnt[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
                         objectSeen = True 
-                        Logger.Log(str(bottomMostPoint))
+                        Logger.Log(str(closestPnt))
                         Logger.Log("height of pic: "+str(contourList[4][1]))
                         print "height of pic: "+str(contourList[4][1])
                     else:
                         #this determines if robot hits table
-                        Logger.Log(str(bottomMostPoint))
+                        Logger.Log(str(closestPnt))
                         print "bottom most table position is :: "
-                        print bottomMostPoint
-                        XValueToWalk = 0.2*(480-bottomMostPoint[1])/480  #((contourList[4][1] - contourList[3][1])/float(contourList[4][1]))
+                        print closestPnt
+                        XValueToWalk = 0.2*(480-closestPnt[1])/480  #((contourList[4][1] - contourList[3][1])/float(contourList[4][1]))
                         h.WalkToPosition(motionProxy,XValueToWalk, 0, 0) #-ve 45 degrees turn Y/float(8.0)
                     print "bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1])
                     Logger.Log("bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1]))

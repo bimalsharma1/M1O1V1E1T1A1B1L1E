@@ -1,3 +1,2 @@
 import InitialiseNaoRobot
 import ImageProcessing
-import InitialiseNaoRobot

@@ -8,12 +8,12 @@ import argparse
 import almath as m # python's wrapping of almath
 import time
 import Logger
-import findNaoObjectPositions
+from SimpleBehaviours import FindObjectOfInterest as f
 from Utils import Helper as h
 
 def LiftTable(motionProxy, portName):
     time.sleep(2)
-    readyToLift = findNaoObjectPositions.findIfOtherNaoReadyToMoveTable(motionProxy, portName)
+    readyToLift = f.FindIfOtherNaoReadyToMoveTable(motionProxy, portName)
     print "ready STATUS"
     print readyToLift
 

@@ -9,7 +9,6 @@ import Logger
 from datetime import datetime
 import config
 import Helper
-import DetectRedBlueYellowGrey
 import vision_getandsaveimage
 
 def CommunicateReadyToLift(motionProxy):

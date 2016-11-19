@@ -1,7 +1,7 @@
-import BehaviourMoveToCornerOfObject
-import BehaviourAlignToLongerSideOfObject
 import Logger
 from Utils import InitialiseNaoRobot
+from SimpleBehaviours import MoveToCornerOfObject
+from SimpleBehaviours import AlignToLongerSideOfObject
 from Utils import Helper as h
 
 class GoToTable:
@@ -10,10 +10,11 @@ class GoToTable:
         print "Go to table"
         Logger.Log("STARTING GoToTable")
         print "Go to corner of table: start"
-        BehaviourMoveToCornerOfObject.behaviourMoveToCornerOfObject(InitialiseNaoRobot)
+        MoveToCornerOfObject.MoveToCornerOfObject(InitialiseNaoRobot)
         print "Go to Longer side of table: start"
-        BehaviourAlignToLongerSideOfObject.behaviourAlignToLongerSideOfObject(InitialiseNaoRobot)   
+        AlignToLongerSideOfObject.AlignToLongerSideOfObject(InitialiseNaoRobot)   
          #document the pre AND post conditions
         Logger.Log("Sending ready to lift message")
         h.SendReadyToLiftMessage(InitialiseNaoRobot,"READYTOLIFT")
+        
 

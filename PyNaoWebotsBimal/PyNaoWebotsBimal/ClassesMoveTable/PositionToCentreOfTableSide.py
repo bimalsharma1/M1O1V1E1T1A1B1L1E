@@ -1,10 +1,10 @@
-import BehaviourAlignToLongerSideOfObject
+from SimpleBehaviours import AlignToLongerSideOfObject as a
 import Logger
 
 class PositionToCentreOfTableSide(object):
     """description of class"""
     def PositionToCentreOfTableSide(self, motionProxy, portName):
         Logger.Log("STARTING PositionToCentreOfTableSide")
-        BehaviourAlignToLongerSideOfObject.behaviourAlignToLongerSideOfObject(motionProxy, portName)  
+        a.AlignToLongerSideOfObject(motionProxy, portName)  
 
 

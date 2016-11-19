@@ -3,14 +3,13 @@
 import almath # python's wrapping of almath
 from naoqi import ALProxy
 import time
-import InitialiseNao
 import ALPhotoCapture
 import config
 import vision_getandsaveimage
-import DetectRedBlueYellowGrey
+from Utils import DetectColourInImage
 import InitialiseHeadAndShoulders
 import sys
-import findObjectOfInterest
+from SimpleBehaviours import FindObjectOfInterest as f
 import os
 import DetectCornersFast
 import Logger
@@ -37,7 +36,7 @@ def behaviourFindObject(motionProxy, portName):
 
     #print "trying to find object"
     #Logger.Log("Behaviour find object STARTING")
-    xCentrePostion, yCentrePosition, headLookingPosition, ObjectFound, bottomMostPoint = findObjectOfInterest.findObjectOfInterest(motionProxy, filenameTopCamera,filenameBottomCamera, portName)
+    xCntrPos, yCntrePos, headLookingPosition, ObjectFound, bottomMostPoint = f.FindObjectOfInterest(motionProxy, filenameTopCamera,filenameBottomCamera, portName)
     #print "turn head to point straight main"
     #angleLists      = [0]
     #motionProxy.angleInterpolation(names, angleLists, times, isAbsolute)
