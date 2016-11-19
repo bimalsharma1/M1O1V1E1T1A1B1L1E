@@ -21,6 +21,7 @@ import comms9559
 import argparse
 import almath as m # python's wrapping of almath
 import InitialiseNaoRobot
+import FileIO
 
 def HeadYawMove(motionProxy, angle): #get angle in degrees (+ve value to turn left, -ve to turn right)
     names = "HeadYaw"   # looking left and right
@@ -150,6 +151,9 @@ def SendMessage(InitialiseNaoRobot, msg):
     ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
     config.WirelessMessages.append([ipList,msg])
     InitialiseNaoRobot.ListOfNaosDetected.append([ipList,msg])
+    Logger.Log("SendMessage")
+    Logger.Log(str(config.WirelessMessages))
+    Logger.Log(str(InitialiseNaoRobot.ListOfNaosDetected))
 
 def ReadMessage(InitialiseNaoRobot):
     print "ReadMessage def in helper"
@@ -163,6 +167,11 @@ def SendReadyToLiftMessage(InitialiseNaoRobot, msg):
     ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
     InitialiseNaoRobot.ReadyToLiftMessages.append([ipList,msg])
     config.WirelessMessages.append([ipList,msg])
+    filename = "readyToLift"
+    FileIO.WriteLine(filename, str(ipList) + str(msg))
+    Logger.Log("SendReadyToLiftMessage")
+    Logger.Log(str(config.WirelessMessages))
+    Logger.Log(str(InitialiseNaoRobot.ListOfNaosDetected))
 
 def GetReadyToLift(InitialiseNaoRobot):
     counter = 0
@@ -180,9 +189,16 @@ def GetReadyToLift(InitialiseNaoRobot):
             print message[1]
             counter = counter + 1
     print counter       
-    if (counter >= 2):
+    Logger.Log("GetReadyToLift")
+    Logger.Log(str(config.WirelessMessages))
+    Logger.Log(str(InitialiseNaoRobot.ListOfNaosDetected))
+    Logger.Log(str(counter) + " NAO READYTOLIFT")
+    filename = "readyToLift"
+    if (FileIO.ReadNumLinesInFile(filename) >= 2):
         return True
+        Logger.Log(str("both nao ready to lift"))
         Logger.Log(str(counter))
         print counter
     else: return False
+
     

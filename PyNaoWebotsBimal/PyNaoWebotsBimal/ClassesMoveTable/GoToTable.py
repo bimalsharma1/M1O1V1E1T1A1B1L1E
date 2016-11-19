@@ -14,5 +14,6 @@ class GoToTable:
         print "Go to Longer side of table: start"
         BehaviourAlignToLongerSideOfObject.behaviourAlignToLongerSideOfObject(InitialiseNaoRobot)   
          #document the pre AND post conditions
+        Logger.Log("Sending ready to lift message")
         h.SendReadyToLiftMessage(InitialiseNaoRobot,"READYTOLIFT")
 

@@ -6,6 +6,7 @@ import time
 import Logger
 import config
 from Utils import Helper as h
+import FileIO
 
 class InitialiseNaoRobot:
     motionProxy = None
@@ -53,7 +54,7 @@ class InitialiseNaoRobot:
         self.motionProxy.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION", True]])
         print config.ipAddress, config.ports[port]
         print "woken up"
-       
+        FileIO.EmptyFileContents("readyToLift.txt")
         time.sleep(3)
 
     def getMotionProxy(self):
