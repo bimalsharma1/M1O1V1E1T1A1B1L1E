@@ -46,14 +46,28 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         #GET rect longer side
         fileName = "TablePicToSelectLongerSide" + str(InitialiseNaoRobot.portName)
         imT = ip.getImage(InitialiseNaoRobot, "TOP", fileName)
+        cv2.imshow('normal',imT)
+        cv2.waitKey()
         xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)        
         fourCorners = [contourList[0], contourList[1], contourList[2], contourList[3]]
         Logger.Log("Four Corners")
         Logger.Log(str(fourCorners))
-        width, height = p.getPerspectiveTransformFromMemory(imT, fourCorners)
-        # hypotLeft = math.hypot(abs(abs(contourList[0][0]) - abs(contourList[3][0])), abs(abs(contourList[0][1]) - abs(contourList[3][1])))
-        # hypotRight = math.hypot(abs(abs(contourList[2][0]) - abs(contourList[3][0])), abs(abs(contourList[2][1]) - abs(contourList[3][1])))
-        
+        warped = p.getPerspectiveTransformFromMemory(imT, fourCorners)
+        print "a"
+        cv2.imshow('warped',warped)
+        cv2.waitKey()
+        xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour("warped.png", "", warped)    
+        #now rotate image as transform looks at image from right
+        print "b"
+        warpedAndRotated = p.rotateImage(warped, 90, xCntrPos, yCntrPos)
+        cv2.imshow('warpedrotated',warpedAndRotated)
+        cv2.waitKey()
+        print "c"
+        xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour("warpedAndRotated.png", "", warpedAndRotated)    
+        print "d"
+        hypotLeft = math.hypot(abs(abs(contourList[0][0]) - abs(contourList[3][0])), abs(abs(contourList[0][1]) - abs(contourList[3][1])))
+        hypotRight = math.hypot(abs(abs(contourList[2][0]) - abs(contourList[3][0])), abs(abs(contourList[2][1]) - abs(contourList[3][1])))
+        print "e"
         Logger.Log(str(fourCorners))
         Logger.Log(str(fourCorners))
         Logger.Log("width " + str(width))

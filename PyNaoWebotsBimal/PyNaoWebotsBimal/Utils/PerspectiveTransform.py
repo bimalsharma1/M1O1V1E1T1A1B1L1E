@@ -14,7 +14,7 @@ def getPerspectiveTransformFromMemory(im, corners):
     l.Log("Width and height")
     l.Log(str(width))
     l.Log(str(height))
-    return width, height 
+    return warped # width, height 
 	# cv2.waitKey(0)
 
 def getPerspectiveTransformFromMFile(imgFileName, corners):  
@@ -25,6 +25,15 @@ def getPerspectiveTransformFromMFile(imgFileName, corners):
 	cv2.imshow("Warped", warped)
 	cv2.imwrite("ImageWarped.png",warped)
 	cv2.waitKey(0)
+
+def rotateImage(img, degreesToRotate, xPosToRotate, yPosToRotate): #+ve dgrees is counterclockwise
+        cols, rows = img.shape[:2]
+	M = cv2.getRotationMatrix2D((xPosToRotate,yPosToRotate),degreesToRotate,1)
+	dst = cv2.warpAffine(img,M,(cols,rows)) 
+	# print img
+	# cv2.imshow("img", img)
+        return dst
+	cv2.imshow("img1", dst)
 
 def order_points(pts):
 	# initialzie a list of coordinates that will be ordered
@@ -86,7 +95,10 @@ def four_point_transform(image, pts):
         # compute the perspective transform matrix and then apply it
         M = cv2.getPerspectiveTransform(pts, dst)
 	print M
-        warped = cv2.warpPerspective(image, M, (maxWidth, maxHeight))
+        warped = cv2.warpPerspective(image, M, (640, 480)) #maxWidth, maxHeight
     
+        #since the transform see from the right of the image,rotate the image left by 90 degrees to see from the robots perspective
+        
+        
         # return the warped image
         return warped, maxWidth, maxHeight

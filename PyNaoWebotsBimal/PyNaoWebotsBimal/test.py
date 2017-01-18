@@ -30,9 +30,17 @@ def main():
 	# ret,thresh = cv2.threshold(imgray, 127, 255, 0)
 	pts1 = np.float32([(0, 315), (287, 212), (470, 231), (344, 413)]) 
 	warped = four_point_transform(img, pts1)   
-	# warped = cv2.getPerspectiveTransform(img, pts1)   
+	# warped = cv2.getPerspectiveTransform(img, pts1)  
+	#    1 img = cv2.imread('messi5.jpg',0)
+	# rows = 640
+	# cols = 480
+
+	cols, rows = warped.shape[:2]
+	M = cv2.getRotationMatrix2D((200,120),90,1)
+	dst = cv2.warpAffine(warped,M,(cols,rows)) 
 	print warped
 	cv2.imshow("Warped", warped)
+	cv2.imshow("Warped1", dst)
 	# cv2.imwrite("ImageWarped.png",warped)
 	cv2.waitKey(0)
 
@@ -109,7 +117,8 @@ def four_point_transform(image, pts):
         # compute the perspective transform matrix and then apply it
         M = cv2.getPerspectiveTransform(pts, dst)
 	print M
-        warped = cv2.warpPerspective(image, M, (maxWidth, maxHeight))
+        warped = cv2.warpPerspective(image, M, (640, 480))
+		# warped = cv2.warpPerspective(image, M, (maxWidth, maxHeight))
     
         # return the warped image
         return warped

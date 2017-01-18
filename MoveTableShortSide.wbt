@@ -1,0 +1,88 @@
+#VRML_SIM V8.5 utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.040996885 -0.95304466 -0.30004189 2.88261
+  position -1.8976684 4.7316709 -5.3908243
+  follow "NAO_H25_V50:2"
+}
+Background {
+  skyColor [
+    1 1 1
+  ]
+}
+LandscapePainting {
+  translation -1 0.5 2
+  rotation 0 1 0 3.14159
+}
+FruitBowl {
+  translation 1.4 -0.00019620013 1.7
+  rotation -0.70710678 -1.4377149e-10 -0.70710678 2.0587657e-08
+}
+RectangleArena {
+  rotation 0 1 0 4.71239
+  floorSize 4 4
+  wallHeight 0.7
+  wallTextureUrl [
+    "textures/old_brick_wall.jpg"
+  ]
+}
+LandscapePainting {
+  translation -1 0.5 -2
+  rotation 0 0 1 4.71239
+  textureUrl [
+    "textures/portrait_painting.jpg"
+  ]
+}
+Door {
+  translation 0 0 -2
+  size 0.6 0.7 0.01
+  wallTileSize 0.05 0.05
+  frameTextureUrl [
+    "textures/old_brick_wall.jpg"
+  ]
+}
+Nao {
+  hidden translation_20 -1.1662649e-10 -1.2781781e-10 -4.1684744e-06
+  hidden rotation_20 0.0027500645 0.95211776 0.30571916 3.139722e-07
+  hidden translation_32 -1.1662804e-10 -1.2733103e-10 -4.1684744e-06
+  hidden rotation_32 -0.002748213 0.95208307 -0.30582719 3.1398364e-07
+  translation -1.6838651 0.33069864 -0.089064988
+  rotation 0.70035313 -0.50475556 -0.50470518 -1.9196716
+  controller "naoqisim"
+  controllerArgs "9557"
+}
+Nao {
+  hidden translation_20 1.5665025e-11 -4.4431125e-12 -4.1684741e-06
+  hidden rotation_20 0.002749162 0.95210187 0.30576867 3.1397771e-07
+  hidden translation_32 1.5665802e-11 -4.4861892e-12 -4.1684741e-06
+  hidden rotation_32 -0.0027491031 0.95210065 -0.30577245 3.1397812e-07
+  translation 1.4311055 0.33127576 0.10500823
+  rotation 0.60629373 0.56230246 0.56233785 -2.0514741
+  controller "naoqisim"
+  controllerArgs "9559"
+}
+TableWithPhysics {
+  translation -3.4013313e-09 0.0084814161 -0.00044976684
+  rotation -0.022352956 0.99950022 -0.022352938 1.571297
+  size 0.4 0.3 0.8
+  feetSize 0.02 0.02
+  frameThickness 0.03
+  trayTextureUrl [
+    "textures/blue.jpg"
+  ]
+}
+CeilingLight {
+  translation 1 2.4 0
+}
+CeilingLight {
+  translation -1 2.4 0
+  rotation 0.70710678 0.70710678 0 0
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0 -1 0
+}
+PottedTree {
+  translation 1.8 0 1
+}
