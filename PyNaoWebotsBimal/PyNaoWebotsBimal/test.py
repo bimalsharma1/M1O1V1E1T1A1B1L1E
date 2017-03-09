@@ -3,44 +3,17 @@ import cv2
 import argparse
 from Utils import DetectColourInImage as d
 
-def main():  
-	# img = cv2.imread('TablePicToSelectLongerSide9559.png')
-	# rows,cols,ch = img.shape
-	# pts1 = np.float32([(0, 315), (287, 212), (470, 231), (344, 413)]) #[56,65],[368,52],[28,387],[389,390]
-	# #(16, 304), (339, 207), (531, 227), (344, 439)
-	# pts2 = np.float32([[0,0],[300,0],[0,300],[300,300]])
-	# M = cv2.getPerspectiveTransform(pts1,pts2)
-	# dst = cv2.warpPerspective(img,M,(300,300))
-	# # plt.subplot(121),plt.imshow(img),plt.title('Input')
-	# # plt.subplot(122),plt.imshow(dst),plt.title('Output')
-	# # plt.show()
-	# # cv2.imshow("img", img)
-	# # cv2.imshow("M", M)
-	# cv2.imshow("dst", dst)
-	# cv2.waitKey(0)
-
-	# xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour("aa.png", "", "TablePicToSelectLongerSide9559.png") 
-	# print contourList
-	# pts = np.array(eval("[(16, 304), (339, 207), (531, 227), (344, 439)]"), dtype = "float32")
-	
+def main(): 
 	img = cv2.imread('TablePicToSelectLongerSide9559.png')
-	# read_original = cv2.imread(img)
-	# imgray = cv2.cvtColor(read_original,cv2.COLOR_BGR2GRAY)
-	# # cv2.imwrite("ImageGray.png",imgray)
-	# ret,thresh = cv2.threshold(imgray, 127, 255, 0)
-	pts1 = np.float32([(0, 315), (287, 212), (470, 231), (344, 413)]) 
+	cv2.imshow("img", img)
+	pts1 = np.float32([(164, 228), (340, 208), (638, 359), (316, 451)]) #[(252, 374), (635, 339), (638, 371), (275, 447)])      #[(0, 315), (287, 212), (470, 231), (344, 413)]) 
 	warped = four_point_transform(img, pts1)   
-	# warped = cv2.getPerspectiveTransform(img, pts1)  
-	#    1 img = cv2.imread('messi5.jpg',0)
-	# rows = 640
-	# cols = 480
-
 	cols, rows = warped.shape[:2]
-	M = cv2.getRotationMatrix2D((200,120),90,1)
+	M = cv2.getRotationMatrix2D((240,200),90,1)
 	dst = cv2.warpAffine(warped,M,(cols,rows)) 
 	print warped
 	cv2.imshow("Warped", warped)
-	cv2.imshow("Warped1", dst)
+	cv2.imshow("dst", dst)
 	# cv2.imwrite("ImageWarped.png",warped)
 	cv2.waitKey(0)
 

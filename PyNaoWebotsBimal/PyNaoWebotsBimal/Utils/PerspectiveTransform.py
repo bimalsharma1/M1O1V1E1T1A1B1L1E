@@ -8,32 +8,39 @@ def getPerspectiveTransformFromMemory(im, corners):
     img = cv2.imdecode(np.fromstring(im, dtype='uint8'), cv2.IMREAD_UNCHANGED)
     pts1 = np.float32(corners)      #[(0, 315), (287, 212), (470, 231), (344, 413)]
     warped, width, height  = four_point_transform(img, pts1)
+    l.Log("print of warped")
+    l.Log(str(warped))
     print warped
-	# cv2.imshow("Warped", warped)
-    # cv2.imwrite("ImageWarped.png",warped)
-    l.Log("Width and height")
+    l.Log("Width and height from get perspective")
     l.Log(str(width))
     l.Log(str(height))
+#     cv2.imshow("Warped", warped)
+# 	cv2.imwrite("ImageWarped.png",warped)
+# 	cv2.waitKey(0)
     return warped # width, height 
 	# cv2.waitKey(0)
 
 def getPerspectiveTransformFromMFile(imgFileName, corners):  
 	img = cv2.imread(imgFileName + '.png')   #png
 	pts1 = np.float32(corners)    #np.float32([(0, 315), (287, 212), (470, 231), (344, 413)]) 
+        l.Log("start to get 4 point transform")
 	warped, width, height = four_point_transform(img, pts1)    
 	print warped
-	cv2.imshow("Warped", warped)
+	# cv2.imshow("Warped", warped)
 	cv2.imwrite("ImageWarped.png",warped)
 	cv2.waitKey(0)
 
 def rotateImage(img, degreesToRotate, xPosToRotate, yPosToRotate): #+ve dgrees is counterclockwise
+        l.Log("rotating image")
         cols, rows = img.shape[:2]
+        l.Log("get img cols and rows")
 	M = cv2.getRotationMatrix2D((xPosToRotate,yPosToRotate),degreesToRotate,1)
 	dst = cv2.warpAffine(img,M,(cols,rows)) 
+        cv2.imwrite("dst.png", dst)
 	# print img
 	# cv2.imshow("img", img)
         return dst
-	cv2.imshow("img1", dst)
+	# cv2.imshow("img1", dst)
 
 def order_points(pts):
 	# initialzie a list of coordinates that will be ordered

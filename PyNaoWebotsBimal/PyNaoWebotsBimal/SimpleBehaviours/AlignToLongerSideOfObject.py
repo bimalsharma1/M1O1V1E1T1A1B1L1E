@@ -46,71 +46,73 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         #GET rect longer side
         fileName = "TablePicToSelectLongerSide" + str(InitialiseNaoRobot.portName)
         imT = ip.getImage(InitialiseNaoRobot, "TOP", fileName)
-        cv2.imshow('normal',imT)
-        cv2.waitKey()
+        # cv2.imshow('normal',imT)
+        # cv2.waitKey()
         xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)        
-        fourCorners = [contourList[0], contourList[1], contourList[2], contourList[3]]
-        Logger.Log("Four Corners")
-        Logger.Log(str(fourCorners))
-        warped = p.getPerspectiveTransformFromMemory(imT, fourCorners)
-        print "a"
-        cv2.imshow('warped',warped)
-        cv2.waitKey()
-        xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour("warped.png", "", warped)    
-        #now rotate image as transform looks at image from right
-        print "b"
-        warpedAndRotated = p.rotateImage(warped, 90, xCntrPos, yCntrPos)
-        cv2.imshow('warpedrotated',warpedAndRotated)
-        cv2.waitKey()
-        print "c"
-        xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour("warpedAndRotated.png", "", warpedAndRotated)    
-        print "d"
-        hypotLeft = math.hypot(abs(abs(contourList[0][0]) - abs(contourList[3][0])), abs(abs(contourList[0][1]) - abs(contourList[3][1])))
-        hypotRight = math.hypot(abs(abs(contourList[2][0]) - abs(contourList[3][0])), abs(abs(contourList[2][1]) - abs(contourList[3][1])))
-        print "e"
-        Logger.Log(str(fourCorners))
-        Logger.Log(str(fourCorners))
-        Logger.Log("width " + str(width))
-        Logger.Log("height right " + str(height))
+        # fourCorners = [contourList[0], contourList[1], contourList[2], contourList[3]]
+        # Logger.Log("Four Corners")
+        # Logger.Log(str(fourCorners))
+        # print "warp image"
+        # warped = p.getPerspectiveTransformFromMemory(imT, fourCorners)    
+        # #now rotate image as transform looks at image from right
+        # print "b"
+        # #problem may be here
+        # warpedAndRotated = p.rotateImage(warped, 90, xCntrPos, yCntrPos)
+        # print "c"
+        # Logger.Log("warped and rotated")
+        # Logger.Log(str(warpedAndRotated))
+        # Logger.Log("Ready to get height and width")
+        # hypotLeft, hypotRight = d.GetHeightWidth("warpedAndRotated.png", "", warpedAndRotated)    
+        # print "d"
+        # Logger.Log("get height and width")
+        # Logger.Log(str(hypotLeft))
+        # Logger.Log(str(hypotRight))
+        # hypotLeft = math.hypot(abs(abs(contourList[0][0]) - abs(contourList[3][0])), abs(abs(contourList[0][1]) - abs(contourList[3][1])))
+        # hypotRight = math.hypot(abs(abs(contourList[2][0]) - abs(contourList[3][0])), abs(abs(contourList[2][1]) - abs(contourList[3][1])))
+        # print "e"
+        # Logger.Log(str(fourCorners))
+        # Logger.Log(str(fourCorners))
+        # Logger.Log("width " + str(width))
+        # Logger.Log("height right " + str(height))
 
 
-        # try:
-        #     #Look LEFT and find length
-        #     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
-        #     h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(29)) # put blocking call here
-        #     InitialiseNaoRobot.motionProxy.waitUntilMoveIsFinished()
-        #     h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(turnAngle))  #+ve value to look left
-        #     InitialiseNaoRobot.motionProxy.waitUntilMoveIsFinished()
-        #     time.sleep(2) # DO NOT REMOVE: THIS ALLOWS TIME FOR HEAD TO MOVE
-        #     fileName = "ImageLeftSide" + str(InitialiseNaoRobot.portName)
-        #     #imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
-        #     imT = ip.getImage(InitialiseNaoRobot, "TOP", fileName)
-        #     xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)            
-        #     hypotLeft = math.hypot(abs(abs(contourList[0][0]) - abs(contourList[3][0])), abs(abs(contourList[0][1]) - abs(contourList[3][1])))
-        #     Logger.Log(str(contourList))
-        #     Logger.Log("hypot left " + str(hypotLeft))
-        # except Exception as e:
-        #     hypotLeft=0
-        #     print "hypot left is 0"
-        # time.sleep(1)
+        try:
+            #Look LEFT and find length
+            h.HeadInitialise(InitialiseNaoRobot.motionProxy)
+            h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(29)) # put blocking call here
+            InitialiseNaoRobot.motionProxy.waitUntilMoveIsFinished()
+            h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(turnAngle))  #+ve value to look left
+            InitialiseNaoRobot.motionProxy.waitUntilMoveIsFinished()
+            time.sleep(2) # DO NOT REMOVE: THIS ALLOWS TIME FOR HEAD TO MOVE
+            fileName = "ImageLeftSide" + str(InitialiseNaoRobot.portName)
+            #imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
+            imT = ip.getImage(InitialiseNaoRobot, "TOP", fileName)
+            xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)            
+            hypotLeft = math.hypot(abs(abs(contourList[0][0]) - abs(contourList[3][0])), abs(abs(contourList[0][1]) - abs(contourList[3][1])))
+            Logger.Log(str(contourList))
+            Logger.Log("hypot left " + str(hypotLeft))
+        except Exception as e:
+            hypotLeft=0
+            print "hypot left is 0"
+        time.sleep(1)
 
-        # try:
-        #     # Look RIGHT and find length
-        #     #h.HeadInitialise(motionProxy)
-        #     h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(-1 * turnAngle))  #+ve value to look left,   
-        #     InitialiseNaoRobot.motionProxy.waitUntilMoveIsFinished()
-        #     time.sleep(2) # DO NOT REMOVE: THIS ALLOWS TIME FOR HEAD TO MOVE
-        #     # imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
-        #     fileName = "ImageRightSide" + str(InitialiseNaoRobot.portName)
-        #     imT = ip.getImage(InitialiseNaoRobot, "TOP" , fileName)
-        #     # time.sleep(2)
-        #     xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)            
-        #     hypotRight = math.hypot(abs(abs(contourList[2][0]) - abs(contourList[3][0])), abs(abs(contourList[2][1]) - abs(contourList[3][1])))
-        #     Logger.Log(str(contourList))
-        #     Logger.Log("hypot right " + str(hypotRight))
-        # except Exception as e:
-        #     hypotRight=0
-        #     print "hypot right is 0"
+        try:
+            # Look RIGHT and find length
+            #h.HeadInitialise(motionProxy)
+            h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(-1 * turnAngle))  #+ve value to look left,   
+            InitialiseNaoRobot.motionProxy.waitUntilMoveIsFinished()
+            time.sleep(2) # DO NOT REMOVE: THIS ALLOWS TIME FOR HEAD TO MOVE
+            # imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
+            fileName = "ImageRightSide" + str(InitialiseNaoRobot.portName)
+            imT = ip.getImage(InitialiseNaoRobot, "TOP" , fileName)
+            # time.sleep(2)
+            xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)            
+            hypotRight = math.hypot(abs(abs(contourList[2][0]) - abs(contourList[3][0])), abs(abs(contourList[2][1]) - abs(contourList[3][1])))
+            Logger.Log(str(contourList))
+            Logger.Log("hypot right " + str(hypotRight))
+        except Exception as e:
+            hypotRight=0
+            print "hypot right is 0"
         
         h.HeadInitialise(InitialiseNaoRobot.motionProxy)
         time.sleep(2)
@@ -120,28 +122,28 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         # and config.InitialLongerSideOfTable=="LEFT"
 
 
-        #if (hypotLeft > hypotRight): # if diff is less than 50 px then it is not accurate
-        if (height > width):
-            print "left side is longer"
-            Logger.Log("left side is longer")
-            config.InitialLongerSideOfTable=="LEFT"
-            leftLonger = True
-            h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0,0, -math.radians(85)) #+ve 45 degrees turn
-            time.sleep(4)
-            h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0,Y, 0) #+ve 45 degrees turn
-            time.sleep(3)
-            #h.WalkToPosition(motionProxy,0, Y, 0) #+ve 45 degrees turn
-        else:
-            print "right side is longer"
-            Logger.Log( "right side is longer")
-            config.InitialLongerSideOfTable=="RIGHT"
-            rightLonger = True
-            #h.WalkToPosition(motionProxy,0, 0, math.radians(75)) #-ve 45 degrees turn 
-            Y = -1 * Y
-            h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, 0, math.radians(85)) #-ve 45 degrees turn 
-            time.sleep(4)
-            h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0) #-ve 45 degrees turn 
-            time.sleep(3)            
+        # #if (hypotLeft > hypotRight): # if diff is less than 50 px then it is not accurate
+        # if (height > width):
+        #     print "left side is longer"
+        #     Logger.Log("left side is longer")
+        #     config.InitialLongerSideOfTable=="LEFT"
+        #     leftLonger = True
+        #     h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0,0, -math.radians(85)) #+ve 45 degrees turn
+        #     time.sleep(4)
+        #     h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0,Y, 0) #+ve 45 degrees turn
+        #     time.sleep(3)
+        #     #h.WalkToPosition(motionProxy,0, Y, 0) #+ve 45 degrees turn
+        # else:
+        #     print "right side is longer"
+        #     Logger.Log( "right side is longer")
+        #     config.InitialLongerSideOfTable=="RIGHT"
+        #     rightLonger = True
+        #     #h.WalkToPosition(motionProxy,0, 0, math.radians(75)) #-ve 45 degrees turn 
+        #     Y = -1 * Y
+        #     h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, 0, math.radians(85)) #-ve 45 degrees turn 
+        #     time.sleep(4)
+        #     h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0) #-ve 45 degrees turn 
+        #     time.sleep(3)            
         #ALIGN to centre using top camera
          #aligned
         aligned = False   
