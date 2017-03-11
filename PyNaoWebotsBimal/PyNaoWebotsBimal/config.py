@@ -19,7 +19,7 @@ imageWidth = 640
 imageHeight = 480
 
 maxTurnAngleForVCentre = 25
-acceptableErrorForVCentre = 20
+acceptableErrorForVCentre = 30
 
 InitialLongerSideOfTable = ""
 Leader = ""   # config is updated witht he leader name
