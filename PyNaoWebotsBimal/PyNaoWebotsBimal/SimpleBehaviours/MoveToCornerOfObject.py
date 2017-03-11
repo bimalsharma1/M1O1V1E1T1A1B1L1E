@@ -19,6 +19,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
     filenameTopCamera = "naoImageTopCamera"
     filenameBottomCamera = "naoImageBottomCamera"
     fourtyFiveDegreeInRadians = 0.9
+    alignedToCentre = False
     turnAngle = 0.00
     count = 0
     names = "HeadYaw"
@@ -65,41 +66,20 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
         if (bottomMostPoint[1] > 450): #was 430
             Logger.Log("starting at corver to ajusr to v corner")
             objectInCentreScreen = v.AdjustForVCorner(InitialiseNaoRobot)
+            h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, X)
+            while not alignedToCentre:
+                #check oin middle point in centre of field of view
+                if bottomMostPoint[0] < leftMostAlignmentLimit:
+                    h.WalkSideWaysRight(InitialiseNaoRobot.motionProxy, 0.3)
+                    print "moving right"
+                elif bottomMostPoint[0] > rightMostAlignmentLimit:
+                    h.WalkSideWaysLeft(InitialiseNaoRobot.motionProxy, 0.3)
+                    print "moving left"
+                else:
+                    alignedToCentre = True
             if(objectInCentreScreen):
-                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, X)
                 return
 
-                # #find initiali longer side of table
-                # try:
-                #     hypotLeft = math.hypot(abs(abs(contourList[0][0]) - abs(contourList[3][0])), abs(abs(contourList[0][1]) - abs(contourList[3][1])))
-                # except Exception as e:
-                #     hypotRight=0
-                # try:
-                #     hypotRight = math.hypot(abs(abs(contourList[2][0]) - abs(contourList[3][0])), abs(abs(contourList[2][1]) - abs(contourList[3][1])))
-                # except Exception as e:
-                #     hypotRight=0
-
-                # if (hypotLeft > hypotRight):
-                #     config.InitialLongerSideOfTable = "LEFT"
-                #     print "left side is longer"
-                #     Logger.Log( "left side is longer")
-                # else:
-                #     config.InitialLongerSideOfTable = "RIGHT"
-                #     print "right side is longer"
-                #     Logger.Log( "right side is longer")
-
-                # print "Initial longer side is "
-                # print config.InitialLongerSideOfTable
-
-                # Logger.Log("Initial longer side is ")
-                # Logger.Log(config.InitialLongerSideOfTable)
-
-                # print "reached corner of object"
-                # Logger.Log("reached corner of object")
-                # return
-
-        
-        
         turnAngle = (320 - bottomMostPoint[0])/float(320.0) * fourtyFiveDegreeInRadians # get appropriate angle to turn
         print "turn angle"
         print turnAngle

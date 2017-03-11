@@ -18,7 +18,7 @@ colorSpace = 11   # RGB
 imageWidth = 640
 imageHeight = 480
 
-maxTurnAngleForVCentre = 20
+maxTurnAngleForVCentre = 25
 acceptableErrorForVCentre = 20
 
 InitialLongerSideOfTable = ""
