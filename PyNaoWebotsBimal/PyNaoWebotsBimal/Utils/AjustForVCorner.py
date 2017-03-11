@@ -9,8 +9,8 @@ from Utils import InitialiseNaoRobot
 
 def AdjustForVCorner(InitialiseNaoRobot): 
     Logger.Log("Adjust to V corner")
-    leftMostAlignmentLimit = 310
-    rightMostAlignmentLimit = 330
+    leftMostAlignmentLimit = config.leftMostAlignmentLimit
+    rightMostAlignmentLimit = config.rightMostAlignmentLimit
 
     acceptableError = config.acceptableErrorForVCentre
     alignedToCentre = False
@@ -53,6 +53,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
             if (diffOfXPositions < acceptableError):
                 adjustedToCorner = True
                 Logger.Log("Adjusted to corner")
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, x)
                 return True
             if (diffBtwnBotMostXAndLMostX > diffBtwnRMostParallelXAndBotMostX):
                 #turm left
@@ -98,6 +99,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
             Logger.Log(str(diffOfXPositions))
             if (diffOfXPositions < acceptableError):
                 Logger.Log("Adjusted to corner")
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, x)
                 adjustedToCorner = True
                 return True
             if (diffBtwnLMostParallelXAndBotMostX > diffBtwnBotMostXAndRMostX):
