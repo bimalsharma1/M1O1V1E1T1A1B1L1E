@@ -114,6 +114,58 @@ def WalkToPositionWaitUntilWalkFinished(motionProxy, X, Y, Theta):
 ############################################################################################
 #####COmms#
 
+def WalkAheadUntilFinished(motionProxy, X):
+    motionProxy.post.moveTo(X, 0, 0)
+    # wait is useful because with post moveTo is not blocking function
+    motionProxy.waitUntilMoveIsFinished()
+
+def WalkBackUntilFinished(motionProxy, X):
+    motionProxy.post.moveTo(-X, 0, 0)
+    # wait is useful because with post moveTo is not blocking function
+    motionProxy.waitUntilMoveIsFinished()
+
+def WalkSideWaysLeftUntilFinished(motionProxy, Y):
+    motionProxy.post.moveTo(0, -Y, 0)
+    # wait is useful because with post moveTo is not blocking function
+    motionProxy.waitUntilMoveIsFinished()
+
+def WalkSideWaysRightUntilFinished(motionProxy, Y):
+    motionProxy.post.moveTo(0, Y, 0)
+    # wait is useful because with post moveTo is not blocking function
+    motionProxy.waitUntilMoveIsFinished()
+
+def WalkSpinLeftUntilFinished(motionProxy, Theta):
+    motionProxy.post.moveTo(0, 0, Theta)
+    # wait is useful because with post moveTo is not blocking function
+    print "spinning left"
+    print Theta
+    motionProxy.waitUntilMoveIsFinished()
+
+def WalkSpinRightUntilFinished(motionProxy, Theta):
+    motionProxy.post.moveTo(0, 0, -Theta)
+    print "spinning right"
+    print -Theta
+    # wait is useful because with post moveTo is not blocking function
+    motionProxy.waitUntilMoveIsFinished()
+
+def WalkAhead(motionProxy, X):
+    motionProxy.post.moveTo(X, 0, 0)
+
+def WalkBack(motionProxy, X):
+    motionProxy.post.moveTo(-X, 0, 0)
+
+def WalkSideWaysLeft(motionProxy, Y):
+    motionProxy.post.moveTo(0, -Y, 0)
+
+def WalkSideWaysRight(motionProxy, Y):
+    motionProxy.post.moveTo(0, Y, 0)
+
+def WalkSpinLeft(motionProxy, Theta):
+    motionProxy.post.moveTo(0, 0, Theta)
+
+def WalkSpinRight(motionProxy, Theta):
+    motionProxy.post.moveTo(0, 0, -Theta)
+
 def CommunicateReadyToLift(motionProxy):
     #Lshoulder roll goes up to 76 degrees out and LElbow roll goes inwards up tp -88 degrees
     #Rshoulder roll goes up to -76 degrees out and RElbow roll goes inwards up tp 88 degrees

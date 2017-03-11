@@ -122,28 +122,28 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         # and config.InitialLongerSideOfTable=="LEFT"
 
 
-        # #if (hypotLeft > hypotRight): # if diff is less than 50 px then it is not accurate
-        # if (height > width):
-        #     print "left side is longer"
-        #     Logger.Log("left side is longer")
-        #     config.InitialLongerSideOfTable=="LEFT"
-        #     leftLonger = True
-        #     h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0,0, -math.radians(85)) #+ve 45 degrees turn
-        #     time.sleep(4)
-        #     h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0,Y, 0) #+ve 45 degrees turn
-        #     time.sleep(3)
-        #     #h.WalkToPosition(motionProxy,0, Y, 0) #+ve 45 degrees turn
-        # else:
-        #     print "right side is longer"
-        #     Logger.Log( "right side is longer")
-        #     config.InitialLongerSideOfTable=="RIGHT"
-        #     rightLonger = True
-        #     #h.WalkToPosition(motionProxy,0, 0, math.radians(75)) #-ve 45 degrees turn 
-        #     Y = -1 * Y
-        #     h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, 0, math.radians(85)) #-ve 45 degrees turn 
-        #     time.sleep(4)
-        #     h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0) #-ve 45 degrees turn 
-        #     time.sleep(3)            
+        if (hypotLeft > hypotRight): # if diff is less than 50 px then it is not accurate
+        #if (height > width):
+            print "left side is longer"
+            Logger.Log("left side is longer")
+            config.InitialLongerSideOfTable=="LEFT"
+            leftLonger = True
+            h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0,0, -math.radians(85)) #+ve 45 degrees turn
+            time.sleep(4)
+            h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0,Y, 0) #+ve 45 degrees turn
+            time.sleep(3)
+            #h.WalkToPosition(motionProxy,0, Y, 0) #+ve 45 degrees turn
+        else:
+            print "right side is longer"
+            Logger.Log( "right side is longer")
+            config.InitialLongerSideOfTable=="RIGHT"
+            rightLonger = True
+            #h.WalkToPosition(motionProxy,0, 0, math.radians(75)) #-ve 45 degrees turn 
+            Y = -1 * Y
+            h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, 0, math.radians(85)) #-ve 45 degrees turn 
+            time.sleep(4)
+            h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0) #-ve 45 degrees turn 
+            time.sleep(3)            
         #ALIGN to centre using top camera
          #aligned
         aligned = False   

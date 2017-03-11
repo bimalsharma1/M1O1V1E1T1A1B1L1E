@@ -283,16 +283,16 @@ def DetectXPos(im, YPixelNumber, startIndex, stopIndex, colourToDetect = None):
 
             if (stopIndex < startIndex):
                 incrementSize = -1
-                Logger.Log("Increment size")
-                Logger.Log(str(incrementSize))
+                # Logger.Log("Increment size")
+                # Logger.Log(str(incrementSize))
             
             for XIndex in range(startIndex, stopIndex, incrementSize):
-                Logger.Log("Looking for black colour now")
-                Logger.Log(str(XIndex))
-                Logger.Log(str(YPixelNumber))
+                # Logger.Log("Looking for black colour now")
+                # Logger.Log(str(XIndex))
+                # Logger.Log(str(YPixelNumber))
                 
                 colourValue = mask[YPixelNumber, XIndex]
-                Logger.Log(str(colourValue))
+                # Logger.Log(str(colourValue))
                 print colourValue 
                 if(colourValue == 0):  
                     Logger.Log("Found DetectXPOS position x")

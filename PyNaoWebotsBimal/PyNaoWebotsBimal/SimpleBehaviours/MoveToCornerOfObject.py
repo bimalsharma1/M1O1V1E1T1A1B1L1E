@@ -66,6 +66,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
             Logger.Log("starting at corver to ajusr to v corner")
             objectInCentreScreen = v.AdjustForVCorner(InitialiseNaoRobot)
             if(objectInCentreScreen):
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, X)
                 return
 
                 # #find initiali longer side of table
@@ -102,9 +103,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
         turnAngle = (320 - bottomMostPoint[0])/float(320.0) * fourtyFiveDegreeInRadians # get appropriate angle to turn
         print "turn angle"
         print turnAngle
-        Logger.Log("turn angle:  " + str(turnAngle))
-            
-            
+        Logger.Log("turn angle:  " + str(turnAngle))    
 
         if (bottomMostPoint[0] >= leftMostAlignmentLimit and bottomMostPoint[0] <= rightMostAlignmentLimit):             
             X=2  # was 1.5

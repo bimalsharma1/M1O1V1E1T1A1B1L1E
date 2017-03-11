@@ -18,6 +18,9 @@ colorSpace = 11   # RGB
 imageWidth = 640
 imageHeight = 480
 
+maxTurnAngleForVCentre = 20
+acceptableErrorForVCentre = 20
+
 InitialLongerSideOfTable = ""
 Leader = ""   # config is updated witht he leader name
 
