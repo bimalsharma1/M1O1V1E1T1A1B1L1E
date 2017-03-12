@@ -113,6 +113,9 @@ def WalkToPositionWaitUntilWalkFinished(motionProxy, X, Y, Theta):
 
 ############################################################################################
 #####COmms#
+# +ve x for front and  -ve x for backwards
+# y Use negative for right
+# theta Use negative for clockwise
 
 def WalkAheadUntilFinished(motionProxy, X):
     motionProxy.post.moveTo(X, 0, 0)
@@ -125,26 +128,26 @@ def WalkBackUntilFinished(motionProxy, X):
     motionProxy.waitUntilMoveIsFinished()
 
 def WalkSideWaysLeftUntilFinished(motionProxy, Y):
-    motionProxy.post.moveTo(0, -Y, 0)
-    # wait is useful because with post moveTo is not blocking function
-    motionProxy.waitUntilMoveIsFinished()
-
-def WalkSideWaysRightUntilFinished(motionProxy, Y):
+    print "WALK SIDEWAYS LEFT" + str(Y)
     motionProxy.post.moveTo(0, Y, 0)
     # wait is useful because with post moveTo is not blocking function
     motionProxy.waitUntilMoveIsFinished()
 
+def WalkSideWaysRightUntilFinished(motionProxy, Y):
+    print "WALK SIDEWAYS RIGHT" + str(-Y)
+    motionProxy.post.moveTo(0, -Y, 0)
+    # wait is useful because with post moveTo is not blocking function
+    motionProxy.waitUntilMoveIsFinished()
+
 def WalkSpinLeftUntilFinished(motionProxy, Theta):
+    print "SPIN TO LEFT" + str(Theta)
     motionProxy.post.moveTo(0, 0, Theta)
     # wait is useful because with post moveTo is not blocking function
-    print "spinning left"
-    print Theta
     motionProxy.waitUntilMoveIsFinished()
 
 def WalkSpinRightUntilFinished(motionProxy, Theta):
+    print "SPIN TO RIGHT" + str(-Theta)
     motionProxy.post.moveTo(0, 0, -Theta)
-    print "spinning right"
-    print -Theta
     # wait is useful because with post moveTo is not blocking function
     motionProxy.waitUntilMoveIsFinished()
 
@@ -155,10 +158,10 @@ def WalkBack(motionProxy, X):
     motionProxy.post.moveTo(-X, 0, 0)
 
 def WalkSideWaysLeft(motionProxy, Y):
-    motionProxy.post.moveTo(0, -Y, 0)
+    motionProxy.post.moveTo(0, Y, 0)
 
 def WalkSideWaysRight(motionProxy, Y):
-    motionProxy.post.moveTo(0, Y, 0)
+    motionProxy.post.moveTo(0, -Y, 0)
 
 def WalkSpinLeft(motionProxy, Theta):
     motionProxy.post.moveTo(0, 0, Theta)

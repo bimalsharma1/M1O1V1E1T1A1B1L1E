@@ -293,7 +293,7 @@ def DetectXPos(im, YPixelNumber, startIndex, stopIndex, colourToDetect = None):
                 
                 colourValue = mask[YPixelNumber, XIndex]
                 # Logger.Log(str(colourValue))
-                print colourValue 
+                # print colourValue 
                 if(colourValue == 0):  
                     Logger.Log("Found DetectXPOS position x")
                     Logger.Log(str(previousIndex))                     

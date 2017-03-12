@@ -43,7 +43,6 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
 
         #use top camera only if bottom camera cannot see ...
         imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-        # imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
         xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",imT)   
         print "bottommost point"
         print bottomMostPoint[1]
@@ -67,16 +66,24 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
             Logger.Log("starting at corver to ajusr to v corner")
             objectInCentreScreen = v.AdjustForVCorner(InitialiseNaoRobot)
             h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, X)
-            while not alignedToCentre:
-                #check oin middle point in centre of field of view
-                if bottomMostPoint[0] < leftMostAlignmentLimit:
-                    h.WalkSideWaysRight(InitialiseNaoRobot.motionProxy, 0.3)
-                    print "moving right"
-                elif bottomMostPoint[0] > rightMostAlignmentLimit:
-                    h.WalkSideWaysLeft(InitialiseNaoRobot.motionProxy, 0.3)
-                    print "moving left"
-                else:
-                    alignedToCentre = True
+            Logger.Log("SETTING BOTTOM POINT TO CENTRE")
+            print "SETTING BOTTOM POINT TO CENTRE"
+            alignedToCentre = True
+            # while not alignedToCentre:
+            #     imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
+            #     xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",imT)   
+
+            #     #check oin middle point in centre of field of view
+            #     if bottomMostPoint[0] < config.leftMostAlignmentLimit:
+            #         h.WalkSideWaysLeft(InitialiseNaoRobot.motionProxy, 0.2)
+            #         print "moving left" + str(bottomMostPoint[0])
+            #     elif bottomMostPoint[0] > config.rightMostAlignmentLimit:
+            #         h.WalkSideWaysRight(InitialiseNaoRobot.motionProxy, 0.2)
+            #         print "moving right" + str(bottomMostPoint[0])
+            #     else:
+            #         print "End move to corner of object"
+            #         Logger.Log("End move to corner of object")
+            #         alignedToCentre = True
             if(objectInCentreScreen):
                 return
 

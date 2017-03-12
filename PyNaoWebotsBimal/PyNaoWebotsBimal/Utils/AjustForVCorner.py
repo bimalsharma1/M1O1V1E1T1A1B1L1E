@@ -6,6 +6,7 @@ import time
 import almath # python's wrapping of almath
 from Utils import ImageProcessing as ip
 from Utils import InitialiseNaoRobot
+from Utils import ActionHelper as ah
 
 def AdjustForVCorner(InitialiseNaoRobot): 
     Logger.Log("Adjust to V corner")
@@ -29,8 +30,8 @@ def AdjustForVCorner(InitialiseNaoRobot):
     y=0.4
     turnAngle = config.maxTurnAngleForVCentre*almath.TO_RAD
     angleToSpin = 0
-    #-ve y walks to the left
-    #+ve turnangle spins to the left
+# y Use negative for right
+# theta Use negative for clockwise
     while not adjustedToCorner:
         im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
         xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)   
@@ -65,7 +66,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, angleToSpin) #
                 print "turning angle left left most y > right most y"
                 # time.sleep(4)
-                h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, y) 
+                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, y) 
                 # time.sleep(4)
                 Logger.Log("walking dimensions LEFT")
                 Logger.Log(str(y))
@@ -80,7 +81,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, angleToSpin) #
                 print "turning angle right left most y > right most y"
                 # time.sleep(4)
-                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, y) 
+                h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, y) 
                 # time.sleep(4)
                 Logger.Log("walking dimensions RIGHT")
                 Logger.Log(str(-y))
@@ -103,9 +104,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 adjustedToCorner = True
                 return True
             if (diffBtwnLMostParallelXAndBotMostX > diffBtwnBotMostXAndRMostX):
-                #turm left
-                #-ve y walks to the left
-                #+ve turnangle spins to the left
+                #turn left
                 angleToSpin = (diffBtwnLMostParallelXAndBotMostX-diffBtwnBotMostXAndRMostX)/(diffBtwnLMostParallelXAndBotMostX)*turnAngle
                 #if cannot calculate angle then use maximum turn angle
                 if angleToSpin == 0:
@@ -114,7 +113,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, angleToSpin) #
                 print "turning angle left - right most y > left most y"
                 time.sleep(4)
-                h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, y) 
+                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, y) 
                 Logger.Log("walking dimensions LEFT")
                 Logger.Log(str(y))
                 Logger.Log(str((diffBtwnLMostParallelXAndBotMostX-diffBtwnBotMostXAndRMostX)/(diffBtwnLMostParallelXAndBotMostX)*turnAngle))
@@ -128,28 +127,29 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 print angleToSpin
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, angleToSpin) #
                 time.sleep(4)
-                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, y) 
+                h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, y) 
                 Logger.Log("walking dimensions RIGHT")
                 Logger.Log(str(-y))
                 Logger.Log(str(-(diffBtwnBotMostXAndRMostX-diffBtwnLMostParallelXAndBotMostX)/(diffBtwnBotMostXAndRMostX)*turnAngle))
-        alignedToCentre = False
-        while not alignedToCentre:
-            im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
-            print "inside angle align"
-            #check oin middle point in centre of field of view
-            if bottomMostPoint[0] < leftMostAlignmentLimit:
-                h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, 5*almath.TO_RAD)
-                print "moving left"
-                print bottomMostPoint[0]
-                print leftMostAlignmentLimit
-                print cornerPoints[3][0]
-            elif bottomMostPoint[0] > rightMostAlignmentLimit:
-                h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, 5*almath.TO_RAD)
-                print "moving right"
-                print bottomMostPoint[0]
-                print leftMostAlignmentLimit
-                print cornerPoints[3][0]
-            else:
-                print "aligned"
-                alignedToCentre = True
+        ah.AlignClosestCornerToMiddle(InitialiseNaoRobot)
+        # alignedToCentre = False
+        # while not alignedToCentre:
+        #     im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
+        #     xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
+        #     print "inside angle align"
+        #     #check oin middle point in centre of field of view
+        #     if bottomMostPoint[0] < leftMostAlignmentLimit:
+        #         h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, 5*almath.TO_RAD)
+        #         print "moving left"
+        #         print bottomMostPoint[0]
+        #         print leftMostAlignmentLimit
+        #         print cornerPoints[3][0]
+        #     elif bottomMostPoint[0] > rightMostAlignmentLimit:
+        #         h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, 5*almath.TO_RAD)
+        #         print "moving right"
+        #         print bottomMostPoint[0]
+        #         print leftMostAlignmentLimit
+        #         print cornerPoints[3][0]
+        #     else:
+        #         print "aligned"
+        #         alignedToCentre = True

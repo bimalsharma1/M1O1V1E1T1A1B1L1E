@@ -21,8 +21,8 @@ imageHeight = 480
 maxTurnAngleForVCentre = 25
 acceptableErrorForVCentre = 30
 
-leftMostAlignmentLimit = 315
-rightMostAlignmentLimit = 325
+leftMostAlignmentLimit = 310
+rightMostAlignmentLimit = 330
 
 InitialLongerSideOfTable = ""
 Leader = ""   # config is updated witht he leader name

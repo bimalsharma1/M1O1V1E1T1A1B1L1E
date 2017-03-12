@@ -17,6 +17,11 @@ from Utils import DetectColourInImage as d
 from Utils import PerspectiveTransform as p
 import cv2
 
+#contourList[0]    #leftmost
+#contourList[1]    #topmost
+#contourList[2]    #rightmost
+#contourList[3] = closestPnt   #bottomMOst
+##contourList[4] HAS HEIGHT AND WIDTH 
 def AlignToLongerSideOfObject(InitialiseNaoRobot): 
         #InitialiseHeadAndShoulders.InitialiseHeadAndShoulders(motionProxy,motionProxy1)
         lastKnownPositionOfObject = ""
@@ -30,18 +35,12 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         percentOfImageCoveredWithContour=0
         leftLonger = False
         rightLonger = False
-        Y = 2
-        correctionAngle = 0
+        Y = 1
+        correctionAngle = 0.2
 
 
         print "FIND LONGER SIDE OF TABLE"
         Logger.Log("FIND LONGER SIDE OF TABLE")
-
-            #contourList[0]    #leftmost
-            #contourList[1]    #topmost
-            #contourList[2]    #rightmost
-            #contourList[3] = closestPnt   #bottomMOst
-            ##contourList[4] HAS HEIGHT AND WIDTH 
 
         #GET rect longer side
         fileName = "TablePicToSelectLongerSide" + str(InitialiseNaoRobot.portName)
@@ -49,32 +48,6 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         # cv2.imshow('normal',imT)
         # cv2.waitKey()
         xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)        
-        # fourCorners = [contourList[0], contourList[1], contourList[2], contourList[3]]
-        # Logger.Log("Four Corners")
-        # Logger.Log(str(fourCorners))
-        # print "warp image"
-        # warped = p.getPerspectiveTransformFromMemory(imT, fourCorners)    
-        # #now rotate image as transform looks at image from right
-        # print "b"
-        # #problem may be here
-        # warpedAndRotated = p.rotateImage(warped, 90, xCntrPos, yCntrPos)
-        # print "c"
-        # Logger.Log("warped and rotated")
-        # Logger.Log(str(warpedAndRotated))
-        # Logger.Log("Ready to get height and width")
-        # hypotLeft, hypotRight = d.GetHeightWidth("warpedAndRotated.png", "", warpedAndRotated)    
-        # print "d"
-        # Logger.Log("get height and width")
-        # Logger.Log(str(hypotLeft))
-        # Logger.Log(str(hypotRight))
-        # hypotLeft = math.hypot(abs(abs(contourList[0][0]) - abs(contourList[3][0])), abs(abs(contourList[0][1]) - abs(contourList[3][1])))
-        # hypotRight = math.hypot(abs(abs(contourList[2][0]) - abs(contourList[3][0])), abs(abs(contourList[2][1]) - abs(contourList[3][1])))
-        # print "e"
-        # Logger.Log(str(fourCorners))
-        # Logger.Log(str(fourCorners))
-        # Logger.Log("width " + str(width))
-        # Logger.Log("height right " + str(height))
-
 
         try:
             #Look LEFT and find length
@@ -117,7 +90,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         h.HeadInitialise(InitialiseNaoRobot.motionProxy)
         time.sleep(2)
         #walk ahead closer to table
-        h.WalkToPosition(InitialiseNaoRobot.motionProxy,0.5, 0, 0) #+ve 45 degrees turn
+        h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.5) #+ve 45 degrees turn
         time.sleep(3)
         # and config.InitialLongerSideOfTable=="LEFT"
 
@@ -128,10 +101,12 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             Logger.Log("left side is longer")
             config.InitialLongerSideOfTable=="LEFT"
             leftLonger = True
-            h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0,0, -math.radians(85)) #+ve 45 degrees turn
-            time.sleep(4)
-            h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0,Y, 0) #+ve 45 degrees turn
-            time.sleep(3)
+            print "turning angle"
+            print math.radians(45)
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45)) #+ve 45 degrees turn
+            print "WALK LEFT DISTANCE"
+            print Y
+            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, Y) #+ve 45 degrees turn
             #h.WalkToPosition(motionProxy,0, Y, 0) #+ve 45 degrees turn
         else:
             print "right side is longer"
@@ -139,11 +114,17 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             config.InitialLongerSideOfTable=="RIGHT"
             rightLonger = True
             #h.WalkToPosition(motionProxy,0, 0, math.radians(75)) #-ve 45 degrees turn 
-            Y = -1 * Y
-            h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, 0, math.radians(85)) #-ve 45 degrees turn 
-            time.sleep(4)
-            h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0) #-ve 45 degrees turn 
-            time.sleep(3)            
+            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45)) #-ve 45 degrees turn 
+            # time.sleep(4)
+            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,Y) #-ve 45 degrees turn 
+          
+        #if bottom most x is less than 450 (i.e you have move further then walk ahead)
+        while not (closestPnt[1] > 450):
+            h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.5)
+            imT = ip.getImage(InitialiseNaoRobot, "TOP", fileName)
+            xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)            
+
+
         #ALIGN to centre using top camera
          #aligned
         aligned = False   
@@ -157,6 +138,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             # imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.PORT], filenameTopCamera)
             xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)    
+            
             print "array contour list LEFT"
             if not contourList:
                 leftMostX = 0
@@ -186,7 +168,6 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             else:
                 rightMostX = contourList[2][0] #rightmost point
                 Logger.Log(str(contourList))
- 
             try:
                 print "array br"          
                 if not br:
@@ -198,10 +179,10 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
 
             print "TURNING TO ALIGN TO TABLE USING TOP CAM"
             if(botLeft > botRight):
-                correctionAngle = 0.2
+                h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
                 #h.WalkToPosition(motionProxy,0, 0, 0.2)
             else:
-                correctionAngle = -0.2
+                h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
                 #h.WalkToPosition(motionProxy,0, 0, -0.2)
 
             print "calculate adjustment"
