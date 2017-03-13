@@ -92,7 +92,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
         print turnAngle
         Logger.Log("turn angle:  " + str(turnAngle))    
 
-        if (bottomMostPoint[0] >= leftMostAlignmentLimit and bottomMostPoint[0] <= rightMostAlignmentLimit):             
+        if (bottomMostPoint[0] >= leftMostAlignmentLimit and bottomMostPoint[0] <= rightMostAlignmentLimit):
             X=2  # was 1.5
             print "bottom y point"
             print bottomMostPoint[1]
