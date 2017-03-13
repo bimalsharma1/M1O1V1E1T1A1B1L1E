@@ -93,7 +93,6 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(turnAngle))  #+ve value to look right,     
             time.sleep(2)
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-            # imT = vision_getandsaveimage.showNaoImageTopCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.portName], filenameTopCamera)
             xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)    
             print "array contour list RIGHT"
             
@@ -121,7 +120,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
 
             print "calculate adjustment"
             X = 0.1
-            Y = 0.3#was 0.5
+            Y = 0.5#was 0.3
 
             time.sleep(3)
 

@@ -25,7 +25,7 @@ from Utils import DetectColourInImage as d
 from Utils import PerspectiveTransform as p
 import cv2
 
-def AlignClosestCornerToMiddle(InitialiseNaoRobot): 
+def AlignClosestCornerToMiddle(InitialiseNaoRobot, ErrorMargin = 10): 
     filenameTopCamera = "naoImageTopCamera"
     alignedToCentre = False
     while not alignedToCentre:
@@ -33,7 +33,7 @@ def AlignClosestCornerToMiddle(InitialiseNaoRobot):
         xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
         print "inside angle align"
         #check oin middle point in centre of field of view
-        if bottomMostPoint[0] < config.leftMostAlignmentLimit:
+        if bottomMostPoint[0] < (config.imageWidth/2-ErrorMargin):
             h.WalkSideWaysLeft(InitialiseNaoRobot.motionProxy, 0.2)
             print "moving left" + str(bottomMostPoint[0])
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
@@ -43,7 +43,7 @@ def AlignClosestCornerToMiddle(InitialiseNaoRobot):
             print bottomMostPoint[0]
             print config.leftMostAlignmentLimit
             print cornerPoints[3][0]
-        elif (bottomMostPoint[0] > config.rightMostAlignmentLimit):                
+        elif (bottomMostPoint[0] > (config.imageWidth/2+ErrorMargin)):                
             h.WalkSideWaysRight(InitialiseNaoRobot.motionProxy, 0.2)
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
@@ -59,6 +59,7 @@ def AlignClosestCornerToMiddle(InitialiseNaoRobot):
             alignedToCentre = True
 
 def FindLongerSideOfTable(InitialiseNaoRobot): 
+    AlignClosestCornerToMiddle(InitialiseNaoRobot,5)
     lastKnownPositionOfObject = ""
     filenameTopCamera = "naoImageTopCamera"
     filenameBottomCamera = "naoImageBottomCamera"
