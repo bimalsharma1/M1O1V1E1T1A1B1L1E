@@ -6,7 +6,6 @@ import time
 import almath # python's wrapping of almath
 from Utils import ImageProcessing as ip
 from Utils import InitialiseNaoRobot
-from Utils import ActionHelper as ah
 
 def AdjustForVCorner(InitialiseNaoRobot): 
     Logger.Log("Adjust to V corner")

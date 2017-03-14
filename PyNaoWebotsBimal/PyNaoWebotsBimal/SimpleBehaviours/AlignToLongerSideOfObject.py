@@ -55,6 +55,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         imT = ip.getImage(InitialiseNaoRobot, "TOP", fileName)
         xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)        
         #if bottom most x is less than 450 (i.e you have move further then walk ahead)
+        Logger.Log("Keep walking until very close to table")
         while not (closestPnt[1] > 465):
             h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.5)
             imT = ip.getImage(InitialiseNaoRobot, "TOP", fileName)
@@ -111,10 +112,12 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
                 botRight = 0
 
             print "TURNING TO ALIGN TO TABLE USING TOP CAM"
-            if(botLeft > botRight):
+            LeftYPos, MidYPos, RightYPos = d.DetectYPos(imT, yCntrPos)
+            #error margin
+            if(LeftYPos > RightYPos and ((LeftYPos-RightYPos)>config.yPointAlignmentErrorMargin)):
                 h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
                 #h.WalkToPosition(motionProxy,0, 0, 0.2)
-            else:
+            elif(LeftYPos > RightYPos and ((RightYPos-LeftYPos)>config.yPointAlignmentErrorMargin)):
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
                 #h.WalkToPosition(motionProxy,0, 0, -0.2)
 
