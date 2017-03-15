@@ -113,6 +113,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
 
             print "TURNING TO ALIGN TO TABLE USING TOP CAM"
             LeftYPos, MidYPos, RightYPos = d.DetectYPos(imT, yCntrPos)
+            print yCntrPos
             #error margin
             if(LeftYPos > RightYPos and ((LeftYPos-RightYPos)>config.yPointAlignmentErrorMargin)):
                 h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
@@ -159,7 +160,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
                         print "too much space to right WALKING LEFT: "+str(leftMostX - rightMostX)
                         print "LEFT MOST AND RIGHT MOST POINT ARE: "
                         print leftMostX, rightMostX
-                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.3)
             time.sleep(3)
 
         time.sleep(2)

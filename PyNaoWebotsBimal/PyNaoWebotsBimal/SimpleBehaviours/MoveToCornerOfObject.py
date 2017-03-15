@@ -27,8 +27,8 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
     isAbsolute = True
     percentOfImageCoveredWithContour=0
     headDownCounter = 0
-    leftMostAlignmentLimit = 300
-    rightMostAlignmentLimit = 340
+    leftMostAlignmentLimit = 310
+    rightMostAlignmentLimit = 330
     hypotLeft=0
     hypotRight=0
     X=0

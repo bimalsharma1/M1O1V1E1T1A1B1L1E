@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Feb 21 21:28:02 2016
-
 @author: bimal
 """
 
@@ -19,10 +18,12 @@ imageWidth = 640
 imageHeight = 480
 
 maxTurnAngleForVCentre = 25
-acceptableErrorForVCentre = 50
+acceptableErrorForVCentre = 25
 
-leftMostAlignmentLimit = 310
-rightMostAlignmentLimit = 330
+leftMostAlignmentLimit = 315
+rightMostAlignmentLimit = 325
+
+yPointAlignmentErrorMargin = 10
 
 InitialLongerSideOfTable = ""
 Leader = ""   # config is updated witht he leader name

@@ -315,7 +315,7 @@ def DetectXPos(im, YPixelNumber, startIndex, stopIndex, colourToDetect = None):
 # Description: takes an image with a search range. It then finds
 # 100px to the right and 100px to the left
 # and finds the closest x axis point on that y axis
-def DetectYPos(im, startYPixelValue, range = 100, colourToDetect = None):
+def DetectYPos(im, startYPixelValue, rangeToSearch = 100, colourToDetect = None):
     #startYPixelValue: can use centriod figure to get mid point of table
     image = cv2.imdecode(np.fromstring(im, dtype='uint8'), cv2.IMREAD_UNCHANGED)
     lower, upper = GetColourRange(colourToDetect)
@@ -328,36 +328,39 @@ def DetectYPos(im, startYPixelValue, range = 100, colourToDetect = None):
     	# the mask
         mask = cv2.inRange(image, lower, upper)   #mask has black and white image
         Logger.Log("mask sizes")
-         # 0 is black and 255 is white
-        try:
-            Logger.Log("Inside: Looking for y axis ranges on coloured blob")         
-            for YIndex in range(startYPixelValue, config.imageHeight):
-                leftYValue = mask[midPoint-range, YIndex]
-                midYValue = mask[midPoint, YIndex]
-                rightYValue = mask[midPoint+range, YIndex]
-                ####stop as soon as you find a black as you already start at the mid white of the mask    
-                if(leftYValue == 0 and LeftYPos != -1):
-                    Logger.Log("left value Y")
-                    Logger.Log(str(YIndex-1))                     
-                    LeftYPos = YIndex-1
-                if(midYValue == 0 and MidYPos != -1):
-                    Logger.Log("left value Y")
-                    Logger.Log(str(YIndex-1))                     
-                    MidYPos = YIndex-1
-                if(rightYValue == 0 and RightYPos != -1):
-                    Logger.Log("left value Y")
-                    Logger.Log(str(YIndex-1))                     
-                    RightYPos = YIndex-1
-            Logger.Log("Y values left mid right")
-            Logger.Log(str(LeftYPos)+str(MidYPos)+str(RightYPos))
-            return LeftYPos,MidYPos,RightYPos          
-            Logger.Log("longer Y val not found")
-        except Exception as e:
-            print "ERROR occurred trying to find pixel value for Y point"
-            print e
-            return LeftYPos,MidYPos,RightYPos
-
-        
+        # 0 is black and 255 is white
+        Logger.Log("Inside: Looking for y axis ranges on coloured blob")         
+        for YIndex in range(startYPixelValue, config.imageHeight):
+            leftYValue = mask[midPoint-rangeToSearch, YIndex]
+            midYValue = mask[midPoint, YIndex]
+            rightYValue = mask[midPoint+rangeToSearch, YIndex]
+            print "INSIDE FIDN Y LOOP"
+            print LeftYPos
+            print MidYPos
+            print RightYPos
+            ####stop as soon as you find a black as you already start at the mid white of the mask    
+            if(leftYValue == 0 and LeftYPos != -1):
+                Logger.Log("left value Y")
+                Logger.Log(str(YIndex-1))                     
+                LeftYPos = YIndex-1
+                print "L"
+            if(midYValue == 0 and MidYPos != -1):
+                Logger.Log("left value Y")
+                Logger.Log(str(YIndex-1))                     
+                MidYPos = YIndex-1
+                print "M"
+            if(rightYValue == 0 and RightYPos != -1):
+                Logger.Log("left value Y")
+                Logger.Log(str(YIndex-1))                     
+                RightYPos = YIndex-1
+                print "R"
+        Logger.Log("Y values left mid right")
+        Logger.Log(str(LeftYPos))
+        Logger.Log(str(MidYPos))
+        Logger.Log(str(RightYPos))
+        return LeftYPos, MidYPos, RightYPos          
+        Logger.Log("longer Y val not found")        
     except Exception as e:
-        Logger.Log("Error: ")
-        Logger.Log(str(e))
+        print "ERROR occurred trying to find pixel value for Y point"
+        print e
+        return LeftYPos,MidYPos,RightYPos
