@@ -35,34 +35,56 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         percentOfImageCoveredWithContour=0
         leftLonger = False
         rightLonger = False
-        Y = 1
-        correctionAngle = 0.2
+        Y = 1.5
+        moveRatio = 1
+        correctionAngle = 0.3
         hypotLeft, hypotRight = a.FindLongerSideOfTable(InitialiseNaoRobot)
         if (hypotLeft > hypotRight): # if diff is less than 50 px then it is not accurate
             leftLonger = True
             print "turning angle"
-            print math.radians(45)
-            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45)) #+ve 45 degrees turn
+            print math.radians(60)
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(60)) #+ve 60 degrees turn
             print "WALK LEFT DISTANCE"
             print Y
-            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, Y) #+ve 45 degrees turn
+            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, Y) #+ve 60 degrees turn
         else:
             rightLonger = True
-            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45)) #-ve 45 degrees turn 
-            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,Y) #-ve 45 degrees turn 
+            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(60)) #-ve 60 degrees turn 
+            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,Y) #-ve 60 degrees turn 
           
         fileName = "TablePicToSelectLongerSide" + str(InitialiseNaoRobot.portName)
         imT = ip.getImage(InitialiseNaoRobot, "TOP", fileName)
         xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)        
         #if bottom most x is less than 450 (i.e you have move further then walk ahead)
         Logger.Log("Keep walking until very close to table")
-        while not (closestPnt[1] > 465):
-            h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.5)
+        # h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.4)
+        while not (closestPnt[1] > 450):
+            moveRatio = abs(closestPnt[1]-450)/450
+            h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, (0.4*moveRatio))
             imT = ip.getImage(InitialiseNaoRobot, "TOP", fileName)
-            xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)            
+            xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)
+            
+            print "TURNING TO ALIGN TO TABLE USING TOP CAM"
+            LeftYPos, MidYPos, RightYPos = d.DetectYPos(imT, yCntrPos)
+            print yCntrPos
+            print LeftYPos
+            print MidYPos
+            print RightYPos
+            #error margin
+            if(LeftYPos > RightYPos and ((LeftYPos-RightYPos)>config.yPointAlignmentErrorMargin)):
+                h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
+                #h.WalkToPosition(motionProxy,0, 0, 0.2)
+            elif(LeftYPos <= RightYPos and ((RightYPos-LeftYPos)>config.yPointAlignmentErrorMargin)):
+                h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
+                #h.WalkToPosition(motionProxy,0, 0, -0.2)
+            #align to centroid
+            if (xCntrPos<(config.imageWidth/2)):
+                h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.4*moveRatio)
+            else:
+                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.4*moveRatio)
 
         #ALIGN to centre using top camera
-         #aligned
+        #aligned
         aligned = False   
         print "LOOK LEFT THEN RIGHT< FIND DIFF AND ADJUST"     
         #LEFT
@@ -111,17 +133,6 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             except Exception as e:
                 botRight = 0
 
-            print "TURNING TO ALIGN TO TABLE USING TOP CAM"
-            LeftYPos, MidYPos, RightYPos = d.DetectYPos(imT, yCntrPos)
-            print yCntrPos
-            #error margin
-            if(LeftYPos > RightYPos and ((LeftYPos-RightYPos)>config.yPointAlignmentErrorMargin)):
-                h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
-                #h.WalkToPosition(motionProxy,0, 0, 0.2)
-            elif(LeftYPos > RightYPos and ((RightYPos-LeftYPos)>config.yPointAlignmentErrorMargin)):
-                h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
-                #h.WalkToPosition(motionProxy,0, 0, -0.2)
-
             print "calculate adjustment"
             X = 0.1
             Y = 0.5#was 0.3
@@ -136,6 +147,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             Logger.Log(str(leftMostX))
             Logger.Log(str(rightMostX))
             print leftMostX , rightMostX
+            
             if (leftMostX==0 and rightMostX==0):
                 h.WalkToPosition(InitialiseNaoRobot.motionProxy,0.4, 0, 0) 
             else:
@@ -160,7 +172,9 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
                         print "too much space to right WALKING LEFT: "+str(leftMostX - rightMostX)
                         print "LEFT MOST AND RIGHT MOST POINT ARE: "
                         print leftMostX, rightMostX
-                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.3)
+                if closestPnt[1] < 470:
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.3)
+
             time.sleep(3)
 
         time.sleep(2)

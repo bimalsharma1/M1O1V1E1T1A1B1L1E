@@ -335,25 +335,22 @@ def DetectYPos(im, startYPixelValue, rangeToSearch = 100, colourToDetect = None)
             midYValue = mask[midPoint, YIndex]
             rightYValue = mask[midPoint+rangeToSearch, YIndex]
             print "INSIDE FIDN Y LOOP"
-            print LeftYPos
-            print MidYPos
-            print RightYPos
+            # print leftYValue
+            # print midYValue
+            # print rightYValue
             ####stop as soon as you find a black as you already start at the mid white of the mask    
             if(leftYValue == 0 and LeftYPos != -1):
                 Logger.Log("left value Y")
                 Logger.Log(str(YIndex-1))                     
                 LeftYPos = YIndex-1
-                print "L"
             if(midYValue == 0 and MidYPos != -1):
                 Logger.Log("left value Y")
                 Logger.Log(str(YIndex-1))                     
                 MidYPos = YIndex-1
-                print "M"
             if(rightYValue == 0 and RightYPos != -1):
                 Logger.Log("left value Y")
                 Logger.Log(str(YIndex-1))                     
                 RightYPos = YIndex-1
-                print "R"
         Logger.Log("Y values left mid right")
         Logger.Log(str(LeftYPos))
         Logger.Log(str(MidYPos))
