@@ -29,7 +29,8 @@ def AdjustForVCorner(InitialiseNaoRobot):
     x=0.5
     y=0.4
     turnAngle = config.maxTurnAngleForVCentre*almath.TO_RAD
-    moveRatio = 0
+    moveRatio = 1
+    previousMoveRatio = 1
 # y Use negative for right
 # theta Use negative for clockwise
     while not adjustedToCorner:
@@ -58,33 +59,35 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 return True
             if (diffBtwnBotMostXAndLMostX > diffBtwnRMostParallelXAndBotMostX):
                 #turm left
-                moveRatio = (diffBtwnBotMostXAndLMostX-diffBtwnRMostParallelXAndBotMostX)/(diffBtwnBotMostXAndLMostX)
+                moveRatio = abs(diffBtwnBotMostXAndLMostX-diffBtwnRMostParallelXAndBotMostX)/(diffBtwnBotMostXAndLMostX)
                 #if cannot calculate angle then use maximum turn angle
-                if moveRatio == 0:
-                    moveRatio = 1
+                if moveRatio is None or moveRatio == 0:
+                    moveRatio = previousMoveRatio
                 print moveRatio
+                previousMoveRatio = moveRatio
                 h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*turnAngle) #
                 print "turning angle left left most y > right most y"
                 # time.sleep(4)
-                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*y) 
+                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*y)
                 # time.sleep(4)
                 Logger.Log("walking dimensions LEFT")
-                Logger.Log(str(y))
+                Logger.Log(str(y*moveRatio))
                 Logger.Log(str((diffBtwnBotMostXAndLMostX-diffBtwnRMostParallelXAndBotMostX)/(diffBtwnBotMostXAndLMostX)*turnAngle))
             else:
                 #turm right
-                moveRatio =  (diffBtwnRMostParallelXAndBotMostX-diffBtwnBotMostXAndLMostX)/(diffBtwnRMostParallelXAndBotMostX)*turnAngle
+                moveRatio = abs(diffBtwnRMostParallelXAndBotMostX-diffBtwnBotMostXAndLMostX)/(diffBtwnRMostParallelXAndBotMostX)*turnAngle
                 #if cannot calculate angle then use maximum turn angle
-                if moveRatio == 0:
-                    moveRatio = 1
+                if moveRatio is None or moveRatio == 0:
+                    moveRatio = previousMoveRatio
                 print moveRatio
+                previousMoveRatio = moveRatio
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*turnAngle) #
                 print "turning angle right left most y > right most y"
                 # time.sleep(4)
                 h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*y) 
                 # time.sleep(4)
                 Logger.Log("walking dimensions RIGHT")
-                Logger.Log(str(-y))
+                Logger.Log(str(-y*moveRatio))
                 Logger.Log(str(-(diffBtwnRMostParallelXAndBotMostX-diffBtwnBotMostXAndLMostX)/(diffBtwnRMostParallelXAndBotMostX)*turnAngle))
         else:
             #table is longer on \\
@@ -105,31 +108,33 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 return True
             if (diffBtwnLMostParallelXAndBotMostX > diffBtwnBotMostXAndRMostX):
                 #turn left
-                moveRatio = (diffBtwnLMostParallelXAndBotMostX-diffBtwnBotMostXAndRMostX)/(diffBtwnLMostParallelXAndBotMostX)
+                moveRatio = abs(diffBtwnLMostParallelXAndBotMostX-diffBtwnBotMostXAndRMostX)/(diffBtwnLMostParallelXAndBotMostX)
                 #if cannot calculate angle then use maximum turn angle
-                if moveRatio == 0:
-                    moveRatio = 1
+                if moveRatio is None or moveRatio == 0:
+                    moveRatio = previousMoveRatio
                 print moveRatio
+                previousMoveRatio = moveRatio
                 h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*turnAngle) #
                 print "turning angle left - right most y > left most y"
-                time.sleep(4)
+                # time.sleep(4)
                 h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*y) 
                 Logger.Log("walking dimensions LEFT")
-                Logger.Log(str(y))
+                Logger.Log(str(moveRatio*y))
                 Logger.Log(str((diffBtwnLMostParallelXAndBotMostX-diffBtwnBotMostXAndRMostX)/(diffBtwnLMostParallelXAndBotMostX)))
             else:
                 #turm right
                 print "turning angle right - right most y > left most y"
-                moveRatio = (diffBtwnBotMostXAndRMostX-diffBtwnLMostParallelXAndBotMostX)/(diffBtwnBotMostXAndRMostX)
+                moveRatio = abs(diffBtwnBotMostXAndRMostX-diffBtwnLMostParallelXAndBotMostX)/(diffBtwnBotMostXAndRMostX)
                 #if cannot calculate angle then use maximum turn angle
-                if moveRatio == 0:
-                    moveRatio = 1
+                if moveRatio is None or moveRatio == 0:
+                    moveRatio = previousMoveRatio
                 print moveRatio
-                h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio* turnAngle) #
-                time.sleep(4)
+                previousMoveRatio = moveRatio
+                h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*turnAngle) #
+                # time.sleep(4)
                 h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*y) 
                 Logger.Log("walking dimensions RIGHT")
-                Logger.Log(str(-y))
+                Logger.Log(str(-y*moveRatio))
                 Logger.Log(str(-(diffBtwnBotMostXAndRMostX-diffBtwnLMostParallelXAndBotMostX)/(diffBtwnBotMostXAndRMostX)*turnAngle))
         ah.AlignClosestCornerToMiddle(InitialiseNaoRobot)
         # alignedToCentre = False

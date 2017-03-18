@@ -172,7 +172,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
                         print "too much space to right WALKING LEFT: "+str(leftMostX - rightMostX)
                         print "LEFT MOST AND RIGHT MOST POINT ARE: "
                         print leftMostX, rightMostX
-                if closestPnt[1] < 470:
+                if closestPnt[1] < 450:
                     h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.3)
 
             time.sleep(3)

@@ -28,28 +28,32 @@ import cv2
 def AlignClosestCornerToMiddle(InitialiseNaoRobot, ErrorMargin = 10): 
     filenameTopCamera = "naoImageTopCamera"
     alignedToCentre = False
+    moveRatio = 1
     while not alignedToCentre:
         im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
         xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
         print "inside angle align"
+        moveRatio = abs(bottomMostPoint[0] - (config.imageWidth/2))/(config.imageWidth/2)
+        if moveRatio is None or moveRatio == 0:
+            moveRatio = 1
         #check oin middle point in centre of field of view
         if bottomMostPoint[0] < (config.imageWidth/2-ErrorMargin):
-            h.WalkSideWaysLeft(InitialiseNaoRobot.motionProxy, 0.2)
+            h.WalkSideWaysLeft(InitialiseNaoRobot.motionProxy, 0.2*moveRatio)
             print "moving left" + str(bottomMostPoint[0])
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
-            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, 5*almath.TO_RAD)
+            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, 5*almath.TO_RAD*moveRatio)
             print "moving left"
             print bottomMostPoint[0]
             print config.leftMostAlignmentLimit
             print cornerPoints[3][0]
         elif (bottomMostPoint[0] > (config.imageWidth/2+ErrorMargin)):                
-            h.WalkSideWaysRight(InitialiseNaoRobot.motionProxy, 0.2)
+            h.WalkSideWaysRight(InitialiseNaoRobot.motionProxy, 0.2*moveRatio)
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
             print "moving right"
             print bottomMostPoint[0]                
-            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, 5*almath.TO_RAD)
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, 5*almath.TO_RAD*moveRatio)
             print "moving right"
             print bottomMostPoint[0]
             print config.leftMostAlignmentLimit

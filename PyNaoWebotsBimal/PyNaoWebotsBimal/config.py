@@ -18,7 +18,7 @@ imageWidth = 640
 imageHeight = 480
 
 maxTurnAngleForVCentre = 25
-acceptableErrorForVCentre = 25
+acceptableErrorForVCentre = 15
 
 leftMostAlignmentLimit = 315
 rightMostAlignmentLimit = 325
