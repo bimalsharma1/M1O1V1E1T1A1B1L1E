@@ -85,7 +85,8 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
 
         #ALIGN to centre using top camera
         #aligned
-        aligned = False   
+        aligned = False
+        spinRatio = 5*almath.TO_RAD
         print "LOOK LEFT THEN RIGHT< FIND DIFF AND ADJUST"     
         #LEFT
         h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(29))
@@ -153,8 +154,8 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             else:
                 if (leftMostX < rightMostX):
                     #check if left or righmost point is very close to edge
-                    if (config.InitialLongerSideOfTable=="LEFT"):
-                        h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0)
+                    if (abs(leftMostX - rightMostX) < config.leftMostXAndRightMostXAlignTableErrorMargin):
+                        # h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0)
                         aligned = True
                     else:
                         h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, -Y, 0) #((leftMostX - rightMostX)/contourList[4][1]) * X, 0)  correctionAngle
@@ -163,10 +164,10 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
                         print "LEFT MOST AND RIGHT MOST POINT ARE: "
                         print leftMostX, rightMostX
                 else:
-                    if (config.InitialLongerSideOfTable=="RIGHT"):
-                        h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, -Y, 0)
+                     if (abs(leftMostX - rightMostX) < config.leftMostXAndRightMostXAlignTableErrorMargin):
+                        # h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, -Y, 0)
                         aligned = True
-                    else:
+                     else:
                         h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0) #-((rightMostX - leftMostX)/contourList[4][1]) * X, 0)
                         Logger.Log("too much to right: "+str(leftMostX - rightMostX))
                         print "too much space to right WALKING LEFT: "+str(leftMostX - rightMostX)

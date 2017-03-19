@@ -52,7 +52,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
             diffOfXPositions = abs(diffBtwnBotMostXAndLMostX - diffBtwnRMostParallelXAndBotMostX)
             Logger.Log("calc of diff x for acceptable error")
             Logger.Log(str(diffOfXPositions))
-            if (diffOfXPositions < acceptableError):
+            if (diffOfXPositions <= acceptableError):
                 adjustedToCorner = True
                 Logger.Log("Adjusted to corner")
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, x)

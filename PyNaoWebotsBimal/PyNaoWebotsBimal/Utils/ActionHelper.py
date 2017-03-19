@@ -39,7 +39,7 @@ def AlignClosestCornerToMiddle(InitialiseNaoRobot, ErrorMargin = 10):
         #check oin middle point in centre of field of view
         if bottomMostPoint[0] < (config.imageWidth/2-ErrorMargin):
             h.WalkSideWaysLeft(InitialiseNaoRobot.motionProxy, 0.2*moveRatio)
-            print "moving left" + str(bottomMostPoint[0])
+            print "moving left " + str(bottomMostPoint[0])
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
             h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, 5*almath.TO_RAD*moveRatio)

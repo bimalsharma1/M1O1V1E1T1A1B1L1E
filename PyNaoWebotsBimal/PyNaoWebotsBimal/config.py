@@ -18,12 +18,14 @@ imageWidth = 640
 imageHeight = 480
 
 maxTurnAngleForVCentre = 25
-acceptableErrorForVCentre = 15
+acceptableErrorForVCentre = 20
 
 leftMostAlignmentLimit = 315
 rightMostAlignmentLimit = 325
 
 yPointAlignmentErrorMargin = 10
+
+leftMostXAndRightMostXAlignTableErrorMargin = 20
 
 InitialLongerSideOfTable = ""
 Leader = ""   # config is updated witht he leader name
