@@ -61,7 +61,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 #turm left
                 moveRatio = abs(abs(diffBtwnBotMostXAndLMostX)-abs(diffBtwnRMostParallelXAndBotMostX))/diffBtwnBotMostXAndLMostX
                 #if cannot calculate angle then use maximum turn angle
-                if moveRatio is None or moveRatio == 0:
+                if moveRatio is None or moveRatio == 0 or moveRatio > 1:
                     moveRatio = previousMoveRatio
                 print moveRatio
                 previousMoveRatio = moveRatio
@@ -77,7 +77,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 #turm right
                 moveRatio = abs(abs(diffBtwnRMostParallelXAndBotMostX)-abs(diffBtwnBotMostXAndLMostX))/(diffBtwnRMostParallelXAndBotMostX)*turnAngle
                 #if cannot calculate angle then use maximum turn angle
-                if moveRatio is None or moveRatio == 0:
+                if moveRatio is None or moveRatio == 0 or moveRatio > 1:
                     moveRatio = previousMoveRatio
                 print moveRatio
                 previousMoveRatio = moveRatio
@@ -110,8 +110,8 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 #turn left
                 moveRatio = abs(abs(diffBtwnLMostParallelXAndBotMostX)-abs(diffBtwnBotMostXAndRMostX))/(diffBtwnLMostParallelXAndBotMostX)
                 #if cannot calculate angle then use maximum turn angle
-                if moveRatio is None or moveRatio == 0:
-                    moveRatio = previousMoveRatio
+                if moveRatio is None or moveRatio == 0  or moveRatio > 1:
+                    moveRatio = previousMoveRatio/2
                 print moveRatio
                 previousMoveRatio = moveRatio
                 h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*turnAngle) #
@@ -126,8 +126,8 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 print "turning angle right - right most y > left most y"
                 moveRatio = abs(abs(diffBtwnBotMostXAndRMostX)-abs(diffBtwnLMostParallelXAndBotMostX))/(diffBtwnBotMostXAndRMostX)
                 #if cannot calculate angle then use maximum turn angle
-                if moveRatio is None or moveRatio == 0:
-                    moveRatio = previousMoveRatio
+                if moveRatio is None or moveRatio == 0 or moveRatio > 1:
+                    moveRatio = previousMoveRatio/2
                 print moveRatio
                 previousMoveRatio = moveRatio
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*turnAngle) #
