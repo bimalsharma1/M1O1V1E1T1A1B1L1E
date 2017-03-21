@@ -330,7 +330,7 @@ def DetectYPos(im, startYPixelValue, rangeToSearch = 100, colourToDetect = None)
         Logger.Log("mask sizes")
         # 0 is black and 255 is white
         Logger.Log("Inside: Looking for y axis ranges on coloured blob")         
-        for YIndex in range(startYPixelValue, config.imageHeight):
+        for YIndex in range(config.imageHeight,0, -1):
             leftYValue = mask[midPoint-rangeToSearch, YIndex]
             midYValue = mask[midPoint, YIndex]
             rightYValue = mask[midPoint+rangeToSearch, YIndex]
@@ -339,23 +339,25 @@ def DetectYPos(im, startYPixelValue, rangeToSearch = 100, colourToDetect = None)
             # print midYValue
             # print rightYValue
             ####stop as soon as you find a black as you already start at the mid white of the mask    
-            if(leftYValue == 0 and LeftYPos != -1):
+            if(leftYValue == 255 and LeftYPos != -1):
                 Logger.Log("left value Y")
                 Logger.Log(str(YIndex-1))                     
                 LeftYPos = YIndex-1
-            if(midYValue == 0 and MidYPos != -1):
+            if(midYValue == 255 and MidYPos != -1):
                 Logger.Log("left value Y")
                 Logger.Log(str(YIndex-1))                     
                 MidYPos = YIndex-1
-            if(rightYValue == 0 and RightYPos != -1):
+            if(rightYValue == 255 and RightYPos != -1):
                 Logger.Log("left value Y")
                 Logger.Log(str(YIndex-1))                     
                 RightYPos = YIndex-1
+            if LeftYPos >= 0 and MidYPos >= 0 and RightYPos >= 0:
+                return LeftYPos, MidYPos, RightYPos
         Logger.Log("Y values left mid right")
         Logger.Log(str(LeftYPos))
         Logger.Log(str(MidYPos))
         Logger.Log(str(RightYPos))
-        return LeftYPos, MidYPos, RightYPos          
+        return LeftYPos, MidYPos, RightYPos        
         Logger.Log("longer Y val not found")        
     except Exception as e:
         print "ERROR occurred trying to find pixel value for Y point"

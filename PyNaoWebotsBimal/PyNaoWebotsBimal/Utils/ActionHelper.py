@@ -38,22 +38,22 @@ def AlignClosestCornerToMiddle(InitialiseNaoRobot, ErrorMargin = 10):
             moveRatio = 1
         #check oin middle point in centre of field of view
         if bottomMostPoint[0] < (config.imageWidth/2-ErrorMargin):
-            h.WalkSideWaysLeft(InitialiseNaoRobot.motionProxy, 0.2*moveRatio)
+            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.2*moveRatio)
             print "moving left " + str(bottomMostPoint[0])
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
-            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, 5*almath.TO_RAD*moveRatio)
+            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, 10*almath.TO_RAD*moveRatio)
             print "moving left"
             print bottomMostPoint[0]
             print config.leftMostAlignmentLimit
             print cornerPoints[3][0]
         elif (bottomMostPoint[0] > (config.imageWidth/2+ErrorMargin)):                
-            h.WalkSideWaysRight(InitialiseNaoRobot.motionProxy, 0.2*moveRatio)
+            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.2*moveRatio)
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
             print "moving right"
             print bottomMostPoint[0]                
-            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, 5*almath.TO_RAD*moveRatio)
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, 10*almath.TO_RAD*moveRatio)
             print "moving right"
             print bottomMostPoint[0]
             print config.leftMostAlignmentLimit
@@ -88,12 +88,12 @@ def FindLongerSideOfTable(InitialiseNaoRobot):
         h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(29)) # put blocking call here
         InitialiseNaoRobot.motionProxy.waitUntilMoveIsFinished()
         Logger.Log("Looking Left1")
-        h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(turnAngle))  #+ve value to look left
+        h.HeadYawMove(InitialiseNaoRobot.motionProxy, math.radians(turnAngle))  #+ve value to look left
         Logger.Log("Looking Left2")
         InitialiseNaoRobot.motionProxy.waitUntilMoveIsFinished()
         time.sleep(2) # DO NOT REMOVE: THIS ALLOWS TIME FOR HEAD TO MOVE
         imT = ip.getImage(InitialiseNaoRobot, "TOP", fileName)
-        xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)                        
+        xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt, contourList, bl, br, tl, tr = d.DetectColour(filenameTopCamera + ".png", "", imT)                        
         Logger.Log("Looking Left3")
         hypotLeft = math.hypot(abs(abs(contourList[0][0]) - abs(contourList[3][0])), abs(abs(contourList[0][1]) - abs(contourList[3][1])))
         Logger.Log(str(contourList))
@@ -135,25 +135,24 @@ def FindLongerSideOfTable(InitialiseNaoRobot):
     return hypotLeft, hypotRight
 
 #Align body of robot with table
-def AlignBodyHorizontallyWithTable(InitialiseNaoRobot):
+def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileNameCamera = "naoImageTopCamera"):
     #look straight    
     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
-    filenameTopCamera = "naoImageTopCamera"
     moveRatio = 1
     fileName = "TablePicToSelectLongerSide" + str(InitialiseNaoRobot.portName)
-    imT = ip.getImage(InitialiseNaoRobot, "TOP", fileName)
-    xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)        
+    im = ip.getImage(InitialiseNaoRobot, cameraName, fileName)
+    xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(fileNameCamera + ".png", "", im)        
     #if bottom most x is less than 450 (i.e you have move further then walk ahead)
     Logger.Log("Keep walking until very close to table")
     # h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.4)
     Aligned = False
     while not (Aligned):
-        moveRatio = abs(closestPnt[1]-450)/450
+        moveRatio = abs(closestPnt[1]-config.imageHeight)/config.imageHeight
         h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, (0.4*moveRatio))
-        imT = ip.getImage(InitialiseNaoRobot, "TOP", fileName)
-        xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)
+        im = ip.getImage(InitialiseNaoRobot, cameraName, fileName)
+        xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(fileNameCamera + ".png", "", im)
         print "TURNING TO ALIGN TO TABLE USING TOP CAM"
-        LeftYPos, MidYPos, RightYPos = d.DetectYPos(imT, yCntrPos)
+        LeftYPos, MidYPos, RightYPos = d.DetectYPos(im, 50)
         print yCntrPos
         print LeftYPos
         print MidYPos
@@ -187,7 +186,7 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot):
         while not (aligned):
             print "Aligning nao to object for"
             h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(-turnAngle))  #-ve value to look left,     0.5 then 0.7
-            time.sleep(2)
+            time.sleep(4)
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)    
             
@@ -195,7 +194,7 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot):
             if not contourList:
                 leftMostX = 0
             else:
-                leftMostX = 640 - contourList[0][0]
+                leftMostX = config.imageWidth - contourList[0][0]
                 Logger.Log(str(contourList))
             time.sleep(2)
             print "array bot left"
@@ -209,7 +208,7 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot):
 
             time.sleep(2)
             h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(turnAngle))  #+ve value to look right,     
-            time.sleep(2)
+            time.sleep(4)
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT)    
             print "array contour list RIGHT"
@@ -238,12 +237,12 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot):
             ##IF LEFT MOST X IS 640 THEN WE CANNOT SEE OBJECT 
             #if (leftMostX == 640):
             #    leftMostX = 0
-            Logger.Log("left most x and right most x points")
+            Logger.Log(">>left most x and right most x points")
             Logger.Log(str(leftMostX))
             Logger.Log(str(rightMostX))
             print leftMostX , rightMostX
             
-            if (leftMostX==0 and rightMostX==0 and (closestPnt[1] < 430 or closestPnt[1] is None)):
+            if (leftMostX==0 and rightMostX==0 and (closestPnt[1] < 400 or closestPnt[1] is None)):
                 h.WalkToPosition(InitialiseNaoRobot.motionProxy,0.2, 0, 0) 
             else:
                 if (leftMostX < rightMostX):
@@ -271,7 +270,7 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot):
             time.sleep(3)
 
 #walk until robot is close enough to lift table
-def WalkAheadUntilCloseToLift(InitialiseNaoRobot):
+def WalkAheadUntilCloseToLift(InitialiseNaoRobot, cameraName = "BOTTOM", fileNameCamera = "naoImageBottomCamera"):
         time.sleep(2)
         h.HeadInitialise(InitialiseNaoRobot.motionProxy)
         print "KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM"
@@ -279,7 +278,6 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot):
 
         #just added this code
         print "move head down"
-        filenameBottomCamera = "naoImageBottomCamera"
         maxHeadPitchAngle = 29
         currentHeadPitchAngle = 10
         
@@ -288,10 +286,9 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot):
         while not (objectSeen):
             print "KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM"
             Logger.Log( "KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM")
-            time.sleep(2)
-            imB = ip.getImage(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)
-            # imB = vision_getandsaveimage.showNaoImageBottomCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.portName], filenameBottomCamera)
-            xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(filenameBottomCamera + ".png", "", imB)  
+            imB = ip.getImage(InitialiseNaoRobot, cameraName, fileNameCamera)
+            # imB = vision_getandsaveimage.showNaoImageBottomCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.portName], fileNameCamera)
+            xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(fileNameCamera + ".png", "", imB)  
             
 
             try:
@@ -299,7 +296,7 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot):
                 if not contourList:
                     print "CANNOT see object from bottom cam so walk ahead"
                     Logger.Log("countour list is empty")
-                    h.WalkToPosition(InitialiseNaoRobot.motionProxy,0.5, 0, 0)
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
                 else:
                     Logger.Log("Longer side is ")
                     Logger.Log(str(config.InitialLongerSideOfTable))
@@ -328,7 +325,7 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot):
                     else:
                         #this determines if robot hits table
                         Logger.Log(str(closestPnt))
-                        print "bottom most table position is :: "
+                        print ">>> bottom most table position is :: "
                         print closestPnt
                         XValueToWalk = 0.2*(480-closestPnt[1])/480  #((contourList[4][1] - contourList[3][1])/float(contourList[4][1]))
                         h.WalkToPosition(motionProxy,XValueToWalk, 0, 0) #-ve 45 degrees turn Y/float(8.0)
@@ -336,7 +333,7 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot):
                     Logger.Log("bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1]))
 
             except Exception as e:
-                h.WalkToPosition(InitialiseNaoRobot.motionProxy,0.2, 0, 0)
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
                 #print e
 
             h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(maxHeadPitchAngle))

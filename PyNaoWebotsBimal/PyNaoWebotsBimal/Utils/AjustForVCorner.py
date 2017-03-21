@@ -55,11 +55,11 @@ def AdjustForVCorner(InitialiseNaoRobot):
             if (diffOfXPositions <= acceptableError):
                 adjustedToCorner = True
                 Logger.Log("Adjusted to corner")
-                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, x)
+                # h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, x)
                 return True
             if (diffBtwnBotMostXAndLMostX > diffBtwnRMostParallelXAndBotMostX):
                 #turm left
-                moveRatio = abs(diffBtwnBotMostXAndLMostX-diffBtwnRMostParallelXAndBotMostX)/(diffBtwnBotMostXAndLMostX)
+                moveRatio = abs(abs(diffBtwnBotMostXAndLMostX)-abs(diffBtwnRMostParallelXAndBotMostX))/diffBtwnBotMostXAndLMostX
                 #if cannot calculate angle then use maximum turn angle
                 if moveRatio is None or moveRatio == 0:
                     moveRatio = previousMoveRatio
@@ -72,10 +72,10 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 # time.sleep(4)
                 Logger.Log("walking dimensions LEFT")
                 Logger.Log(str(y*moveRatio))
-                Logger.Log(str((diffBtwnBotMostXAndLMostX-diffBtwnRMostParallelXAndBotMostX)/(diffBtwnBotMostXAndLMostX)*turnAngle))
+                Logger.Log(str((diffBtwnBotMostXAndLMostX-diffBtwnRMostParallelXAndBotMostX))/(diffBtwnBotMostXAndLMostX)*turnAngle)
             else:
                 #turm right
-                moveRatio = abs(diffBtwnRMostParallelXAndBotMostX-diffBtwnBotMostXAndLMostX)/(diffBtwnRMostParallelXAndBotMostX)*turnAngle
+                moveRatio = abs(abs(diffBtwnRMostParallelXAndBotMostX)-abs(diffBtwnBotMostXAndLMostX))/(diffBtwnRMostParallelXAndBotMostX)*turnAngle
                 #if cannot calculate angle then use maximum turn angle
                 if moveRatio is None or moveRatio == 0:
                     moveRatio = previousMoveRatio
@@ -108,7 +108,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 return True
             if (diffBtwnLMostParallelXAndBotMostX > diffBtwnBotMostXAndRMostX):
                 #turn left
-                moveRatio = abs(diffBtwnLMostParallelXAndBotMostX-diffBtwnBotMostXAndRMostX)/(diffBtwnLMostParallelXAndBotMostX)
+                moveRatio = abs(abs(diffBtwnLMostParallelXAndBotMostX)-abs(diffBtwnBotMostXAndRMostX))/(diffBtwnLMostParallelXAndBotMostX)
                 #if cannot calculate angle then use maximum turn angle
                 if moveRatio is None or moveRatio == 0:
                     moveRatio = previousMoveRatio
@@ -124,7 +124,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
             else:
                 #turm right
                 print "turning angle right - right most y > left most y"
-                moveRatio = abs(diffBtwnBotMostXAndRMostX-diffBtwnLMostParallelXAndBotMostX)/(diffBtwnBotMostXAndRMostX)
+                moveRatio = abs(abs(diffBtwnBotMostXAndRMostX)-abs(diffBtwnLMostParallelXAndBotMostX))/(diffBtwnBotMostXAndRMostX)
                 #if cannot calculate angle then use maximum turn angle
                 if moveRatio is None or moveRatio == 0:
                     moveRatio = previousMoveRatio
