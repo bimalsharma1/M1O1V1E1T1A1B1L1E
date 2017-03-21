@@ -37,8 +37,8 @@ def AlignClosestCornerToMiddle(InitialiseNaoRobot, ErrorMargin = 10):
         if moveRatio is None or moveRatio == 0:
             moveRatio = 1
         #check oin middle point in centre of field of view
-        if bottomMostPoint[0] < (config.imageWidth/2-ErrorMargin):
-            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.2*moveRatio)
+        if bottomMostPoint[0] < ((config.imageWidth/2)-ErrorMargin):
+            h.WalkSideWaysLefttUntilFinished(InitialiseNaoRobot.motionProxy, 0.2*moveRatio)
             print "moving left " + str(bottomMostPoint[0])
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
@@ -328,7 +328,7 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot, cameraName = "BOTTOM", fileNam
                         print ">>> bottom most table position is :: "
                         print closestPnt
                         XValueToWalk = 0.2*(480-closestPnt[1])/480  #((contourList[4][1] - contourList[3][1])/float(contourList[4][1]))
-                        h.WalkToPosition(motionProxy,XValueToWalk, 0, 0) #-ve 45 degrees turn Y/float(8.0)
+                        h.WalkAheadUntilFinished(motionProxy,XValueToWalk) #-ve 45 degrees turn Y/float(8.0)
                     print "bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1])
                     Logger.Log("bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1]))
 
