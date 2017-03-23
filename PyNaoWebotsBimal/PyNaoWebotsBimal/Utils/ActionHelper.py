@@ -154,7 +154,7 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
         im = ip.getImage(InitialiseNaoRobot, cameraName, fileName)
         xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(fileNameCamera + ".png", "", im)
         print "TURNING TO ALIGN TO TABLE USING TOP CAM"
-        LeftYPos, MidYPos, RightYPos = d.DetectYPos(im, 50)
+        LeftYPos, MidYPos, RightYPos = d.DetectYPos(im, 50, xCntrPos)
         print yCntrPos
         print LeftYPos
         print MidYPos
@@ -231,7 +231,7 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot):
 
             print "calculate adjustment"
             X = 0.1
-            Y = 0.5#was 0.3
+            Y = 0.3#was 0.3
 
             time.sleep(3)
 
@@ -249,21 +249,21 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot):
             else:
                 if (leftMostX < rightMostX):
                     #check if left or righmost point is very close to edge
-                    if (abs(leftMostX - rightMostX) < config.leftMostXAndRightMostXAlignTableErrorMargin):
+                    if (abs(leftMostX - rightMostX) <= config.leftMostXAndRightMostXAlignTableErrorMargin):
                         # h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0)
                         aligned = True
                     else:
-                        h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, -Y, 0) #((leftMostX - rightMostX)/contourList[4][1]) * X, 0)  correctionAngle
+                        h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,Y) #((leftMostX - rightMostX)/contourList[4][1]) * X, 0)  correctionAngle
                         Logger.Log("too much to left: "+str(leftMostX - rightMostX))
                         print "too much space to left WALKING RIGHT: "+str(leftMostX - rightMostX)
                         print "LEFT MOST AND RIGHT MOST POINT ARE: "
                         print leftMostX, rightMostX
                 else:
-                     if (abs(leftMostX - rightMostX) < config.leftMostXAndRightMostXAlignTableErrorMargin):
+                     if (abs(leftMostX - rightMostX) <= config.leftMostXAndRightMostXAlignTableErrorMargin):
                         # h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, -Y, 0)
                         aligned = True
                      else:
-                        h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0) #-((rightMostX - leftMostX)/contourList[4][1]) * X, 0)
+                        h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,Y) #-((rightMostX - leftMostX)/contourList[4][1]) * X, 0)
                         Logger.Log("too much to right: "+str(leftMostX - rightMostX))
                         print "too much space to right WALKING LEFT: "+str(leftMostX - rightMostX)
                         print "LEFT MOST AND RIGHT MOST POINT ARE: "
@@ -283,7 +283,7 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot, cameraName = "BOTTOM", fileNam
         maxHeadPitchAngle = 29
         currentHeadPitchAngle = 10
         
-        maxClosestPoint = 460
+        maxClosestPoint = 430
         objectSeen = False
         while not (objectSeen):
             print "KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM"
@@ -305,20 +305,20 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot, cameraName = "BOTTOM", fileNam
                     Logger.Log("contour details are")
                     Logger.Log(str(contourList))
                     #if space can be seen then adjust
-                    if (config.InitialLongerSideOfTable=="RIGHT" and contourList[0][0] > 10 and contourList[3][1] < maxClosestPoint):
+                    if (config.InitialLongerSideOfTable=="RIGHT" and contourList[0][0] > 10 and closestPnt[1] < maxClosestPoint):
                         #calculate angle to turn to correct
                         if (contourList[2][0]< 300): # correct angle if pic only seen to the right
-                            adjustAngle = 0.5
+                            adjustAngle = 0.3
                             h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy,0, 0, adjustAngle)
-                        h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy,0, -0.2, 0)
+                        h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy,0, -0.1, 0)
                         time.sleep(2)
-                    elif(config.InitialLongerSideOfTable=="LEFT" and contourList[2][0] < 630 and contourList[3][1] < maxClosestPoint):
+                    elif(config.InitialLongerSideOfTable=="LEFT" and contourList[2][0] < 630 and closestPnt[1] < maxClosestPoint):
                         if (contourList[0][0]> 300): # correct angle if pic only seen to the right
-                            adjustAngle = -0.5
+                            adjustAngle = -0.3
                             h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy,0, 0, adjustAngle)
-                        h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy,0, 0.2, 0)
+                        h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy,0, 0.1, 0)
 
-                    # if (contourList[3][1] >= maxClosestPoint):  # ( (contourList[4][1] - closestPnt[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
+                    # if (closestPnt[1] >= maxClosestPoint):  # ( (contourList[4][1] - closestPnt[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
                     if (closestPnt[1] >= maxClosestPoint):  # ( (contourList[4][1] - closestPnt[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
                         objectSeen = True 
                         Logger.Log(str(closestPnt))

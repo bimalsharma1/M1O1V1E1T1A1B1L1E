@@ -315,14 +315,14 @@ def DetectXPos(im, YPixelNumber, startIndex, stopIndex, colourToDetect = None):
 # Description: takes an image with a search range. It then finds
 # 100px to the right and 100px to the left
 # and finds the closest x axis point on that y axis
-def DetectYPos(im, startYPixelValue, rangeToSearch = 100, colourToDetect = None):
+def DetectYPos(im, rangeToSearch = 100, midXPoint = config.imageWidth/2, colourToDetect = None):
     #startYPixelValue: can use centriod figure to get mid point of table
     image = cv2.imdecode(np.fromstring(im, dtype='uint8'), cv2.IMREAD_UNCHANGED)
     lower, upper = GetColourRange(colourToDetect)
     LeftYPos= -1
     MidYPos= -1
     RightYPos= -1
-    midPoint = config.imageWidth/2 #get the mid point of image
+     #get the mid point of image
     try:
     	# find the colors within the specified boundaries and apply
     	# the mask
@@ -331,23 +331,23 @@ def DetectYPos(im, startYPixelValue, rangeToSearch = 100, colourToDetect = None)
         # 0 is black and 255 is white
         Logger.Log("Inside: Looking for y axis ranges on coloured blob")         
         for YIndex in range(config.imageHeight,0, -1):
-            leftYValue = mask[midPoint-rangeToSearch, YIndex]
-            midYValue = mask[midPoint, YIndex]
-            rightYValue = mask[midPoint+rangeToSearch, YIndex]
+            leftYValue = mask[midXPoint-rangeToSearch, YIndex]
+            midYValue = mask[midXPoint, YIndex]
+            rightYValue = mask[midXPoint+rangeToSearch, YIndex]
             print "INSIDE FIDN Y LOOP"
             # print leftYValue
             # print midYValue
             # print rightYValue
-            ####stop as soon as you find a black as you already start at the mid white of the mask    
-            if(leftYValue == 255 and LeftYPos != -1):
+            ####stop as soon as you find a white as you already start at the bottom black 
+            if(leftYValue == 255 and LeftYPos == -1):
                 Logger.Log("left value Y")
                 Logger.Log(str(YIndex-1))                     
                 LeftYPos = YIndex-1
-            if(midYValue == 255 and MidYPos != -1):
+            if(midYValue == 255 and MidYPos == -1):
                 Logger.Log("left value Y")
                 Logger.Log(str(YIndex-1))                     
                 MidYPos = YIndex-1
-            if(rightYValue == 255 and RightYPos != -1):
+            if(rightYValue == 255 and RightYPos == -1):
                 Logger.Log("left value Y")
                 Logger.Log(str(YIndex-1))                     
                 RightYPos = YIndex-1

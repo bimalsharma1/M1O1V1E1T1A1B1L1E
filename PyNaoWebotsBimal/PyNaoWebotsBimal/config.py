@@ -25,7 +25,7 @@ rightMostAlignmentLimit = 325
 
 yPointAlignmentErrorMargin = 10
 
-leftMostXAndRightMostXAlignTableErrorMargin = 20
+leftMostXAndRightMostXAlignTableErrorMargin = 5
 
 InitialLongerSideOfTable = ""
 Leader = ""   # config is updated witht he leader name

@@ -29,8 +29,8 @@ def AdjustForVCorner(InitialiseNaoRobot):
     x=0.5
     y=0.4
     turnAngle = config.maxTurnAngleForVCentre*almath.TO_RAD
-    moveRatio = 1
-    previousMoveRatio = 1
+    moveRatio = 1.0
+    previousMoveRatio = 1.0
 # y Use negative for right
 # theta Use negative for clockwise
     while not adjustedToCorner:
