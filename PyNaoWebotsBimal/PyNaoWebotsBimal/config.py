@@ -25,7 +25,10 @@ rightMostAlignmentLimit = 325
 
 yPointAlignmentErrorMargin = 10
 
-leftMostXAndRightMostXAlignTableErrorMargin = 5
+leftMostXAndRightMostXAlignTableErrorMargin = 50
+centroidLeftMostXAndRightMostXAlignTableErrorMargin = 40
+
+maxClosestPoint = 430
 
 InitialLongerSideOfTable = ""
 Leader = ""   # config is updated witht he leader name
