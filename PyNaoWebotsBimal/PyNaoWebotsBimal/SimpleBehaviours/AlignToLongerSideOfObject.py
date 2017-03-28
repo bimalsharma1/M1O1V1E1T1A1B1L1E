@@ -54,8 +54,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         #Look left and right to align to middle of table
         a.LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot)
 
-        #Align body of robot with table
-        a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)
+        
 
         #walk ahead until close enough to lift range
         a.WalkAheadUntilCloseToLift(InitialiseNaoRobot)

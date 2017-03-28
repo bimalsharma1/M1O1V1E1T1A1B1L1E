@@ -28,15 +28,15 @@ import cv2
 def AlignClosestCornerToMiddle(InitialiseNaoRobot, ErrorMargin = 10): 
     filenameTopCamera = "naoImageTopCamera"
     alignedToCentre = False
-    moveRatio = 1
-    previousRatio = 1
+    moveRatio = 1.0
+    previousRatio = 1.0
     while not alignedToCentre:
         im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
         xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
         print "inside angle align"
-        moveRatio = abs(bottomMostPoint[0] - (config.imageWidth/2))/(config.imageWidth/2)
+        moveRatio = abs(bottomMostPoint[0] - float(config.imageWidth/2))/float(config.imageWidth/2)
         if moveRatio is None or moveRatio == 0  or moveRatio > 1:
-            moveRatio = previousRatio
+            moveRatio = previousRatio/2
         previousRatio = moveRatio
         #check oin middle point in centre of field of view
         if bottomMostPoint[0] < ((config.imageWidth/2)-ErrorMargin):
@@ -138,9 +138,10 @@ def FindLongerSideOfTable(InitialiseNaoRobot):
 
 #Align body of robot with table
 def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileNameCamera = "naoImageTopCamera"):
+    correctionAngle = 0.2
     #look straight    
     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
-    moveRatio = 1
+    moveRatio = 1.0
     fileName = "TablePicToSelectLongerSide" + str(InitialiseNaoRobot.portName)
     im = ip.getImage(InitialiseNaoRobot, cameraName, fileName)
     xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(fileNameCamera + ".png", "", im)        
@@ -149,7 +150,7 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
     # h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.4)
     Aligned = False
     while not (Aligned):
-        moveRatio = abs(closestPnt[1]-config.imageHeight)/config.imageHeight
+        moveRatio = h.GetMoveRatio(closestPnt[1],config.imageHeight)
         h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, (0.4*moveRatio))
         im = ip.getImage(InitialiseNaoRobot, cameraName, fileName)
         xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(fileNameCamera + ".png", "", im)
@@ -176,6 +177,7 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot):
         #ALIGN to centre using top camera
         #aligned
         filenameTopCamera = "naoImageTopCamera"
+        filenameBottomCamera = "naoImageBottomCamera"
         aligned = False
         rightMostX = 0
         leftMostX = 0
@@ -268,6 +270,8 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot):
             else:
                 aligned = True
             time.sleep(3)
+            #Align body of robot with table
+            AlignBodyHorizontallyWithTable(InitialiseNaoRobot, "TOP", filenameBottomCamera)
 
 #walk until robot is close enough to lift table
 def WalkAheadUntilCloseToLift(InitialiseNaoRobot, cameraName = "BOTTOM", fileNameCamera = "naoImageBottomCamera"):

@@ -169,6 +169,27 @@ def WalkSpinLeft(motionProxy, Theta):
 def WalkSpinRight(motionProxy, Theta):
     motionProxy.post.moveTo(0, 0, -Theta)
 
+def GetMoveRatio(numerator = 1, denominator = None):
+    if (denominator is None):
+        denominator = numerator
+    startRatio = 1.0
+    moveRatio = 1.0
+
+    if (denominator <> 0):
+        moveRatio = ((abs(denominator) - abs(numerator)) / abs(denominator))
+    else:
+        moveRatio = startRatio
+    #if cannot calculate angle then use maximum turn angle
+    if moveRatio is None or moveRatio == 0 or moveRatio > 1:
+        moveRatio = float(startRatio)
+    # avoid having ratio that is too small
+    if (moveRatio < 0.2):
+        moveRatio = 0.2
+        print "**MOVE RATIO**"
+        print moveRatio
+    return moveRatio
+    
+
 def CommunicateReadyToLift(motionProxy):
     #Lshoulder roll goes up to 76 degrees out and LElbow roll goes inwards up tp -88 degrees
     #Rshoulder roll goes up to -76 degrees out and RElbow roll goes inwards up tp 88 degrees

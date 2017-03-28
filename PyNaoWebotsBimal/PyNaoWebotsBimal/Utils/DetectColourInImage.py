@@ -17,8 +17,8 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
     #cv2.imwrite("test1.png",im1)  
     #time.sleep(2)
     objectFound = False
-    print "width and  height  of pic"
-    print width,height
+    # print "width and  height  of pic"
+    # print width,height
 
     contourList=[0 for i in range(5)]
     contourList[4] = [width, height]
@@ -29,8 +29,8 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
 
      #colours are in RGB
     lower, upper = GetColourRange(colourToDetect)
-    print lower
-    print upper 
+    # print lower
+    # print upper 
     try:
     	# find the colors within the specified boundaries and apply
     	# the mask
@@ -39,10 +39,10 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
 
         
         try:
-            print "BOTTOM MOST POINT BY NP ARRAY"
+            # print "BOTTOM MOST POINT BY NP ARRAY"
             #print np.max(np.where(np.max(mask,axis=1)==255))
             bottomMostYPoint = np.max(np.where(np.max(mask,axis=1)==255))
-            print bottomMostYPoint
+            # print bottomMostYPoint
         except Exception as e:
             print "ERROR occurred trying to find largest contour"
             print e
@@ -56,7 +56,7 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
         thresh = 90      
         #gray = cv2.cvtColor(output,cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(output,(5,5),0) 
-        print "Gaussian blur complete"
+        # print "Gaussian blur complete"
         #blur = cv2.GaussianBlur(gray,(5,5),0)  
         edges = cv2.Canny(gray,thresh,thresh*2)  #removed gaussianblur and put gray    
         #cv2.imwrite("blur.png",blur)
@@ -67,16 +67,16 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
         #cnts = contours[0] if imutils.is_cv2() else contours[1]
         #cnt = max(cnts, key=cv2.contourArea)
        
-        print "get areas"
+        # print "get areas"
         
         # Find the index of the largest contour
         areas = [cv2.contourArea(c) for c in contours]
-        print "find largest contour"
+        # print "find largest contour"
         try:
             if (areas != []):
-                print "calc max Index"
+                # print "calc max Index"
                 max_index = np.argmax(areas)
-                print "calc cnt"
+                # print "calc cnt"
                 cnt = contours[max_index]
             else:
                 cnt = contours[0]
@@ -88,16 +88,16 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
       
         #for cnt in contours:   #just removed this loop
         moments = cv2.moments(cnt)                          # Calculate moments
-        print "calculating moments"
+        # print "calculating moments"
         if moments['m00']!=0:
             cx = int(moments['m10']/moments['m00'])         # cx = M10/M00
             cy = int(moments['m01']/moments['m00'])         # cy = M01/M00
             areaOfLargestContour = moments['m00']  
-            print "MOMENT VALUES"
-            print cx, cy, areaOfLargestContour
+            # print "MOMENT VALUES"
+            # print cx, cy, areaOfLargestContour
 
         try:
-            print "finding the bottom most point"
+            # print "finding the bottom most point"
             rect = cv2.minAreaRect(cnt)
             box =  cv2.boxPoints(rect)
             pts = np.int0(box)
@@ -148,8 +148,8 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
         #cv2.circle(output,(cx,cy),5,(0,0,255),-1)       
         print "dimensions"
         print cx, cy, objectFound, bottomMostPoint, contourList
-        print "all points"
-        print bl,br,tl,tr
+        # print "all points"
+        # print bl,br,tl,tr
         return (cx, cy, objectFound, bottomMostPoint, contourList,bl,br,tl,tr)
     except Exception as e:
         print e
