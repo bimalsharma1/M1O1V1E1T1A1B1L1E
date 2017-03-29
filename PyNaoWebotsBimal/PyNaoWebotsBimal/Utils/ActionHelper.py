@@ -40,7 +40,7 @@ def AlignClosestCornerToMiddle(InitialiseNaoRobot, ErrorMargin = 10):
         previousRatio = moveRatio
         #check oin middle point in centre of field of view
         if bottomMostPoint[0] < ((config.imageWidth/2)-ErrorMargin):
-            # h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.2*moveRatio)
+            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
             print "moving left " + str(bottomMostPoint[0])
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
@@ -50,7 +50,7 @@ def AlignClosestCornerToMiddle(InitialiseNaoRobot, ErrorMargin = 10):
             print config.leftMostAlignmentLimit
             print cornerPoints[3][0]
         elif (bottomMostPoint[0] > (config.imageWidth/2+ErrorMargin)):                
-            # h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.2*moveRatio)
+            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
             print "moving right"
@@ -151,7 +151,7 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
     Aligned = False
     while not (Aligned):
         moveRatio = h.GetMoveRatio(closestPnt[1],config.imageHeight)
-        h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, (0.4*moveRatio))
+        # h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, (0.4*moveRatio))
         im = ip.getImage(InitialiseNaoRobot, cameraName, fileName)
         xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(fileNameCamera + ".png", "", im)
         print "TURNING TO ALIGN TO TABLE USING TOP CAM"
@@ -165,12 +165,13 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
             h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
         elif(LeftYPos <= RightYPos and ((RightYPos-LeftYPos)>config.yPointAlignmentErrorMargin)):
             h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
-        #align to centroid
-        if (xCntrPos<(config.imageWidth/2)):
-            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.4*moveRatio)
-        else:
-            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.4*moveRatio)
+        # #align to centroid
+        # if (xCntrPos<(config.imageWidth/2)):
+        #     h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.4*moveRatio)
+        # else:
+        #     h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.4*moveRatio)
         if (abs(LeftYPos-RightYPos) <= config.yPointAlignmentErrorMargin):
+            print "COMPLETED ** AlignBodyHorizontallyWithTable"
             Aligned = True
 
 def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot):

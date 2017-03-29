@@ -315,7 +315,7 @@ def DetectXPos(im, YPixelNumber, startIndex, stopIndex, colourToDetect = None):
 # Description: takes an image with a search range. It then finds
 # 100px to the right and 100px to the left
 # and finds the closest x axis point on that y axis
-def DetectYPos(im, rangeToSearch = 100, midXPoint = config.imageWidth/2, colourToDetect = None):
+def DetectYPos(im, rangeToSearch = 100, midXPoint = float(config.imageWidth)/2.0, colourToDetect = None):
     #startYPixelValue: can use centriod figure to get mid point of table
     image = cv2.imdecode(np.fromstring(im, dtype='uint8'), cv2.IMREAD_UNCHANGED)
     lower, upper = GetColourRange(colourToDetect)
@@ -329,12 +329,13 @@ def DetectYPos(im, rangeToSearch = 100, midXPoint = config.imageWidth/2, colourT
         mask = cv2.inRange(image, lower, upper)   #mask has black and white image
         Logger.Log("mask sizes")
         # 0 is black and 255 is white
-        Logger.Log("Inside: Looking for y axis ranges on coloured blob")         
+        Logger.Log("Inside: Looking for y axis ranges on coloured blob")
+        print "Inside: Looking for y axis ranges on coloured blob"         
         for YIndex in range(config.imageHeight,0, -1):
-            leftYValue = mask[midXPoint-rangeToSearch, YIndex]
+            leftYValue = mask[midXPoint - rangeToSearch, YIndex]
             midYValue = mask[midXPoint, YIndex]
-            rightYValue = mask[midXPoint+rangeToSearch, YIndex]
-            print "INSIDE FIDN Y LOOP"
+            rightYValue = mask[midXPoint + rangeToSearch, YIndex]
+            
             # print leftYValue
             # print midYValue
             # print rightYValue

@@ -27,7 +27,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
     diffBtwnLMostParallelXAndBotMostX = 0
     filenameTopCamera = "naoImageTopCamera"
     x=0.5
-    y=0.4
+    y=0.2
     previousMoveRatio = 1.0
     turnAngle = config.maxTurnAngleForVCentre*almath.TO_RAD
     

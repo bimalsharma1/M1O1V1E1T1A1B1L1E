@@ -36,6 +36,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         hypotLeft, hypotRight = a.FindLongerSideOfTable(InitialiseNaoRobot)
         if (hypotLeft > hypotRight): # if diff is less than 50 px then it is not accurate
             leftLonger = True
+            config.InitialLongerSideOfTable = "LEFT"
             print "turning angle"
             print math.radians(60)
             h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(60)) #+ve 60 degrees turn
@@ -44,15 +45,36 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, Y) #+ve 60 degrees turn
         else:
             rightLonger = True
+            config.InitialLongerSideOfTable = "LEFT"
             h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(60)) #-ve 60 degrees turn 
             h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,Y) #-ve 60 degrees turn 
-          
- 
-        #Align body of robot with table
-        # a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"TOP", filenameTopCamera)
+        
+        adjustedToMiddle = False
+        while not adjustedToMiddle:
+            im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
+            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)   
+
+            if (leftLonger and cornerPoints[2][0] > (float(config.imageWidth)-5)):
+                h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(5))
+                h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, float(Y)/2.0 )
+                if (cornerPoints[2][0] < 420):
+                    #walk ahead to get close to table
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+            elif (rightLonger and cornerPoints[0][0] > 5):
+                h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(5))
+                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, float(Y)/2.0 )
+                if (cornerPoints[2][0] < 420):
+                    #walk ahead to get close to table
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+            else:
+                adjustedToMiddle = True
+        
 
         #Look left and right to align to middle of table
         a.LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot)
+
+        #Align body of robot with table
+        a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"TOP", filenameTopCamera)
 
         
 
@@ -60,4 +82,4 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         a.WalkAheadUntilCloseToLift(InitialiseNaoRobot)
 
         #Align body of robot with table
-        a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)
+        # a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)

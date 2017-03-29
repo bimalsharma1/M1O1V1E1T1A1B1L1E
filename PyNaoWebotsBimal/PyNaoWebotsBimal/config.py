@@ -18,12 +18,12 @@ imageWidth = 640
 imageHeight = 480
 
 maxTurnAngleForVCentre = 25
-acceptableErrorForVCentre = 15
+acceptableErrorForVCentre = 10
 
 leftMostAlignmentLimit = 315
 rightMostAlignmentLimit = 325
 
-yPointAlignmentErrorMargin = 10
+yPointAlignmentErrorMargin = 5
 
 leftMostXAndRightMostXAlignTableErrorMargin = 50
 centroidLeftMostXAndRightMostXAlignTableErrorMargin = 40
