@@ -327,14 +327,18 @@ def DetectYPos(im, rangeToSearch = 100, midXPoint = float(config.imageWidth)/2.0
     	# find the colors within the specified boundaries and apply
     	# the mask
         mask = cv2.inRange(image, lower, upper)   #mask has black and white image
+        # cv2.imshow("croppedRightmost11", mask)
+        # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
         Logger.Log("mask sizes")
         # 0 is black and 255 is white
         Logger.Log("Inside: Looking for y axis ranges on coloured blob")
-        print "Inside: Looking for y axis ranges on coloured blob"         
-        for YIndex in range(config.imageHeight,0, -1):
-            leftYValue = mask[midXPoint - rangeToSearch, YIndex]
-            midYValue = mask[midXPoint, YIndex]
-            rightYValue = mask[midXPoint + rangeToSearch, YIndex]
+        print "Inside: Looking for y axis ranges on coloured blob"
+        #can only have range from 0 - 479 in this case so need to minus 1
+        for YIndex in range(config.imageHeight-1,0, -1):
+            leftYValue = mask[YIndex, midXPoint - rangeToSearch]
+            midYValue = mask[YIndex, midXPoint]
+            rightYValue = mask[YIndex, midXPoint + rangeToSearch]
             
             # print leftYValue
             # print midYValue

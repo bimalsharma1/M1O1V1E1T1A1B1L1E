@@ -34,19 +34,25 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         moveRatio = 1
         correctionAngle = 0.3
         hypotLeft, hypotRight = a.FindLongerSideOfTable(InitialiseNaoRobot)
+
+        #walk ahead until close enough to lift range
+        a.WalkAheadUntilVeryCloseToCorner(InitialiseNaoRobot, "TOP", filenameTopCamera)
+
         if (hypotLeft > hypotRight): # if diff is less than 50 px then it is not accurate
             leftLonger = True
             config.InitialLongerSideOfTable = "LEFT"
             print "turning angle"
             print math.radians(60)
             h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(60)) #+ve 60 degrees turn
+            time.sleep(4)
             print "WALK LEFT DISTANCE"
             print Y
             h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, Y) #+ve 60 degrees turn
         else:
             rightLonger = True
-            config.InitialLongerSideOfTable = "LEFT"
+            config.InitialLongerSideOfTable = "RIGHT"
             h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(60)) #-ve 60 degrees turn 
+            time.sleep(4)
             h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,Y) #-ve 60 degrees turn 
         
         adjustedToMiddle = False
@@ -68,6 +74,8 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
                     h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
             else:
                 adjustedToMiddle = True
+                #this walk will be used for the object to be seen by bottom cam
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.4)
         
 
         #Look left and right to align to middle of table

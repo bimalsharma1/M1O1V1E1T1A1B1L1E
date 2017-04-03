@@ -46,6 +46,7 @@ from multiprocessing import Process, Value, Array
 from SimpleBehaviours import AlignToLongerSideOfObject as a
 
 def mainMenu():
+    Logger.RenamePreviousFile()
     try:
         print "Select between the tasks below"
         print "Enter 0 for NEW two robot task to move a heavy table"

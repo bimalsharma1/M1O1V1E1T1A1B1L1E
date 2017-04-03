@@ -28,9 +28,12 @@ yPointAlignmentErrorMargin = 5
 leftMostXAndRightMostXAlignTableErrorMargin = 50
 centroidLeftMostXAndRightMostXAlignTableErrorMargin = 40
 
-maxClosestPoint = 430
+maxClosestPoint = 410
+maxClosestPointToCorner = 430
 
 InitialLongerSideOfTable = ""
 Leader = ""   # config is updated witht he leader name
+
+loggingId=""
 
 WirelessMessages = [] #storage for simulated wireless

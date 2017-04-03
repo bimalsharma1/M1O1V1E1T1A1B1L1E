@@ -37,6 +37,7 @@ class InitialiseNaoRobot:
         InitialiseNaoRobot.bottomVideoClient = camProxy.subscribeCamera("python_client",vision_definitions.kBottomCamera , config.resolution, config.colorSpace, 5)
         InitialiseNaoRobot.portName = config.ports[port]
         InitialiseNaoRobot.ipAddress = config.ipAddress
+        config.loggingId = str(config.ipAddress) + "-" + str(config.ports[port])
         isLeader = False
         ListOfNaosDetected = []
         ReadyToLiftMessages = []
