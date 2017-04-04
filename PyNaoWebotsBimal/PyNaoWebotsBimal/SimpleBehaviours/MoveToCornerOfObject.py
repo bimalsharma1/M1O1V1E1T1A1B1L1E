@@ -41,7 +41,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
 
     Logger.Log("ALign image to centre")
     print "ALign image to centre"
-    a.AlignClosestCornerToMiddle(InitialiseNaoRobot, 25)
+    
 
     print "start moving robot so that bottom most point is in centre of screen"
     objectInCentreScreen = False
@@ -51,6 +51,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
         #use top camera only if bottom camera cannot see ...
         imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
         xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,percentOfImageCoveredWithContour,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",imT)   
+        a.AlignClosestCornerToMiddle(InitialiseNaoRobot, 25)
         print "bottommost point"
         print bottomMostPoint[1]
         Logger.Log("bottommost point: "+ str(bottomMostPoint[1]))
@@ -101,7 +102,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
             #     h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, turnAngle)
             a.AlignClosestCornerToMiddle(InitialiseNaoRobot, 50)
             if (bottomMostPoint[1] > 300):
-                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, float(X)/2.0)
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.2)
             else:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, X)
             # h.WalkToPosition(InitialiseNaoRobot.motionProxy, X, 0, turnAngle)

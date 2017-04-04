@@ -84,7 +84,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                     print "checking from bottom camera"
                     Logger.Log("bottom cam")
                     print xCntrPos, yCntrPos, objFoundBtmCam,botMostPnt
-                    h.WalkToPosition(motionProxy, 0.0, 0, math.radians(angleOfHead))
+                    h.WalkToPosition(motionProxy, 0.0, 0, math.radians(angleOfHead)*2)
                     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
                     time.sleep(2)
                     return (xCntrPos, yCntrPos, headLookingPosition, ObjectFound, botMostPnt)
@@ -106,7 +106,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                     print "top camera values"
                     print xCntrPos, yCntrPos, objFoundBtmCam
                     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
-                    h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead)*1.5)
+                    h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead)*2)
                     #keep turning until centre of table is mid way
                     imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
                     xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT) 

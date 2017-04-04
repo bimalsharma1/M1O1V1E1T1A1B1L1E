@@ -17,7 +17,7 @@ colorSpace = 11   # RGB
 imageWidth = 640
 imageHeight = 480
 
-maxTurnAngleForVCentre = 25
+maxTurnAngleForVCentre = 20
 acceptableErrorForVCentre = 10
 
 leftMostAlignmentLimit = 315
@@ -26,9 +26,9 @@ rightMostAlignmentLimit = 325
 yPointAlignmentErrorMargin = 5
 
 leftMostXAndRightMostXAlignTableErrorMargin = 50
-centroidLeftMostXAndRightMostXAlignTableErrorMargin = 40
+centroidLeftMostXAndRightMostXAlignTableErrorMargin = 20
 
-maxClosestPoint = 410
+maxClosestPoint = 480
 maxClosestPointToCorner = 430
 
 InitialLongerSideOfTable = ""

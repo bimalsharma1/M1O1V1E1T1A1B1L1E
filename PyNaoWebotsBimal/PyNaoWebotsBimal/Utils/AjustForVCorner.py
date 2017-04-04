@@ -7,6 +7,7 @@ import time
 import almath # python's wrapping of almath
 from Utils import ImageProcessing as ip
 from Utils import InitialiseNaoRobot
+from Utils import ActionHelper as a
 
 def AdjustForVCorner(InitialiseNaoRobot): 
     Logger.Log("Adjust to V corner")
@@ -26,7 +27,7 @@ def AdjustForVCorner(InitialiseNaoRobot):
     diffBtwnBotMostXAndRMostX = 0
     diffBtwnLMostParallelXAndBotMostX = 0
     filenameTopCamera = "naoImageTopCamera"
-    x=0.5
+    x=0.4
     y=0.2
     previousMoveRatio = 1.0
     turnAngle = config.maxTurnAngleForVCentre*almath.TO_RAD
@@ -34,8 +35,11 @@ def AdjustForVCorner(InitialiseNaoRobot):
 # y Use negative for right
 # theta Use negative for clockwise
     while not adjustedToCorner:
+        a.AlignClosestCornerToMiddle(InitialiseNaoRobot,50)
         im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-        xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)   
+        xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)
+        if (cornerPoints[3][1] > 390):
+            h.WalkBackUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
 
         if(cornerPoints[0][1] >= cornerPoints[2][1]):    
             #if leftMostY >= rightMostY table is longer //
@@ -54,13 +58,15 @@ def AdjustForVCorner(InitialiseNaoRobot):
             Logger.Log(str(diffOfXPositions))
             if (diffOfXPositions <= acceptableError):
                 adjustedToCorner = True
-                Logger.Log("Adjusted to corner")
+                Logger.Log("Adjusted to V corner")
                 # h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, x)
                 return True
             if (diffBtwnBotMostXAndLMostX > diffBtwnRMostParallelXAndBotMostX):
                 #turm left
-                moveRatio = h.GetMoveRatio(diffBtwnRMostParallelXAndBotMostX,diffBtwnBotMostXAndLMostX)        
-                previousMoveRatio = moveRatio
+                moveRatio = h.GetMoveRatio(diffBtwnRMostParallelXAndBotMostX,diffBtwnBotMostXAndLMostX)
+                if moveRatio is None or moveRatio == 0  or moveRatio > 1:
+                    moveRatio = float(previousRatio)/2      
+                # previousMoveRatio = moveRatio
                 h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*turnAngle) #
                 print "turning angle left left most y > right most y"
                 # time.sleep(4)
@@ -72,7 +78,9 @@ def AdjustForVCorner(InitialiseNaoRobot):
             else:
                 #turm right
                 moveRatio = h.GetMoveRatio(diffBtwnBotMostXAndLMostX,diffBtwnRMostParallelXAndBotMostX)
-                previousMoveRatio = moveRatio
+                if moveRatio is None or moveRatio == 0  or moveRatio > 1:
+                    moveRatio = float(previousRatio)/2
+                # previousMoveRatio = moveRatio
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*turnAngle) #
                 print "turning angle right left most y > right most y"
                 # time.sleep(4)
@@ -101,7 +109,9 @@ def AdjustForVCorner(InitialiseNaoRobot):
             if (diffBtwnLMostParallelXAndBotMostX > diffBtwnBotMostXAndRMostX):
                 #turn left
                 moveRatio = h.GetMoveRatio(diffBtwnBotMostXAndRMostX,diffBtwnLMostParallelXAndBotMostX)
-                previousMoveRatio = moveRatio
+                if moveRatio is None or moveRatio == 0  or moveRatio > 1:
+                    moveRatio = float(previousRatio)/2
+                # previousMoveRatio = moveRatio
                 h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*turnAngle) #
                 print "turning angle left - right most y > left most y"
                 # time.sleep(4)
@@ -113,7 +123,9 @@ def AdjustForVCorner(InitialiseNaoRobot):
                 #turm right
                 print "turning angle right - right most y > left most y"
                 moveRatio = h.GetMoveRatio(diffBtwnLMostParallelXAndBotMostX,diffBtwnBotMostXAndRMostX)
-                previousMoveRatio = moveRatio
+                if moveRatio is None or moveRatio == 0  or moveRatio > 1:
+                    moveRatio = float(previousRatio)/2
+                # previousMoveRatio = moveRatio
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, moveRatio*turnAngle) #
                 # time.sleep(4)
                 h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, y)

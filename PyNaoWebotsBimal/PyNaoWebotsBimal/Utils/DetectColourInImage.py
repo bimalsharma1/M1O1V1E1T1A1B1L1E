@@ -150,6 +150,11 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
         print cx, cy, objectFound, bottomMostPoint, contourList
         # print "all points"
         # print bl,br,tl,tr
+        # Logger.Log("Extreme point in order bl br tl tr")
+        # Logger.Log(str(bl))
+        # Logger.Log(str(br))
+        # Logger.Log(str(tl))
+        # Logger.Log(str(tr))
         return (cx, cy, objectFound, bottomMostPoint, contourList,bl,br,tl,tr)
     except Exception as e:
         print e
@@ -315,7 +320,7 @@ def DetectXPos(im, YPixelNumber, startIndex, stopIndex, colourToDetect = None):
 # Description: takes an image with a search range. It then finds
 # 100px to the right and 100px to the left
 # and finds the closest x axis point on that y axis
-def DetectYPos(im, rangeToSearch = 100, midXPoint = float(config.imageWidth)/2.0, colourToDetect = None):
+def DetectYPos(im, rangeToSearch = 5, midXPoint = float(config.imageWidth)/2.0, colourToDetect = None):
     #startYPixelValue: can use centriod figure to get mid point of table
     image = cv2.imdecode(np.fromstring(im, dtype='uint8'), cv2.IMREAD_UNCHANGED)
     lower, upper = GetColourRange(colourToDetect)
