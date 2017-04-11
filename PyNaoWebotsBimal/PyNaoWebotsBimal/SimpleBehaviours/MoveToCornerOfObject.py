@@ -58,7 +58,9 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
 
         if (bottomMostPoint[1] > 370): #was 430
             Logger.Log("starting at corver to ajusr to v corner")
-            objectInCentreScreen = v.AdjustForVCorner(InitialiseNaoRobot)
+            # objectInCentreScreen = v.AdjustForVCorner(InitialiseNaoRobot)
+            objectInCentreScreen = v.AdjustForVCornerByRange(InitialiseNaoRobot)
+            
             # h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, X)
             Logger.Log("SETTING BOTTOM POINT TO CENTRE")
             print "SETTING BOTTOM POINT TO CENTRE"
@@ -106,7 +108,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
             else:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, X)
             # h.WalkToPosition(InitialiseNaoRobot.motionProxy, X, 0, turnAngle)
-            print "XXXXXXXXXXXXXXXXXXXXXXXXX WALKING AHEAD XXXXXXXXXXXXXXXXXXXXXXX"
+            print "XXXXXXXXXXX WALKING AHEAD XXXXXXXX"
             print X
             
             # h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, X)

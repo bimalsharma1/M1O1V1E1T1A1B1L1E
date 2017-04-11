@@ -34,6 +34,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         moveRatio = 1
         correctionAngle = 0.3
         hypotLeft, hypotRight = a.FindLongerSideOfTable(InitialiseNaoRobot)
+        a.FindLongerSideOfTableBySides(InitialiseNaoRobot)
 
         #walk ahead until close enough to lift range
         a.WalkAheadUntilVeryCloseToCorner(InitialiseNaoRobot, "TOP", filenameTopCamera)
@@ -43,40 +44,45 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             config.InitialLongerSideOfTable = "LEFT"
             print "turning angle"
             print math.radians(60)
-            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(60)) #+ve 60 degrees turn
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75)) #+ve 75 degrees turn
             time.sleep(4)
             print "WALK LEFT DISTANCE"
             print Y
-            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, Y) #+ve 60 degrees turn
+            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, Y) #+ve 75 degrees turn
         else:
             rightLonger = True
             config.InitialLongerSideOfTable = "RIGHT"
-            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(60)) #-ve 60 degrees turn 
+            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75)) #-ve 75 degrees turn 
             time.sleep(4)
-            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,Y) #-ve 60 degrees turn 
+            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,Y) #-ve 75 degrees turn 
         
         adjustedToMiddle = False
         while not adjustedToMiddle:
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)   
 
-            if (leftLonger and cornerPoints[2][0] > (float(config.imageWidth)-5)):
-                h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(5))
+            if (leftLonger and cornerPoints[2][0] < (float(config.imageWidth)-1)):
+                h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(10))
                 h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, float(Y)/2.0 )
-                if (cornerPoints[2][0] < 420):
-                    #walk ahead to get close to table
-                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
-            elif (rightLonger and cornerPoints[0][0] > 5):
-                h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(5))
-                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, float(Y)/2.0 )
-                if (cornerPoints[2][0] < 420):
+                if (cornerPoints[3][0] < 450):
                     #walk ahead to get close to table
                     h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
             else:
                 adjustedToMiddle = True
                 #this walk will be used for the object to be seen by bottom cam
-                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.4)
-        
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+                break
+            if (rightLonger and cornerPoints[0][0] > 1):
+                h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(10))
+                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, float(Y)/2.0 )
+                if (cornerPoints[3][0] < 450):
+                    #walk ahead to get close to table
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+            else:
+                adjustedToMiddle = True
+                #this walk will be used for the object to be seen by bottom cam
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+                break
 
         #Look left and right to align to middle of table
         # a.LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot)
