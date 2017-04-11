@@ -89,7 +89,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
 
             moveRatio = h.GetMoveRatio(bottomMostPoint[1], config.imageHeight)    #(480.0-bottomMostPoint[1])/float(480.0)
             if (moveRatio < 0.1 or moveRatio is None or moveRatio>1):
-                moveRatio = 0.4
+                moveRatio = 0.2
             X = (moveRatio * X)
             if (X < 0.2):
                 X = 0.2
@@ -104,7 +104,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
             #     h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, turnAngle)
             a.AlignClosestCornerToMiddle(InitialiseNaoRobot, 50)
             if (bottomMostPoint[1] > 300):
-                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.2)
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.15)
             else:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, X)
             # h.WalkToPosition(InitialiseNaoRobot.motionProxy, X, 0, turnAngle)

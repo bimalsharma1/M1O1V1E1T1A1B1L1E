@@ -30,7 +30,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         names = "HeadYaw"
         leftLonger = False
         rightLonger = False
-        Y = 1.5
+        Y = 2
         moveRatio = 1
         correctionAngle = 0.3
         hypotLeft, hypotRight = a.FindLongerSideOfTable(InitialiseNaoRobot)
@@ -67,18 +67,13 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
                 if (cornerPoints[3][0] < 450):
                     #walk ahead to get close to table
                     h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
-            else:
-                adjustedToMiddle = True
-                #this walk will be used for the object to be seen by bottom cam
-                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
-                break
-            if (rightLonger and cornerPoints[0][0] > 1):
+            elif (rightLonger and cornerPoints[0][0] > 1):
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(10))
                 h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, float(Y)/2.0 )
                 if (cornerPoints[3][0] < 450):
                     #walk ahead to get close to table
                     h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
-            else:
+            elif((rightLonger and cornerPoints[0][0] <= 1) or (leftLonger and cornerPoints[2][0] >= (float(config.imageWidth)-2))):
                 adjustedToMiddle = True
                 #this walk will be used for the object to be seen by bottom cam
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
