@@ -95,6 +95,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                     # imT = vision_getandsaveimage.showNaoImageTopCam(config.ipAddress, config.ports[portName], filenameTopCamera)
                     imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
                     xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT) 
+                    # h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead))
                     print "top cam"
                     Logger.Log("top cam")
                     time.sleep(2)       
@@ -110,7 +111,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                     #keep turning until centre of table is mid way
                     imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
                     xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT) 
-                    while(xCntrPos < (config.imageWidth/2)):
+                    while(xCntrPos < float(config.imageWidth)/2.00):
                         h.WalkToPositionWaitUntilWalkFinished(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead))#20 degrees
                         imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
                         xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT) 

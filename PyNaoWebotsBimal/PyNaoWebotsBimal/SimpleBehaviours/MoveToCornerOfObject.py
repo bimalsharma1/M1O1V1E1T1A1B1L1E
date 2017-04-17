@@ -58,6 +58,12 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
 
         if (bottomMostPoint[1] > 370): #was 430
             Logger.Log("starting at corver to ajusr to v corner")
+            
+            names      = [ "HeadPitch"]
+            angleLists = [29.5*almath.TO_RAD]
+            timeLists  = [1.2]
+            isAbsolute = True
+            InitialiseNaoRobot.motionProxy.angleInterpolation(names, angleLists, timeLists, isAbsolute)
             # objectInCentreScreen = v.AdjustForVCorner(InitialiseNaoRobot)
             objectInCentreScreen = v.AdjustForVCornerByRange(InitialiseNaoRobot)
             

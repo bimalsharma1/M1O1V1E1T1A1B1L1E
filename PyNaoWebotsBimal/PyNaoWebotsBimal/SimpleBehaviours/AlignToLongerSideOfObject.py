@@ -49,31 +49,44 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             print "WALK LEFT DISTANCE"
             print Y
             h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, Y) #+ve 75 degrees turn
+
+            #adjust and move again
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(20)) #+ve 75 degrees turn
+            time.sleep(4)
+            print "WALK LEFT DISTANCE"
+            print Y
+            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, float(Y)/2.0) #+ve 75 degrees turn
         else:
             rightLonger = True
             config.InitialLongerSideOfTable = "RIGHT"
             h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75)) #-ve 75 degrees turn 
             time.sleep(4)
             h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,Y) #-ve 75 degrees turn 
+            #adjustand move again
+            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(20)) #-ve 75 degrees turn 
+            time.sleep(4)
+            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,float(Y)/2.0) #-ve 75 degrees turn 
         
         adjustedToMiddle = False
         while not adjustedToMiddle:
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)   
 
-            if (leftLonger and cornerPoints[2][0] < (float(config.imageWidth)-1)):
-                h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(10))
-                h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, float(Y)/2.0 )
-                if (cornerPoints[3][0] < 450):
-                    #walk ahead to get close to table
-                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
-            elif (rightLonger and cornerPoints[0][0] > 1):
+            if (leftLonger and cornerPoints[2][0] < (float(config.imageWidth)-10)):
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(10))
-                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, float(Y)/2.0 )
+                h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, Y)
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.05)
                 if (cornerPoints[3][0] < 450):
                     #walk ahead to get close to table
                     h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
-            elif((rightLonger and cornerPoints[0][0] <= 1) or (leftLonger and cornerPoints[2][0] >= (float(config.imageWidth)-2))):
+            if (rightLonger and cornerPoints[0][0] > 10):
+                h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(10))
+                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, Y)
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.05)
+                if (cornerPoints[3][0] < 450):
+                    #walk ahead to get close to table
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+            if((rightLonger and cornerPoints[0][0] <= 10) or (leftLonger and cornerPoints[2][0] >= (float(config.imageWidth)-10))):
                 adjustedToMiddle = True
                 #this walk will be used for the object to be seen by bottom cam
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
