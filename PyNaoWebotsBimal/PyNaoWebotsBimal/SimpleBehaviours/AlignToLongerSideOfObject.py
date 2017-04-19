@@ -30,18 +30,19 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         names = "HeadYaw"
         leftLonger = False
         rightLonger = False
+        maxHeadPitchAngle = 29
         Y = 2
         moveRatio = 1
         correctionAngle = 0.3
-        hypotLeft, hypotRight = a.FindLongerSideOfTable(InitialiseNaoRobot)
+        # hypotLeft, hypotRight = a.FindLongerSideOfTable(InitialiseNaoRobot)
         a.FindLongerSideOfTableBySides(InitialiseNaoRobot)
 
         #walk ahead until close enough to lift range
         a.WalkAheadUntilVeryCloseToCorner(InitialiseNaoRobot, "TOP", filenameTopCamera)
 
-        if (hypotLeft > hypotRight): # if diff is less than 50 px then it is not accurate
+        if (config.InitialLongerSideOfTable == "LEFT"):#hypotLeft > hypotRight): # if diff is less than 50 px then it is not accurate
             leftLonger = True
-            config.InitialLongerSideOfTable = "LEFT"
+            # config.InitialLongerSideOfTable = "LEFT"
             print "turning angle"
             print math.radians(60)
             h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75)) #+ve 75 degrees turn
@@ -51,22 +52,23 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, Y) #+ve 75 degrees turn
 
             #adjust and move again
-            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(20)) #+ve 75 degrees turn
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(40)) #+ve 75 degrees turn
             time.sleep(4)
             print "WALK LEFT DISTANCE"
             print Y
-            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, float(Y)/2.0) #+ve 75 degrees turn
+            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 1) #+ve 75 degrees turn
         else:
             rightLonger = True
-            config.InitialLongerSideOfTable = "RIGHT"
+            # config.InitialLongerSideOfTable = "RIGHT"
             h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75)) #-ve 75 degrees turn 
             time.sleep(4)
             h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,Y) #-ve 75 degrees turn 
             #adjustand move again
-            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(20)) #-ve 75 degrees turn 
+            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(40)) #-ve 75 degrees turn 
             time.sleep(4)
-            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,float(Y)/2.0) #-ve 75 degrees turn 
+            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,1) #-ve 75 degrees turn 
         
+        h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(maxHeadPitchAngle))
         adjustedToMiddle = False
         while not adjustedToMiddle:
             im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
