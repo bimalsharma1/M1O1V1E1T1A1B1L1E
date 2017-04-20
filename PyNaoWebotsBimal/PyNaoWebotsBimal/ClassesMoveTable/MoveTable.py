@@ -18,6 +18,8 @@ class MoveTable:
         liftTable = LiftTable.LiftTable()
         liftTable.LiftTable(InitialiseNaoRobot.motionProxy)
 
+        if(InitialiseNaoRobot.isLeader):#to make both robots walk on the same side
+            Y = -1 * Y
         print "taking small step sideways"
         smallStepSideways = SmallStepSideways.SmallStepSideways()
         smallStepSideways.SmallStepSideways(InitialiseNaoRobot.motionProxy, X, Y, Theta)

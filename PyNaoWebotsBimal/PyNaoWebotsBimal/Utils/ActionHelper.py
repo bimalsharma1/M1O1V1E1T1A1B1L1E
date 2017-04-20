@@ -407,26 +407,13 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot, cameraName = "BOTTOM", fileNam
                         h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
                     elif(config.InitialLongerSideOfTable=="LEFT"):
                         h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,adjustAngle)
-                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.4)
                 else:
                     Logger.Log("Longer side is ")
                     Logger.Log(str(config.InitialLongerSideOfTable))
                     Logger.Log("contour details are")
                     Logger.Log(str(contourList))
                     
-                    #spin if angle is too far to the left or right
-                    adjustAngle = 0.5
-                    if (contourList[0][0] >= (float(config.imageWidth)/2.0)):                     
-                        h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
-                    if (contourList[2][0] <= (float(config.imageWidth)/2.0)):
-                        h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
-                    if (contourList[0][0] >= 5):                     
-                        h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
-                    if (contourList[2][0] <= (float(config.imageWidth)-5.0)):
-                        h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
-
-
-                    AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM", fileNameCamera)
                     # if (closestPnt[1] >= config.maxClosestPoint):  # ( (contourList[4][1] - closestPnt[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
                     if (closestPnt[1] >= config.maxClosestPoint or contourList[3][1] >= config.maxClosestPoint or contourList[0][1] >= config.maxClosestPoint or contourList[2][1] >= config.maxClosestPoint):  # ( (contourList[4][1] - closestPnt[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
                         objectSeen = True
@@ -460,7 +447,20 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot, cameraName = "BOTTOM", fileNam
                             h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,XValueToWalk) #-ve 45 degrees turn Y/float(8.0)
                         print "bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1])
                         Logger.Log("bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1]))
+                    #spin if angle is too far to the left or right
+                    adjustAngle = 0.5
+                    if (contourList[0][0] >= (float(config.imageWidth)/2.0)):                     
+                        h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
+                    if (contourList[2][0] <= (float(config.imageWidth)/2.0)):
+                        h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
+                    if (contourList[0][0] >= 5):                     
+                        h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
+                    if (contourList[2][0] <= (float(config.imageWidth)-5.0)):
+                        h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
 
+
+                    AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM", fileNameCamera)
+                    
             except Exception as e:
                 print "ERROR so walking ahead"
                 print e

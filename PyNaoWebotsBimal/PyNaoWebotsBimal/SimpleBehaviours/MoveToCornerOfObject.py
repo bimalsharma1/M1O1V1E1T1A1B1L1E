@@ -56,9 +56,8 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
         print bottomMostPoint[1]
         Logger.Log("bottommost point: "+ str(bottomMostPoint[1]))
 
-        if (bottomMostPoint[1] > 370): #was 430
+        if (bottomMostPoint[1] > 360): #was 430
             Logger.Log("starting at corver to ajusr to v corner")
-            
             names      = [ "HeadPitch"]
             angleLists = [29.5*almath.TO_RAD]
             timeLists  = [1.2]
