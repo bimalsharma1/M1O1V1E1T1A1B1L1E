@@ -111,17 +111,17 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
 
             #the code below replaces the code above to remove depency on bottommost point on drawing a rectangle
             Logger.Log("PRINTING BOTTOMMOST POINTS BELOW:::::")
-            Logger.Log(str(tuple(cnt[cnt[:,:,1].argmax()][0]) ))
-            Logger.Log(str(bottomMostYPoint))
+            # Logger.Log(str(tuple(cnt[cnt[:,:,1].argmax()][0]) ))
+            # Logger.Log(str(bottomMostYPoint))
             bottomMostPoint = tuple(cnt[cnt[:,:,1].argmax()][0])   # removed this as we now get bottom most point directly from the mask to be more accurate
             if (bottomMostYPoint > 0):
                 try:
                     lst = list(bottomMostPoint) #convert tuple to list as tuples are immutable
                     Logger.Log(str(lst))
                     lst[1] = bottomMostYPoint  #assign value
-                    Logger.Log(str(lst[1]))
+                    # Logger.Log(str(lst[1]))
                     bottomMostPoint = tuple(lst)
-                    Logger.Log(str(bottomMostPoint))
+                    # Logger.Log(str(bottomMostPoint))
                 except Exception as e:
                     Logger.Log(str(e))
             contourList[0] = tuple(cnt[cnt[:,:,0].argmin()][0])   #leftmost

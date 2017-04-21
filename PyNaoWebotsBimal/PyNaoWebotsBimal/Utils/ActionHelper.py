@@ -404,9 +404,9 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot, cameraName = "BOTTOM", fileNam
                     Logger.Log("countour list is empty")
                     adjustAngle = 0.5
                     if (config.InitialLongerSideOfTable=="RIGHT"):
-                        h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
+                        h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
                     elif(config.InitialLongerSideOfTable=="LEFT"):
-                        h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,adjustAngle)
+                        h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy,adjustAngle)
                     h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.4)
                 else:
                     Logger.Log("Longer side is ")
