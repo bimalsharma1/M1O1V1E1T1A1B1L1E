@@ -172,11 +172,12 @@ def WalkAheadUntilVeryCloseToCorner(InitialiseNaoRobot, cameraName = "BOTTOM", f
 
         #just added this code
         print "move head down"
+        headDownCounter = 0
         maxHeadPitchAngle = 29
-        currentHeadPitchAngle = 10
+        currentHeadPitchAngle = 15
         lastCornerPosition = 0
         
-        h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(maxHeadPitchAngle))
+        h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(currentHeadPitchAngle))
         
         objectSeen = False
         while not (objectSeen):
@@ -190,18 +191,19 @@ def WalkAheadUntilVeryCloseToCorner(InitialiseNaoRobot, cameraName = "BOTTOM", f
                 if not contourList:
                     print "CANNOT see object from  cam so walk ahead"
                     Logger.Log("countour list is empty")
-                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
-                    if (lastCornerPosition) > float(config.imageWidth)/2.0:
-                        h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy,0.78) #spin 45 degrees
-                    else:
-                        h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.78) #spin 45 degrees
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+                    # if (lastCornerPosition) > float(config.imageWidth)/2.0:
+                    #     h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy,0.78) #spin 45 degrees
+                    # else:
+                    #     h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.78) #spin 45 degrees
                 else:
                     Logger.Log("contour details are")
                     Logger.Log(str(contourList))
                     lastCornerPosition = contourList[3][1]
                     if (closestPnt[1] >= float(config.imageHeight)/2.0):  # ( (contourList[4][1] - closestPnt[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
                         objectSeen = True 
-                        h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+                        AlignClosestCornerToMiddle(InitialiseNaoRobot,50, cameraName)
+                        # h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.05)
                         Logger.Log(str(closestPnt))
                         Logger.Log("height of pic: "+str(contourList[4][1]))
                         print "height of pic: "+str(contourList[4][1])
@@ -216,7 +218,10 @@ def WalkAheadUntilVeryCloseToCorner(InitialiseNaoRobot, cameraName = "BOTTOM", f
                         # XValueToWalk = 0.2*(480-closestPnt[1])/480  #((contourList[4][1] - contourList[3][1])/float(contourList[4][1]))
                         h.WalkAheadUntilFinished(motionProxy,0.1) #-ve 45 degrees turn Y/float(8.0)
                     AlignClosestCornerToMiddle(InitialiseNaoRobot,50, cameraName)
-                    # h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(maxHeadPitchAngle))
+                    if (headDownCounter == 0):
+                        h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(maxHeadPitchAngle))
+                        headDownCounter += 1
+                    
             except Exception as e:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
                 #print e
@@ -447,19 +452,19 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot, cameraName = "BOTTOM", fileNam
                             h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,XValueToWalk) #-ve 45 degrees turn Y/float(8.0)
                         print "bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1])
                         Logger.Log("bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1]))
-                    #spin if angle is too far to the left or right
-                    adjustAngle = 0.5
-                    if (contourList[0][0] >= (float(config.imageWidth)/2.0)):                     
-                        h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
-                    if (contourList[2][0] <= (float(config.imageWidth)/2.0)):
-                        h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
-                    if (contourList[0][0] >= 5):                     
-                        h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
-                    if (contourList[2][0] <= (float(config.imageWidth)-5.0)):
-                        h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
+                        #spin if angle is too far to the left or right
+                        adjustAngle = 0.5
+                        if (contourList[0][0] >= (float(config.imageWidth)/2.0)):                     
+                            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
+                        if (contourList[2][0] <= (float(config.imageWidth)/2.0)):
+                            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
+                        if (contourList[0][0] >= 5):                     
+                            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
+                        if (contourList[2][0] <= (float(config.imageWidth)-5.0)):
+                            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
 
 
-                    AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM", fileNameCamera)
+                        AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM", fileNameCamera)
                     
             except Exception as e:
                 print "ERROR so walking ahead"

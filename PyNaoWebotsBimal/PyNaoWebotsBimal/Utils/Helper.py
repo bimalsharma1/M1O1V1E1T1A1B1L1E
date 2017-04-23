@@ -250,7 +250,7 @@ def GetReadyToLift(InitialiseNaoRobot):
     counter = 0
     #read all messages
     print "config list"
-    print config.WirelessMessages
+    # print config.WirelessMessages
     for msg in config.WirelessMessages:
         for message in InitialiseNaoRobot.ReadyToLiftMessages:
             if (message[0] != msg[0]):
@@ -261,7 +261,7 @@ def GetReadyToLift(InitialiseNaoRobot):
             Logger.Log(str(message[1]))
             print message[1]
             counter = counter + 1
-    print counter       
+    # print counter       
     Logger.Log("GetReadyToLift")
     Logger.Log(str(config.WirelessMessages))
     Logger.Log(str(InitialiseNaoRobot.ListOfNaosDetected))
@@ -271,7 +271,7 @@ def GetReadyToLift(InitialiseNaoRobot):
         return True
         Logger.Log(str("both nao ready to lift"))
         Logger.Log(str(counter))
-        print counter
+        # print counter
     else: return False
 
     

@@ -18,11 +18,20 @@ class MoveTable:
         liftTable = LiftTable.LiftTable()
         liftTable.LiftTable(InitialiseNaoRobot.motionProxy)
 
-        if(InitialiseNaoRobot.isLeader):#to make both robots walk on the same side
-            Y = -1 * Y
         print "taking small step sideways"
         smallStepSideways = SmallStepSideways.SmallStepSideways()
-        smallStepSideways.SmallStepSideways(InitialiseNaoRobot.motionProxy, X, Y, Theta)
+        if(InitialiseNaoRobot.isLeader):#to make both robots walk on the same side
+            smallStepSideways.SmallStepSideways(InitialiseNaoRobot.motionProxy, X, -Y, Theta)
+            print "moving Y value NEGATIVE"
+            print str(-Y)
+            Logger.Log("moving Y value NEGATIVE")
+            Logger.Log(str(-Y))
+        else:
+            smallStepSideways.SmallStepSideways(InitialiseNaoRobot.motionProxy, X, Y, Theta)
+            print "moving Y value POSITIVE"
+            print str(Y)
+            Logger.Log("moving Y value POSITIVE")
+            Logger.Log(str(Y))
 
         print "Landing table"
         landTable = LandTable.LandTable()
