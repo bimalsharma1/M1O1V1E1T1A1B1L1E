@@ -56,6 +56,7 @@ class InitialiseNaoRobot:
         print config.ipAddress, config.ports[port]
         print "woken up"
         FileIO.EmptyFileContents("readyToLift.txt")
+        FileIO.EmptyFileContents("distance.txt")
         time.sleep(3)
 
     def getMotionProxy(self):

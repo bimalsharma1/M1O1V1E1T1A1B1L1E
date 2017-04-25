@@ -41,8 +41,10 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
 
     Logger.Log("ALign image to centre")
     print "ALign image to centre"
-    
 
+    #SELCT LEADER
+    print "SELECTING LEADER"
+    h.SelectLeader(InitialiseNaoRobot)
     print "start moving robot so that bottom most point is in centre of screen"
     objectInCentreScreen = False
     while not (objectInCentreScreen):

@@ -208,17 +208,50 @@ def AddNao(InitialiseNaoRobot): #get angle in degrees (+ve value to look down, -
     SendMessage(InitialiseNaoRobot, "NEW NAO")
     print "call read msg"
     ReadMessage(InitialiseNaoRobot)
-    SelectLeader(InitialiseNaoRobot)
+    # SelectLeader(InitialiseNaoRobot)
 
 def SelectLeader(InitialiseNaoRobot): #get angle in degrees (+ve value to look down, -ve to look up)
-    ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
-    leader = max(sublist[0] for sublist in InitialiseNaoRobot.ListOfNaosDetected)
-    if (leader == ipList):
-        InitialiseNaoRobot.isLeader = True
-    print "THE LEADER IS: "
-    Logger.Log("THE LEADER IS: ")
-    print leader
-    Logger.Log(leader)
+    # ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
+    # leader = max(sublist[0] for sublist in InitialiseNaoRobot.ListOfNaosDetected)
+    # if (leader == ipList):
+    #     InitialiseNaoRobot.isLeader = True
+    #     SendLeaderMessage(str(ipList))
+    filename = "distance.txt"
+    with open(filename) as f:
+        content = f.readlines()
+    # remove whitespace characters like `\n` at the end of each line
+    listOfDistances = [x.strip() for x in content]
+    print listOfDistances
+    # Logger.Log(listOfDistances)
+    if (len(listOfDistances) > 3):
+        if (listOfDistances[1] > listOfDistances[3]):
+            config.Leader = listOfDistances[0]
+        else:
+            config.Leader = listOfDistances[2]
+        print config.Leader
+        Logger.Log(str(config.Leader))
+        if(str(InitialiseNaoRobot.ipAddress)+":"+str(InitialiseNaoRobot.portName) in config.Leader):
+            InitialiseNaoRobot.isLeader = True
+        print "THE LEADER IS: "
+        Logger.Log("THE LEADER IS: ")
+        print config.Leader
+        Logger.Log(config.Leader)
+def SendLeaderMessage(msg):
+    filename = "leader"
+    FileIO.WriteLine(filename, str(msg))
+    Logger.Log("SendLeaderMessage")
+    Logger.Log(str(msg))
+
+def SendDistanceToObjectMessage(InitialiseNaoRobot, msg):
+    filename = "distance"
+    robotName = str(InitialiseNaoRobot.ipAddress)+':'+str(InitialiseNaoRobot.portName)
+    print "send distance message"
+    Logger.Log("send distance message")
+    FileIO.WriteLine(filename, str(robotName))
+    FileIO.WriteLine(filename, str(msg))
+    print "SendDistanceToObjectMessage"
+    Logger.Log("SendDistanceToObjectMessage")
+    Logger.Log(str(msg))
 
 def SendMessage(InitialiseNaoRobot, msg):
     ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)

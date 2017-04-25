@@ -57,6 +57,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
             Logger.Log("object found")
             Logger.Log(str(InitialiseNaoRobot.portName))
             print xCntrPos
+            h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
             ObjectFound = True
             cameraPosition = 'TOP'
             return (xCntrPos, yCntrPos, headLookingPosition, ObjectFound, botMostPnt)   
@@ -126,6 +127,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                 print "Inside align table found to middle"
                 if (xCntrPos > float(config.imageWidth)/2.00):
                     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
+                    h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
                     return (xCntrPos, yCntrPos, headLookingPosition, ObjectFound, botMostPnt)
         elif(angleOfHead > 0):
             objectPosition = "LEFT"
@@ -142,6 +144,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                 print "Inside align table found to middle"
                 if (xCntrPos < float(config.imageWidth)/2.00):
                     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
+                    h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
                     return (xCntrPos, yCntrPos, headLookingPosition, ObjectFound, botMostPnt)
                     # h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead)*2)
                     
