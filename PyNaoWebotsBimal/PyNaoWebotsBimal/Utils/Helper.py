@@ -274,4 +274,16 @@ def GetReadyToLift(InitialiseNaoRobot):
         # print counter
     else: return False
 
-    
+def GetSideToWalkWithTable(InitialiseNaoRobot): 
+    #read from ready to lift file. First line move in one direction and the other match move in another direction
+    textToMatch = str(InitialiseNaoRobot.ipAddress) + ":" + str(InitialiseNaoRobot.portName) + "READYTOLIFT"
+    Logger.Log(textToMatch)
+    filename = "readyToLift"
+    firstLineOfFile = FileIO.ReadFirstLineInFile(filename)
+    Logger.Log(str(firstLineOfFile))
+    if (textToMatch in firstLineOfFile):
+        Logger.Log("GetSideToWalkWithTable - TRUE")
+        return True
+    else:
+        Logger.Log("GetSideToWalkWithTable - FALSE")
+        return False     

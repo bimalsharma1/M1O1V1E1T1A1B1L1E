@@ -23,9 +23,19 @@ def ReadNumLinesInFile(filename):
     for line in f:
         counter = counter + 1
         Logger.Log(str(line))
-        
+    f.close()
     Logger.Log(str(counter))
     return counter
+
+def ReadFirstLineInFile(filename):
+    counter = 0
+    f = open(filename+".txt", 'r')
+    Logger.Log("starting count of lines in file")
+    message = f.readline()
+    Logger.Log(message)
+    print message
+    f.close()
+    return message
 
 def EmptyFileContents(filename):
     f = open(filename, 'w')

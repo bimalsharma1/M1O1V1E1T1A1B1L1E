@@ -28,7 +28,7 @@ yPointAlignmentErrorMargin = 10
 leftMostXAndRightMostXAlignTableErrorMargin = 50
 centroidLeftMostXAndRightMostXAlignTableErrorMargin = 20
 
-maxClosestPoint = 380
+maxClosestPoint = 360
 maxClosestPointToCorner = 450
 
 InitialLongerSideOfTable = ""
