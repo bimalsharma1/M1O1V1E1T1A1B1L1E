@@ -61,7 +61,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             time.sleep(4)
             print "WALK LEFT DISTANCE"
             print Y
-            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.4) #+ve 75 degrees turn
+            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 1) #+ve 75 degrees turn
         else:
             rightLonger = True
             # config.InitialLongerSideOfTable = "RIGHT"
@@ -73,7 +73,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             #adjustand move again
             h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45)) #-ve 75 degrees turn 
             time.sleep(4)
-            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.4) #-ve 75 degrees turn 
+            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,1) #-ve 75 degrees turn 
         
         h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(maxHeadPitchAngle))
         adjustedToMiddle = False

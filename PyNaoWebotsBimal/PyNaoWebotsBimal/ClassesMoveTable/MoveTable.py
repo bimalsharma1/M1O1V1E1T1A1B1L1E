@@ -20,7 +20,7 @@ class MoveTable:
 
         print "taking small step sideways"
         smallStepSideways = SmallStepSideways.SmallStepSideways()
-        if(h.GetSideToWalkWithTable(InitialiseNaoRobot) == True):#to make both robots walk on the same side
+        if(InitialiseNaoRobot.isLeader == True):#to make both robots walk on the same side
             smallStepSideways.SmallStepSideways(InitialiseNaoRobot.motionProxy, X, -Y, Theta)
             print "moving Y value NEGATIVE"
             print str(-Y)

@@ -11,5 +11,3 @@ class SmallStepSideways:
         h.WalkToPositionWithHandsUp(motionProxy, X, Y, Theta)
         motionProxy.waitUntilMoveIsFinished()
         time.sleep(5)
-
-

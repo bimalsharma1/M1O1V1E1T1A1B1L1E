@@ -38,7 +38,9 @@ import thread
 import time
 from SimpleBehaviours import MoveToCornerOfObject as m
 from SimpleBehaviours import AlignToLongerSideOfObject as a
-from Utils import InitialiseNaoRobot 
+from Utils import InitialiseNaoRobot
+from Utils import ActionHelper as a
+from SimpleBehaviours import MoveToOtherSideOfObject as o
 from Queue import Queue
 exitFlag = 0
 print sys.argv
@@ -171,7 +173,10 @@ def mainMenu():
             t3.join()
             #BehaviourWalkToLiftRangeOfObject.LiftObject(motionProxy, portName1, 0, 2, 0)
             #BehaviourWalkToLiftRangeOfObject.LiftObject(motionProxy1, portName2, 0, -2, 0)
-  
+        elif ("9" in inputChoice):
+            Logger.Log("MOVE FIRST NAO") 
+            portName1 = 'port1'
+            motionProxy = InitialiseNao.InitialiseFirstNao()
         else:
             print "Coming soon!"
         
@@ -192,6 +197,7 @@ def PerformIndividualBehaviour():
     print "Enter 1 to go to table"
     print "Enter 2 to go to longer side of table"
     print "Enter 3 to move table"
+    print "Enter 4 to move to other side of table"
     print "Enter 9 to initialise robots .."
     inputSubChoice = raw_input("Enter your choice: ")
 
@@ -238,6 +244,20 @@ def PerformIndividualBehaviour():
         t3.start()
         t4 = threading.Thread(target=moveTable2.MoveTableDef, args=(motionProxy2, 0, -1, 0))
         t4.start()
+    elif ("4" in inputSubChoice):
+        print "calling MoveToOtherSideOfObject class"
+
+        initNao1 = InitialiseNaoRobot.InitialiseNaoRobot('port1')
+        initNao1.wakeUpRobot('port1')
+        initNao2 = InitialiseNaoRobot.InitialiseNaoRobot('port2')
+        initNao2.wakeUpRobot('port2')
+
+        p0 = Process(target=o.MoveToOtherSideOfObject, args=(initNao1, 'LEFT',))
+        p0.start()
+        p1 = Process(target=o.MoveToOtherSideOfObject, args=(initNao2, 'RIGHT',))
+        p1.start()
+        p0.join()
+        p1.join()
     elif ("9" in inputSubChoice):
         initNao = InitialiseNaoRobot.InitialiseNaoRobot("port1")
         initNao2 = InitialiseNaoRobot.InitialiseNaoRobot("port2")

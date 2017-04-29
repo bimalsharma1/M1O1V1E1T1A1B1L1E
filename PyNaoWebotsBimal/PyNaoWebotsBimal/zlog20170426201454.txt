@@ -1,0 +1,38 @@
+April 26, 2017 20:13:25:734000	127.0.0.1-9557	START MOVING TO OTHER SIDE MoveToOtherSideOfObject
+April 26, 2017 20:13:29:588000	127.0.0.1-9557	Keep walking until very close to table
+April 26, 2017 20:13:31:034000	127.0.0.1-9557	mask sizes
+April 26, 2017 20:13:31:036000	127.0.0.1-9557	Inside: Looking for y axis ranges on coloured blob
+April 26, 2017 20:13:31:106000	127.0.0.1-9557	left value Y
+April 26, 2017 20:13:31:109000	127.0.0.1-9557	2
+April 26, 2017 20:13:31:115000	127.0.0.1-9557	Y values left mid right
+April 26, 2017 20:13:31:117000	127.0.0.1-9557	-1
+April 26, 2017 20:13:31:119000	127.0.0.1-9557	2
+April 26, 2017 20:13:31:128000	127.0.0.1-9557	-1
+April 26, 2017 20:13:33:774000	127.0.0.1-9557	Keep walking until very close to table
+April 26, 2017 20:13:35:223000	127.0.0.1-9557	mask sizes
+April 26, 2017 20:13:35:226000	127.0.0.1-9557	Inside: Looking for y axis ranges on coloured blob
+April 26, 2017 20:13:35:253000	127.0.0.1-9557	left value Y
+April 26, 2017 20:13:35:259000	127.0.0.1-9557	2
+April 26, 2017 20:13:35:262000	127.0.0.1-9557	Y values left mid right
+April 26, 2017 20:13:35:268000	127.0.0.1-9557	-1
+April 26, 2017 20:13:35:271000	127.0.0.1-9557	2
+April 26, 2017 20:13:35:273000	127.0.0.1-9557	-1
+April 26, 2017 20:13:38:142000	127.0.0.1-9557	Keep walking until very close to table
+April 26, 2017 20:13:39:524000	127.0.0.1-9557	mask sizes
+April 26, 2017 20:13:39:526000	127.0.0.1-9557	Inside: Looking for y axis ranges on coloured blob
+April 26, 2017 20:13:39:550000	127.0.0.1-9557	left value Y
+April 26, 2017 20:13:39:552000	127.0.0.1-9557	2
+April 26, 2017 20:13:39:554000	127.0.0.1-9557	Y values left mid right
+April 26, 2017 20:13:39:557000	127.0.0.1-9557	-1
+April 26, 2017 20:13:39:559000	127.0.0.1-9557	2
+April 26, 2017 20:13:39:563000	127.0.0.1-9557	-1
+April 26, 2017 20:13:42:131000	127.0.0.1-9557	Keep walking until very close to table
+April 26, 2017 20:13:43:635000	127.0.0.1-9557	mask sizes
+April 26, 2017 20:13:43:650000	127.0.0.1-9557	Inside: Looking for y axis ranges on coloured blob
+April 26, 2017 20:13:43:734000	127.0.0.1-9557	left value Y
+April 26, 2017 20:13:43:745000	127.0.0.1-9557	2
+April 26, 2017 20:13:43:748000	127.0.0.1-9557	Y values left mid right
+April 26, 2017 20:13:43:749000	127.0.0.1-9557	-1
+April 26, 2017 20:13:43:752000	127.0.0.1-9557	2
+April 26, 2017 20:13:43:757000	127.0.0.1-9557	-1
+April 26, 2017 20:13:46:788000	127.0.0.1-9557	Keep walking until very close to table
