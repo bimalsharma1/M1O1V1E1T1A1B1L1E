@@ -25,6 +25,52 @@ from Utils import DetectColourInImage as d
 from Utils import PerspectiveTransform as p
 import cv2
 
+def FindDirectionOfOtherRobot(InitialiseNaoRobot):
+    filenameTopCamera = "naoImageTopCamera"
+    filenameBottomCamera = "naoImageBottomCamera"
+    headDown = False
+    headDownChecked = False
+    turnCounter = 0
+    angleOfHead = 100
+    objectFound = False
+
+    while not objectFound:
+        angleOfHead = 100
+        headDown = False
+        headDownChecked = False
+        time.sleep(3)
+        h.HeadInitialise(InitialiseNaoRobot.motionProxy)
+        h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(angleOfHead))
+        h.HeadPitchMove(InitialiseNaoRobot.motionProxy,math.radians(29.5))   # move head down to get better view of surroundings
+        while (angleOfHead >= -100):  # and headDownChecked == False):
+            #check if the bottom camera can see object 
+            print "FindDirectionOfOtherRobot"
+            Logger.Log("FindDirectionOfOtherRobot")
+            headLookingPosition = 'CENTRE'
+            #use top camera only if bottom camera cannot see ...
+            imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
+            xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT,config.colourOfHeadOfNao) 
+            time.sleep(2)       
+            if (xCntrPos > 0):
+                ObjectFound = True
+                if (angleOfHead > 0):
+                    Logger.Log("FindDirectionOfOtherRobot is LEFT")
+                    return "LEFT"
+                elif (angleOfHead < 0):
+                    Logger.Log("FindDirectionOfOtherRobot is RIGHT")
+                    return "RIGHT"
+                else:
+                    Logger.Log("FindDirectionOfOtherRobot is AHEAD")
+                    return "AHEAD"
+            print "values found in this turn"
+            print xCntrPos, yCntrPos, objFoundBtmCam
+            angleOfHead = angleOfHead - 50
+            print "angle of head"
+            print angleOfHead
+            Logger.Log(str(angleOfHead))
+            h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(angleOfHead))
+
+
 def AlignClosestCornerToMiddle(InitialiseNaoRobot, ErrorMargin = 10, cameraName = "TOP"): 
     Logger.Log("AlignClosestCornerToMiddle")
     filenameTopCamera = "naoImageTopCamera"

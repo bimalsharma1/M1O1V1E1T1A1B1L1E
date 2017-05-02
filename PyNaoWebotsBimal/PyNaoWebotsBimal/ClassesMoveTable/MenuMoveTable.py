@@ -252,9 +252,9 @@ def PerformIndividualBehaviour():
         initNao2 = InitialiseNaoRobot.InitialiseNaoRobot('port2')
         initNao2.wakeUpRobot('port2')
 
-        p0 = Process(target=o.MoveToOtherSideOfObject, args=(initNao1, 'LEFT',))
+        p0 = Process(target=o.MoveToOtherSideOfObject, args=(initNao1,))
         p0.start()
-        p1 = Process(target=o.MoveToOtherSideOfObject, args=(initNao2, 'RIGHT',))
+        p1 = Process(target=o.MoveToOtherSideOfObject, args=(initNao2,))
         p1.start()
         p0.join()
         p1.join()

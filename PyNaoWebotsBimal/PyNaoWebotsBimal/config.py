@@ -28,8 +28,10 @@ yPointAlignmentErrorMargin = 10
 leftMostXAndRightMostXAlignTableErrorMargin = 50
 centroidLeftMostXAndRightMostXAlignTableErrorMargin = 20
 
-maxClosestPoint = 360
+maxClosestPoint = 350
 maxClosestPointToCorner = 450
+
+colourOfHeadOfNao = "RED"
 
 InitialLongerSideOfTable = ""
 Leader = ""   # config is updated witht he leader name

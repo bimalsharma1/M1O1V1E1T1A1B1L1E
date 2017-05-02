@@ -20,6 +20,7 @@ from Utils import ImageProcessing as ip
 from Utils import InitialiseNaoRobot
 from Utils import Helper as h
 from Utils import DetectColourInImage as d
+from SimpleBehaviours import MoveToOtherSideOfObject as mo 
 
 def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCamera):
     objectFound = False
@@ -60,6 +61,16 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
             h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
             ObjectFound = True
             cameraPosition = 'TOP'
+
+            #SELCT LEADER
+            h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
+            #     #align to other side of object
+            # print "CHeck for leader to move to the other side"
+            # print InitialiseNaoRobot.isLeader
+            # Logger.Log("CHeck for leader to move to the other side")
+            # Logger.Log(str(InitialiseNaoRobot.isLeader))
+            # if(InitialiseNaoRobot.isLeader != True):
+            #     mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
             return (xCntrPos, yCntrPos, headLookingPosition, ObjectFound, botMostPnt)   
         
 
@@ -86,11 +97,13 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                     print xCntrPos
                     # angleOfHead = -200
                     ObjectFound = True
+                    print "SELECTING LEADER"
+                    h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
                     cameraPosition = 'TOP'
                     print "top camera values"
                     print xCntrPos, yCntrPos, objFoundBtmCam
                     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
-                    time.sleep(2)
+                    time.sleep(2) 
                     break
                 print "values found in this turn"
                 print xCntrPos, yCntrPos, objFoundBtmCam

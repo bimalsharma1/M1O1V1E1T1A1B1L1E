@@ -14,6 +14,7 @@ import DetectCornersFast
 import Logger
 from Utils import ImageProcessing as ip
 from Utils import ActionHelper as a
+from SimpleBehaviours import MoveToOtherSideOfObject as mo
 
 def MoveToCornerOfObject(InitialiseNaoRobot):
     lastKnownPositionOfObject = ""
@@ -42,9 +43,15 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
     Logger.Log("ALign image to centre")
     print "ALign image to centre"
 
-    #SELCT LEADER
+    #Wait for leader data to be available
+    while not h.isLeaderDataAvailable(InitialiseNaoRobot):
+        time.sleep(2)
     print "SELECTING LEADER"
     h.SelectLeader(InitialiseNaoRobot)
+
+    #CODE TO EXECUTE WHEN ROBOTS START ON THE SAME SIDE
+    if(InitialiseNaoRobot.isLeader != True):
+        mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
     print "start moving robot so that bottom most point is in centre of screen"
     objectInCentreScreen = False
     while not (objectInCentreScreen):

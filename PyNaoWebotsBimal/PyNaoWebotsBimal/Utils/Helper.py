@@ -211,11 +211,6 @@ def AddNao(InitialiseNaoRobot): #get angle in degrees (+ve value to look down, -
     # SelectLeader(InitialiseNaoRobot)
 
 def SelectLeader(InitialiseNaoRobot): #get angle in degrees (+ve value to look down, -ve to look up)
-    # ipList = InitialiseNaoRobot.ipAddress+':'+str(InitialiseNaoRobot.portName)
-    # leader = max(sublist[0] for sublist in InitialiseNaoRobot.ListOfNaosDetected)
-    # if (leader == ipList):
-    #     InitialiseNaoRobot.isLeader = True
-    #     SendLeaderMessage(str(ipList))
     filename = "distance.txt"
     with open(filename) as f:
         content = f.readlines()
@@ -236,6 +231,20 @@ def SelectLeader(InitialiseNaoRobot): #get angle in degrees (+ve value to look d
         Logger.Log("THE LEADER IS: ")
         print config.Leader
         Logger.Log(config.Leader)
+
+def isLeaderDataAvailable(InitialiseNaoRobot): #get angle in degrees (+ve value to look down, -ve to look up)
+    isLeaderDataAvailable = False
+    filename = "distance.txt"
+    with open(filename) as f:
+        content = f.readlines()
+    # remove whitespace characters like `\n` at the end of each line
+    listOfDistances = [x.strip() for x in content]
+    print listOfDistances
+    print "WAITING FOR LEADER DATA TO BE AVAILABLE"
+    if (len(listOfDistances) >= 4):
+        isLeaderDataAvailable = True
+    return isLeaderDataAvailable 
+
 def SendLeaderMessage(msg):
     filename = "leader"
     FileIO.WriteLine(filename, str(msg))
