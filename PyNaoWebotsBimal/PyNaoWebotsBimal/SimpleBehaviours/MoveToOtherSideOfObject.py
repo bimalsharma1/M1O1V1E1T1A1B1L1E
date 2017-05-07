@@ -47,30 +47,39 @@ def MoveToOtherSideOfObject(InitialiseNaoRobot):
             print "MOVING TO OTHER SIDE MoveToOtherSideOfObject"
             im = ip.getImage(InitialiseNaoRobot, "BOTTOM", filenameTopCamera)
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, closestPnt,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)   
-            a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM",filenameBottomCamera)
-            if (xCentrePostion > 0):
+            # a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM",filenameBottomCamera)
+            print "CLOSEST POINT OF MOVING TO OTHER SIDE MoveToOtherSideOfObject FIRST CORNER"
+            print cornerPoints
+            closestPnt[1]
+            
+            if closestPnt[1] <= 300:
                 if (directionToMove == "LEFT"):
-                    h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(10))
-                    h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.5)
-                    if (cornerPoints[0][0] > 400):
-                        adjustedToOtherSide = True
-                        h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75))
-                        h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.5)
-                        h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45))                        
-                        h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.4)
-                        break
+                    h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(15))
+                    h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
                 else:
-                    h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(10))
-                    h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.5)
-                    if (cornerPoints[3][0] < 250):
-                        adjustedToOtherSide = True
-                        h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75))
-                        h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.5)
-                        h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45))
-                        h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.4)
-                        break
-            else:
+                    h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(15))
+                    h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+            elif (directionToMove == "LEFT"):
+                h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45))
+                print "SPINNING AT ANGLE"
+                h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,1)
+                if cornerPoints[0][0] > 450:
+                    adjustedToOtherSide = True
+                    print "SPINNING AT ANGLE"
+                    h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(90))   
+                    h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+                    break
+            else:
+                h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45))
+                print "SPINNING AT ANGLE"
+                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,1)
+                if cornerPoints[0][0] < 190:
+                    adjustedToOtherSide = True
+                    print "SPINNING AT ANGLE"
+                    h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75))
+                    h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+                    break
 
         adjustedToOtherSideFinal = False
         
@@ -78,24 +87,36 @@ def MoveToOtherSideOfObject(InitialiseNaoRobot):
             print "MOVING TO OTHER SIDE MoveToOtherSideOfObject FIRST CORNER REACHED MOVING TO SECOND CORNER"
             Logger.Log("MOVING TO OTHER SIDE MoveToOtherSideOfObject FIRST CORNER REACHED MOVING TO SECOND CORNER") 
             im = ip.getImage(InitialiseNaoRobot, "BOTTOM", filenameTopCamera)
-            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, closestPnt,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)   
-            a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM",filenameBottomCamera)
-            if (xCentrePostion > 0):
+            xCentrePostion, yCentrePosition, objectFoundOnBottomCamera,closestPnt,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)   
+            # a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM",filenameBottomCamera)
+            print "CLOSEST POINT OF MOVING TO OTHER SIDE MoveToOtherSideOfObject FIRST CORNER REACHED MOVING TO SECOND CORNER"
+            print InitialiseNaoRobot.portName
+            print cornerPoints
+            Logger.Log(str(cornerPoints))
+            Logger.Log(str(closestPnt))
+            if closestPnt[1] < 300:
                 if (directionToMove == "LEFT"):
                     h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(10))
-                    h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.5)
-                    if (cornerPoints[0][0] > 320):
-                        adjustedToOtherSideFinal = True
-                        h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
-                        h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75))
-                        break
                 else:
                     h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(10))
-                    h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.5)
-                    if (cornerPoints[3][0] < 320):
-                        adjustedToOtherSideFinal = True
-                        h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
-                        h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75))
-                        break
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
+            elif (directionToMove == "LEFT"):
+                h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(10))
+                h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.5)
+                if cornerPoints[0][0] > 600:
+                    adjustedToOtherSideFinal = True
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
+                    h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75))
+                    Logger.Log("OTHER SIDE OF TABLE REACHED")
+                    print "OTHER SIDE OF TABLE REACHED"
+                    break
             else:
-                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
+                h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(10))
+                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.5)
+                if cornerPoints[0][0] < 40:
+                    adjustedToOtherSideFinal = True
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
+                    h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75))
+                    Logger.Log("OTHER SIDE OF TABLE REACHED")
+                    print "OTHER SIDE OF TABLE REACHED"
+                    break

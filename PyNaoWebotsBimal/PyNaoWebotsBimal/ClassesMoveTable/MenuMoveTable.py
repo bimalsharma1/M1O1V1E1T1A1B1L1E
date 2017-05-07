@@ -46,35 +46,50 @@ exitFlag = 0
 print sys.argv
 from multiprocessing import Process, Value, Array
 from SimpleBehaviours import AlignToLongerSideOfObject as a
+from Utils import Helper as h
 
 def mainMenu():
     Logger.RenamePreviousFile()
     try:
         print "Select between the tasks below"
         print "Enter 0 for NEW two robot task to move a heavy table"
-        print "Enter 1 for individual behaviours"
+        print "Enter 1 to look for table"
+        print "Enter 2 to go to table"
+        print "Enter 3 to move table"
         print "Enter 5 for single robot task to move a light table"
         print "Enter 6 for two robot task to move a heavy table"
-        print "Enter 7 to select a single behaviour"
+        print "Enter 7 to Look for table"
         print "Enter 8 to lift and move with table"
         inputChoice = raw_input("Enter your choice: ")
 
         if ("0" in inputChoice):
-
             p0 = Process(target=MoveTableMain.MoveTableMain().Main, args=('port1',))
             p0.start()
             p1 = Process(target=MoveTableMain.MoveTableMain().Main, args=('port2',))
             p1.start()
             p0.join()
             p1.join()
-            # t0 = threading.Thread(target=MoveTableMain.MoveTableMain().Main, args=('port1',))   
-            # t0.start()
-            # t1 = threading.Thread(target=MoveTableMain.MoveTableMain().Main, args=('port2',))
-            # t1.start()
-            # print "start"
-
         if ("1" in inputChoice):
-            PerformIndividualBehaviour()
+            p0 = Process(target=MoveTableMain.MoveTableMain().LookForTable, args=('port1',))
+            p0.start()
+            p1 = Process(target=MoveTableMain.MoveTableMain().LookForTable, args=('port2',))
+            p1.start()
+            p0.join()
+            p1.join()
+        if ("2" in inputChoice):
+            p0 = Process(target=MoveTableMain.MoveTableMain().GoToTable, args=('port1',))
+            p0.start()
+            p1 = Process(target=MoveTableMain.MoveTableMain().GoToTable, args=('port2',))
+            p1.start()
+            p0.join()
+            p1.join()
+        if ("3" in inputChoice):
+            p0 = Process(target=MoveTableMain.MoveTableMain().MoveTable, args=('port1',))
+            p0.start()
+            p1 = Process(target=MoveTableMain.MoveTableMain().MoveTable, args=('port2',))
+            p1.start()
+            p0.join()
+            p1.join()
 
         elif ("5" in inputChoice):
             Logger.Log("MOVE FIRST NAO") 
@@ -99,22 +114,6 @@ def mainMenu():
             portName2 = 'port2'
             motionProxy1 = InitialiseNao.InitialiseSecondNao()
 
-
-           # #moveTowardObjectOfInterest.moveTowardObjectOfInterest(motionProxy, portName1)
-           # #moveTowardObjectOfInterest.moveTowardObjectOfInterest(motionProxy1, portName2)
-      
-           # #thread.start_new_thread(moveTowardObjectOfInterest.moveTowardObjectOfInterest,(motionProxy,portName1,))    
-           # #thread.start_new_thread(moveTowardObjectOfInterest.moveTowardObjectOfInterest,(motionProxy1,portName2,))
-        
-           # ## Create new threads
-           # #thread1 = myThread(motionProxy,portName1)
-           # #thread2 = myThread(motionProxy1,portName2)
-
-           # ## Start new Threads
-           # #thread1.run()
-           # #thread2.run()
-
-      
             t = threading.Thread(target=moveTowardObjectOfInterest.moveTowardObjectOfInterest, args=(motionProxy,portName1))
             #   threads.append(t)
             t1 = threading.Thread(target=moveTowardObjectOfInterest.moveTowardObjectOfInterest, args=(motionProxy1,portName2))
@@ -127,15 +126,6 @@ def mainMenu():
             time.sleep(3) 
             Helper.LiftWithElbowAndShoulders(motionProxy)
             Helper.LiftWithElbowAndShoulders(motionProxy1)
-
-
-           # time.sleep(3)
-           # print ("LIFT TABLE")
-           # print ("LIFT TABLE")
-           # print ("LIFT TABLE")
-           # print ("LIFT TABLE")
-
-
             t2 = threading.Thread(target=BehaviourWalkToLiftRangeOfObject.LiftObject, args=(motionProxy,portName1, 0, 2, 0))
             #   threads.append(t)
             t3 = threading.Thread(target=BehaviourWalkToLiftRangeOfObject.LiftObject, args=(motionProxy1,portName2, 0, -2, 0))
@@ -144,35 +134,15 @@ def mainMenu():
             t3.start()
             t2.join()#for concurrency
             t3.join()
-            #BehaviourWalkToLiftRangeOfObject.LiftObject(motionProxy, portName1, 0, 2, 0)
-            #BehaviourWalkToLiftRangeOfObject.LiftObject(motionProxy1, portName2, 0, -2, 0)
-  
-        
-            #thread.start_new_thread(moveTowardObjectOfInterest.moveTowardObjectOfInterest(motionProxy,portName,))    
-           # thread.start_new_thread(moveTowardObjectOfInterest.moveTowardObjectOfInterest(motionProxy1,portName,))
+
         elif ("7" in inputChoice):
-            Logger.Log("MOVE FIRST NAO") 
-            portName1 = 'port1'
-            motionProxy = InitialiseNao.InitialiseFirstNao()
+            p0 = Process(target=MoveTableMain.MoveTableMain().LookForTable, args=('port1',))
+            p0.start()
+            p1 = Process(target=MoveTableMain.MoveTableMain().LookForTable, args=('port2',))
+            p1.start()
+            p0.join()
+            p1.join()
 
-            Logger.Log("MOVE SECOND NAO")    
-            portName2 = 'port2'
-            motionProxy1 = InitialiseNao.InitialiseSecondNao()
-
-            #time.sleep(3) 
-            #Helper.LiftWithElbowAndShoulders(motionProxy)
-            #Helper.LiftWithElbowAndShoulders(motionProxy1)
-
-            t2 = threading.Thread(target=BehaviourWalkToLiftRangeOfObject.LiftObject, args=(motionProxy,portName1, 0, 4, 0))
-            #   threads.append(t)
-            t3 = threading.Thread(target=BehaviourWalkToLiftRangeOfObject.LiftObject, args=(motionProxy1,portName2, 0, -4, 0))
-            #threads.append(t)
-            t2.start()
-            t3.start()
-            t2.join()#for concurrency
-            t3.join()
-            #BehaviourWalkToLiftRangeOfObject.LiftObject(motionProxy, portName1, 0, 2, 0)
-            #BehaviourWalkToLiftRangeOfObject.LiftObject(motionProxy1, portName2, 0, -2, 0)
         elif ("9" in inputChoice):
             Logger.Log("MOVE FIRST NAO") 
             portName1 = 'port1'
@@ -206,30 +176,20 @@ def PerformIndividualBehaviour():
 
 
     if ("0" in inputSubChoice):
-        lookForTable1 = LookForTable.LookForTable(initNao1.camProxy) 
-        # lookForTable1.LookForTable(motionProxy1, portName1)
-        # #second Nao looks for table
-        lookForTable2 = LookForTable.LookForTable(initNao2.camProxy) 
-        # lookForTable2.LookForTable(motionProxy2, portName2)
-        motionProxy1 = initNao1.motionProxy # InitialiseNaoRobot.InitialiseNaoRobot.motionProxy
-        portName1 = 'port1'
-        print "thread start a"
-        t0 = threading.Thread(target=LookForTable1.LookForTable, args=(initNao1.camProxy))    
-        t0.start()
-        t0.join()
-
-        motionProxy2 = initNao2.motionProxy# InitialiseNaoRobot.InitialiseNaoRobot.motionProxy
-        portName2 = 'port2'
-        t1 = threading.Thread(target=LookForTable2.LookForTable, args=(initNao2.camProxy))
-        t1.start()
-        t1.join()#for concurrency
+        p0 = Process(target=LookForTable, args=('port1',))
+        p0.start()
+        p1 = Process(target=LookForTable, args=('port2',))
+        p1.start()
+        p0.join()
+        p1.join()
+       
     elif ("1" in inputSubChoice):
-        goToTable1 = GoToTable.GoToTable()
-        goToTable2 = GoToTable.GoToTable()
-        t = threading.Thread(target=goToTable1.GoToTable, args=(motionProxy1, portName1))    
+        # goToTable1 = GoToTable.GoToTable()
+        # goToTable2 = GoToTable.GoToTable()
+        t = threading.Thread(target=LookForTable, args=('port1',))    
         t.start()
 
-        t2 = threading.Thread(target=goToTable2.GoToTable, args=(motionProxy2, portName2))
+        t2 = threading.Thread(target=LookForTable, args=('port1',))
         t2.start()
         t2.join()#for concurrency
         t.join()

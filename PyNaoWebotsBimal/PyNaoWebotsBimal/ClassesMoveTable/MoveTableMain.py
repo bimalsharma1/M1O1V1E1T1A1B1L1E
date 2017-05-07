@@ -35,3 +35,36 @@ class MoveTableMain:
         print "move table"
         moveTable = MoveTable.MoveTable()
         moveTable.MoveTableDef(initNao, 0, 1, 0)
+
+    def LookForTable(self, port):
+        Logger.Log("MOVE  NAO") 
+        print "MOVE  NAO"
+        initNao = InitialiseNaoRobot.InitialiseNaoRobot(port)
+        initNao.wakeUpRobot(port)
+        h.AddNao(initNao)
+
+        print "look for table"
+        lookForTable = LookForTable.LookForTable() 
+        lookForTable.LookForTable(initNao)
+
+    def GoToTable(self, port):
+        Logger.Log("MOVE  NAO") 
+        print "MOVE  NAO"
+        initNao = InitialiseNaoRobot.InitialiseNaoRobot(port)
+        initNao.wakeUpRobot(port)
+        h.AddNao(initNao)
+
+        print "go to table"
+        goToTable = GoToTable.GoToTable()
+        goToTable.GoToTable(initNao)
+
+    def MoveTable(self, port):
+        Logger.Log("MOVE  NAO") 
+        print "MOVE  NAO"
+        initNao = InitialiseNaoRobot.InitialiseNaoRobot(port)
+        initNao.wakeUpRobot(port)
+        h.AddNao(initNao)
+        
+        print "move table"
+        moveTable = MoveTable.MoveTable()
+        moveTable.MoveTableDef(initNao, 0, 1, 0)

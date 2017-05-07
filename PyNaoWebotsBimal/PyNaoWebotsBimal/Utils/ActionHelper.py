@@ -62,13 +62,14 @@ def FindDirectionOfOtherRobot(InitialiseNaoRobot):
                 else:
                     Logger.Log("FindDirectionOfOtherRobot is AHEAD")
                     return "AHEAD"
-            print "values found in this turn"
-            print xCntrPos, yCntrPos, objFoundBtmCam
-            angleOfHead = angleOfHead - 50
             print "angle of head"
             print angleOfHead
             Logger.Log(str(angleOfHead))
+            print "values found in this turn"
+            print xCntrPos, yCntrPos, objFoundBtmCam
+            angleOfHead = angleOfHead - 50
             h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(angleOfHead))
+            time.sleep(2)
 
 
 def AlignClosestCornerToMiddle(InitialiseNaoRobot, ErrorMargin = 10, cameraName = "TOP"): 
