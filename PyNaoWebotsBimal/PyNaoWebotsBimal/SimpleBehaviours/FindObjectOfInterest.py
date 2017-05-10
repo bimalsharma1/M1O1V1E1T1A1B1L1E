@@ -58,7 +58,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
             Logger.Log("object found")
             Logger.Log(str(InitialiseNaoRobot.portName))
             print xCntrPos
-            h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
+            # h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
             ObjectFound = True
             cameraPosition = 'TOP'
 

@@ -15,6 +15,7 @@ import Logger
 from Utils import ImageProcessing as ip
 from Utils import ActionHelper as a
 from SimpleBehaviours import MoveToOtherSideOfObject as mo
+from SimpleBehaviours import MoveAwayFromObject as ma
 
 def MoveToCornerOfObject(InitialiseNaoRobot):
     lastKnownPositionOfObject = ""
@@ -51,7 +52,10 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
 
     #CODE TO EXECUTE WHEN ROBOTS START ON THE SAME SIDE
     if(InitialiseNaoRobot.isLeader != True):
-        mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
+        ma.MoveAwayFromObject(InitialiseNaoRobot)
+        # mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
+    else:
+        h.CommunicateLeadershipByPuttingRightHandUp(InitialiseNaoRobot.motionProxy)
     print "start moving robot so that bottom most point is in centre of screen"
     objectInCentreScreen = False
     while not (objectInCentreScreen):

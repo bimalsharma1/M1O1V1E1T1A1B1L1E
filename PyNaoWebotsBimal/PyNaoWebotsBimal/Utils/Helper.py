@@ -251,6 +251,24 @@ def SendLeaderMessage(msg):
     Logger.Log("SendLeaderMessage")
     Logger.Log(str(msg))
 
+def CommunicateLeadershipByPuttingRightHandUp(motionProxy):
+    #Lshoulder roll goes up to 76 degrees out and LElbow roll goes inwards up tp -88 degrees
+    #Rshoulder roll goes up to -76 degrees out and RElbow roll goes inwards up tp 88 degrees
+    # Arms motion from user have always the priority than walk arms motion
+    #LSHouldPitch goes up by 119 degrees and down by -ve 119 degrees
+    pFractionMaxSpeed = 0.02
+    
+    JointNames = ["LShoulderPitch", "RShoulderPitch"]
+    Arm = [0, 119]  #-35
+    Arm = [ x * motion.TO_RAD for x in Arm]
+    motionProxy.angleInterpolationWithSpeed(JointNames, Arm, pFractionMaxSpeed)
+    motionProxy.waitUntilMoveIsFinished()
+
+    # time.sleep(3)
+    # Arm = [0,0]
+    # Arm = [ x * motion.TO_RAD for x in Arm]
+    # motionProxy .angleInterpolationWithSpeed(JointNames, Arm, pFractionMaxSpeed)
+
 def SendDistanceToObjectMessage(InitialiseNaoRobot, msg):
     filename = "distance"
     robotName = str(InitialiseNaoRobot.ipAddress)+':'+str(InitialiseNaoRobot.portName)
