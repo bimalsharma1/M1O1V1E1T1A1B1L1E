@@ -60,8 +60,13 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
     else:
         h.CommunicateLeadershipByPuttingRightHandUp(InitialiseNaoRobot.motionProxy)
         #wait unil other robot moved away
-        while not fio.ReadFirstLineInFile("otherRobotMovedAway") == "MovedAway":
+        while not str(fio.ReadFirstLineInFile("otherRobotMovedAway")).strip().lower() == "movedaway":
+            print str(fio.ReadFirstLineInFile("otherRobotMovedAway")).strip().lower() == "movedaway"
+            print str(fio.ReadFirstLineInFile("otherRobotMovedAway")).lower()
             time.sleep(2) #wait for 2 seconds
+    
+    print "OUT OF SELECTING LEADER AND MOVING AWAY"
+    
     print "start moving robot so that bottom most point is in centre of screen"
     objectInCentreScreen = False
     while not objectInCentreScreen:

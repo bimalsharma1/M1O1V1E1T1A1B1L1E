@@ -57,6 +57,7 @@ class InitialiseNaoRobot:
         print "woken up"
         FileIO.EmptyFileContents("readyToLift.txt")
         FileIO.EmptyFileContents("distance.txt")
+        FileIO.EmptyFileContents("otherRobotMovedAway.txt")
         time.sleep(3)
 
     def getMotionProxy(self):

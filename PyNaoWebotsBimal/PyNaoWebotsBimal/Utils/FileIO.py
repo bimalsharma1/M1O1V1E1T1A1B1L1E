@@ -3,13 +3,13 @@ from datetime import datetime
 import Logger
 
 def WriteMessageToFile(InitialiseNaoRobot, msg, fileName):
-    EmptyFileContents(fileName)
-    # filename = "otherRobotMovedAway"
-    robotName = str(InitialiseNaoRobot.ipAddress)+':'+str(InitialiseNaoRobot.portName)
+    EmptyFileContents(fileName+".txt")
+    # fileName = "otherRobotMovedAway"
+    # robotName = str(InitialiseNaoRobot.ipAddress)+':'+str(InitialiseNaoRobot.portName)
     print str(msg)
     Logger.Log(str(msg))
-    FileIO.WriteLine(filename, str(robotName))
-    FileIO.WriteLine(filename, str(msg))
+    # WriteLine(fileName, str(robotName))
+    WriteLine(fileName, str(msg))
 
 def WriteLine(filename, stringToWrite):
     # Open a file
@@ -37,13 +37,16 @@ def ReadNumLinesInFile(filename):
     return counter
 
 def ReadFirstLineInFile(filename):
-    counter = 0
-    f = open(filename+".txt", 'r')
-    message = f.readline()
-    Logger.Log(message)
-    print message
-    f.close()
-    return message
+    try:
+        counter = 0
+        f = open(filename+".txt", 'r')
+        message = f.readline()
+        Logger.Log(message)
+        print "first line of file is :  " + message
+        f.close()
+        return message
+    except:
+        return ""
 
 def EmptyFileContents(filename):
     f = open(filename, 'w')
