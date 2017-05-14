@@ -306,6 +306,34 @@ def SendReadyToLiftMessage(InitialiseNaoRobot, msg):
     Logger.Log(str(config.WirelessMessages))
     Logger.Log(str(InitialiseNaoRobot.ListOfNaosDetected))
 
+def GetApprovalToMoveFromLeader(InitialiseNaoRobot):
+    counter = 0
+    #read all messages
+    print "config list"
+    # print config.WirelessMessages
+    for msg in config.WirelessMessages:
+        for message in InitialiseNaoRobot.ReadyToLiftMessages:
+            if (message[0] != msg[0]):
+                InitialiseNaoRobot.ListOfNaosDetected.append([msg[0], msg[1]])
+
+    for message in InitialiseNaoRobot.ReadyToLiftMessages:
+        if (message[1] == "READYTOLIFT"):
+            Logger.Log(str(message[1]))
+            print message[1]
+            counter = counter + 1
+    # print counter       
+    Logger.Log("GetReadyToLift")
+    Logger.Log(str(config.WirelessMessages))
+    Logger.Log(str(InitialiseNaoRobot.ListOfNaosDetected))
+    Logger.Log(str(counter) + " NAO READYTOLIFT")
+    filename = "readyToLift"
+    if (FileIO.ReadNumLinesInFile(filename) >= 1):
+        return True
+        Logger.Log(str("both nao ready to lift"))
+        Logger.Log(str(counter))
+        # print counter
+    else: return False
+
 def GetReadyToLift(InitialiseNaoRobot):
     counter = 0
     #read all messages

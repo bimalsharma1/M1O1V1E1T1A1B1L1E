@@ -14,6 +14,7 @@ import DetectCornersFast
 import Logger
 from Utils import ImageProcessing as ip
 from Utils import ActionHelper as a
+from Utils import FileIO as fio
 from SimpleBehaviours import MoveToOtherSideOfObject as mo
 from SimpleBehaviours import MoveAwayFromObject as ma
 
@@ -53,13 +54,18 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
     #CODE TO EXECUTE WHEN ROBOTS START ON THE SAME SIDE
     if(InitialiseNaoRobot.isLeader != True):
         ma.MoveAwayFromObject(InitialiseNaoRobot)
+        while h.GetApprovalToMoveFromLeader(InitialiseNaoRobot) == False:
+            time.sleep(1)
         # mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
     else:
         h.CommunicateLeadershipByPuttingRightHandUp(InitialiseNaoRobot.motionProxy)
+        #wait unil other robot moved away
+        while not fio.ReadFirstLineInFile("otherRobotMovedAway") == "MovedAway":
+            time.sleep(2) #wait for 2 seconds
     print "start moving robot so that bottom most point is in centre of screen"
     objectInCentreScreen = False
-    while not (objectInCentreScreen):
-        bottomMostPoint=[0,0]
+    while not objectInCentreScreen:
+        bottomMostPoint = [0, 0]
 
         #use top camera only if bottom camera cannot see ...
         imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)

@@ -16,6 +16,7 @@ from Utils import ImageProcessing as ip
 from Utils import DetectColourInImage as d
 from Utils import PerspectiveTransform as p
 from Utils import ActionHelper as a
+from Utils import FileIO as fio
 import cv2
 
 #contourList[0]    #leftmost
@@ -37,9 +38,13 @@ def MoveAwayFromObject(InitialiseNaoRobot):
         h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(240))
         time.sleep(4)
         h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,5)
+        #send message that other robot has moved away
+        fio.WriteMessageToFile(InitialiseNaoRobot, "MovedAway","otherRobotMovedAway")
     elif (directionOfOtherRobot == "RIGHT"):
         h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(240))
         time.sleep(4)
         h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,5)
+        #send message that other robot has moved away
+        fio.WriteMessageToFile(InitialiseNaoRobot, "MovedAway","otherRobotMovedAway")
     else:
         return

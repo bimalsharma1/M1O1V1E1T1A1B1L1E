@@ -2,6 +2,15 @@ import os
 from datetime import datetime
 import Logger
 
+def WriteMessageToFile(InitialiseNaoRobot, msg, fileName):
+    EmptyFileContents(fileName)
+    # filename = "otherRobotMovedAway"
+    robotName = str(InitialiseNaoRobot.ipAddress)+':'+str(InitialiseNaoRobot.portName)
+    print str(msg)
+    Logger.Log(str(msg))
+    FileIO.WriteLine(filename, str(robotName))
+    FileIO.WriteLine(filename, str(msg))
+
 def WriteLine(filename, stringToWrite):
     # Open a file
     fo = open(filename+".txt",'a') # w for write and a for append
@@ -30,7 +39,6 @@ def ReadNumLinesInFile(filename):
 def ReadFirstLineInFile(filename):
     counter = 0
     f = open(filename+".txt", 'r')
-    Logger.Log("starting count of lines in file")
     message = f.readline()
     Logger.Log(message)
     print message
