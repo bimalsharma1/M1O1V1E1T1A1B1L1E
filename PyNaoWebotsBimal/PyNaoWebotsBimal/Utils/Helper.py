@@ -20,6 +20,8 @@ import almath as m # python's wrapping of almath
 import InitialiseNaoRobot
 import FileIO
 
+# Description: Perform movement of basic robot parts like arms, head and legs
+
 def HeadYawMove(motionProxy, angle): #get angle in degrees (+ve value to turn left, -ve to turn right)
     names = "HeadYaw"   # looking left and right
     times      = [1.0]

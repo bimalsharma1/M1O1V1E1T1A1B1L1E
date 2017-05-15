@@ -5,7 +5,7 @@ from SimpleBehaviours import AlignToLongerSideOfObject
 from Utils import Helper as h
 
 class GoToTable:
-    """description of class"""
+    """Perform Behaviour GoToTable"""
     def GoToTable(self, InitialiseNaoRobot):
         print "Go to table"
         Logger.Log("STARTING GoToTable")

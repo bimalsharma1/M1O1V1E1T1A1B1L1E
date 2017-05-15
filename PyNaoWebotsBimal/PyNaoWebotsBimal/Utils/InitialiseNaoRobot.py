@@ -8,6 +8,8 @@ import config
 from Utils import Helper as h
 import FileIO
 
+# Description: Set all initialisation variables for the robot
+
 class InitialiseNaoRobot:
     motionProxy = None
     postureProxy = None

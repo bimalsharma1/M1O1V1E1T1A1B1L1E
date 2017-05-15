@@ -9,6 +9,8 @@ from Utils import ImageProcessing as ip
 from Utils import InitialiseNaoRobot
 from Utils import ActionHelper as a
 
+# Description: FIns and adjust to the closest V Corner of the table
+
 def AdjustForVCornerByRange(InitialiseNaoRobot): 
     Logger.Log("Adjust to V corner")
     acceptableError = config.acceptableErrorForVCentre

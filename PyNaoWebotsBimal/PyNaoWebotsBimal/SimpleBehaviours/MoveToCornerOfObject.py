@@ -18,6 +18,8 @@ from Utils import FileIO as fio
 from SimpleBehaviours import MoveToOtherSideOfObject as mo
 from SimpleBehaviours import MoveAwayFromObject as ma
 
+# Description: Perform behaviour MoveToCornerOfObject
+
 def MoveToCornerOfObject(InitialiseNaoRobot):
     lastKnownPositionOfObject = ""
     filenameTopCamera = "naoImageTopCamera"

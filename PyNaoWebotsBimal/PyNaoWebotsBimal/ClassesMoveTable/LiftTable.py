@@ -2,7 +2,7 @@ import Helper
 import Logger
 
 class LiftTable:
-    """description of class"""
+    """Perform Behaviour LiftTable"""
     def LiftTable(self, motionProxy):
         Logger.Log("STARTING LiftTable")
         Helper.LiftWithElbowAndShoulders(motionProxy) #rename to utils

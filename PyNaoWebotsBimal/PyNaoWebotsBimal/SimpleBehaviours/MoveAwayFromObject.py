@@ -19,6 +19,8 @@ from Utils import ActionHelper as a
 from Utils import FileIO as fio
 import cv2
 
+# Description: Perform behaviour MoveAwayFromObject
+
 #contourList[0]    #leftmost
 #contourList[1]    #topmost
 #contourList[2]    #rightmost

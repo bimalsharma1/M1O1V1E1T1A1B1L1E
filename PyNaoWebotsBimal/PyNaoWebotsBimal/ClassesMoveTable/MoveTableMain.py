@@ -15,8 +15,8 @@ import thread
 import time
 import BehaviourMoveToTopCornerOfObject
 
+#Description: Main controller to perform behaviour in logical order
 class MoveTableMain:
-    """description of class"""
     def Main(self, port):
         Logger.Log("MOVE  NAO") 
         print "MOVE  NAO"

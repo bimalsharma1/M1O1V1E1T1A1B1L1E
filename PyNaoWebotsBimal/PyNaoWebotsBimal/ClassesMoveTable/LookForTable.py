@@ -3,7 +3,7 @@ from Utils import InitialiseNaoRobot
 from SimpleBehaviours import FindObjectOfInterest as f
 
 class LookForTable:
-    """description of class"""
+    """Perform Behaviour LookForTable"""
     def LookForTable(self, InitialiseNaoRobot): 
         #inherit common vars
         Logger.Log("STARTING LOOKFORTABLE")

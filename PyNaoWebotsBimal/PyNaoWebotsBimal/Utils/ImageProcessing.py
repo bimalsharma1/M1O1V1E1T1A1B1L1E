@@ -10,6 +10,8 @@ from naoqi import ALProxy
 import cv2
 import vision_definitions
 
+# Description: Captures images from top and bottom camera
+
 def getImage(InitialiseNaoRobot, camera, FILENAME = None): 
         camProxy = InitialiseNaoRobot.camProxy
         topVideoClient = InitialiseNaoRobot.topVideoClient

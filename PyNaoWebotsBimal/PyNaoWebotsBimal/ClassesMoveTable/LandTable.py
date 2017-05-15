@@ -3,7 +3,7 @@ import Logger
 import time
 
 class LandTable:
-    """description of class"""
+    """Perform Behaviour LandTable"""
     def LandTable(self, motionProxy):
         Logger.Log("STARTING LandTable")
         h.LiftWithElbowAndShouldersPutObjectDown(motionProxy)

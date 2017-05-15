@@ -22,6 +22,8 @@ from Utils import Helper as h
 from Utils import DetectColourInImage as d
 from SimpleBehaviours import MoveToOtherSideOfObject as mo 
 
+# Description: Perform behaviour FindObjectOfInterest
+
 def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCamera):
     objectFound = False
     print "FindObjectOfInterest"

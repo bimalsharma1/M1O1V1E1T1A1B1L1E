@@ -18,6 +18,8 @@ from Utils import PerspectiveTransform as p
 from Utils import ActionHelper as a
 import cv2
 
+# Description: Perform behaviour MoveToOtherSideOfObject
+
 #contourList[0]    #leftmost
 #contourList[1]    #topmost
 #contourList[2]    #rightmost

@@ -2,8 +2,11 @@ import os
 from datetime import datetime
 import Logger
 
+# Description: Write various messages to files and read from files
+# perform CRD operations
+
 def WriteMessageToFile(InitialiseNaoRobot, msg, fileName):
-    EmptyFileContents(fileName+".txt")
+    
     # fileName = "otherRobotMovedAway"
     # robotName = str(InitialiseNaoRobot.ipAddress)+':'+str(InitialiseNaoRobot.portName)
     print str(msg)

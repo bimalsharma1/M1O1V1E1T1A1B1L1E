@@ -8,6 +8,9 @@ import Logger
 import config
 import datetime
 
+# Description: Look for a particular colour in an object and return its dimensions like 
+# the closest point , four corners and sides
+
 def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
     image = cv2.imdecode(np.fromstring(im, dtype='uint8'), cv2.IMREAD_UNCHANGED)
     

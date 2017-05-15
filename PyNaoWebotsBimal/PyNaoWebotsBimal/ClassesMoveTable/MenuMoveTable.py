@@ -48,6 +48,7 @@ from multiprocessing import Process, Value, Array
 from SimpleBehaviours import AlignToLongerSideOfObject as a
 from Utils import Helper as h
 
+#Description: Menu to select behaviour to perform
 def mainMenu():
     Logger.RenamePreviousFile()
     try:
