@@ -61,7 +61,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
             Logger.Log(str(InitialiseNaoRobot.portName))
             print xCntrPos
             # h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
-            ObjectFound = True
+            objectFound = True
             cameraPosition = 'TOP'
 
             #SELCT LEADER
@@ -73,7 +73,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
             # Logger.Log(str(InitialiseNaoRobot.isLeader))
             # if(InitialiseNaoRobot.isLeader != True):
             #     mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
-            return (xCntrPos, yCntrPos, headLookingPosition, ObjectFound, botMostPnt)   
+            return (xCntrPos, yCntrPos, headLookingPosition, objectFound, botMostPnt)   
         
 
         while not (objectFound):
@@ -98,7 +98,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                     print "OBJECT FOUND"
                     print xCntrPos
                     # angleOfHead = -200
-                    ObjectFound = True
+                    objectFound = True
                     print "SELECTING LEADER"
                     h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
                     cameraPosition = 'TOP'
@@ -118,7 +118,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
 
             print "out of inner loop-checking if object found"
             Logger.Log("out of inner loop-checking if object found")
-            if(ObjectFound):
+            if(objectFound):
                 break
             h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(180))
             turnCounter = turnCounter + 1
@@ -143,7 +143,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                 if (xCntrPos > float(config.imageWidth)/2.00):
                     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
                     h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
-                    return (xCntrPos, yCntrPos, headLookingPosition, ObjectFound, botMostPnt)
+                    return (xCntrPos, yCntrPos, headLookingPosition, objectFound, botMostPnt)
         elif(angleOfHead > 0):
             objectPosition = "LEFT"
             h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(45))
@@ -160,7 +160,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                 if (xCntrPos < float(config.imageWidth)/2.00):
                     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
                     h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
-                    return (xCntrPos, yCntrPos, headLookingPosition, ObjectFound, botMostPnt)
+                    return (xCntrPos, yCntrPos, headLookingPosition, objectFound, botMostPnt)
                     # h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead)*2)
                     
   

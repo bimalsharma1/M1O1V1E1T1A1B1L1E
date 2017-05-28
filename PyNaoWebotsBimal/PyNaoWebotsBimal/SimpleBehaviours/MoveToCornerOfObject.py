@@ -17,6 +17,7 @@ from Utils import ActionHelper as a
 from Utils import FileIO as fio
 from SimpleBehaviours import MoveToOtherSideOfObject as mo
 from SimpleBehaviours import MoveAwayFromObject as ma
+from SimpleBehaviours import FindObjectOfInterest as f
 
 # Description: Perform behaviour MoveToCornerOfObject
 
@@ -57,8 +58,10 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
     if(InitialiseNaoRobot.isLeader != True):
         ma.MoveAwayFromObject(InitialiseNaoRobot)
         while h.GetApprovalToMoveFromLeader(InitialiseNaoRobot) == False:
-            time.sleep(1)
-        # mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
+            time.sleep(5)
+        # FindObjectOfInterest
+        xCntrPos, yCntrePos, headPos, objFound, btmPnt = f.FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera,filenameBottomCamera)
+        mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
     else:
         h.CommunicateLeadershipByPuttingRightHandUp(InitialiseNaoRobot.motionProxy)
         #wait unil other robot moved away

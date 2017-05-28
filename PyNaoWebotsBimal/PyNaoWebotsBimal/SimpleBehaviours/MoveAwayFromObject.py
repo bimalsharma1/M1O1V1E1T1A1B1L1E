@@ -37,18 +37,10 @@ def MoveAwayFromObject(InitialiseNaoRobot):
     directionOfOtherRobot = a.FindDirectionOfOtherRobot(InitialiseNaoRobot)
     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
     if (directionOfOtherRobot == "LEFT"):
-        h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(240))
-        time.sleep(4)
-        h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(90))
-        h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,5)
-        #send message that other robot has moved away
+        a.MoveWithObstacleAvoidance(InitialiseNaoRobot, "RIGHT")
         fio.WriteMessageToFile(InitialiseNaoRobot, "movedaway","otherRobotMovedAway")
     elif (directionOfOtherRobot == "RIGHT"):
-        h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(240))
-        time.sleep(4)
-        h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(90))
-        h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,5)
-        #send message that other robot has moved away
+        a.MoveWithObstacleAvoidance(InitialiseNaoRobot, "LEFT")
         fio.WriteMessageToFile(InitialiseNaoRobot, "MovedAway","otherRobotMovedAway")
     else:
         return
