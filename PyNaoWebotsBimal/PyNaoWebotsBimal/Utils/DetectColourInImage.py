@@ -54,16 +54,16 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
         #bottomMostPoint = tuple(mask[mask[:,:,1].argmax()][0])
         #print bottomMostPoint
         output = cv2.bitwise_and(image, image, mask = mask)    #output has found image in the colour
-        #cv2.imwrite("output.png",output)
+        cv2.imwrite("output.png",output)
         #    get centre position of colour
         thresh = 90      
         #gray = cv2.cvtColor(output,cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(output,(5,5),0) 
         # print "Gaussian blur complete"
-        #blur = cv2.GaussianBlur(gray,(5,5),0)  
+
         edges = cv2.Canny(gray,thresh,thresh*2)  #removed gaussianblur and put gray    
-        #cv2.imwrite("blur.png",blur)
-        #cv2.imwrite("edges.png",edges)
+
+        # cv2.imwrite("edges.png",edges)
         #drawing = np.zeros(output.shape,np.uint8)                  # Image to draw the contours
         derp,contours,hierarchy = cv2.findContours(edges,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)    
         #find max contour

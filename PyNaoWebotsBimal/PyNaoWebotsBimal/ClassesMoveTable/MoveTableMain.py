@@ -14,6 +14,7 @@ import threading
 import thread
 import time
 import BehaviourMoveToTopCornerOfObject
+from SimpleBehaviours import AlignToMiddleOfTable
 
 #Description: Main controller to perform behaviour in logical order
 class MoveTableMain:
@@ -68,3 +69,14 @@ class MoveTableMain:
         print "move table"
         moveTable = MoveTable.MoveTable()
         moveTable.MoveTableDef(initNao, 0, 1, 0)
+    
+    def AlignToMiddleOfTable(self, port):
+        Logger.Log("MOVE  NAO") 
+        print "MOVE  NAO"
+        initNao = InitialiseNaoRobot.InitialiseNaoRobot(port)
+        initNao.wakeUpRobot(port)
+        h.AddNao(initNao)
+
+        print "align to middle"
+        alignToMiddle = AlignToMiddleOfTable.AlignToMiddleOfTable()
+        alignToMiddle.AlignToMiddleOfTable(initNao)

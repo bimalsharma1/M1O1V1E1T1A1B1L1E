@@ -61,6 +61,7 @@ def mainMenu():
         print "Enter 6 for two robot task to move a heavy table"
         print "Enter 7 to Look for table"
         print "Enter 8 to lift and move with table"
+        print "Enter 9 to align to the middle of table"
         inputChoice = raw_input("Enter your choice: ")
 
         if ("0" in inputChoice):
@@ -145,9 +146,9 @@ def mainMenu():
             p1.join()
 
         elif ("9" in inputChoice):
-            Logger.Log("MOVE FIRST NAO") 
-            portName1 = 'port1'
-            motionProxy = InitialiseNao.InitialiseFirstNao()
+            p0 = Process(target=MoveTableMain.MoveTableMain().AlignToMiddleOfTable, args=('port1',))
+            p0.start()
+            p0.join()
         else:
             print "Coming soon!"
         

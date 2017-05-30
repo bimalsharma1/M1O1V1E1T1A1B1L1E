@@ -25,7 +25,8 @@ import cv2
 #contourList[2]    #rightmost
 #contourList[3] = closestPnt   #bottomMOst
 ##contourList[4] HAS HEIGHT AND WIDTH 
-def AlignToMiddleOfTable(InitialiseNaoRobot): 
+class AlignToMiddleOfTable:
+    def AlignToMiddleOfTable(self, InitialiseNaoRobot): 
         filenameTopCamera = "naoImageTopCamera"
         filenameBottomCamera = "naoImageBottomCamera"
         fourtyFiveDegreeInRadians = 1
@@ -38,16 +39,17 @@ def AlignToMiddleOfTable(InitialiseNaoRobot):
         correctionAngle = 0.3
 
 
+        #Align body of robot with table
+        a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM", filenameBottomCamera, 50)
+
         #Look left and right to align to middle of table
-        a.LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot)
+        a.LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot, "BOTTOM")
 
         #Align body of robot with table
-        a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"TOP", filenameTopCamera)
-
-        
+        a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM", filenameBottomCamera, 80)
 
         #walk ahead until close enough to lift range
         a.WalkAheadUntilCloseToLift(InitialiseNaoRobot)
 
         #Align body of robot with table
-        # a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)
+        a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera, 100)
