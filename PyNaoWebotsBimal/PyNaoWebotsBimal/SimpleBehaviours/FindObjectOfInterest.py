@@ -120,10 +120,11 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
             Logger.Log("out of inner loop-checking if object found")
             if(objectFound):
                 break
-            h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(180))
+            # h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(180))
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(180))
             turnCounter = turnCounter + 1
             time.sleep(4)
-            if (turnCounter % 2 == 0):
+            if (turnCounter % 2 == 0 and turnCounter > 0):
                 h.WalkToPosition(InitialiseNaoRobot.motionProxy, 1, 0, 0)
                 time.sleep(3)
 

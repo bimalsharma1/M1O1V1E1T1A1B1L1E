@@ -117,7 +117,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         
 
         #walk ahead until close enough to lift range
-        a.WalkAheadUntilCloseToLift(InitialiseNaoRobot)
+        # a.WalkAheadUntilCloseToLift(InitialiseNaoRobot)
 
         #Align body of robot with table
         # a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)

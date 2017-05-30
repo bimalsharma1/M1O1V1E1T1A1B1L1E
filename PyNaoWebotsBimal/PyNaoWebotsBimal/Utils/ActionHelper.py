@@ -36,7 +36,7 @@ def MoveWithObstacleAvoidanceTowardOtherCorner(InitialiseNaoRobot, directionToMo
     angleToTurn = 0.3
     angleOfHead = 0
     while not movedToOtherCorner:
-        print "SPINNING TO MOVE AWAY"
+        print "SPINNING TO MOVE AWAY MoveWithObstacleAvoidanceTowardOtherCorner"
         im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
         xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint, cornerPoints, bl, br, tl, tr = d.DetectColour(filenameTopCamera + ".png", "", im)
         print bottomMostPoint
@@ -49,12 +49,32 @@ def MoveWithObstacleAvoidanceTowardOtherCorner(InitialiseNaoRobot, directionToMo
             time.sleep(2)
         else:
             movedToOtherCorner = True
-    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,3)
+    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 4)
+
+    if (directionToMoveAway == "RIGHT"):
+        angleOfHead = 100 #100 looking left -100 looking right
+    elif (directionToMoveAway == "LEFT"):
+        angleOfHead = -100 #100 looking left -100 looking right
+
+    h.HeadInitialise(InitialiseNaoRobot.motionProxy)
+    h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(angleOfHead))
+    #keeop walking until table out of sight
+    while not objectOutOfSight:
+        print "WALKING OUT OF SIGHT"
+        im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
+        xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint, cornerPoints, bl, br, tl, tr = d.DetectColour(filenameTopCamera + ".png", "", im)
+        if directionToMoveAway == "RIGHT" and bottomMostPoint[0] > 5:
+            h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,1)
+        elif directionToMoveAway == "LEFT"and bottomMostPoint[0] > 0 and bottomMostPoint[0] < 635:
+            h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,1)
+        else:
+            objectOutOfSight = True
+    h.HeadInitialise(InitialiseNaoRobot.motionProxy)
 
     #now face table
     facingTable = False
     while not facingTable:
-        print "SPINNING TO MOVE AWAY"
+        print "SPINNING TO MOVE AWAY MoveWithObstacleAvoidanceTowardOtherCorner"
         im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
         xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint, cornerPoints, bl, br, tl, tr = d.DetectColour(filenameTopCamera + ".png", "", im)
         print bottomMostPoint
@@ -125,15 +145,17 @@ def FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot):
     objectFound = False
     tableInCentre = False
     xCentrePostion = 0
+    tablePositionRelativeToRobot = "NONE"
 
     while not tableInCentre:
         Logger.Log("Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable")
         im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-        xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, closestPnt,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)   
+        #face the other robot
+        xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, closestPnt, cornerPoints, bl, br, tl, tr = d.DetectColour(filenameTopCamera + ".png", "", im, config.colourOfHeadOfNao)   
         if (xCentrePostion < (config.imageWidth/2.0)-50):
-            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(15))
+            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(25))
         elif (xCentrePostion > (config.imageWidth/2.0)+50):
-            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(15))
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(25))
         else:
             tableInCentre = True
 
@@ -152,19 +174,26 @@ def FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot):
             headLookingPosition = 'CENTRE'
             #use top camera only if bottom camera cannot see ...
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-            xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT,config.colourOfHeadOfNao) 
+            xCntrPosRobot, yCntrPosRobot, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT, config.colourOfHeadOfNao) 
             time.sleep(2)       
-            if (xCntrPos > 0):
+            if (xCntrPosRobot > 0):
                 ObjectFound = True
                 h.HeadInitialise(InitialiseNaoRobot.motionProxy)
                 im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-                xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, closestPnt, cornerPoints, bl, br, tl, tr = d.DetectColour(filenameTopCamera + ".png", "", im)   
-                if xCntrPos < xCentrePostion:
+                xCentrePostionTable, yCentrePositionTable, objectFoundOnBottomCamera, closestPnt, cornerPoints, bl, br, tl, tr = d.DetectColour(filenameTopCamera + ".png", "", im)
+
+                #determine of table in front or behind robot
+                if yCntrPosRobot > 0 and yCentrePositionTable > 0:
+                    if yCntrPosRobot < yCentrePositionTable:
+                        tablePositionRelativeToRobot = "INFRONT"
+                    elif yCntrPosRobot < yCentrePositionTable:
+                        tablePositionRelativeToRobot = "BEHIND"
+                if xCntrPosRobot < xCentrePostionTable:
                     Logger.Log("FindDirectionOfOtherRobotRelativeToTable is LEFT")    
-                    return "LEFT"
-                elif xCntrPos > xCentrePostion:
+                    return "LEFT", xCntrPosRobot, xCentrePostionTable, tablePositionRelativeToRobot
+                elif xCntrPosRobot > xCentrePostionTable:
                     Logger.Log("FindDirectionOfOtherRobotRelativeToTable is RIGHT")
-                    return "RIGHT"
+                    return "RIGHT", xCntrPosRobot, xCentrePostionTable, tablePositionRelativeToRobot
                 else:
                     Logger.Log("FindDirectionOfOtherRobotRelativeToTable is NOT FOUND")
                     # return "NOT FOUND"
@@ -172,11 +201,11 @@ def FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot):
             print angleOfHead
             Logger.Log(str(angleOfHead))
             print "values found in this turn"
-            print xCntrPos, yCntrPos, objFoundBtmCam
+            print xCntrPosRobot, yCntrPosRobot, objFoundBtmCam, tablePositionRelativeToRobot
             angleOfHead = angleOfHead - 50
             h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(angleOfHead))
             time.sleep(2)
-        return "NOT FOUND"
+        return "NOT FOUND", xCntrPosRobot, xCentrePostionTable
 
 def FindDirectionOfOtherRobot(InitialiseNaoRobot):
     filenameTopCamera = "naoImageTopCamera"
