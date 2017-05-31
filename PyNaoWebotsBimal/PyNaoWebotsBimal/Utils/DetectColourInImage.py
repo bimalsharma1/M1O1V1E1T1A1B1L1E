@@ -60,12 +60,11 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
         #gray = cv2.cvtColor(output,cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(output,(5,5),0) 
         # print "Gaussian blur complete"
+        edges = cv2.Canny(gray, thresh, thresh*2)  #removed gaussianblur and put gray    
+        cv2.imwrite("edges.png",edges)
 
-        edges = cv2.Canny(gray,thresh,thresh*2)  #removed gaussianblur and put gray    
-
-        # cv2.imwrite("edges.png",edges)
         #drawing = np.zeros(output.shape,np.uint8)                  # Image to draw the contours
-        derp,contours,hierarchy = cv2.findContours(edges,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)    
+        derp, contours, hierarchy = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)    
         #find max contour
         #cnts = contours[0] if imutils.is_cv2() else contours[1]
         #cnt = max(cnts, key=cv2.contourArea)
@@ -74,6 +73,7 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
         
         # Find the index of the largest contour
         areas = [cv2.contourArea(c) for c in contours]
+        # Logger.Log(str(areas))
         # print "find largest contour"
         try:
             if (areas != []):
@@ -102,11 +102,15 @@ def DetectColour(FILENAME,CAMERANAME, im, colourToDetect = None):
         try:
             # print "finding the bottom most point"
             rect = cv2.minAreaRect(cnt)
+            # Logger.Log(str(rect))
             box =  cv2.boxPoints(rect)
+            # Logger.Log(str(box))
             pts = np.int0(box)
+            # Logger.Log(str(pts))
             xSorted = pts[np.argsort(pts[:, 0]), :]
             leftMost = xSorted[:2, :]
             rightMost = xSorted[2:, :]
+            # Logger.Log(str(rightMost))
             leftMost = leftMost[np.argsort(leftMost[:, 1]), :]
             (tl, bl) = leftMost
             D = dist.cdist(tl[np.newaxis], rightMost, "euclidean")[0]
@@ -376,3 +380,48 @@ def DetectYPos(im, rangeToSearch = 5, midXPoint = float(config.imageWidth)/2.0, 
         print "ERROR occurred trying to find pixel value for Y point"
         print e
         return LeftYPos,MidYPos,RightYPos
+
+
+# Description: takes an image and find the 
+#left most / right most topmost and bottom most of blob
+
+def DetectFourExtremePoints(im, colourToDetect = None):
+    #startYPixelValue: can use centriod figure to get mid point of table
+    image = cv2.imdecode(np.fromstring(im, dtype='uint8'), cv2.IMREAD_UNCHANGED)
+    lower, upper = GetColourRange(colourToDetect)
+    LeftMostX = -1
+    RightMostX = -1
+    TopMostY = -1
+    BottomMostY = -1
+    
+     #get the mid point of image
+    try:
+    	# the mask
+        mask = cv2.inRange(image, lower, upper)   #mask has black and white image
+        #can only have range from 0 - 479 in this case so need to minus 1
+        for YIndex in range(0, 479, 1):
+            for XIndex in range(0, 639, 1):
+                currentValue = mask[YIndex, XIndex]
+                # midYValue = mask[YIndex, midXPoint]
+                # rightYValue = mask[YIndex, midXPoint + rangeToSearch]
+                ####stop as soon as you find a white as you already start at the bottom black 
+                if(currentValue == 255):
+                    if TopMostY == -1 or TopMostY > YIndex:
+                        TopMostY = YIndex
+                    if BottomMostY == -1 or BottomMostY < YIndex:
+                        BottomMostY = YIndex
+                    if RightMostX == -1 or RightMostX < XIndex:
+                        RightMostX = XIndex
+                    if LeftMostX == -1 or LeftMostX > XIndex:
+                        LeftMostX = XIndex
+        Logger.Log("Four extreme points are: ")
+        Logger.Log(str(LeftMostX))
+        Logger.Log(str(RightMostX))
+        Logger.Log(str(TopMostY))
+        Logger.Log(str(BottomMostY))
+        print LeftMostX, RightMostX, TopMostY, BottomMostY
+        return LeftMostX, RightMostX, TopMostY, BottomMostY           
+    except Exception as e:
+        print "ERROR occurred trying to find extreme points of blob"
+        print e
+        return LeftMostX, RightMostX, TopMostY, BottomMostY
