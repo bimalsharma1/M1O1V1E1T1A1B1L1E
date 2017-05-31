@@ -537,8 +537,8 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot, camera = "TOP"):
             time.sleep(1)
             imT = ip.getImage(InitialiseNaoRobot, camera, filenameBottomCamera)
             LeftMostX, RightMostX, TopMostY, BottomMostY = d.DetectFourExtremePoints(imT)
-            if LeftMostX == -1 or RightMostX == -1 or BottomMostY < 240:
-                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.2)
+            if LeftMostX == -1 or RightMostX == -1 or BottomMostY < 200:
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
             elif(LeftMostX > 10):
                 print "WALK LEFT sideways based on centroid value"
                 h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.5)         
