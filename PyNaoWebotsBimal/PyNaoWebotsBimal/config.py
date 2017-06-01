@@ -23,7 +23,7 @@ acceptableErrorForVCentre = 80 #was 50
 leftMostAlignmentLimit = 315
 rightMostAlignmentLimit = 325
 
-yPointAlignmentErrorMargin = 10
+yPointAlignmentErrorMargin = 5
 
 leftMostXAndRightMostXAlignTableErrorMargin = 50
 centroidLeftMostXAndRightMostXAlignTableErrorMargin = 20

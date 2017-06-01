@@ -43,7 +43,7 @@ class AlignToMiddleOfTable:
         a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM", filenameBottomCamera, 50)
 
         #Look left and right to align to middle of table
-        a.LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot, "BOTTOM")
+        a.LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot, "TOP")
 
         #Align body of robot with table
         # a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM", filenameBottomCamera, 80)

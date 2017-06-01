@@ -496,15 +496,6 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
             print "COMPLETED ** AlignBodyHorizontallyWithTable"
             Logger.Log("COMPLETED ** AlignBodyHorizontallyWithTable")
             Aligned = True
-        if LeftYPos == 0 or RightYPos != 0:
-            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
-        elif LeftYPos != 0 or RightYPos == 0:
-            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
-        elif LeftYPos == 0 or RightYPos == 0:
-            print "One of the vertical positions not found AlignBodyHorizontallyWithTable"
-            Logger.Log("One of the vertical positions not found AlignBodyHorizontallyWithTable")
-            Aligned = True
-
         elif LeftYPos <> 0 and RightYPos <> 0:
             if LeftYPos > RightYPos:
                 moveRatio = 1 - (RightYPos / float(LeftYPos)) * correctionAngle
@@ -513,9 +504,18 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
             correctionAngle = correctionAngle * abs(moveRatio)
             if(LeftYPos > RightYPos and (abs(LeftYPos-RightYPos)>config.yPointAlignmentErrorMargin)):
                 h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
+                print "spinning left"
             elif(LeftYPos <= RightYPos and ((RightYPos-LeftYPos)>config.yPointAlignmentErrorMargin)):
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
-
+                print "spinning right"
+        if LeftYPos <= 0 or RightYPos != 0:
+            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
+        elif LeftYPos != 0 or RightYPos <= 0:
+            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
+        elif LeftYPos <= 0 or RightYPos <= 0:
+            print "One of the vertical positions not found AlignBodyHorizontallyWithTable"
+            Logger.Log("One of the vertical positions not found AlignBodyHorizontallyWithTable")
+            Aligned = True
         
 
 def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot, camera = "TOP"):
@@ -535,10 +535,10 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot, camera = "TOP"):
         while not tableInWholeFieldOfView:
             h.HeadYawMove(InitialiseNaoRobot.motionProxy, 0)  #-ve value to look left,     0.5 then 0.7
             time.sleep(1)
-            imT = ip.getImage(InitialiseNaoRobot, camera, filenameBottomCamera)
+            imT = ip.getImage(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)
             LeftMostX, RightMostX, TopMostY, BottomMostY = d.DetectFourExtremePoints(imT)
             if LeftMostX == -1 or RightMostX == -1 or BottomMostY < 200:
-                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.15)
             elif(LeftMostX > 10):
                 print "WALK LEFT sideways based on centroid value"
                 h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.5)         
@@ -547,12 +547,17 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot, camera = "TOP"):
                 h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.5) 
             else:
                 tableInWholeFieldOfView = True
-        time.sleep(2)
+        time.sleep(2) 
 
         print "LOOK LEFT THEN RIGHT< FIND DIFF AND ADJUST"     
-        #LEFT
-        
+        #LEFT     
         while not (aligned):
+            #look ahead and align
+            h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(0))  #-ve value to look left,     0.5 then 0.7
+            time.sleep(4)
+            AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM", filenameBottomCamera, 50)
+
+            #look left
             print "Aligning nao to object for"
             h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(turnAngle))  #-ve value to look left,     0.5 then 0.7
             time.sleep(4)
@@ -629,14 +634,15 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot, cameraName = "BOTTOM", fileNam
         maxHeadPitchAngle = 29
         currentHeadPitchAngle = 10
         
-        objectSeen = False
-        while not (objectSeen):
+        objectWithinRange = False
+        while not (objectWithinRange):
             print "KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM"
             Logger.Log( "KEEP WALKING UNTIL OBJECT SEEN BY BOTTOM CAM")
+            
             im = ip.getImage(InitialiseNaoRobot, cameraName, fileNameCamera)
             LeftMostX, RightMostX, TopMostY, BottomMostY = d.DetectFourExtremePoints(im)
             if (BottomMostY > 470):
-                objectSeen = True
+                objectWithinRange = True
                 print "CLOSE ENOUGH TO TABLE NOW"
                 Logger.Log("CLOSE ENOUGH TO TABLE NOW")
             else:
@@ -732,3 +738,4 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot, cameraName = "BOTTOM", fileNam
 
         #look straight    
         h.HeadInitialise(InitialiseNaoRobot.motionProxy)
+        AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM", fileNameCamera, 50)
