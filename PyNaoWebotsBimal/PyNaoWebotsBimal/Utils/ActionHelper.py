@@ -492,11 +492,11 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
         print MidYPos
         print RightYPos
 
-        if (LeftYPos <> 0 and RightYPos <> 0 and abs(LeftYPos-RightYPos) <= config.yPointAlignmentErrorMargin):
+        if (LeftYPos > 0 and RightYPos > 0 and abs(LeftYPos-RightYPos) <= config.yPointAlignmentErrorMargin):
             print "COMPLETED ** AlignBodyHorizontallyWithTable"
             Logger.Log("COMPLETED ** AlignBodyHorizontallyWithTable")
             Aligned = True
-        elif LeftYPos <> 0 and RightYPos <> 0:
+        elif LeftYPos > 0 and RightYPos > 0:
             if LeftYPos > RightYPos:
                 moveRatio = 1 - (RightYPos / float(LeftYPos)) * correctionAngle
             else:
@@ -508,11 +508,13 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
             elif(LeftYPos <= RightYPos and ((RightYPos-LeftYPos)>config.yPointAlignmentErrorMargin)):
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
                 print "spinning right"
-        if LeftYPos <= 0 or RightYPos != 0:
-            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
-        elif LeftYPos != 0 or RightYPos <= 0:
+        elif LeftYPos <= 0 and RightYPos > 0:
+            print "left y pos has no value"
+            h.WalkSideWaysRightUntilFinished(InitialiseNaandobot.motionProxy, 0.1)
+        elif LeftYPos > 0 and RightYPos <= 0:
+            print "right y pos has no value"
             h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
-        elif LeftYPos <= 0 or RightYPos <= 0:
+        else: #LeftYPos <= 0 or RightYPos <= 0:
             print "One of the vertical positions not found AlignBodyHorizontallyWithTable"
             Logger.Log("One of the vertical positions not found AlignBodyHorizontallyWithTable")
             Aligned = True
@@ -529,6 +531,7 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot, camera = "TOP"):
         leftMostXLookingLeft = 0
         moveRatio = 1
         turnAngle = 45
+        moveAheadDistance = 0.15
         spinRatio = 5*almath.TO_RAD
         h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(29))
         print "Look straight ahead"
@@ -538,7 +541,9 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot, camera = "TOP"):
             imT = ip.getImage(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)
             LeftMostX, RightMostX, TopMostY, BottomMostY = d.DetectFourExtremePoints(imT)
             if LeftMostX == -1 or RightMostX == -1 or BottomMostY < 200:
-                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.15)
+                if BottomMostY > 20:
+                    moveAheadDistance = 0.05
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, moveAheadDistance)
             elif(LeftMostX > 10):
                 print "WALK LEFT sideways based on centroid value"
                 h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.5)         
@@ -587,7 +592,7 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot, camera = "TOP"):
 
             print "calculate adjustment"
             X = 0.1
-            Y = 0.1#was 0.3
+            Y = 0.2#was 0.3
 
             time.sleep(3)
 
@@ -599,6 +604,7 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot, camera = "TOP"):
                     if (abs(leftMostXLookingLeft - rightMostXLookingRight) <= config.leftMostXAndRightMostXAlignTableErrorMargin):
                         # h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, Y, 0)
                         aligned = True
+                        h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(0))
                     else:
                         h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,Y) #((leftMostX - rightMostX)/contourList[4][1]) * X, 0)  correctionAngle
                         # h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
@@ -610,6 +616,7 @@ def LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot, camera = "TOP"):
                      if (abs(leftMostXLookingLeft - rightMostXLookingRight) <= config.leftMostXAndRightMostXAlignTableErrorMargin):
                         # h.WalkToPosition(InitialiseNaoRobot.motionProxy,0, -Y, 0)
                         aligned = True
+                        h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(0))
                      else:
                         h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,Y) #-((rightMostX - leftMostX)/contourList[4][1]) * X, 0)
                         # h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
