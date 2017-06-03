@@ -135,6 +135,20 @@ def MoveWithObstacleAvoidance(InitialiseNaoRobot, directionToMoveAway):
         else:
             objectOutOfSight = True
     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
+    
+    #spin to face leader
+    naoHeadInCentre = False
+    while not naoHeadInCentre:
+        Logger.Log("Spin to face leader MoveWithObstacleAvoidance")
+        im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
+        #face the other robot
+        xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, closestPnt, cornerPoints, bl, br, tl, tr = d.DetectColour(filenameTopCamera + ".png", "", im, config.colourOfHeadOfNao)   
+        if (xCentrePostion < (config.imageWidth/2.0)-50):
+            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(25))
+        elif (xCentrePostion > (config.imageWidth/2.0)+50):
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(25))
+        else:
+            naoHeadInCentre = True
 
 def FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot):
     filenameTopCamera = "naoImageTopCamera"
@@ -145,10 +159,11 @@ def FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot):
     angleOfHead = 100
     objectFound = False
     tableInCentre = False
+    naoHeadInCentre = False
     xCentrePostion = 0
     tablePositionRelativeToRobot = "NONE"
 
-    while not tableInCentre:
+    while not naoHeadInCentre:
         Logger.Log("Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable")
         im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
         #face the other robot
@@ -158,7 +173,7 @@ def FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot):
         elif (xCentrePostion > (config.imageWidth/2.0)+50):
             h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(25))
         else:
-            tableInCentre = True
+            naoHeadInCentre = True
 
     while not objectFound:
         angleOfHead = 100
@@ -176,7 +191,7 @@ def FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot):
             #use top camera only if bottom camera cannot see ...
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCntrPosRobot, yCntrPosRobot, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT, config.colourOfHeadOfNao) 
-            time.sleep(2)       
+            time.sleep(2)
             if (xCntrPosRobot > 0):
                 ObjectFound = True
                 h.HeadInitialise(InitialiseNaoRobot.motionProxy)
@@ -185,14 +200,18 @@ def FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot):
 
                 #determine of table in front or behind robot
                 if yCntrPosRobot > 0 and yCentrePositionTable > 0:
+                    #get red y centre and then search further down for blue color to get position
                     if yCntrPosRobot < yCentrePositionTable:
                         tablePositionRelativeToRobot = "INFRONT"
                     elif yCntrPosRobot < yCentrePositionTable:
                         tablePositionRelativeToRobot = "BEHIND"
-                if xCntrPosRobot < xCentrePostionTable:
-                    Logger.Log("FindDirectionOfOtherRobotRelativeToTable is LEFT")    
+                    else:
+                        tablePositionRelativeToRobot = "NONE"
+
+                if xCntrPosRobot < xCentrePostionTable and (abs(xCntrPosRobot) - abs(xCentrePostionTable)) < 50:
+                    Logger.Log("FindDirectionOfOtherRobotRelativeToTable is LEFT")
                     return "LEFT", xCntrPosRobot, xCentrePostionTable, tablePositionRelativeToRobot
-                elif xCntrPosRobot > xCentrePostionTable:
+                elif xCntrPosRobot > xCentrePostionTable and (abs(xCntrPosRobot) - abs(xCentrePostionTable)) < 50:
                     Logger.Log("FindDirectionOfOtherRobotRelativeToTable is RIGHT")
                     return "RIGHT", xCntrPosRobot, xCentrePostionTable, tablePositionRelativeToRobot
                 else:

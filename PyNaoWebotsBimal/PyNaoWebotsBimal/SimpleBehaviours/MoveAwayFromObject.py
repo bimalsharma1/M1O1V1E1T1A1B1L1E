@@ -38,9 +38,11 @@ def MoveAwayFromObject(InitialiseNaoRobot):
     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
     if (directionOfOtherRobot == "LEFT"):
         a.MoveWithObstacleAvoidance(InitialiseNaoRobot, "RIGHT")
-        fio.WriteMessageToFile(InitialiseNaoRobot, "movedaway","otherRobotMovedAway")
+        #send message that other robot has moved away
+        fio.WriteMessageToFile(InitialiseNaoRobot, "MovedAway","otherRobotMovedAway")
     elif (directionOfOtherRobot == "RIGHT"):
         a.MoveWithObstacleAvoidance(InitialiseNaoRobot, "LEFT")
+        #send message that other robot has moved away
         fio.WriteMessageToFile(InitialiseNaoRobot, "MovedAway","otherRobotMovedAway")
     else:
         return
