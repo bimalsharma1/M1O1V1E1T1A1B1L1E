@@ -48,13 +48,20 @@ def MoveToOtherSideOfObject(InitialiseNaoRobot):
             print "CLOSEST POINT OF MOVING TO OTHER SIDE MoveToOtherSideOfObject"
             print cornerPoints
             closestPnt[1]
-            if (InitialDirectionOfOtherRobot == "LEFT"):
+            directionOfOtherRobot, xCntrPosRobot, xCentrePostionTable, tablePositionRelativeToRobot = a.FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot)
+            if (directionOfOtherRobot == "LEFT"):
+                if(cornerPoints[3][1] < 300):
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot, 0.4)
+                    time.sleep(2)
                 h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 1)
                 # directionToMove = "RIGHT"       
-            elif (InitialDirectionOfOtherRobot == "RIGHT"):
+            elif (directionOfOtherRobot == "RIGHT"):
+                if(cornerPoints[3][1] < 300):
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot, 0.4)
+                    time.sleep(2)
                 h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 1)
                 # directionToMove = "LEFT"
-            directionOfOtherRobot, xCntrPosRobot, xCentrePostionTable, tablePositionRelativeToRobot = a.FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot)
+            
             # if (not InitialDirectionOfOtherRobot == directionOfOtherRobot) or tablePositionRelativeToRobot > 4:
             if tablePositionRelativeToRobot == "BEHIND":
                 # tableBehindCounter+= 1  #increase this counter to allow robot to move sideways to opposite side more times

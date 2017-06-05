@@ -107,17 +107,3 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
                     break
             else:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
-
-        #Look left and right to align to middle of table
-        # a.LookLeftAndRightToAlignToMiddleOfTable(InitialiseNaoRobot)
-
-        #Align body of robot with table
-        # a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"TOP", filenameTopCamera)
-
-        
-
-        #walk ahead until close enough to lift range
-        # a.WalkAheadUntilCloseToLift(InitialiseNaoRobot)
-
-        #Align body of robot with table
-        # a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot, "BOTTOM", filenameBottomCamera)

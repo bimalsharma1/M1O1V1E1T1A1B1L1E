@@ -100,28 +100,38 @@ def MoveWithObstacleAvoidance(InitialiseNaoRobot, directionToMoveAway):
     previousRatio = 1.0
     angleToTurn = 0.3
     angleOfHead = 0
+    time.sleep(3)
     while not movedAway:
         print "SPINNING TO MOVE AWAY"
+        time.sleep(3)
         im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
-        xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint, cornerPoints, bl, br, tl, tr = d.DetectColour(filenameTopCamera + ".png", "", im)
-        print bottomMostPoint
-        print cornerPoints
-        if directionToMoveAway == "RIGHT" and bottomMostPoint[0] > 5:
-            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(90))
+        LeftMostX, RightMostX, TopMostY, BottomMostY = d.DetectFourExtremePoints(im)
+        # xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, bottomMostPoint, cornerPoints, bl, br, tl, tr = d.DetectColour(filenameTopCamera + ".png", "", im)
+        print LeftMostX
+        print RightMostX
+        Logger.Log(str(LeftMostX))
+        Logger.Log(str(RightMostX))
+        if directionToMoveAway == "RIGHT" and (RightMostX > 0 or BottomMostY > 0):
+            print "spinning right"
+            Logger.Log("spinning right")
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(120))
             time.sleep(2)
-        elif directionToMoveAway == "LEFT" and bottomMostPoint[0] > 0 and bottomMostPoint[0] < 635:
-            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(90))
+        elif directionToMoveAway == "LEFT" and (LeftMostX > 0 or BottomMostY > 0):
+            print "spinning left"
+            Logger.Log("spinning left")
+            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(120))
             time.sleep(2)
         else:
+            print "table out os sight moving away"
             movedAway = True
-    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,5)
+    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,6)
 
-    if (directionToMoveAway == "RIGHT"):
+    if directionToMoveAway == "RIGHT":
         angleOfHead = 100 #100 looking left -100 looking right
-    elif (directionToMoveAway == "LEFT"):
+    elif directionToMoveAway == "LEFT":
         angleOfHead = -100 #100 looking left -100 looking right
 
-    h.HeadInitialise(InitialiseNaoRobot.motionProxy)
+    # h.HeadInitialise(InitialiseNaoRobot.motionProxy)
     h.HeadYawMove(InitialiseNaoRobot.motionProxy,math.radians(angleOfHead))
     #keeop walking until table out of sight
     while not objectOutOfSight:
@@ -208,15 +218,15 @@ def FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot):
                     else:
                         tablePositionRelativeToRobot = "NONE"
 
-                if xCntrPosRobot < xCentrePostionTable and (abs(xCntrPosRobot) - abs(xCentrePostionTable)) < 50:
+                if xCntrPosRobot < xCentrePostionTable and abs(abs(xCntrPosRobot) - abs(xCentrePostionTable)) > 50:
                     Logger.Log("FindDirectionOfOtherRobotRelativeToTable is LEFT")
                     return "LEFT", xCntrPosRobot, xCentrePostionTable, tablePositionRelativeToRobot
-                elif xCntrPosRobot > xCentrePostionTable and (abs(xCntrPosRobot) - abs(xCentrePostionTable)) < 50:
+                elif xCntrPosRobot > xCentrePostionTable and abs(abs(xCntrPosRobot) - abs(xCentrePostionTable)) > 50:
                     Logger.Log("FindDirectionOfOtherRobotRelativeToTable is RIGHT")
                     return "RIGHT", xCntrPosRobot, xCentrePostionTable, tablePositionRelativeToRobot
                 else:
                     Logger.Log("FindDirectionOfOtherRobotRelativeToTable is NOT FOUND")
-                    # return "NOT FOUND"
+                    return "NOT FOUND"
             print "angle of head"
             print angleOfHead
             Logger.Log(str(angleOfHead))
@@ -465,7 +475,10 @@ def WalkAheadUntilVeryCloseToCorner(InitialiseNaoRobot, cameraName = "BOTTOM", f
                         print ">>> bottom most table position is :: "
                         print closestPnt
                         # XValueToWalk = 0.2*(480-closestPnt[1])/480  #((contourList[4][1] - contourList[3][1])/float(contourList[4][1]))
-                        h.WalkAheadUntilFinished(motionProxy,0.1) #-ve 45 degrees turn Y/float(8.0)
+                        if closestPnt[1] > 0:
+                            h.WalkAheadUntilFinished(motionProxy,0.03) #-ve 45 degrees turn Y/float(8.0)
+                        else:
+                            h.WalkAheadUntilFinished(motionProxy,0.1) #-ve 45 degrees turn Y/float(8.0)
                     AlignClosestCornerToMiddle(InitialiseNaoRobot,50, cameraName)
                     if (headDownCounter == 0):
                         h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(maxHeadPitchAngle))
@@ -673,93 +686,6 @@ def WalkAheadUntilCloseToLift(InitialiseNaoRobot, cameraName = "BOTTOM", fileNam
                 Logger.Log("CLOSE ENOUGH TO TABLE NOW")
             else:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.05)
-            # im = vision_getandsaveimage.showNaoImageBottomCam(InitialiseNaoRobot.IP, config.ports[InitialiseNaoRobot.portName], fileNameCamera)
-            # xCntrPos, yCntrPos, maxBtmCamAreaCovrd, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(fileNameCamera + ".png", "", im)  
-            
-            # try:
-            #     adjustAngle = 0.5
-            #     if not contourList:
-            #         print "CANNOT see object from bottom cam so walk ahead"
-            #         Logger.Log("countour list is empty")
-            #         adjustAngle = 0.5
-            #         if (config.InitialLongerSideOfTable=="RIGHT"):
-            #             h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
-            #         elif(config.InitialLongerSideOfTable=="LEFT"):
-            #             h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy,adjustAngle)
-            #         h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.4)
-            #     else:
-            #         Logger.Log("Longer side is ")
-            #         Logger.Log(str(config.InitialLongerSideOfTable))
-            #         Logger.Log("contour details are")
-            #         Logger.Log(str(contourList))
-                    
-            #         # if (closestPnt[1] >= config.maxClosestPoint):  # ( (contourList[4][1] - closestPnt[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
-            #         if (closestPnt[1] >= config.maxClosestPoint or contourList[3][1] >= config.maxClosestPoint or contourList[0][1] >= config.maxClosestPoint or contourList[2][1] >= config.maxClosestPoint):  # ( (contourList[4][1] - closestPnt[1]) < (contourList[4][1] * 0.25)): #(0 is height and 1 is width)
-            #             objectSeen = True
-            #             Logger.Log(str(closestPnt))
-            #             Logger.Log("height of pic: "+str(contourList[4][1]))
-            #             print "height of pic: "+str(contourList[4][1])
-            #             print "CLOSE ENOUGH TO TABLE NOW"
-            #             Logger.Log("CLOSE ENOUGH TO TABLE NOW")
-            #             return
-            #         else:
-            #         #     #if space can be seen then adjust
-            #         #     if (config.InitialLongerSideOfTable=="RIGHT" and contourList[0][0] > 1 and closestPnt[1] < config.maxClosestPoint):
-            #         #         #calculate angle to turn to correct
-            #         #         if (contourList[2][0]< 100): # correct angle if pic only seen to the right
-            #         #             h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
-            #         #         h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.4)
-            #         #         time.sleep(2)
-            #         #     elif(config.InitialLongerSideOfTable=="LEFT" and contourList[2][0] < 639 and closestPnt[1] < config.maxClosestPoint):
-            #         #         if (contourList[0][0]> 100): # correct angle if pic only seen to the right
-            #         #             h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,adjustAngle)
-            #         #         h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.4)
-
-            #         #         #this determines if robot hits table
-            #         #         Logger.Log(str(closestPnt))
-            #         #         print ">>> bottom most table position is :: "
-            #         #         print closestPnt
-            #             if (closestPnt[1] <= 0):
-            #                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
-            #             elif (closestPnt[1] >= 200):
-            #                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.03)
-            #             else:
-            #                 XValueToWalk = float(0.06*(480-closestPnt[1]))/float(config.imageHeight)  #((contourList[4][1] - contourList[3][1])/float(contourList[4][1]))
-            #                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,XValueToWalk) #-ve 45 degrees turn Y/float(8.0)
-            #             print "bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1])
-            #             Logger.Log("bot most yof BOTTOM CA<MERA: "+ str(contourList[3][1]))
-            #             #spin if angle is too far to the left or right
-            #             # adjustAngle = 0.5
-            #             # if (contourList[0][0] >= (float(config.imageWidth)/2.0)):                     
-            #             #     h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
-            #             # if (contourList[2][0] <= (float(config.imageWidth)/2.0)):
-            #             #     h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
-            #             # if (contourList[0][0] >= 5):                     
-            #             #     h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
-            #             # if (contourList[2][0] <= (float(config.imageWidth)-5.0)):
-            #             #     h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
-
-
-            #             # AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM", fileNameCamera)
-                    
-            # except Exception as e:
-            #     print "ERROR so walking ahead"
-            #     print e
-            #     Logger.Log("ERROR so walking ahead")
-            #     Logger.Log(str(e))
-            #     h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.2)
-            #      #spin if angle is too far to the left or right
-            #     if (config.InitialLongerSideOfTable=="RIGHT"):
-            #         adjustAngle = 0.3
-            #         h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, adjustAngle)
-            #     elif(config.InitialLongerSideOfTable=="LEFT"):
-            #         adjustAngle = -0.3
-            #         h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,adjustAngle)
-            #     #print e
-
-            # h.HeadPitchMove(InitialiseNaoRobot.motionProxy, math.radians(maxHeadPitchAngle))
-            # time.sleep(2)
-
         print "CLOSE ENOUGH TO TABLE NOW"
 
         #look straight    

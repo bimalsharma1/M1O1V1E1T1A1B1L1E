@@ -62,6 +62,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
         # FindObjectOfInterest
         xCntrPos, yCntrePos, headPos, objFound, btmPnt = f.FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera,filenameBottomCamera)
         mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
+        return True
     else:
         h.CommunicateLeadershipByPuttingRightHandUp(InitialiseNaoRobot.motionProxy)
         #wait unil other robot moved away

@@ -60,7 +60,7 @@ def mainMenu():
         print "Enter 5 for single robot task to move a light table"
         print "Enter 6 for two robot task to move a heavy table"
         print "Enter 7 to Look for table"
-        print "Enter 8 to lift and move with table"
+        print "Enter 8 tMOve to other side"
         print "Enter 9 to align to the middle of table"
         inputChoice = raw_input("Enter your choice: ")
 
@@ -144,7 +144,10 @@ def mainMenu():
             p1.start()
             p0.join()
             p1.join()
-
+        elif ("8" in inputChoice):
+            p0 = Process(target=MoveTableMain.MoveTableMain().AlignToOtherSide, args=('port1',))
+            p0.start()
+            p0.join()
         elif ("9" in inputChoice):
             p0 = Process(target=MoveTableMain.MoveTableMain().AlignToMiddleOfTable, args=('port1',))
             p0.start()

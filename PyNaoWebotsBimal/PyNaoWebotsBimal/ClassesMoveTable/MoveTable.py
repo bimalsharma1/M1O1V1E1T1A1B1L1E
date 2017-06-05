@@ -6,6 +6,7 @@ import time
 from Utils import InitialiseNaoRobot
 from Utils import Helper as h
 
+#Description: Perform behaviour MoveTable
 class MoveTable:
     def MoveTableDef(self, InitialiseNaoRobot, X, Y, Theta):
         print "in function"
