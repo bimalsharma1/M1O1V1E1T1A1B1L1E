@@ -46,24 +46,45 @@ def MoveToOtherSideOfObject(InitialiseNaoRobot):
             xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, closestPnt,cornerPoints,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "",im)   
             # a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot,"BOTTOM",filenameBottomCamera)
             print "CLOSEST POINT OF MOVING TO OTHER SIDE MoveToOtherSideOfObject"
-            print cornerPoints
-            closestPnt[1]
+            print cornerPoints[3][1]
+            print "Direction of other robot "
+
             directionOfOtherRobot, xCntrPosRobot, xCentrePostionTable, tablePositionRelativeToRobot = a.FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot)
-            if (directionOfOtherRobot == "LEFT"):
-                if(cornerPoints[3][1] < 300):
-                    h.WalkAheadUntilFinished(InitialiseNaoRobot, 0.4)
+            print directionOfOtherRobot
+            print tablePositionRelativeToRobot
+            if (directionOfOtherRobot == "LEFT" and InitialDirectionOfOtherRobot == "LEFT"):
+                if(cornerPoints[3][1] < 450):
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.4)
                     time.sleep(2)
+                print "walk right"
                 h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 1)
                 # directionToMove = "RIGHT"       
-            elif (directionOfOtherRobot == "RIGHT"):
-                if(cornerPoints[3][1] < 300):
-                    h.WalkAheadUntilFinished(InitialiseNaoRobot, 0.4)
+            elif (directionOfOtherRobot == "RIGHT" and InitialDirectionOfOtherRobot == "RIGHT"):
+                if(cornerPoints[3][1] < 450):
+                    h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.4)
                     time.sleep(2)
+                print "walk left"
                 h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 1)
-                # directionToMove = "LEFT"
-            
-            # if (not InitialDirectionOfOtherRobot == directionOfOtherRobot) or tablePositionRelativeToRobot > 4:
-            if tablePositionRelativeToRobot == "BEHIND":
-                # tableBehindCounter+= 1  #increase this counter to allow robot to move sideways to opposite side more times
-                adjustedToOtherSide = True
-                return
+            else: # directionOfOtherRobot == "MIDDLE" and tablePositionRelativeToRobot == "INFRONT":
+                print directionOfOtherRobot
+                print tablePositionRelativeToRobot
+                closeToTable = False
+                h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 1)
+                while not closeToTable:
+                    imB = ip.getImage(InitialiseNaoRobot, "BOTTOM", filenameTopCamera)
+                    LeftMostX, RightMostX, TopMostY, BottomMostY = d.DetectFourExtremePoints(imB)
+                    if BottomMostY > 0:
+                        a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot, "BOTTOM", "naoImageBottomCamera", 50)
+                    if (BottomMostY < 300 or BottomMostY is None):
+                        h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.15)
+                    else:
+                        closeToTable = True
+                        adjustedToOtherSide = True
+                        return
+            # else:
+            #     if (InitialDirectionOfOtherRobot == "LEFT"):
+            #         print "walk right"
+            #         h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.3)
+            #     else:
+            #         print "walk left"
+            #         h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.3)
