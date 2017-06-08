@@ -1,0 +1,12 @@
+June 08, 2017 20:08:30:672000		MOVE  NAO
+June 08, 2017 20:08:36:053000	127.0.0.1-9557	SendMessage
+June 08, 2017 20:08:36:055000	127.0.0.1-9557	[['127.0.0.1:9557', 'NEW NAO']]
+June 08, 2017 20:08:36:057000	127.0.0.1-9557	[['127.0.0.1:9557', 'NEW NAO']]
+June 08, 2017 20:08:36:061000	127.0.0.1-9557	read messages
+June 08, 2017 20:08:36:063000	127.0.0.1-9557	['127.0.0.1:9557', 'NEW NAO']
+June 08, 2017 20:08:36:067000	127.0.0.1-9557	START MOVING TO OTHER SIDE MoveToOtherSideOfObject
+June 08, 2017 20:08:36:069000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+June 08, 2017 20:08:43:570000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+June 08, 2017 20:08:48:216000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+June 08, 2017 20:08:52:746000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+June 08, 2017 20:08:58:293000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable

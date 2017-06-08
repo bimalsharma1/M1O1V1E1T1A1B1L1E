@@ -544,7 +544,7 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
                 print "spinning right"
         elif LeftYPos <= 0 and RightYPos > 0:
             print "left y pos has no value"
-            h.WalkSideWaysRightUntilFinished(InitialiseNaandobot.motionProxy, 0.1)
+            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
         elif LeftYPos > 0 and RightYPos <= 0:
             print "right y pos has no value"
             h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
