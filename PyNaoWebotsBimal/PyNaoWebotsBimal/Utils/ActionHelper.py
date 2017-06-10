@@ -160,6 +160,24 @@ def MoveWithObstacleAvoidance(InitialiseNaoRobot, directionToMoveAway):
         else:
             naoHeadInCentre = True
 
+def AlignObjectToCentreofFieldOfView(InitialiseNaoRobot, cameraName="TOP", colourToAlign="BLUE"):
+    filenameTopCamera = "naoImageTopCamera"
+    filenameBottomCamera = "naoImageBottomCamera"
+    naoHeadInCentre = False
+    xCentrePostion = 0
+
+    while not naoHeadInCentre:
+        Logger.Log("Adjust table to centre for AlignObjectToCentreofFieldOfView")
+        im = ip.getImage(InitialiseNaoRobot, cameraName, filenameTopCamera)
+        #face the other robot
+        xCentrePostion, yCentrePosition, objectFoundOnBottomCamera, closestPnt, cornerPoints, bl, br, tl, tr = d.DetectColour(filenameTopCamera + ".png", "", im, colourToAlign)   
+        if (xCentrePostion < (config.imageWidth/2.0)-50):
+            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(25))
+        elif (xCentrePostion > (config.imageWidth/2.0)+50):
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(25))
+        else:
+            naoHeadInCentre = True
+
 def FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot):
     filenameTopCamera = "naoImageTopCamera"
     filenameBottomCamera = "naoImageBottomCamera"
@@ -220,10 +238,10 @@ def FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot):
             print "Position of robot and table"
             print xCntrPosRobot
             print xCentrePostionTable
-            if xCntrPosRobot < xCentrePostionTable and abs(abs(xCntrPosRobot) - abs(xCentrePostionTable)) > 25:
+            if xCntrPosRobot < xCentrePostionTable and xCntrPosRobot > 0:
                 Logger.Log("FindDirectionOfOtherRobotRelativeToTable is LEFT")
                 return "LEFT", xCntrPosRobot, xCentrePostionTable, tablePositionRelativeToRobot
-            elif xCntrPosRobot > xCentrePostionTable and abs(abs(xCntrPosRobot) - abs(xCentrePostionTable)) > 25:
+            elif xCntrPosRobot > xCentrePostionTable and  xCentrePostionTable > 0:
                 Logger.Log("FindDirectionOfOtherRobotRelativeToTable is RIGHT")
                 return "RIGHT", xCntrPosRobot, xCentrePostionTable, tablePositionRelativeToRobot
             else:
@@ -513,13 +531,13 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
     Logger.Log("Keep walking until very close to table")
     # h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.4)
     Aligned = False
-    while not (Aligned):
+    while not Aligned:
         # moveRatio = h.GetMoveRatio(closestPnt[1],config.imageHeight)
         # h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, (0.4*moveRatio))
         im = ip.getImage(InitialiseNaoRobot, cameraName, fileName)
         LeftMostX, RightMostX, TopMostY, BottomMostY = d.DetectFourExtremePoints(im)
         # xCntrPos, yCntrPos, ObjFoundBtmCam, closestPnt,contourList,bl,br,tl,tr = d.DetectColour(fileNameCamera + ".png", "", im)
-        print "TURNING TO ALIGN TO TABLE USING TOP CAM"
+        print "TURNING TO ALIGN TO TABLE USING " + cameraName + " CAM"
         LeftYPos, MidYPos, RightYPos = d.DetectYPos(im, horizontalSearchRange, xCntrPos)
         print yCntrPos
         print LeftYPos
@@ -536,6 +554,8 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
             else:
                 moveRatio = 1 - (LeftYPos / float(RightYPos)) * correctionAngle
             correctionAngle = correctionAngle * abs(moveRatio)
+            if correctionAngle < 0.04:
+                correctionAngle = 0.04
             if(LeftYPos > RightYPos and (abs(LeftYPos-RightYPos)>config.yPointAlignmentErrorMargin)):
                 h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
                 print "spinning left"
@@ -545,9 +565,13 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
         elif LeftYPos <= 0 and RightYPos > 0:
             print "left y pos has no value"
             h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
+            if RightYPos < 100:
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
         elif LeftYPos > 0 and RightYPos <= 0:
             print "right y pos has no value"
             h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
+            if LeftYPos < 100:
+                h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
         else: #LeftYPos <= 0 or RightYPos <= 0:
             print "One of the vertical positions not found AlignBodyHorizontallyWithTable"
             Logger.Log("One of the vertical positions not found AlignBodyHorizontallyWithTable")

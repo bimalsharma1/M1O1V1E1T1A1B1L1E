@@ -32,6 +32,7 @@ maxClosestPoint = 350
 maxClosestPointToCorner = 450
 
 colourOfHeadOfNao = "RED"
+colourOfTable = "BLUE"
 
 InitialLongerSideOfTable = ""
 Leader = ""   # config is updated witht he leader name

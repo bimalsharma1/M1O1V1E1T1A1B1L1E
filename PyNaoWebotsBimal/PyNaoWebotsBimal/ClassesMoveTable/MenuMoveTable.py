@@ -57,6 +57,7 @@ def mainMenu():
         print "Enter 1 to look for table"
         print "Enter 2 to go to table"
         print "Enter 3 to move table"
+        print "Enter 4 to lift and land table repeatedly"
         print "Enter 5 for single robot task to move a light table"
         print "Enter 6 for two robot task to move a heavy table"
         print "Enter 7 to Look for table"
@@ -92,7 +93,13 @@ def mainMenu():
             p1.start()
             p0.join()
             p1.join()
-
+        elif ("4" in inputChoice):
+            p0 = Process(target=MoveTableMain.MoveTableMain().LiftLandTableRepeat, args=('port1',))
+            p0.start()
+            p1 = Process(target=MoveTableMain.MoveTableMain().LiftLandTableRepeat, args=('port2',))
+            p1.start()
+            p0.join()
+            p1.join()
         elif ("5" in inputChoice):
             Logger.Log("MOVE FIRST NAO") 
             portName1 = 'port1'

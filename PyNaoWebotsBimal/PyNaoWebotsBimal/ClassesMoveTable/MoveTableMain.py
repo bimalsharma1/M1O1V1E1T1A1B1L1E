@@ -9,6 +9,7 @@ import SmallStepSideways
 import Logger
 from Utils import InitialiseNaoRobot
 from Utils import Helper as h
+from Utils import ActionHelper as a
 from Queue import Queue
 import threading 
 import thread
@@ -35,7 +36,7 @@ class MoveTableMain:
 
         print "move table"
         moveTable = MoveTable.MoveTable()
-        moveTable.MoveTableDef(initNao, 0, 1, 0)
+        moveTable.MoveTableDef(initNao, 0, 2, 0)
 
     def LookForTable(self, port):
         Logger.Log("MOVE  NAO") 
@@ -91,3 +92,29 @@ class MoveTableMain:
         print "align to middle"
         alignToMiddle = MoveToOtherSideOfObject.MoveToOtherSideOfObject(initNao)
         # alignToMiddle.MoveToOtherSideOfObject(initNao)
+
+    def LiftLandTableRepeat(self, port):
+        closeToWall = False
+        Logger.Log("LiftLandTableRepeat") 
+        print "LiftLandTableRepeat"
+        initNao = InitialiseNaoRobot.InitialiseNaoRobot(port)
+        initNao.wakeUpRobot(port)
+        h.AddNao(initNao)
+
+        liftLandCounter = 0
+
+        while not closeToWall:
+            #document the pre AND post conditions
+            alignToMiddle = AlignToMiddleOfTable.AlignToMiddleOfTable()
+            alignToMiddle.AlignToMiddleOfTable(InitialiseNaoRobot)
+
+            a.WalkAheadUntilCloseToLift(InitialiseNaoRobot)
+            Logger.Log("Sending ready to lift message")
+            h.SendReadyToLiftMessage(InitialiseNaoRobot,"READYTOLIFT")
+
+            print "move table"
+            moveTable = MoveTable.MoveTable()
+            moveTable.MoveTableDef(initNao, 0, 2, 0)
+
+            liftLandCounter += 1
+    
