@@ -97,24 +97,37 @@ class MoveTableMain:
         closeToWall = False
         Logger.Log("LiftLandTableRepeat") 
         print "LiftLandTableRepeat"
-        initNao = InitialiseNaoRobot.InitialiseNaoRobot(port)
-        initNao.wakeUpRobot(port)
-        h.AddNao(initNao)
+        InitNao = InitialiseNaoRobot.InitialiseNaoRobot(port)
+        InitNao.wakeUpRobot(port)
+        h.AddNao(InitNao)
+
+        yCntrPos = 0
+        #SELCT LEADER
+        if InitNao.portName == "9559":
+            yCntrPos = 10
+            h.SendDistanceToObjectMessage(InitNao, str(yCntrPos))
+        else:
+            h.SendDistanceToObjectMessage(InitNao, str(yCntrPos))
+        #Wait for leader data to be available
+        while not h.isLeaderDataAvailable(InitNao):
+            time.sleep(2)
+        print "SELECTING LEADER"
+        h.SelectLeader(InitNao)
 
         liftLandCounter = 0
-
         while not closeToWall:
             #document the pre AND post conditions
             alignToMiddle = AlignToMiddleOfTable.AlignToMiddleOfTable()
-            alignToMiddle.AlignToMiddleOfTable(InitialiseNaoRobot)
-
-            a.WalkAheadUntilCloseToLift(InitialiseNaoRobot)
+            alignToMiddle.AlignToMiddleOfTable(InitNao)
+            a.WalkAheadUntilCloseToLift(InitNao)
             Logger.Log("Sending ready to lift message")
-            h.SendReadyToLiftMessage(InitialiseNaoRobot,"READYTOLIFT")
-
+            h.SendReadyToLiftMessage(InitNao,"READYTOLIFT")
             print "move table"
             moveTable = MoveTable.MoveTable()
-            moveTable.MoveTableDef(initNao, 0, 2, 0)
-
+            if InitNao.isLeader != True:
+                moveTable.MoveTableDef(InitNao, 0, 1, 0)
+            else:
+                moveTable.MoveTableDef(InitNao, 0, -1, 0)
             liftLandCounter += 1
-    
+            if liftLandCounter > 3:
+                closeToWall = True

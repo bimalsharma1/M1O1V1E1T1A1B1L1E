@@ -520,6 +520,7 @@ def WalkAheadUntilVeryCloseToCorner(InitialiseNaoRobot, cameraName = "BOTTOM", f
 #Align body of robot with table
 def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileNameCamera = "naoImageTopCamera", horizontalSearchRange = 5):
     correctionAngle = math.radians(10)
+    # print str(InitialiseNaoRobot.portName)
     #look straight    
     # h.HeadInitialise(InitialiseNaoRobot.motionProxy)
     moveRatio = 1.0
