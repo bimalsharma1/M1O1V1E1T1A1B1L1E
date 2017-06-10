@@ -566,12 +566,12 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
         elif LeftYPos <= 0 and RightYPos > 0:
             print "left y pos has no value"
             h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
-            if RightYPos < 100:
+            if RightYPos < 200:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
         elif LeftYPos > 0 and RightYPos <= 0:
             print "right y pos has no value"
             h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
-            if LeftYPos < 100:
+            if LeftYPos < 200:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
         else: #LeftYPos <= 0 or RightYPos <= 0:
             print "One of the vertical positions not found AlignBodyHorizontallyWithTable"

@@ -7,6 +7,7 @@ import LandTable
 import PositionToCentreOfTableSide
 import SmallStepSideways
 import Logger
+from Utils import FileIO
 from Utils import InitialiseNaoRobot
 from Utils import Helper as h
 from Utils import ActionHelper as a
@@ -127,7 +128,9 @@ class MoveTableMain:
             if InitNao.isLeader != True:
                 moveTable.MoveTableDef(InitNao, 0, 1, 0)
             else:
-                moveTable.MoveTableDef(InitNao, 0, -1, 0)
+                moveTable.MoveTableDef(InitNao, 0, 1, 0)
+
+            FileIO.EmptyFileContents("readyToLift.txt")
             liftLandCounter += 1
             if liftLandCounter > 3:
                 closeToWall = True
