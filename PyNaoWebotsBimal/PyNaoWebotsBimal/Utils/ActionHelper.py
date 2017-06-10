@@ -565,14 +565,14 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
                 print "spinning right"
         elif LeftYPos <= 0 and RightYPos > 0:
             print "left y pos has no value"
-            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
-            if RightYPos < 200:
+            if RightYPos < 350:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
+            h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
         elif LeftYPos > 0 and RightYPos <= 0:
             print "right y pos has no value"
-            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
-            if LeftYPos < 200:
+            if LeftYPos < 350:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
+            h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
         else: #LeftYPos <= 0 or RightYPos <= 0:
             print "One of the vertical positions not found AlignBodyHorizontallyWithTable"
             Logger.Log("One of the vertical positions not found AlignBodyHorizontallyWithTable")

@@ -125,10 +125,7 @@ class MoveTableMain:
             h.SendReadyToLiftMessage(InitNao,"READYTOLIFT")
             print "move table"
             moveTable = MoveTable.MoveTable()
-            if InitNao.isLeader != True:
-                moveTable.MoveTableDef(InitNao, 0, 1, 0)
-            else:
-                moveTable.MoveTableDef(InitNao, 0, 1, 0)
+            moveTable.MoveTableDef(InitNao, 0, 2, 0)
 
             FileIO.EmptyFileContents("readyToLift.txt")
             liftLandCounter += 1
