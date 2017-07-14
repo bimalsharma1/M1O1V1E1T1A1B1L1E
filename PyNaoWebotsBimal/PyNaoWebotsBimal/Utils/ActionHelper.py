@@ -191,6 +191,7 @@ def FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot):
     xCentrePostion = 0
     tablePositionRelativeToRobot = "NONE"
 
+    #find nao head
     while not naoHeadInCentre:
         Logger.Log("Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable")
         im = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
@@ -531,6 +532,9 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
     #if bottom most x is less than 450 (i.e you have move further then walk ahead)
     Logger.Log("Keep walking until very close to table")
     # h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.4)
+    collisionAvoidancePoint = 450
+    if not (cameraName == "TOP"):
+        collisionAvoidancePoint = 380
     Aligned = False
     while not Aligned:
         # moveRatio = h.GetMoveRatio(closestPnt[1],config.imageHeight)
@@ -565,12 +569,12 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
                 print "spinning right"
         elif LeftYPos <= 0 and RightYPos > 0:
             print "left y pos has no value"
-            if RightYPos < 350:
+            if RightYPos < collisionAvoidancePoint:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
             h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
         elif LeftYPos > 0 and RightYPos <= 0:
             print "right y pos has no value"
-            if LeftYPos < 350:
+            if LeftYPos < collisionAvoidancePoint:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
             h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
         else: #LeftYPos <= 0 or RightYPos <= 0:

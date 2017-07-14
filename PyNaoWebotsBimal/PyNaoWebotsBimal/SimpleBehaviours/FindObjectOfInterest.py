@@ -164,7 +164,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                     return (xCntrPos, yCntrPos, headLookingPosition, objectFound, botMostPnt)
                     # h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead)*2)
                     
-  
+        return (xCntrPos, yCntrPos, headLookingPosition, objectFound, botMostPnt)
     except Exception as e:
         print e
         Logger.Log(str(e))

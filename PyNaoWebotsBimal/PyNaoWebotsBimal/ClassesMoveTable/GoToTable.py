@@ -21,5 +21,3 @@ class GoToTable:
 
         Logger.Log("Sending ready to lift message")
         h.SendReadyToLiftMessage(InitialiseNaoRobot,"READYTOLIFT")
-        
-

@@ -95,10 +95,3 @@ def MoveToOtherSideOfObject(InitialiseNaoRobot):
                         closeToTable = True
                         adjustedToOtherSide = True
                         return
-            # else:
-            #     if (InitialDirectionOfOtherRobot == "LEFT"):
-            #         print "walk right"
-            #         h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.3)
-            #     else:
-            #         print "walk left"
-            #         h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.3)

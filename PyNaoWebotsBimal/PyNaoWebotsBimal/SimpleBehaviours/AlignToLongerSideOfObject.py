@@ -26,6 +26,7 @@ import cv2
 #contourList[3] = closestPnt   #bottomMOst
 ##contourList[4] HAS HEIGHT AND WIDTH 
 def AlignToLongerSideOfObject(InitialiseNaoRobot): 
+        Logger.Log("AlignToLongerSideOfObject")
         filenameTopCamera = "naoImageTopCamera"
         filenameBottomCamera = "naoImageBottomCamera"
         fourtyFiveDegreeInRadians = 1
@@ -45,6 +46,7 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
         print "START MOVING TO LONGER SIDE"
         Logger.Log("START MOVING TO LONGER SIDE")
         Logger.Log(str(config.InitialLongerSideOfTable))
+
         if (config.InitialLongerSideOfTable == "LEFT"):#hypotLeft > hypotRight): # if diff is less than 50 px then it is not accurate
             leftLonger = True
             # config.InitialLongerSideOfTable = "LEFT"
@@ -52,12 +54,14 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             print math.radians(60)
             print "LEFT LONGER SO MOVING LEFT"
             Logger.Log("LEFT LONGER SO MOVING LEFT")
-            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75)) #+ve 75 degrees turn
+            while SpinUntilAligned(InitialiseNaoRobot, "SPINRIGHT") > config.imageWidth/2:
+                h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45)) #+ve 75 degrees turn
+                time.sleep(2)
             time.sleep(4)
             print "WALK LEFT DISTANCE"
             print Y
             h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, Y) #+ve 75 degrees turn
-
+            time.sleep(8)
             #adjust and move again
             h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45)) #+ve 75 degrees turn
             time.sleep(4)
@@ -69,10 +73,14 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
             # config.InitialLongerSideOfTable = "RIGHT"
             print "RIGHT LONGER SO MOVING RIGHT"
             Logger.Log("RIGHT LONGER SO MOVING RIGHT")
-            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(75)) #-ve 75 degrees turn 
+            while SpinUntilAligned(InitialiseNaoRobot, "SPINLEFT") < config.imageWidth/2:
+                h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45)) #+ve 75 degrees turn
+                time.sleep(2)
+             #-ve 75 degrees turn 
             time.sleep(4)
             h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,Y) #-ve 75 degrees turn 
             #adjustand move again
+            time.sleep(8)
             h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy, math.radians(45)) #-ve 75 degrees turn 
             time.sleep(4)
             h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy,1) #-ve 75 degrees turn 
@@ -107,3 +115,13 @@ def AlignToLongerSideOfObject(InitialiseNaoRobot):
                     break
             else:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy,0.1)
+
+def SpinUntilAligned(InitialiseNaoRobot, limitDirection):
+    fileName = "TablePicToSelectLongerSide" + str(InitialiseNaoRobot.portName)
+    cameraName = "TOP"
+    im = ip.getImage(InitialiseNaoRobot, cameraName, fileName)       
+    LeftMostX, RightMostX, TopMostY, BottomMostY = d.DetectFourExtremePoints(im)
+    if (limitDirection == "SPINLEFT"):
+        return LeftMostX
+    else:
+        return RightMostX

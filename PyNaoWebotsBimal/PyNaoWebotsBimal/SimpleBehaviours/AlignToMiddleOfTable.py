@@ -27,6 +27,7 @@ import cv2
 ##contourList[4] HAS HEIGHT AND WIDTH 
 class AlignToMiddleOfTable:
     def AlignToMiddleOfTable(self, InitialiseNaoRobot): 
+        Logger.Log("AlignToMiddleOfTable")
         filenameTopCamera = "naoImageTopCamera"
         filenameBottomCamera = "naoImageBottomCamera"
         fourtyFiveDegreeInRadians = 1

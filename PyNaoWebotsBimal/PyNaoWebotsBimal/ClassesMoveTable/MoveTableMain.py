@@ -1,11 +1,4 @@
-import LookForTable
-import GoToTable
-import GoToOppositeSideOfTable
-import MoveTable
-import LiftTable
-import LandTable
-import PositionToCentreOfTableSide
-import SmallStepSideways
+
 import Logger
 from Utils import FileIO
 from Utils import InitialiseNaoRobot
@@ -18,6 +11,10 @@ import time
 import BehaviourMoveToTopCornerOfObject
 from SimpleBehaviours import AlignToMiddleOfTable
 from SimpleBehaviours import MoveToOtherSideOfObject
+from ClassesMoveTable import LookForTable
+from ClassesMoveTable import GoToTable
+from ClassesMoveTable import MoveTable
+from Utils import InitialiseNaoRobot
 #Description: Main controller to perform behaviour in logical order
 class MoveTableMain:
     def Main(self, port):
@@ -35,9 +32,18 @@ class MoveTableMain:
         goToTable = GoToTable.GoToTable()
         goToTable.GoToTable(initNao)
 
-        print "move table"
-        moveTable = MoveTable.MoveTable()
-        moveTable.MoveTableDef(initNao, 0, 2, 0)
+        print "move table -- repeat"
+        Logger.Log("move table -- repeat")
+        closeToWall = False
+        liftLandCounter = 0
+        while not closeToWall:
+            moveTable = MoveTable.MoveTable()
+            moveTable.MoveTableDef(initNao, 0, 2, 0)
+
+            FileIO.EmptyFileContents("readyToLift.txt")
+            liftLandCounter += 1
+            if liftLandCounter > 3:
+                closeToWall = True
 
     def LookForTable(self, port):
         Logger.Log("MOVE  NAO") 

@@ -43,7 +43,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
     Y = -0.0 # move left or right
     #positive theta is anticlockwise
     Theta = 1 # amount to turn around in radians
-    Logger.Log("STARTING behaviourMoveToCornerOfObject")
+    Logger.Log("STARTING behaviour MoveToCornerOfObject")
 
     Logger.Log("ALign image to centre")
     print "ALign image to centre"
@@ -54,22 +54,33 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
     print "SELECTING LEADER"
     h.SelectLeader(InitialiseNaoRobot)
 
+    #find position of table relative to robot
+    directionOfOtherRobot, xCntrPosRobot, xCentrePostionTable, tablePositionRelativeToRobot = a.FindDirectionOfOtherRobotRelativeToTable(InitialiseNaoRobot)
+    print "Table relative to robots is"
+    print tablePositionRelativeToRobot
+    Logger.Log("Table relative to robots is")
+    Logger.Log(str(tablePositionRelativeToRobot)) 
+    
     #CODE TO EXECUTE WHEN ROBOTS START ON THE SAME SIDE
-    if(InitialiseNaoRobot.isLeader != True):
-        ma.MoveAwayFromObject(InitialiseNaoRobot)
-        while h.GetApprovalToMoveFromLeader(InitialiseNaoRobot) == False:
-            time.sleep(5)
-        # FindObjectOfInterest
-        xCntrPos, yCntrePos, headPos, objFound, btmPnt = f.FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera,filenameBottomCamera)
-        mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
-        return True
+    if(InitialiseNaoRobot.isLeader != True):#include logic in here to avoid moving to tother side when starting on the same side
+        if tablePositionRelativeToRobot != "INFRONT": #if table is not in between the robots
+            ma.MoveAwayFromObject(InitialiseNaoRobot)
+            Logger.Log(str(tablePositionRelativeToRobot))
+            while h.GetApprovalToMoveFromLeader(InitialiseNaoRobot) == False:
+                time.sleep(5)
+            # FindObjectOfInterest
+            xCntrPos, yCntrePos, headPos, objFound, btmPnt = f.FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera,filenameBottomCamera)
+            Logger.Log("Assistant robot move to other side")
+            mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
+            return True
     else:
         h.CommunicateLeadershipByPuttingRightHandUp(InitialiseNaoRobot.motionProxy)
-        #wait unil other robot moved away
-        while not str(fio.ReadFirstLineInFile("otherRobotMovedAway")).strip().lower() == "movedaway":
-            print str(fio.ReadFirstLineInFile("otherRobotMovedAway")).strip().lower() == "movedaway"
-            print str(fio.ReadFirstLineInFile("otherRobotMovedAway")).lower()
-            time.sleep(2) #wait for 2 seconds
+        if tablePositionRelativeToRobot != "INFRONT": #if table is not in between the robots
+            #wait unil other robot moved away
+            while not str(fio.ReadFirstLineInFile("otherRobotMovedAway")).strip().lower() == "movedaway":
+                print str(fio.ReadFirstLineInFile("otherRobotMovedAway")).strip().lower() == "movedaway"
+                print str(fio.ReadFirstLineInFile("otherRobotMovedAway")).lower()
+                time.sleep(2) #wait for 2 seconds
     
     print "OUT OF SELECTING LEADER AND MOVING AWAY"
     
