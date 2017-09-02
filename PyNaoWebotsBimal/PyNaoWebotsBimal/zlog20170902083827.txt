@@ -1,0 +1,514 @@
+September 02, 2017 08:25:04:161000		MOVE  NAO
+September 02, 2017 08:25:10:828000	127.0.0.1-9557	SendMessage
+September 02, 2017 08:25:10:830000	127.0.0.1-9557	[['127.0.0.1:9557', 'NEW NAO']]
+September 02, 2017 08:25:10:833000	127.0.0.1-9557	[['127.0.0.1:9557', 'NEW NAO']]
+September 02, 2017 08:25:10:931000	127.0.0.1-9557	read messages
+September 02, 2017 08:25:11:001000	127.0.0.1-9557	['127.0.0.1:9557', 'NEW NAO']
+September 02, 2017 08:25:11:033000	127.0.0.1-9557	STARTING LOOKFORTABLE
+September 02, 2017 08:25:11:057000	127.0.0.1-9557	FindObjectOfInterest
+September 02, 2017 08:25:11:398000	127.0.0.1-9559	SendMessage
+September 02, 2017 08:25:11:400000	127.0.0.1-9559	[['127.0.0.1:9559', 'NEW NAO']]
+September 02, 2017 08:25:11:402000	127.0.0.1-9559	[['127.0.0.1:9559', 'NEW NAO']]
+September 02, 2017 08:25:11:433000	127.0.0.1-9559	read messages
+September 02, 2017 08:25:11:436000	127.0.0.1-9559	['127.0.0.1:9559', 'NEW NAO']
+September 02, 2017 08:25:11:438000	127.0.0.1-9559	STARTING LOOKFORTABLE
+September 02, 2017 08:25:11:443000	127.0.0.1-9559	FindObjectOfInterest
+September 02, 2017 08:25:14:117000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:25:14:121000	127.0.0.1-9557	[352, 335]
+September 02, 2017 08:25:14:123000	127.0.0.1-9557	[(291, 301), (541, 279), (638, 311), (352, 335), [640, 480]]
+September 02, 2017 08:25:14:780000	127.0.0.1-9559	initial top cam
+September 02, 2017 08:25:15:027000	127.0.0.1-9557	initial top cam
+September 02, 2017 08:25:17:068000	127.0.0.1-9557	object found
+September 02, 2017 08:25:17:082000	127.0.0.1-9557	9557
+September 02, 2017 08:25:17:149000	127.0.0.1-9557	send distance message
+September 02, 2017 08:25:17:278000	127.0.0.1-9557	SendDistanceToObjectMessage
+September 02, 2017 08:25:17:281000	127.0.0.1-9557	311
+September 02, 2017 08:25:17:528000	127.0.0.1-9557	STARTING GoToTable
+September 02, 2017 08:25:17:600000	127.0.0.1-9557	STARTING behaviour MoveToCornerOfObject
+September 02, 2017 08:25:17:603000	127.0.0.1-9557	ALign image to centre
+September 02, 2017 08:25:27:581000	127.0.0.1-9559	50
+September 02, 2017 08:25:32:943000	127.0.0.1-9559	0
+September 02, 2017 08:25:38:471000	127.0.0.1-9559	-50
+September 02, 2017 08:25:43:508000	127.0.0.1-9559	-100
+September 02, 2017 08:25:45:956000	127.0.0.1-9559	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:25:45:959000	127.0.0.1-9559	[324, 215]
+September 02, 2017 08:25:45:963000	127.0.0.1-9559	[(223, 183), (375, 163), (484, 176), (324, 215), [640, 480]]
+September 02, 2017 08:25:49:048000	127.0.0.1-9559	9559
+September 02, 2017 08:25:49:288000	127.0.0.1-9559	send distance message
+September 02, 2017 08:25:49:390000	127.0.0.1-9559	SendDistanceToObjectMessage
+September 02, 2017 08:25:49:393000	127.0.0.1-9559	188
+September 02, 2017 08:25:52:961000	127.0.0.1-9557	127.0.0.1:9557
+September 02, 2017 08:25:52:991000	127.0.0.1-9557	THE LEADER IS: 
+September 02, 2017 08:25:52:998000	127.0.0.1-9557	127.0.0.1:9557
+September 02, 2017 08:25:53:004000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:25:53:821000	127.0.0.1-9559	out of inner loop-checking if object found
+September 02, 2017 08:25:54:660000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:25:54:663000	127.0.0.1-9557	[560, 259]
+September 02, 2017 08:25:54:668000	127.0.0.1-9557	[(560, 256), (560, 256), (563, 259), (560, 259), [640, 480]]
+September 02, 2017 08:26:00:699000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:02:277000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:26:02:282000	127.0.0.1-9557	[508, 259]
+September 02, 2017 08:26:02:305000	127.0.0.1-9557	[(508, 256), (512, 252), (515, 255), (508, 259), [640, 480]]
+September 02, 2017 08:26:08:674000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:08:750000	127.0.0.1-9559	send distance message
+September 02, 2017 08:26:08:899000	127.0.0.1-9559	SendDistanceToObjectMessage
+September 02, 2017 08:26:08:901000	127.0.0.1-9559	0
+September 02, 2017 08:26:09:441000	127.0.0.1-9559	STARTING GoToTable
+September 02, 2017 08:26:09:514000	127.0.0.1-9559	STARTING behaviour MoveToCornerOfObject
+September 02, 2017 08:26:09:530000	127.0.0.1-9559	ALign image to centre
+September 02, 2017 08:26:10:358000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:26:10:360000	127.0.0.1-9557	[500, 259]
+September 02, 2017 08:26:10:363000	127.0.0.1-9557	[(500, 256), (512, 248), (519, 255), (500, 259), [640, 480]]
+September 02, 2017 08:26:11:910000	127.0.0.1-9559	127.0.0.1:9557
+September 02, 2017 08:26:11:915000	127.0.0.1-9559	THE LEADER IS: 
+September 02, 2017 08:26:11:929000	127.0.0.1-9559	127.0.0.1:9557
+September 02, 2017 08:26:11:954000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:14:817000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:16:330000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:26:16:332000	127.0.0.1-9557	[476, 287]
+September 02, 2017 08:26:16:340000	127.0.0.1-9557	[(476, 280), (476, 280), (483, 287), (476, 287), [640, 480]]
+September 02, 2017 08:26:17:670000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:20:716000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:22:427000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:26:22:429000	127.0.0.1-9557	[512, 259]
+September 02, 2017 08:26:22:437000	127.0.0.1-9557	[(512, 256), (520, 252), (523, 255), (512, 259), [640, 480]]
+September 02, 2017 08:26:23:328000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:26:623000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:28:062000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:26:28:065000	127.0.0.1-9557	[480, 255]
+September 02, 2017 08:26:28:068000	127.0.0.1-9557	[(480, 252), (496, 245), (497, 245), (480, 255), [640, 480]]
+September 02, 2017 08:26:28:276000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:31:665000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:33:069000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:26:33:071000	127.0.0.1-9557	[460, 287]
+September 02, 2017 08:26:33:074000	127.0.0.1-9557	[(456, 280), (456, 280), (463, 287), (460, 287), [640, 480]]
+September 02, 2017 08:26:33:940000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:36:224000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:37:735000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:26:37:749000	127.0.0.1-9557	[456, 259]
+September 02, 2017 08:26:37:751000	127.0.0.1-9557	[(456, 256), (456, 256), (463, 259), (456, 259), [640, 480]]
+September 02, 2017 08:26:39:119000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:42:753000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:44:203000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:26:44:209000	127.0.0.1-9557	[496, 259]
+September 02, 2017 08:26:44:215000	127.0.0.1-9557	[(496, 256), (504, 248), (507, 251), (496, 259), [640, 480]]
+September 02, 2017 08:26:45:151000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:48:231000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:49:879000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:26:49:891000	127.0.0.1-9557	[468, 283]
+September 02, 2017 08:26:49:920000	127.0.0.1-9557	[(468, 280), (468, 280), (471, 283), (468, 283), [640, 480]]
+September 02, 2017 08:26:51:015000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:54:969000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:26:56:676000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:26:56:679000	127.0.0.1-9557	[480, 259]
+September 02, 2017 08:26:56:682000	127.0.0.1-9557	[(480, 256), (480, 256), (487, 259), (480, 259), [640, 480]]
+September 02, 2017 08:26:57:792000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:02:777000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:04:609000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:27:04:615000	127.0.0.1-9557	[492, 259]
+September 02, 2017 08:27:04:621000	127.0.0.1-9557	[(492, 256), (492, 256), (499, 259), (492, 259), [640, 480]]
+September 02, 2017 08:27:04:647000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:08:182000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:10:206000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:10:335000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:27:10:338000	127.0.0.1-9557	[492, 259]
+September 02, 2017 08:27:10:349000	127.0.0.1-9557	[(492, 256), (492, 256), (499, 259), (492, 259), [640, 480]]
+September 02, 2017 08:27:13:649000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:15:029000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:15:079000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:27:15:081000	127.0.0.1-9557	[456, 251]
+September 02, 2017 08:27:15:086000	127.0.0.1-9557	[(456, 248), (456, 248), (459, 251), (456, 251), [640, 480]]
+September 02, 2017 08:27:18:720000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:19:900000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:20:092000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:27:20:095000	127.0.0.1-9557	[400, 287]
+September 02, 2017 08:27:20:100000	127.0.0.1-9557	[(400, 284), (400, 284), (403, 287), (400, 287), [640, 480]]
+September 02, 2017 08:27:23:477000	127.0.0.1-9557	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:24:773000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:25:012000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:27:25:019000	127.0.0.1-9557	[288, 255]
+September 02, 2017 08:27:25:030000	127.0.0.1-9557	[(288, 252), (288, 252), (291, 255), (288, 255), [640, 480]]
+September 02, 2017 08:27:28:568000	127.0.0.1-9557	FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:29:795000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:29:950000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:27:29:956000	127.0.0.1-9557	[296, 255]
+September 02, 2017 08:27:29:966000	127.0.0.1-9557	[(296, 252), (296, 252), (299, 255), (296, 255), [640, 480]]
+September 02, 2017 08:27:33:608000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:27:33:613000	127.0.0.1-9557	[74, 363]
+September 02, 2017 08:27:33:621000	127.0.0.1-9557	[(1, 327), (375, 296), (375, 296), (74, 363), [640, 480]]
+September 02, 2017 08:27:33:690000	127.0.0.1-9557	FindDirectionOfOtherRobotRelativeToTable is RIGHT
+September 02, 2017 08:27:33:709000	127.0.0.1-9557	Table relative to robots is
+September 02, 2017 08:27:33:711000	127.0.0.1-9557	INFRONT
+September 02, 2017 08:27:34:612000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:40:262000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:45:426000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:50:389000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:27:53:474000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:27:53:484000	127.0.0.1-9557	[56, 360]
+September 02, 2017 08:27:53:493000	127.0.0.1-9557	[(1, 327), (363, 298), (363, 298), (56, 360), [640, 480]]
+September 02, 2017 08:27:54:101000	127.0.0.1-9557	AlignClosestCornerToMiddle
+September 02, 2017 08:27:55:558000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:27:55:560000	127.0.0.1-9557	[66, 359]
+September 02, 2017 08:27:55:563000	127.0.0.1-9557	[(1, 327), (363, 298), (363, 298), (66, 359), [640, 480]]
+September 02, 2017 08:27:55:791000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:01:303000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:04:652000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:28:04:656000	127.0.0.1-9557	[108, 359]
+September 02, 2017 08:28:04:663000	127.0.0.1-9557	[(36, 320), (303, 291), (400, 300), (108, 359), [640, 480]]
+September 02, 2017 08:28:06:140000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:28:06:143000	127.0.0.1-9557	[108, 359]
+September 02, 2017 08:28:06:153000	127.0.0.1-9557	[(36, 320), (303, 291), (400, 300), (108, 359), [640, 480]]
+September 02, 2017 08:28:06:232000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:11:442000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:15:491000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:28:15:494000	127.0.0.1-9557	[100, 355]
+September 02, 2017 08:28:15:497000	127.0.0.1-9557	[(31, 326), (295, 291), (407, 311), (100, 355), [640, 480]]
+September 02, 2017 08:28:16:705000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:17:183000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:28:17:194000	127.0.0.1-9557	[100, 355]
+September 02, 2017 08:28:17:220000	127.0.0.1-9557	[(31, 326), (295, 291), (407, 311), (100, 355), [640, 480]]
+September 02, 2017 08:28:21:445000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:25:617000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:28:25:619000	127.0.0.1-9557	[124, 351]
+September 02, 2017 08:28:25:621000	127.0.0.1-9557	[(52, 312), (297, 291), (423, 311), (124, 351), [640, 480]]
+September 02, 2017 08:28:26:192000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:27:049000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:28:27:052000	127.0.0.1-9557	[120, 359]
+September 02, 2017 08:28:27:060000	127.0.0.1-9557	[(47, 330), (311, 291), (419, 311), (120, 359), [640, 480]]
+September 02, 2017 08:28:31:072000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:35:842000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:35:872000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:28:35:879000	127.0.0.1-9557	[128, 359]
+September 02, 2017 08:28:35:883000	127.0.0.1-9557	[(59, 329), (311, 291), (431, 307), (128, 359), [640, 480]]
+September 02, 2017 08:28:38:015000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:28:38:020000	127.0.0.1-9557	[128, 359]
+September 02, 2017 08:28:38:023000	127.0.0.1-9557	[(59, 329), (311, 291), (431, 307), (128, 359), [640, 480]]
+September 02, 2017 08:28:40:657000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:45:485000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:46:241000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:28:46:244000	127.0.0.1-9557	[168, 355]
+September 02, 2017 08:28:46:250000	127.0.0.1-9557	[(91, 323), (331, 291), (440, 300), (168, 355), [640, 480]]
+September 02, 2017 08:28:47:920000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:28:47:924000	127.0.0.1-9557	[164, 355]
+September 02, 2017 08:28:47:929000	127.0.0.1-9557	[(91, 323), (331, 291), (459, 311), (164, 355), [640, 480]]
+September 02, 2017 08:28:50:402000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:55:439000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:28:55:991000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:28:55:993000	127.0.0.1-9557	[168, 355]
+September 02, 2017 08:28:55:998000	127.0.0.1-9557	[(95, 325), (339, 291), (463, 311), (168, 355), [640, 480]]
+September 02, 2017 08:28:57:418000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:28:57:423000	127.0.0.1-9557	[172, 355]
+September 02, 2017 08:28:57:426000	127.0.0.1-9557	[(100, 316), (341, 291), (467, 311), (172, 355), [640, 480]]
+September 02, 2017 08:29:00:137000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:29:05:424000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:29:06:043000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:29:06:047000	127.0.0.1-9557	[188, 351]
+September 02, 2017 08:29:06:072000	127.0.0.1-9557	[(112, 312), (367, 287), (479, 307), (188, 351), [640, 480]]
+September 02, 2017 08:29:08:090000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:29:08:093000	127.0.0.1-9557	[184, 355]
+September 02, 2017 08:29:08:095000	127.0.0.1-9557	[(111, 323), (351, 291), (479, 311), (184, 355), [640, 480]]
+September 02, 2017 08:29:10:624000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:29:17:060000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:29:18:348000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:29:18:367000	127.0.0.1-9557	[240, 355]
+September 02, 2017 08:29:18:369000	127.0.0.1-9557	[(160, 316), (403, 291), (520, 300), (240, 355), [640, 480]]
+September 02, 2017 08:29:20:963000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:29:20:969000	127.0.0.1-9557	[240, 355]
+September 02, 2017 08:29:20:975000	127.0.0.1-9557	[(160, 316), (403, 291), (520, 300), (240, 355), [640, 480]]
+September 02, 2017 08:29:22:674000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:29:28:739000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:29:29:311000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:29:29:328000	127.0.0.1-9557	[232, 351]
+September 02, 2017 08:29:29:376000	127.0.0.1-9557	[(160, 312), (361, 295), (523, 315), (232, 351), [640, 480]]
+September 02, 2017 08:29:31:420000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:29:31:423000	127.0.0.1-9557	[232, 351]
+September 02, 2017 08:29:31:439000	127.0.0.1-9557	[(160, 312), (361, 295), (523, 315), (232, 351), [640, 480]]
+September 02, 2017 08:29:34:297000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:29:39:355000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:29:39:396000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:29:39:401000	127.0.0.1-9557	[244, 347]
+September 02, 2017 08:29:39:405000	127.0.0.1-9557	[(176, 312), (379, 291), (535, 311), (244, 347), [640, 480]]
+September 02, 2017 08:29:41:214000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:29:41:216000	127.0.0.1-9557	[248, 355]
+September 02, 2017 08:29:41:219000	127.0.0.1-9557	[(175, 323), (424, 292), (539, 311), (248, 355), [640, 480]]
+September 02, 2017 08:29:44:306000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:29:49:552000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:29:49:598000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:29:49:601000	127.0.0.1-9557	[276, 355]
+September 02, 2017 08:29:49:631000	127.0.0.1-9557	[(191, 321), (419, 295), (535, 305), (276, 355), [640, 480]]
+September 02, 2017 08:29:51:311000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:29:51:339000	127.0.0.1-9557	[264, 355]
+September 02, 2017 08:29:51:352000	127.0.0.1-9557	[(179, 326), (423, 291), (543, 311), (264, 355), [640, 480]]
+September 02, 2017 08:29:54:469000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:29:59:200000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:29:59:374000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:29:59:376000	127.0.0.1-9557	[264, 359]
+September 02, 2017 08:29:59:379000	127.0.0.1-9557	[(183, 325), (419, 299), (547, 323), (264, 359), [640, 480]]
+September 02, 2017 08:30:00:922000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:30:00:929000	127.0.0.1-9557	[264, 355]
+September 02, 2017 08:30:00:934000	127.0.0.1-9557	[(179, 325), (419, 291), (543, 311), (264, 355), [640, 480]]
+September 02, 2017 08:30:05:341000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:30:09:956000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:30:09:961000	127.0.0.1-9557	[276, 355]
+September 02, 2017 08:30:09:968000	127.0.0.1-9557	[(188, 316), (399, 295), (551, 315), (276, 355), [640, 480]]
+September 02, 2017 08:30:10:348000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:30:11:509000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:30:11:511000	127.0.0.1-9557	[276, 355]
+September 02, 2017 08:30:11:515000	127.0.0.1-9557	[(191, 321), (431, 291), (551, 311), (276, 355), [640, 480]]
+September 02, 2017 08:30:15:685000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:30:20:306000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:30:20:361000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:30:20:366000	127.0.0.1-9557	[284, 355]
+September 02, 2017 08:30:20:369000	127.0.0.1-9557	[(195, 319), (423, 295), (555, 319), (284, 355), [640, 480]]
+September 02, 2017 08:30:22:275000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:30:22:303000	127.0.0.1-9557	[280, 355]
+September 02, 2017 08:30:22:306000	127.0.0.1-9557	[(192, 316), (431, 291), (555, 311), (280, 355), [640, 480]]
+September 02, 2017 08:30:25:750000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:30:30:950000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:30:30:951000	127.0.0.1-9557	[300, 355]
+September 02, 2017 08:30:30:954000	127.0.0.1-9557	[(204, 320), (399, 299), (564, 312), (300, 355), [640, 480]]
+September 02, 2017 08:30:31:482000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:30:32:472000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:30:32:504000	127.0.0.1-9557	[281, 356]
+September 02, 2017 08:30:32:506000	127.0.0.1-9557	[(191, 326), (427, 291), (551, 311), (281, 356), [640, 480]]
+September 02, 2017 08:30:37:198000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:30:40:185000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:30:40:188000	127.0.0.1-9557	[280, 355]
+September 02, 2017 08:30:40:198000	127.0.0.1-9557	[(191, 323), (427, 291), (547, 311), (280, 355), [640, 480]]
+September 02, 2017 08:30:42:799000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:30:42:805000	127.0.0.1-9557	[267, 356]
+September 02, 2017 08:30:42:808000	127.0.0.1-9557	[(184, 320), (421, 291), (539, 311), (267, 356), [640, 480]]
+September 02, 2017 08:30:43:109000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:30:48:545000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:30:50:790000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:30:50:794000	127.0.0.1-9557	[276, 355]
+September 02, 2017 08:30:50:818000	127.0.0.1-9557	[(191, 323), (401, 295), (551, 315), (276, 355), [640, 480]]
+September 02, 2017 08:30:52:422000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:30:52:425000	127.0.0.1-9557	[276, 355]
+September 02, 2017 08:30:52:428000	127.0.0.1-9557	[(191, 323), (423, 291), (551, 311), (276, 355), [640, 480]]
+September 02, 2017 08:30:53:605000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:30:58:458000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:31:01:388000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:01:393000	127.0.0.1-9557	[269, 356]
+September 02, 2017 08:31:01:396000	127.0.0.1-9557	[(179, 323), (411, 291), (539, 311), (269, 356), [640, 480]]
+September 02, 2017 08:31:03:011000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:03:014000	127.0.0.1-9557	[268, 355]
+September 02, 2017 08:31:03:032000	127.0.0.1-9557	[(180, 316), (415, 291), (539, 311), (268, 355), [640, 480]]
+September 02, 2017 08:31:03:670000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:31:08:879000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:31:11:412000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:11:422000	127.0.0.1-9557	[264, 355]
+September 02, 2017 08:31:11:425000	127.0.0.1-9557	[(179, 327), (407, 291), (539, 311), (264, 355), [640, 480]]
+September 02, 2017 08:31:13:236000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:13:246000	127.0.0.1-9557	[272, 355]
+September 02, 2017 08:31:13:259000	127.0.0.1-9557	[(187, 323), (423, 291), (543, 311), (272, 355), [640, 480]]
+September 02, 2017 08:31:13:928000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:31:18:965000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:31:21:346000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:21:354000	127.0.0.1-9557	[268, 355]
+September 02, 2017 08:31:21:358000	127.0.0.1-9557	[(183, 323), (407, 295), (543, 315), (268, 355), [640, 480]]
+September 02, 2017 08:31:22:929000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:22:931000	127.0.0.1-9557	[268, 355]
+September 02, 2017 08:31:22:942000	127.0.0.1-9557	[(183, 323), (407, 295), (543, 315), (268, 355), [640, 480]]
+September 02, 2017 08:31:24:263000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:31:29:387000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:31:31:272000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:31:276000	127.0.0.1-9557	[276, 351]
+September 02, 2017 08:31:31:279000	127.0.0.1-9557	[(195, 326), (415, 287), (551, 303), (276, 351), [640, 480]]
+September 02, 2017 08:31:32:939000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:32:941000	127.0.0.1-9557	[276, 351]
+September 02, 2017 08:31:32:945000	127.0.0.1-9557	[(195, 326), (415, 287), (551, 303), (276, 351), [640, 480]]
+September 02, 2017 08:31:34:637000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:31:39:786000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:31:41:757000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:41:761000	127.0.0.1-9557	[292, 355]
+September 02, 2017 08:31:41:767000	127.0.0.1-9557	[(199, 326), (427, 291), (551, 311), (292, 355), [640, 480]]
+September 02, 2017 08:31:44:032000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:44:051000	127.0.0.1-9557	[292, 355]
+September 02, 2017 08:31:44:055000	127.0.0.1-9557	[(195, 325), (423, 291), (551, 311), (292, 355), [640, 480]]
+September 02, 2017 08:31:45:217000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:31:50:078000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:31:53:157000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:53:191000	127.0.0.1-9557	[312, 355]
+September 02, 2017 08:31:53:196000	127.0.0.1-9557	[(211, 319), (444, 292), (567, 311), (312, 355), [640, 480]]
+September 02, 2017 08:31:55:321000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:31:55:456000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:55:460000	127.0.0.1-9557	[308, 355]
+September 02, 2017 08:31:55:464000	127.0.0.1-9557	[(211, 323), (435, 291), (567, 311), (308, 355), [640, 480]]
+September 02, 2017 08:31:56:247000	127.0.0.1-9557	bottommost point: 363
+September 02, 2017 08:31:56:253000	127.0.0.1-9557	starting at corver to ajust to v corner
+September 02, 2017 08:31:57:901000	127.0.0.1-9557	Adjust to V corner
+September 02, 2017 08:31:57:904000	127.0.0.1-9557	AlignClosestCornerToMiddle
+September 02, 2017 08:31:59:373000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:31:59:396000	127.0.0.1-9557	[308, 355]
+September 02, 2017 08:31:59:401000	127.0.0.1-9557	[(208, 316), (435, 291), (563, 311), (308, 355), [640, 480]]
+September 02, 2017 08:32:01:065000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:32:01:068000	127.0.0.1-9557	[308, 355]
+September 02, 2017 08:32:01:074000	127.0.0.1-9557	[(208, 316), (435, 291), (563, 311), (308, 355), [640, 480]]
+September 02, 2017 08:32:01:120000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:32:02:546000	127.0.0.1-9557	mask sizes
+September 02, 2017 08:32:02:548000	127.0.0.1-9557	Inside: Looking for y axis ranges on coloured blob
+September 02, 2017 08:32:02:781000	127.0.0.1-9557	left value Y
+September 02, 2017 08:32:02:784000	127.0.0.1-9557	354
+September 02, 2017 08:32:02:788000	127.0.0.1-9557	left value Y
+September 02, 2017 08:32:02:801000	127.0.0.1-9557	346
+September 02, 2017 08:32:02:806000	127.0.0.1-9557	left value Y
+September 02, 2017 08:32:02:808000	127.0.0.1-9557	342
+September 02, 2017 08:32:02:810000	127.0.0.1-9557	Adjusted to V corner
+September 02, 2017 08:32:02:815000	127.0.0.1-9557	SETTING BOTTOM POINT TO CENTRE
+September 02, 2017 08:32:02:830000	127.0.0.1-9557	AlignToLongerSideOfObject
+September 02, 2017 08:32:02:832000	127.0.0.1-9557	AlignClosestCornerToMiddle
+September 02, 2017 08:32:04:791000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:32:04:795000	127.0.0.1-9557	[312, 123]
+September 02, 2017 08:32:04:799000	127.0.0.1-9557	[(203, 94), (415, 63), (568, 68), (312, 123), [640, 480]]
+September 02, 2017 08:32:07:111000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:32:11:980000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:32:13:080000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:32:13:083000	127.0.0.1-9557	[312, 47]
+September 02, 2017 08:32:13:086000	127.0.0.1-9557	[(207, 15), (299, 1), (595, 7), (312, 47), [640, 480]]
+September 02, 2017 08:32:15:232000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:32:15:241000	127.0.0.1-9557	[312, 47]
+September 02, 2017 08:32:15:245000	127.0.0.1-9557	[(203, 17), (283, 1), (595, 3), (312, 47), [640, 480]]
+September 02, 2017 08:32:16:760000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:32:21:642000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:32:23:348000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:32:23:351000	127.0.0.1-9557	[320, 47]
+September 02, 2017 08:32:23:353000	127.0.0.1-9557	[(208, 8), (283, 1), (599, 3), (320, 47), [640, 480]]
+September 02, 2017 08:32:24:991000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:32:24:995000	127.0.0.1-9557	[312, 47]
+September 02, 2017 08:32:24:998000	127.0.0.1-9557	[(203, 14), (283, 1), (595, 3), (312, 47), [640, 480]]
+September 02, 2017 08:32:26:471000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:32:31:431000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:32:33:179000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:32:33:181000	127.0.0.1-9557	[328, 51]
+September 02, 2017 08:32:33:185000	127.0.0.1-9557	[(219, 15), (343, 1), (607, 15), (328, 51), [640, 480]]
+September 02, 2017 08:32:35:372000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:32:35:377000	127.0.0.1-9557	[325, 48]
+September 02, 2017 08:32:35:379000	127.0.0.1-9557	[(211, 18), (291, 1), (603, 3), (325, 48), [640, 480]]
+September 02, 2017 08:32:35:423000	127.0.0.1-9557	FIND LONGER SIDE OF TABLE BY SIDES
+September 02, 2017 08:32:36:310000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:32:36:937000	127.0.0.1-9557	PRINTING BOTTOMMOST POINTS BELOW:::::
+September 02, 2017 08:32:36:939000	127.0.0.1-9557	[320, 47]
+September 02, 2017 08:32:36:949000	127.0.0.1-9557	[(212, 8), (287, 1), (603, 3), (320, 47), [640, 480]]
+September 02, 2017 08:32:38:238000	127.0.0.1-9557	RIGHT side is longer FIND LONGER SIDE OF TABLE BY SIDES
+September 02, 2017 08:32:40:247000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:32:41:321000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:32:41:892000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:32:42:885000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:32:46:766000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:32:48:979000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:32:50:747000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:32:51:680000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:32:56:658000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:32:56:842000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:32:58:586000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:33:01:388000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:33:04:932000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:33:06:287000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:33:06:641000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:33:11:419000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:33:13:220000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:33:14:845000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:33:16:189000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:33:21:142000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:33:21:279000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:33:22:908000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:33:26:066000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:33:29:137000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:33:30:973000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:33:31:425000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:33:36:641000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:33:37:346000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:33:38:849000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:33:41:278000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:33:45:192000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:33:46:450000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:33:47:285000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:33:51:653000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:33:54:187000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:33:56:311000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:33:56:979000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:34:01:766000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:34:02:622000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:34:04:131000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:34:06:681000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:34:10:489000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:34:11:757000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:34:12:293000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:34:16:773000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:34:19:014000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:34:21:039000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:34:22:234000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:34:27:533000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:34:27:709000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:34:30:026000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:34:33:284000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:34:36:863000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:34:38:372000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:34:38:598000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:34:43:652000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:34:45:102000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:34:46:953000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:34:48:469000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:34:53:222000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:34:53:279000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:34:55:152000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:34:58:222000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:35:01:642000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:35:03:416000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:35:03:576000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:35:09:160000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:35:10:853000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:35:12:797000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:35:15:041000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:35:19:457000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:35:20:356000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:35:21:734000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:35:26:285000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:35:29:171000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:35:32:058000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:35:33:187000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:35:37:702000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:35:39:716000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:35:41:255000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:35:42:742000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:35:47:730000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:35:48:380000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:35:49:471000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:35:53:125000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:35:55:509000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:35:57:235000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:35:58:614000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:03:340000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:36:03:611000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:05:091000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:36:08:570000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:11:482000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:36:13:057000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:36:13:745000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:18:671000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:19:281000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:36:21:106000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:36:23:762000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:27:397000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:36:28:724000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:28:920000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:36:33:957000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:35:396000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:36:37:100000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:36:39:157000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:43:645000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:36:44:412000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:45:201000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:36:49:159000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:51:541000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:36:53:374000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:36:54:402000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:59:392000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:36:59:755000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:37:01:350000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:37:04:282000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:37:07:926000	127.0.0.1-9557	KEEP WALKING UNTIL VERY CLOSE TO CORNER
+September 02, 2017 08:37:09:067000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable
+September 02, 2017 08:37:09:361000	127.0.0.1-9557	countour list is empty
+September 02, 2017 08:37:14:029000	127.0.0.1-9559	Adjust table to centre for FindDirectionOfOtherRobotRelativeToTable

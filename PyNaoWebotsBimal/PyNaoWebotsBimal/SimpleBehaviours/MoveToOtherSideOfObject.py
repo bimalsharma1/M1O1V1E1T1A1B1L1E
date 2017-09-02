@@ -81,13 +81,14 @@ def MoveToOtherSideOfObject(InitialiseNaoRobot):
                     h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 1.5)
                 while not closeToTable:
                     print "keep moving while not close to table"
+                    Logger.Log("keep moving while not close to table")
                     
                     imB = ip.getImage(InitialiseNaoRobot, "BOTTOM", filenameTopCamera)
                     LeftMostX, RightMostX, TopMostY, BottomMostY = d.DetectFourExtremePoints(imB)
                     if BottomMostY > 0:
                         a.AlignObjectToCentreofFieldOfView(InitialiseNaoRobot, "BOTTOM", config.colourOfHeadOfNao)
                         a.AlignBodyHorizontallyWithTable(InitialiseNaoRobot, "BOTTOM", "naoImageBottomCamera", 50)
-                    if (BottomMostY < 300 or BottomMostY is None):
+                    if ((BottomMostY < 300 and BottomMostY > 0) or BottomMostY is None):
                         if BottomMostY is None:
                             a.AlignObjectToCentreofFieldOfView(InitialiseNaoRobot, "TOP", config.colourOfHeadOfNao)
                         h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.15)

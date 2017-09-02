@@ -63,17 +63,6 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
     
     #CODE TO EXECUTE WHEN ROBOTS START ON THE SAME SIDE
     if(InitialiseNaoRobot.isLeader != True):#include logic in here to avoid moving to tother side when starting on the same side
-        if tablePositionRelativeToRobot != "INFRONT": #if table is not in between the robots
-            ma.MoveAwayFromObject(InitialiseNaoRobot)
-            Logger.Log(str(tablePositionRelativeToRobot))
-            while h.GetApprovalToMoveFromLeader(InitialiseNaoRobot) == False:
-                time.sleep(5)
-            # FindObjectOfInterest
-            xCntrPos, yCntrePos, headPos, objFound, btmPnt = f.FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera,filenameBottomCamera)
-            Logger.Log("Assistant robot move to other side")
-            mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
-            return True
-    else:
         h.CommunicateLeadershipByPuttingRightHandUp(InitialiseNaoRobot.motionProxy)
         if tablePositionRelativeToRobot != "INFRONT": #if table is not in between the robots
             #wait unil other robot moved away
@@ -81,6 +70,20 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
                 print str(fio.ReadFirstLineInFile("otherRobotMovedAway")).strip().lower() == "movedaway"
                 print str(fio.ReadFirstLineInFile("otherRobotMovedAway")).lower()
                 time.sleep(2) #wait for 2 seconds
+    else:
+        
+        if tablePositionRelativeToRobot != "INFRONT": #if table is not in between the robots
+            ma.MoveAwayFromObject(InitialiseNaoRobot)
+            Logger.Log(str(tablePositionRelativeToRobot))
+        
+        while h.GetApprovalToMoveFromLeader(InitialiseNaoRobot) == False:
+            time.sleep(5)
+        # FindObjectOfInterest
+        xCntrPos, yCntrePos, headPos, objFound, btmPnt = f.FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera,filenameBottomCamera)
+        Logger.Log("Assistant robot move to other side")
+        # time.sleep(9999999999999999)
+        mo.MoveToOtherSideOfObject(InitialiseNaoRobot)
+        return True
     
     print "OUT OF SELECTING LEADER AND MOVING AWAY"
     
@@ -98,7 +101,7 @@ def MoveToCornerOfObject(InitialiseNaoRobot):
         Logger.Log("bottommost point: "+ str(bottomMostPoint[1]))
 
         if (bottomMostPoint[1] > 360): #was 430
-            Logger.Log("starting at corver to ajusr to v corner")
+            Logger.Log("starting at corver to ajust to v corner")
             names      = [ "HeadPitch"]
             angleLists = [29.5*almath.TO_RAD]
             timeLists  = [1.2]

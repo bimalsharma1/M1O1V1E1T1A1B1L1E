@@ -568,12 +568,17 @@ def AlignBodyHorizontallyWithTable(InitialiseNaoRobot, cameraName = "TOP", fileN
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy, correctionAngle)
                 print "spinning right"
         elif LeftYPos <= 0 and RightYPos > 0:
-            print "left y pos has no value"
+            print "left y pos has no value detect with a smaller span"
+            # LeftYPos, MidYPos, RightYPos = d.DetectYPos(im, horizontalSearchRange, xCntrPos)
+            if (horizontalSearchRange > 5):
+                horizontalSearchRange = horizontalSearchRange - 5
             if RightYPos < collisionAvoidancePoint:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
             h.WalkSideWaysRightUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
         elif LeftYPos > 0 and RightYPos <= 0:
             print "right y pos has no value"
+            if (horizontalSearchRange > 5):
+                horizontalSearchRange = horizontalSearchRange - 5
             if LeftYPos < collisionAvoidancePoint:
                 h.WalkAheadUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)
             h.WalkSideWaysLeftUntilFinished(InitialiseNaoRobot.motionProxy, 0.1)

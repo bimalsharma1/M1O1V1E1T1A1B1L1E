@@ -130,10 +130,10 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
 
         if (angleOfHead < 0):
             objectPosition = "RIGHT"
-            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(45))
+            h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(75))
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT) 
-            while(xCntrPos < float(config.imageWidth)/2.00 or xCntrPos == 0):
+            while(xCntrPos > float(config.imageWidth)/2.00 or xCntrPos == 0):
                 print "SPINNING RIGHT in FindObjectOfInterest"
                 h.WalkSpinRightUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(45))
                 # h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead)*2)#20 degrees
@@ -141,16 +141,16 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                 imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
                 xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT) 
                 print "Inside align table found to middle"
-                if (xCntrPos > float(config.imageWidth)/2.00):
+                if (xCntrPos < float(config.imageWidth)/2.00):
                     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
                     h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
                     return (xCntrPos, yCntrPos, headLookingPosition, objectFound, botMostPnt)
         elif(angleOfHead > 0):
             objectPosition = "LEFT"
-            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(45))
+            h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(75))
             imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
             xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT) 
-            while(xCntrPos > float(config.imageWidth)/2.00 or xCntrPos==0):
+            while(xCntrPos < float(config.imageWidth)/2.00 or xCntrPos==0):
                 print "SPINNING LEFT in FindObjectOfInterest"
                 h.WalkSpinLeftUntilFinished(InitialiseNaoRobot.motionProxy,math.radians(45))
                 # h.WalkToPosition(InitialiseNaoRobot.motionProxy, 0.0, 0, math.radians(angleOfHead)*2)#20 degrees
@@ -158,7 +158,7 @@ def FindObjectOfInterest(InitialiseNaoRobot, filenameTopCamera, filenameBottomCa
                 imT = ip.getImage(InitialiseNaoRobot, "TOP", filenameTopCamera)
                 xCntrPos, yCntrPos, objFoundBtmCam, botMostPnt,pcntImgCovrd,bl,br,tl,tr = d.DetectColour(filenameTopCamera + ".png", "", imT) 
                 print "Inside align table found to middle"
-                if (xCntrPos < float(config.imageWidth)/2.00):
+                if (xCntrPos > float(config.imageWidth)/2.00):
                     h.HeadInitialise(InitialiseNaoRobot.motionProxy)
                     h.SendDistanceToObjectMessage(InitialiseNaoRobot, str(yCntrPos))
                     return (xCntrPos, yCntrPos, headLookingPosition, objectFound, botMostPnt)
